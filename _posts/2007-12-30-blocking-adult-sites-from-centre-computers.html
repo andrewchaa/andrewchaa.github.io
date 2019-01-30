@@ -1,0 +1,24 @@
+---
+layout: post
+title: blocking adult sites from centre computers
+date: 2007-12-30 12:43:54.000000000 +00:00
+type: post
+published: true
+status: publish
+categories: []
+tags: []
+meta: {}
+author:
+  login: simplelifeuk
+  email: andrew.chaa@yahoo.co.uk
+  display_name: Andy
+  first_name: Andrew
+  last_name: Chaa
+---
+<p>먼저 공짜로 쓸 수 있는 좋은 DNS서버가 있지롱. 바로 <a href="http://www.opendns.com/">OpenDNS</a> 그러면 이상한 사이트들은 DNS 변환이 안되어 막아지게 된다.</p>
+<ul>
+<li><a href="https://www.opendns.com/start?device=netgear">Set-up direction</a></li>
+<li>Router 세팅이 끝나면 물리적으로 restart 해준다.</li>
+<li>그리고 나서 한 20분 정도 기다려야 설정이 업데이트 되며 작동하기 시작한다.</li>
+<li>서버가 static ip로 되어있고, DNS 서버가 되면 안됨. Router가 DHCP server로 설정되어 있고, 서버 역시 ip와 DNS를 받아야 한다. </li>
+</ul>

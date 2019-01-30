@@ -1,0 +1,19 @@
+---
+layout: post
+title: password is commented out in Sql server 2005 profiler
+date: 2007-10-17 15:25:36.000000000 +01:00
+type: post
+published: true
+status: publish
+categories: []
+tags:
+- sqlserver
+meta: {}
+author:
+  login: simplelifeuk
+  email: andrew.chaa@yahoo.co.uk
+  display_name: Andy
+  first_name: Andrew
+  last_name: Chaa
+---
+<p>It is a bit annoying that every sql statement that has 'password' literally are commented out. You can't see the statement in Profiler. There seems to be a <a href="http://www.andreabertolotto.net/Articles/SP4BlacklistedWordsRemover.aspx">hack</a> that disables this for Sql server 2000 with SP4, but not applicable to sql server 2005. I think there must be a configuration to switch this functionality off.</p>

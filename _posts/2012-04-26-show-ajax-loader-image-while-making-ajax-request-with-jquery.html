@@ -1,0 +1,61 @@
+---
+layout: post
+title: show ajax loader image while making ajax request with jquery
+date: 2012-04-26 15:01:27.000000000 +01:00
+type: post
+published: true
+status: publish
+categories: []
+tags:
+- ajax
+- jquery
+- loader
+meta:
+  _edit_last: '1907066'
+  _wpas_done_linkedin: '1'
+  publicize_results: a:1:{s:7:"twitter";a:1:{i:111615627;a:2:{s:7:"user_id";s:10:"andrewchaa";s:7:"post_id";s:18:"195528028732915712";}}}
+  _wpas_done_twitter: '1'
+author:
+  login: simplelifeuk
+  email: andrew.chaa@yahoo.co.uk
+  display_name: Andy
+  first_name: Andrew
+  last_name: Chaa
+---
+<p>You will need an image, first. Go to <a href="http://ajaxload.info/">ajaxload.info</a> and get one you like.</p>
+<p>Put the html for the loader in the page.</p>
+<p>[sourcecode language="html"]<br />
+&lt;div id=&quot;spinner&quot;&gt;<br />
+    &lt;img src=&quot;/jobadmanager/Content/images/ajax-loader-big.gif&quot; alt=&quot;Loading...&quot;/&gt;<br />
+&lt;/div&gt;<br />
+[/sourcecode]</p>
+<p>Style the div element to position it on the centre of the browser.</p>
+<p>[sourcecode language="css"]<br />
+&lt;style&gt;<br />
+div#spinner<br />
+{<br />
+    display: none;<br />
+    width:100px;<br />
+    height: 100px;<br />
+    position: fixed;<br />
+    top: 50%;<br />
+    left: 50%;<br />
+    text-align:center;<br />
+    margin-left: -50px;<br />
+    margin-top: -100px;<br />
+    z-index:2;<br />
+    overflow: auto;<br />
+}<br />
+&lt;/style&gt;<br />
+[/sourcecode]</p>
+<p>Now, use javascript to fade it in and out, when an ajax request starts. </p>
+<p>[sourcecode language="javascript"]<br />
+&lt;script type=&quot;text/javascript&quot;&gt;<br />
+    $('#spinner').ajaxStart(function () {<br />
+        $(this).fadeIn('fast');<br />
+    }).ajaxStop(function () {<br />
+        $(this).stop().fadeOut('fast');<br />
+    });</p>
+<p>&lt;/script&gt;<br />
+[/sourcecode]</p>
+<p>Reference: http://stackoverflow.com/questions/807408/showing-loading-animation-in-center-of-page-while-making-a-call-to-action-method</p>

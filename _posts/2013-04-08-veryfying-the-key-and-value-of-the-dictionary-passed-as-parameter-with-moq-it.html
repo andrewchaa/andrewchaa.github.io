@@ -1,0 +1,78 @@
+---
+layout: post
+title: Veryfying the key and value of the dictionary passed as parameter with Moq.It
+date: 2013-04-08 12:35:53.000000000 +01:00
+type: post
+published: true
+status: publish
+categories:
+- Programming
+tags:
+- mock
+- moq
+- Unit Test
+meta:
+  _edit_last: '1907066'
+  publicize_reach: a:2:{s:7:"twitter";a:1:{i:1752093;i:166;}s:2:"wp";a:1:{i:0;i:7;}}
+  _publicize_done_external: a:1:{s:7:"twitter";a:1:{i:111615627;b:1;}}
+  _wpas_done_1752093: '1'
+  publicize_twitter_user: andrewchaa
+  _wpas_skip_1752093: '1'
+  tagazine-media: a:7:{s:7:"primary";s:0:"";s:6:"images";a:0:{}s:6:"videos";a:0:{}s:11:"image_count";i:0;s:6:"author";s:7:"1907066";s:7:"blog_id";s:7:"1833431";s:9:"mod_stamp";s:19:"2013-04-08
+    12:46:15";}
+  _oembed_049e9571c94a85b68a552a14c921c11e: "{{unknown}}"
+  _oembed_5d0b0b8a99c6acda4343ed2768840096: "{{unknown}}"
+  _oembed_b1dc1c03bfe9d2fdfd677b2cffa72f8b: "{{unknown}}"
+  _oembed_aa11d69417bc088a1364a606ed4fa80e: "{{unknown}}"
+  _oembed_9b729f858e7beeb8b97e26b515a9a05e: "{{unknown}}"
+author:
+  login: simplelifeuk
+  email: andrew.chaa@yahoo.co.uk
+  display_name: Andy
+  first_name: Andrew
+  last_name: Chaa
+---
+<p>In unit-tests, you mock out external dependencies. With Mock framework, you can verify that a correct value is passed into the dependency. Today, I had a case that a dictionary object is passed into the dictionary. I wasn't sure how to verify that the value is correct, as what I wanted was just to check the dictionary has two keys and those keys have correct values.</p>
+<p>Simply, I learned I can use Moq.It.Is...</p>
+<p>The code is like this. It uses <a href="https://code.google.com/p/moq/">Moq</a> and <a href="https://github.com/machine/machine.specifications">Machine.Specification</a>.</p>
+<p>[sourcecode language="csharp"]<br />
+public class When_you_verify_the_dictionary_has_certain_keys_and_values<br />
+{<br />
+    static Mock&lt;IConsume&gt; _consumer;<br />
+    static ConsumerUser _consumerUser;<br />
+    static string _username;<br />
+    static string _password;</p>
+<p>    Establish context = () =&gt;<br />
+        {<br />
+            _username = &quot;Dorothy&quot;;<br />
+            _password = &quot;Perkins&quot;;<br />
+            _consumer = new Mock&lt;IConsume&gt;();<br />
+            _consumerUser = new ConsumerUser(_consumer.Object);<br />
+        };</p>
+<p>    Because it_consumes = () =&gt; _consumerUser.Consume(_username, _password);</p>
+<p>    It should_have_username_and_password_in_the_input = () =&gt;<br />
+        _consumer.Verify(d =&gt;d.Consume(Moq.It.Is&lt;Dictionary&lt;string, string&gt;&gt;(<br />
+                dict =&gt; dict[&quot;username&quot;] == &quot;Dorothy&quot; &amp;&amp;<br />
+                        dict[&quot;password&quot;] == &quot;Perkins&quot;)));<br />
+}}</p>
+<p>public interface IConsume<br />
+{<br />
+    void Consume(Dictionary&lt;string, string&gt; input);<br />
+}</p>
+<p>public class ConsumerUser<br />
+{<br />
+    private readonly IConsume _consume;</p>
+<p>    public ConsumerUser(IConsume consume)<br />
+    {<br />
+        _consume = consume;<br />
+    }</p>
+<p>    public void Consume(string username, string password)<br />
+    {<br />
+        var pairs = new Dictionary&lt;string, string&gt;();<br />
+        pairs.Add(&quot;username&quot;, username);<br />
+        pairs.Add(&quot;password&quot;, password);</p>
+<p>        _consume.Consume(pairs);<br />
+    }<br />
+}</p>
+<p>[/sourcecode]</p>
+<p>The above code is in github. <a href="https://github.com/andrewchaa/CodeExamples/blob/master/MoqExamples/VerifyDictionaryKeyAndValue.cs">https://github.com/andrewchaa/CodeExamples/blob/master/MoqExamples/VerifyDictionaryKeyAndValue.cs</a></p>

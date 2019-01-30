@@ -1,0 +1,61 @@
+---
+layout: post
+title: Don't use string concatenation for JSON string, use JSON.stringify()
+date: 2012-07-16 13:06:56.000000000 +01:00
+type: post
+published: true
+status: publish
+categories:
+- Programming
+tags:
+- javascript
+- json
+meta:
+  tagazine-media: a:7:{s:7:"primary";s:0:"";s:6:"images";a:0:{}s:6:"videos";a:0:{}s:11:"image_count";s:1:"0";s:6:"author";s:7:"1907066";s:7:"blog_id";s:7:"1833431";s:9:"mod_stamp";s:19:"2012-07-16
+    13:06:56";}
+  _edit_last: '1907066'
+author:
+  login: simplelifeuk
+  email: andrew.chaa@yahoo.co.uk
+  display_name: Andy
+  first_name: Andrew
+  last_name: Chaa
+---
+<p>As javascript newbie, this is what I did.</p>
+<p>[sourcecode language="javascript"]</p>
+<p>return '{&quot;Data&quot; : '<br />
+		+ '{'<br />
+			+ '&quot;uid&quot; : &quot;' + this.uid + '&quot;, '<br />
+			+ '&quot;approval&quot; : &quot;' + ($('.date-picker', this.form).val() || '') + '&quot;, '<br />
+			+ '&quot;count&quot; : ' + this.uploader.getcount() + ', '<br />
+			+ '&quot;size&quot; : ' + this.getsize() + ', '<br />
+			+ '&quot;fid&quot; : ' + vm.getfid() + ', '<br />
+			+ '&quot;Notifees&quot; : [], '<br />
+			+ '&quot;Assignees&quot; : [], '<br />
+			+ '&quot;AssigneesPersonalMessage&quot; : &quot;&quot;, '<br />
+			+ '&quot;NotificationPersonalMessage&quot; : &quot;&quot;, '<br />
+			+ '&quot;TeamId&quot; : 0, '<br />
+			+ '&quot;Addresses&quot; : &quot;&quot;'<br />
+		+ '}'<br />
+	+ '}';<br />
+[/sourcecode]</p>
+<p>But don't do this. You can use <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/JSON/stringify">JSON.stringify</a>(). it converts an object to JSON notation representing it.</p>
+<p>With that, the code changes to this.</p>
+<p>[sourcecode language="javascript"]<br />
+var metaData =                 {<br />
+		&quot;Data&quot; : {<br />
+			&quot;uid&quot; : self.uid,<br />
+			&quot;count&quot; : 1,<br />
+			&quot;size&quot; : self.getsize(),<br />
+			&quot;fid&quot; : vm.getfid(),<br />
+			&quot;approval&quot; : &quot;&quot;,<br />
+			&quot;Notifees&quot; : [],<br />
+			&quot;Assignees&quot; : [],<br />
+			&quot;AssigneesPersonalMessage&quot; : &quot;&quot;,<br />
+			&quot;NotificationPersonalMessage&quot; : &quot;&quot;,<br />
+			&quot;TeamId&quot; : 0,<br />
+			&quot;Addresses&quot; : &quot;&quot;<br />
+		}<br />
+	};</p>
+<p>return JSON.stringify(metaData);</p>
+<p>[/sourcecode]</p>

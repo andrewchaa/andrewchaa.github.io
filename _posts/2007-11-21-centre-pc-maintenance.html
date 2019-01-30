@@ -1,0 +1,26 @@
+---
+layout: post
+title: Centre PC Maintenance
+date: 2007-11-21 06:37:52.000000000 +00:00
+type: post
+published: true
+status: publish
+categories: []
+tags: []
+meta: {}
+author:
+  login: simplelifeuk
+  email: andrew.chaa@yahoo.co.uk
+  display_name: Andy
+  first_name: Andrew
+  last_name: Chaa
+---
+<p>Bible centre의 PC들을 가끔 손볼 때가 있다.</p>
+<ul>
+<li>Remove last logged-in user's name: 몇 대의 PC를 여러명이 사용하다 보면, 이전 사람들이 로그인했던 흔적이 남는다. 아예 안뜨게 하는게 더 좋다. 괜히 다른 사람 이름 지우고 내이름 다시 치는 것보다.<br />
+<a href="http://episteme.arstechnica.com/eve/forums/a/tpc/f/99609816/m/529002220831">from arstechnica</a><br />
+If in a Workgroup, not Domain setup :&gt;<br />
+Control Panel / Administrative Tools / Local Security Settings / Local Policies / Security Options / "Interactive Logon: Do not display last user name"<br />
+if in a domain setup, the same setting, but by group policy from the domain controller</li>
+<li><a href="http://www.microsoft.com/downloads/details.aspx?FamilyID=4de91d3a-69f4-4d7b-94b1-c69b8be029f4&amp;displaylang=en">Windows SteadyState 2.5 Beta</a>: 여러대의 공용 computer들을 편리하게 관리해주는 tool</li>
+</ul>

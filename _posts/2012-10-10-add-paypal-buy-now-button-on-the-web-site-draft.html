@@ -1,0 +1,53 @@
+---
+layout: post
+title: Add paypal buy now button on the web site - draft
+date: 2012-10-10 12:24:33.000000000 +01:00
+type: post
+published: true
+status: publish
+categories:
+- Programming
+tags:
+- paypal
+meta:
+  _edit_last: '1907066'
+  publicize_reach: a:2:{s:7:"twitter";a:1:{i:1752093;i:158;}s:2:"wp";a:1:{i:0;i:6;}}
+  _wpas_done_1752093: '1'
+  _publicize_done_external: a:1:{s:7:"twitter";a:1:{i:111615627;b:1;}}
+  tagazine-media: a:7:{s:7:"primary";s:0:"";s:6:"images";a:0:{}s:6:"videos";a:0:{}s:11:"image_count";i:0;s:6:"author";s:7:"1907066";s:7:"blog_id";s:7:"1833431";s:9:"mod_stamp";s:19:"2012-10-13
+    11:51:00";}
+author:
+  login: simplelifeuk
+  email: andrew.chaa@yahoo.co.uk
+  display_name: Andy
+  first_name: Andrew
+  last_name: Chaa
+---
+<p>I'm working on <a href="http://www.sushiwa.co.uk/">the website of a restaurant</a> that Sue's friend owns. Recently, her friend wanted to add online order feature, and her preferred payment method was PayPal. </p>
+<p>Though I'm a web developer with quite diverse experience, I haven't done it. I mostly worked on large scale web sites, and PayPal was never an considered option there. It's kind of fun and refreshing to work on small scale website where I have to look after the whole aspects, not just small part of big thing. </p>
+<p>First, there is <a href="http://www.asp.net/mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-22-restructuring-rerouting-and-paypal">an ASP.NET MVC Storefront webcast</a> in which Rob Conery talks about attaching paypal payment on the site. It's very useful and fun to watch as his videos are always.</p>
+<h3>"Buy Now" button</h3>
+<p>The quick and easiest option is to add "Buy Now" button on the site and use IPN to verify that the payment has gone through. </p>
+<p>The <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_pdn_xclick_techview_outside">"Buy Now"'s HTML code</a> is quite straight forward. </p>
+<p>It's looks like this.</p>
+<p>[sourcecode language="html"]<br />
+&lt;form name=&quot;_xclick&quot; action=&quot;https://www.sandbox.paypal.com/cgi-bin/webscr&quot; method=&quot;post&quot;&gt;<br />
+    &lt;input type=&quot;hidden&quot; name=&quot;cmd&quot; value=&quot;_xclick&quot;&gt;<br />
+    &lt;input type=&quot;hidden&quot; name=&quot;business&quot; value=&quot;sushi_1349815500_biz@yahoo.co.uk&quot;&gt;<br />
+    &lt;input type=&quot;hidden&quot; name=&quot;currency_code&quot; value=&quot;GBP&quot;&gt;<br />
+    &lt;input type=&quot;hidden&quot; name=&quot;item_name&quot; value=&quot;Teddy Bear&quot;&gt;<br />
+    &lt;input type=&quot;hidden&quot; name=&quot;amount&quot; value=&quot;12.99&quot;&gt;<br />
+    &lt;input type=&quot;image&quot; src=&quot;http://www.paypal.com/en_US/i/btn/btn_buynow_LG.gif&quot; border=&quot;0&quot; name=&quot;submit&quot; alt=&quot;Make payments with PayPal - it's fast, free and secure!&quot;&gt;<br />
+&lt;/form&gt;<br />
+[/sourcecode]</p>
+<p>I changed the action url to the sandbox one and the business to the sandbox test user for testing.</p>
+<p>This is for real transaction, and you wouldn't want to go live without any testing, especially with payment. It'll probably break bad and bite you back. So you need to <a href="https://www.x.com/developers/paypal/documentation-tools/how-to-guides/how-test-paypal-payments-standard-buttons">test it in the sandbox</a>.</p>
+<ol>
+<li>Go to <a href="https://developer.paypal.com/">PayPal sandbox</a></li>
+<li>Create your developer account. It's different from your real paypal account, so you have to create one even though you have a paypal account.</li>
+<li>Then create two test accounts, one is seller and the other is buyer.</li>
+</ol>
+<h3>Receiving payment notification</h3>
+<p>You would need to be notified when the payment is gone through. You can use PDT or IPN, or both. IPN makes a request to your webserver, so you can update the record. With PDT you get the notification instantly and can do any additional processing required and show the user a confirmation page. IPN is more reliable as PDT can break if the user's machine breaks out during the processing.  </p>
+<p>With IPN, you can use <a href="https://developer.paypal.com/us/cgi-bin/devscr">IPN simulator</a>. If you just use standard "buy now" button or cart, then choose "Web Accept" transaction type.</p>
+<p>to be continued ...</p>

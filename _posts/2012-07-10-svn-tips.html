@@ -1,0 +1,29 @@
+---
+layout: post
+title: SVN tips
+date: 2012-07-10 08:51:05.000000000 +01:00
+type: post
+published: true
+status: publish
+categories:
+- Programming
+tags: []
+meta:
+  _edit_last: '1907066'
+  tagazine-media: a:7:{s:7:"primary";s:0:"";s:6:"images";a:0:{}s:6:"videos";a:0:{}s:11:"image_count";s:1:"0";s:6:"author";s:7:"1907066";s:7:"blog_id";s:7:"1833431";s:9:"mod_stamp";s:19:"2012-07-10
+    08:51:05";}
+author:
+  login: simplelifeuk
+  email: andrew.chaa@yahoo.co.uk
+  display_name: Andy
+  first_name: Andrew
+  last_name: Chaa
+---
+<p><a href="http://tortoisesvn.net/">SVN</a> has been useful source control, though recently people go for git or mercurial for its disconnected manner. I am git/hg convert too, but you know, you can ignore SVN, as you will still have some code base in central SVN server. </p>
+<p>Daily, I use SVN and git together at work. At home, some of my personal projects are in <a href="https://bitbucket.org/">bitbucket</a> (HG) and others in git (<a href="https://github.com/">github</a>).</p>
+<p><h2>svn revert</h2>
+<p>discard change(s)</p>
+<p><strong>if you want to discard all changes</strong></p>
+<p>[sourcecode language="bash"]<br />
+svn revert --depth=infinity .<br />
+[/sourcecode]</p>

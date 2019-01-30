@@ -1,0 +1,25 @@
+---
+layout: post
+title: 2007 Autumn Bible Conference를 다녀와서.
+date: 2007-11-13 11:09:32.000000000 +00:00
+type: post
+published: true
+status: publish
+categories: []
+tags: []
+meta: {}
+author:
+  login: simplelifeuk
+  email: andrew.chaa@yahoo.co.uk
+  display_name: Andy
+  first_name: Andrew
+  last_name: Chaa
+---
+<p>전병옥 목사님 말대로, conference를 다녀온 직후 새로운 insight들이 생생할 때 이를 기록하고 다음 수양회를 준비하는 것이 지혜로운 일인 것 같다.</p>
+<p>좋았지만 더 개선할 수 있는 것들</p>
+<ul>
+<li> 폴더: 현재 폴더는 완전히 평면으로 펴지지 않아, 뒤에 blank paper가 있어도 실제 글씨를 쓰기가 쉽지 안다. 폴더 대신, 앞에 투명한 플라스틱 커버, 뒤에 약간 두꺼운 종이를 대어, binding을 하면 좋을것 같다.</li>
+<li>센터에 풀과, bluetac, 가위가 항상 있으면 좋겠다.</li>
+<li>방에는물이 없으므로, 아이들이 있는 집은 간단한 물병이 필요하다.</li>
+<li>주제 1, 2강 관련 성경 passage 뿐만 아니라, 일용할 양식, 저녁 강의 관련 passage도 있으면 좋을것 같다.</li>
+</ul>

@@ -1,0 +1,176 @@
+---
+layout: post
+title: git tips
+date: 2012-04-21 19:59:16.000000000 +01:00
+type: post
+published: true
+status: publish
+categories:
+- Programming
+tags:
+- git
+- tips
+meta:
+  _edit_last: '1907066'
+  _wpas_done_linkedin: '1'
+  publicize_results: a:1:{s:7:"twitter";a:1:{i:111615627;a:2:{s:7:"user_id";s:10:"andrewchaa";s:7:"post_id";s:18:"193791038371008512";}}}
+  _wpas_done_twitter: '1'
+  tagazine-media: a:7:{s:7:"primary";s:0:"";s:6:"images";a:0:{}s:6:"videos";a:0:{}s:11:"image_count";s:1:"0";s:6:"author";s:7:"1907066";s:7:"blog_id";s:7:"1833431";s:9:"mod_stamp";s:19:"2012-04-22
+    15:28:00";}
+  _wp_old_slug: git-basics
+  _wpas_skip_1752093: '1'
+  _oembed_c806b213b86291288e88f9871115d0ca: "{{unknown}}"
+  _oembed_04faae808777f73bf95c017a47d59fe4: "{{unknown}}"
+author:
+  login: simplelifeuk
+  email: andrew.chaa@yahoo.co.uk
+  display_name: Andy
+  first_name: Andrew
+  last_name: Chaa
+---
+<p>I have used git for a year now on my personal projects, but it's still mysterious. I feel like I need a good gui like TortoiseHG. Probably <a href="http://code.google.com/p/gitextensions/">Git Extension</a> is the most mature project in guifying git.</p>
+<h3>Setting up your git environment</h3>
+<p>Set up can be a times-taking and boring job, but well, you can skip it. It's something you need to to properly, to make the whole experience pleasant!</p>
+<h4>An augmented .gitignore</h4>
+<p>This will ignore rails document, vim, emacs swap files, and Mac OS X Finder's DS_Store.</p>
+<p>[sourcecode language="ruby"]<br />
+# Ignore bundler config<br />
+/.bundle</p>
+<p># Ignore the default SQLite database.<br />
+/db/*.sqlite3</p>
+<p># Ignore all logfiles and tempfiles.<br />
+/log/*.log<br />
+/tmp</p>
+<p># Ignore other unneeded files.<br />
+doc/<br />
+*.swp<br />
+*~<br />
+.project<br />
+.DS_Store<br />
+bundler_stubs/<br />
+[/sourcecode]</p>
+<h4>Configure git to use BeyondCompare</h4>
+<p><strong>diff</strong><br />
+[sourcecode language="bash"]<br />
+$ git config --global diff.tool bc3<br />
+$ git config --global difftool.bc3.path &quot;C:\Program Files (x86)\Beyond Compare 3\bcomp.exe&quot;<br />
+[/sourcecode]</p>
+<p><strong>merge</strong><br />
+[sourcecode language="bash"]<br />
+$ git config --global merge.tool bc3<br />
+$ git config --global mergetool.bc3.path &quot;C:\Program Files (x86)\Beyond Compare 3\bcomp.exe&quot;<br />
+[/sourcecode]</p>
+<p>To launch a diff with BC3, use the command "git difftool" or "git difftool foofile.txt"</p>
+<h4>Line endings</h4>
+<p>If you use git on windows like me, it's better to configure it to "commit as-is, checkout as-is".</p>
+<p>[sourcecode language="bash"]<br />
+git config --global core.autocrlf false<br />
+[/sourcecode]</p>
+<h4>Pull behaviour</h4>
+<p>By default Git will merge remote changes with your local changes when pulling. This can result in an ugly commit graph that makes it difficult to track changes. Rebasing on the other hand results in a single commit line graph. Rebasing long-lived branches is not recommended.</p>
+<p>The guidance is that when pulling; when you’re only making changes on the master branch (or any long-lived remote branch) always use rebase. If you’re working on a long-lived branch merge should be used when pulling in changes from the original branch or merging back to that branch.</p>
+<p>[sourcecode language="bash"]<br />
+git pull --rebase<br />
+[/sourcecode]</p>
+<h4>github</h4>
+<p>Generate a new ssh key on your machine. Go for default file name and type in your password.</p>
+<p>[sourcecode language="bash"]<br />
+$ ssh-keygen -t rsa -C &quot;your_email@youremail.com&quot;<br />
+[/sourcecode]</p>
+<p>Then copy the key from id_rsa.pub and register it on your github.com.</p>
+<p>Create an app first on github. Push your changes to it.</p>
+<p>[sourcecode language="bash"]<br />
+$ git remote add origin git@github.com:/first_app.git<br />
+$ git push -u origin master<br />
+[/sourcecode]</p>
+<p>Sometimes, you make a mistake while creating a remote origin. Then</p>
+<p>[sourcecode language="bash"]<br />
+$ git remote rm origin<br />
+[/sourcecode]</p>
+<h4>Rename remote</h4>
+<p>[sourcecode language="bash"]<br />
+$ git remote -v<br />
+appharbor       https://andrewchaa@appharbor.com/londonubf.git (fetch)<br />
+appharbor       https://andrewchaa@appharbor.com/londonubf.git (push)<br />
+origin  git@github.com:andrewchaa/LondonUbf.git (fetch)<br />
+origin  git@github.com:andrewchaa/LondonUbf.git (push)</p>
+<p>$ git remote rename appharbor apphb</p>
+<p>$ git remote -v<br />
+apphb   https://andrewchaa@appharbor.com/londonubf.git (fetch)<br />
+apphb   https://andrewchaa@appharbor.com/londonubf.git (push)<br />
+origin  git@github.com:andrewchaa/LondonUbf.git (fetch)<br />
+origin  git@github.com:andrewchaa/LondonUbf.git (push)</p>
+<p>[/sourcecode]</p>
+<h4>staging files</h4>
+<p>[sourcecode language="bash"]<br />
+$ git add . // This will stage all files<br />
+$ git add -u // This will stage delete files<br />
+you put the period at the end.<br />
+[/sourcecode]</p>
+<h4>Discard unstaged files</h4>
+<p>from <a href="http://stackoverflow.com/a/52713/437961">http://stackoverflow.com/a/52713/437961</a><br />
+[sourcecode language="bash"]<br />
+$ git checkout path/to/file/to/revert // for a specific file<br />
+$ git checkout -- . //This will delete all unstaged files. Make sure you put the period at the end.<br />
+[/sourcecode]</p>
+<h4>Branch, edit, and merge</h4>
+<p>To edit readme file, you can checkout in to a new branch. It's kind of a good practice that you protect the main branch by branching your change out. You can delete the temp branch afterwards.</p>
+<p>[sourcecode language="bash"]<br />
+git checkout -b modify-README<br />
+git mv README.rdoc README.md<br />
+mate README.md</p>
+<p>it commit -a -m 'improve the README file'<br />
+git branch -d modify-README<br />
+[/sourcecode]</p>
+<p>-a means commit all files that you changed.<br />
+if you use -D, instead of -d, it will delete the branch even though you haven’t merged in the changes.</p>
+<p><strong>Creating a branch</strong><br />
+[sourcecode language="bash"]<br />
+git branch NuGetUpdate<br />
+git checkout NuGetUpdate<br />
+[/sourcecode]</p>
+<p>or this is one liner.<br />
+[sourcecode language="bash"]<br />
+git checkout -b NuGetUpdate<br />
+[/sourcecode]</p>
+<h3>Creating a remote branch</h3>
+<p>The title is a bit misleading. You just create a local branch and push it remotely, then the remote branch is created.</p>
+<p>[sourcecode language="bash"]<br />
+push &lt;remote-name&gt; &lt;branch-name&gt; // syntax</p>
+<p>git branch 1.0-dev<br />
+git checkout 1.0-dev<br />
+git push origin 1.0-dev<br />
+[/sourcecode]</p>
+<h4>Caching your credential</h4>
+<p>If you have to type in your username and password to push your change to github, your fingres and wrists will suffer. You can cache your credential for a certain period.</p>
+<p>I cached it for 5 hours. If you want an hour, use 3600.</p>
+<p>[sourcecode language="bash"]<br />
+git config --global credential.helper 'cache --timeout=18000'<br />
+[/sourcecode]</p>
+<h4>ignore ssl certificate error</h4>
+<p>when you commit to your company githup repository that doesn't have signed certificate, unfortunately, you get an error. You can get around it by turning off the warning.</p>
+<p>[sourcecode language="bash"]<br />
+git config – –global http.sslVerify false<br />
+[/sourcecode]</p>
+<h4>Git commit against tag with no branch</h4>
+<p>I honestly panicked. I wasn't aware that the working directory was attached to any branch. I added and committed my changes (which took an hour of toil). Then it wasn't in any branch. I checked out to master. All the changes seemed to be lost!</p>
+<p>The saviour was git reflog. You can find your commit SHA1, and checkout with it.</p>
+<p>[sourcecode language="bash"]<br />
+D:\dev\files&gt;git reflog<br />
+WARNING: terminal is not fully functional<br />
+ce0320e HEAD@{0}: checkout: moving from tempbranch to NuGetUpdate<br />
+ce0320e HEAD@{1}: checkout: moving from NuGetUpdate to tempbranch<br />
+ce0320e HEAD@{2}: merge tempbranch: Fast-forward<br />
+1b355c7 HEAD@{3}: checkout: moving from tempbranch to NuGetUpdate<br />
+ce0320e HEAD@{10}: commit: updated references with the downgraded framework<br />
+...<br />
+[/sourcecode]</p>
+<p>Then you can check it out, create a new branch, and merge the branch to master or whatever, phew!</p>
+<p>[sourcecode language="bash"]<br />
+$ git checkout ce0320e<br />
+$ git checkout -b &lt;new_branch_name&gt;<br />
+$ git checkout master<br />
+$ git merge new branch<br />
+$ git branch -d newbranch<br />
+$ git push ...<br />
+[/sourcecode]</p>

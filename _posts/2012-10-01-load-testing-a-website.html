@@ -1,0 +1,167 @@
+---
+layout: post
+title: Load Testing a Website
+date: 2012-10-01 12:44:35.000000000 +01:00
+type: post
+published: true
+status: publish
+categories:
+- Programming
+tags:
+- Load Testing
+- testing
+meta:
+  tagazine-media: a:7:{s:7:"primary";s:0:"";s:6:"images";a:0:{}s:6:"videos";a:0:{}s:11:"image_count";i:0;s:6:"author";s:7:"1907066";s:7:"blog_id";s:7:"1833431";s:9:"mod_stamp";s:19:"2012-10-17
+    15:50:13";}
+  publicize_reach: a:2:{s:7:"twitter";a:1:{i:1752093;i:157;}s:2:"wp";a:1:{i:0;i:6;}}
+  _edit_last: '1907066'
+  _wpas_done_1752093: '1'
+  _oembed_787e800c84bbd36d98e1b7bb04da434e: "{{unknown}}"
+  _oembed_1930e1f75bdec5ad57514ff2e442234e: "{{unknown}}"
+  _oembed_388f775a2a8fed4d1887f26f2d2809bc: "{{unknown}}"
+  _oembed_3109dfa83795855ef6f2b7fb58a10546: "{{unknown}}"
+  _oembed_f1153daf43544b8d86b064dcbc5b9e9a: "{{unknown}}"
+  _oembed_387452b541fd419947427cfb380b6a15: "{{unknown}}"
+  _oembed_d334e9cf353e8d41cd18692ae7e140de: "{{unknown}}"
+  _oembed_1ca81614cc7aaa8e5c7e1cb72bf4acbb: "{{unknown}}"
+  _oembed_96fcf0eb7202726658100bee5cd361b8: "{{unknown}}"
+  _oembed_a6073650c4c688926a859db2102929b5: "{{unknown}}"
+  _oembed_c49e43f163ea10fafe286751d98ed368: "{{unknown}}"
+  _oembed_831551813dbf0d9dc16be9c1e772bdf4: "{{unknown}}"
+  _oembed_038669e4d1af1173cd9780a7b6a72cf5: "{{unknown}}"
+  _oembed_686e834658da3502f260454a734b1522: "{{unknown}}"
+  _oembed_b6b618a0925534eb4744159991fc6e0f: "{{unknown}}"
+  _oembed_dd8ae4c79270e3bf774ce81773ea0f7f: "{{unknown}}"
+  _oembed_4399b6297c8a053121afd39a275e6681: "{{unknown}}"
+  _oembed_0a239a23a20b8809ef958af6205308a2: "{{unknown}}"
+  _oembed_a7a14d8b0c4e236e54ee95964ed9780f: "{{unknown}}"
+  _oembed_e3cfdca0bc2eb5f5a34e143117d005b5: "{{unknown}}"
+  _oembed_ae73f2256acca01e71d4ea7607ffd76b: "{{unknown}}"
+  _oembed_5107377c32586c61c03444fc779ea867: "{{unknown}}"
+  _oembed_de77ef040e72bb8adedd48b9caac03db: "{{unknown}}"
+  _oembed_f8ce6c636c84d8cc473966455507a5af: "{{unknown}}"
+  _oembed_5546f2350117cf1ef8c4879e90197e49: "{{unknown}}"
+  _oembed_813e79b73d105c5a462d777feb97d9b0: "{{unknown}}"
+  _oembed_fa71517265efe2c507a8932333b8ecb7: "{{unknown}}"
+  _oembed_cfab25b175c6b58a40097d4a07bef00a: "{{unknown}}"
+  _oembed_635e9ddd8443a98cf23efd92dbf4e677: "{{unknown}}"
+  _oembed_064ffdcd3133caaaa07a9647955ee1a4: "{{unknown}}"
+  _oembed_15194a80fe184ad3d1128510c16c01da: "{{unknown}}"
+  _oembed_ddf64c684e642ebcbb1c966eafb7af41: "{{unknown}}"
+  _oembed_6dd8c1c9bb3bd6a4a8dab79574e3ce3e: "{{unknown}}"
+  _oembed_8d4fdc5069dc13d9e751618dbe47161f: "{{unknown}}"
+  _oembed_7c73247b76d92310dd92763e39858c0c: "{{unknown}}"
+author:
+  login: simplelifeuk
+  email: andrew.chaa@yahoo.co.uk
+  display_name: Andy
+  first_name: Andrew
+  last_name: Chaa
+---
+<h3>What is Load Testing?</h3>
+<blockquote><p>
+Load testing is the process of putting demand on a system or device and measuring its response. Load testing is performed to determine a system’s behavior under both normal and anticipated peak load conditions. It helps to identify the maximum operating capacity of an application as well as any bottlenecks and determine which element is causing degradation
+</p></blockquote>
+<p>from <a href="http://en.wikipedia.org/wiki/Load_testing">wikipedia's Load Testing</a></p>
+<h3>Typical user scenario</h3>
+<p>With load test, you want to know how many users the server can handle. It's a vague statement. What do you mean by "can handle"? Does it mean all web response are within 15 seconds? Will you tolerate intermittent late response for heavy operations? Who are our users and what are their typical activities when they log in to our website? Though we create a typical user, and test the site with that user, would the result reflect the reality? I mean if you say the server can handle 1000 users, would the server really be able to handle 1000 real users? What about caching? </p>
+<p>There would be lots of questions, and you would have to answer them as you go along the testing. Some of them might not be tackled in their nature. You cannot say the real load until real users come to the site. Even the pattern of the activities would be different depending on the day or the time.</p>
+<p>So, measuring the accurate load is almost impossible, but we can have some result we can use as our yard stick. </p>
+<p>So, I created three user persona (exactly speaking, me and my colleagues, but I'm writing this post and I would say "I")</p>
+<ol>
+<li>Light user: 50%</li>
+<li>File user: 30%</li>
+<li>Heavy reader: 20%</li>
+</ol>
+<p>Light user will be 50% of all our users in the testing. Heavy reader only consists of 20%.<br />
+And I wrote the user's typical activity based on our web analytic and statistics. </p>
+<p>For example, the typical activity of light user is like this.</p>
+<ul>
+<li>Default page</li>
+<li>Go to Workspace 1</li>
+<li>Whiteboards</li>
+<li>Read 1 message</li>
+<li>Go to task</li>
+<li>Create a task</li>
+<li>Go to workspace overview</li>
+<li>Go to files</li>
+<li>Files – Add 1 new document (PDF)</li>
+<li>Preview the file</li>
+<li>Assign the document to a big group such as workspace users or company</li>
+<li>Go to Workspace 2</li>
+<li>Files  - Read 2 document (PDF)</li>
+<li>Download 1 document</li>
+<li>Exit</li>
+</ul>
+<p>Once you have a scenario, you can start recoding the test with MS Web Performance Test. </p>
+<h3><a href="http://msdn.microsoft.com/en-us/library/dd293540(v=vs.100).aspx">MS Test for Load and performance testing</a></h3>
+<p>Unfortunately, you need to have Visual Studio Ultimate. One of perks I have at work is I work in Infrastructure &amp; architecture team that gives you MSDN ultimate subscription. Yay! MS Office is included. </p>
+<p>You record the web performance test. It generates something like this.</p>
+<ul>
+<li>https://www.yoursite.dev/default.aspx</li>
+<li>https://www.yoursite.dev/work/505841/document/1450343</li>
+<li>https://www.yoursite.{{configDs.config.topleveldomain}}/</li>
+</ul>
+<p>Those requests only have static values, but we want to use dynamic values. You ran the test against your development box, but later you would need to run in against your production or staging server. We need to change the domain "dev" to something else. </p>
+<p>You can do that by <a href="http://msdn.microsoft.com/en-us/library/ms182546(v=vs.80).aspx">adding Data Binding to the web test</a>. </p>
+<h3>Web Test Data Binding</h3>
+<p>You can choose three types; xml, csv, and sql server data source. For configuration data, such as environmental settings, I use xml file. For users, as I was going to have 200 users ideally, I used csv. I didn't use sql data source as it may impact the performance of the DB server I test. </p>
+<p>csv example</p>
+<pre>
+user,id,hash,work,board, ....
+invite,1308,A1D93654,1396, ....
+</pre>
+<p>configuration xml<br />
+[sourcecode language="xml"]<br />
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;<br />
+&lt;configs&gt;<br />
+  &lt;config&gt;<br />
+    &lt;domain&gt;dev&lt;/domain&gt;<br />
+  &lt;/config&gt;<br />
+&lt;/configs&gt;<br />
+[/sourcecode]</p>
+<p>Now, you start running the test, and soon find several failing requests. Web test recording out of the box doesn't do much and requires your customisation. You can write your own code to sort those issues out with plugin.</p>
+<h3>Web test plugin</h3>
+<p>There are a few things you can't do with the out-of-box recording.</p>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/OAuth">OAuth token</a> for your authenticated ajax api calls</li>
+<li>Form post <a href="http://www.codeproject.com/Articles/267694/Security-in-ASP-NET-MVC-by-using-Anti-Forgery-Toke">anti-forgery token</a> in the request header</li>
+<li>Missing ViewState in your request if you use ASP.NET WebForm</li>
+<li>Grab the generated file Id you have just uploaded</li>
+</ul>
+<p>When you make an authenticated api call, you need to include OAuth token in the header. WebTest recorder doesn't not catch it, and I had to manually include it.</p>
+<p>It was surprisingly easy to write a plug in. You create a C# class that inherits WebTestPlugin. If you inherit "WebTestPlugin", it is executed only once prior the WebTest. It behaves like [SetUp] in NUnit test </p>
+<p>[sourcecode language="csharp"]<br />
+public class OAuthTokenPlugin : WebTestPlugin<br />
+{<br />
+    public override void PreWebTest(object sender, PreWebTestEventArgs e)<br />
+    {<br />
+        var username = string.Empty;<br />
+        var password = string.Empty;</p>
+<p>        username = e.WebTest.Context[&quot;DataSource.user#csv.username&quot;].ToString();<br />
+        password = e.WebTest.Context[&quot;DataSource.user#csv.password&quot;].ToString();</p>
+<p>        e.WebTest.Context[&quot;OAuth&quot;] = GetToken(username, password, e.WebTest.Context[&quot;configDs.config.domain&quot;].ToString());<br />
+    }</p>
+<p>    public string GetAccessTokenUsingPasswordCredentials(string username, string password, string topLevelDomain)<br />
+    {<br />
+        ....</p>
+<p>        return &quot;OAuth2 &quot; + token;<br />
+    }<br />
+}<br />
+[/sourcecode]</p>
+<p>"DataSource.user.username" is the way to access your data source. But one thing you have to know is you need to mention that data source through property window on the test. Otherwise, the data source is not loaded into memory.</p>
+<p>Anti-forgery token pluin is a WebTestRequestPlugin. WebTestPlugin runs once prior web test and WebTest</p>
+<h3>A dynamic url with data source</h3>
+<p>Many of our api calls use different ids or numbers in the url. For example, if the workspace id is 10, the api call becomes https://dev/workspace/10/tasks. You can easily replace the hard-coded value with data source. </p>
+<p>[sourcecode language="csharp"]</p>
+<p>https://dev/workspace/{{UsersDataSource.user.workspace}}/tasks</p>
+<p>[/sourcecode]</p>
+<p>...</p>
+<p>Other things to add</p>
+<ol>
+<li>deployment item</li>
+<li>get viewstate</li>
+<li>file upload</li>
+<li>Controller and agent</li>
+</ol>
+<p>to be continued.</p>

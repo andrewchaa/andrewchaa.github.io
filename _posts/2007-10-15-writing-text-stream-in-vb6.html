@@ -1,0 +1,37 @@
+---
+layout: post
+title: Writing text stream in VB6
+date: 2007-10-15 09:39:11.000000000 +01:00
+type: post
+published: true
+status: publish
+categories: []
+tags: []
+meta:
+  _edit_last: '1907066'
+author:
+  login: simplelifeuk
+  email: andrew.chaa@yahoo.co.uk
+  display_name: Andy
+  first_name: Andrew
+  last_name: Chaa
+---
+<p>I had rather unusual experience of writing VB6 code in 2007. I had to support one of old applications, written probably around 2001. It is to write XML file into text stream. The codes are like the followings.</p>
+<p>[sourcecode language='vb']</p>
+<p>Dim objXMLResult As MSXML2.FreeThreadedDOMDocument30<br />
+Set objXMLResult = New MSXML2.FreeThreadedDOMDocument30</p>
+<p>Dim objProcessor As MSXML2.IXSLProcessor<br />
+Set objProcessor = objXSLTemplate.createProcessor<br />
+objProcessor.input = objXMLDoc<br />
+objProcessor.addParameter "SiteID", 4<br />
+'objProcessor.output = objResultStream<br />
+objProcessor.Transform</p>
+<p>Dim translateXml As String<br />
+Dim objFileSystem As New FileSystemObject<br />
+Dim objStream As TextStream<br />
+objFileSystem.CreateTextFile "c:\temp\XslResult.txt", True, True<br />
+Set objStream = objFileSystem.OpenTextFile("c:\temp\XslResult.txt", ForWriting)</p>
+<p>translateXml = objProcessor.output<br />
+objStream.Write translateXml<br />
+objStream.Close</p>
+<p>[/sourcecode]</p>

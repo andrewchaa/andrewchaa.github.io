@@ -1,0 +1,23 @@
+---
+layout: post
+title: 몇 가지 읽어볼만한 article들
+date: 2007-12-10 10:23:37.000000000 +00:00
+type: post
+published: true
+status: publish
+categories: []
+tags: []
+meta: {}
+author:
+  login: simplelifeuk
+  email: andrew.chaa@yahoo.co.uk
+  display_name: Andy
+  first_name: Andrew
+  last_name: Chaa
+---
+
+<ul>
+<li><a href="http://www.codeproject.com/KB/cs/Embed_Js_Css_Image.aspx">How to Embed /Access JavaScript ,CSS,Images in an Assembly</a></li>
+<li><a href="http://www.codeproject.com/KB/cs/Smart_Search.aspx">Smart Search Textbox</a></li>
+<li><a href="http://www.codeproject.com/KB/GDI-plus/imaging_applications.aspx">A C# Sample Code/Article Extending the Capabilities of GDI+ in C# (.NET)</a></li>
+</ul>

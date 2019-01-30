@@ -1,0 +1,31 @@
+---
+layout: post
+title: self-signed SSL certificate
+date: 2007-10-23 12:13:36.000000000 +01:00
+type: post
+published: true
+status: publish
+categories: []
+tags: []
+meta: {}
+author:
+  login: simplelifeuk
+  email: andrew.chaa@yahoo.co.uk
+  display_name: Andy
+  first_name: Andrew
+  last_name: Chaa
+---
+<p>Safari를 테스트하면서, 작업용 PC에 SSL certificate를 새로 설치해야 하는 경우가 생겼다. 이 Safari 브라우저란 놈이 기존의 certificate은 아예 인정도 안해주고, 페이지를 열수 없다고 자빠지는게 아닌가? 잠깐 구글 형님을 이용해 보니, 좋은 참고자료가 있다.</p>
+<ul>
+<li><a href="http://www.visualwin.com/SelfSSL/">Setting up SSL with a SelfSSL certificate on Windows Server 2003</a></li>
+<li><a href="http://www.microsoft.com/downloads/details.aspx?FamilyID=56fc92ee-a71a-4c73-b628-ade629c89499&amp;displaylang=en">Internet Information Services (IIS) 6.0 Resource Kit Tools</a></li>
+<li><a href="http://www.microsoft.com/downloads/details.aspx?FamilyID=80a1b6e6-829e-49b7-8c02-333d9c148e69&amp;DisplayLang=en">관련 ebook</a></li>
+</ul>
+<p>필요한 IIS resource Kit도 다운받을 수 있고, 고맙게도 관련 책자까지 무료로 준다. 가끔은 무척 고마운 마이크로소프트.</p>
+<p>Install 하고 나면, start menu에 여러 프로그램들을 등록한다. 그 중에서 SelfSSL을 실행한다. 그러면 command prompt가 뜨는데,  거기에서 selfssl.exe /T /N:CN=test.totalops.com /k:1024 /v:1000 /s:3 /p:4050 처럼 해주면 된다.</p>
+<ul>
+<li>/s: site id. InetMgr에서 얻을 수 있다.</li>
+<li>/p: port number. SSL port number이다.</li>
+</ul>
+<p>요렇게 한번 해주면 깨끗한 SSL을 얻을 수 있다.</p>
+<p>요렇게 서버에 설치해주고, 혹시 계속 에러가 나면, mapping 되는 ISA 서버에도 설치해줘야 한다.</p>

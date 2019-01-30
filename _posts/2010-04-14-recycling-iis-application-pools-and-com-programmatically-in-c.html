@@ -1,0 +1,74 @@
+---
+layout: post
+title: Recycling IIS application pools and COM+ programmatically in C#
+date: 2010-04-14 09:15:59.000000000 +01:00
+type: post
+published: true
+status: publish
+categories:
+- Programming
+tags:
+- IIS
+meta:
+  _edit_last: '1907066'
+  _oembed_f731929c7333b4ad7123f810dd3f1790: "{{unknown}}"
+  _oembed_15eafa52378f7fdd021b006699c350d4: "{{unknown}}"
+  _oembed_d1366353ae54382892c7785879711939: "{{unknown}}"
+  _oembed_33b91d953d664cda6e7a2b28de532e72: "{{unknown}}"
+author:
+  login: simplelifeuk
+  email: andrew.chaa@yahoo.co.uk
+  display_name: Andy
+  first_name: Andrew
+  last_name: Chaa
+---
+<p>These days, I work on projects that is based on Sitecore CMS. Sitecore caches everything, so if you make any changes to your code, the web page does not reflect your change until you reset IIS or recycle the application pool. Resetting IIS often takes 10 to 20, even 30 seconds, and it is a bit obstructive that you have to reset IIS in the middle of coding. So I wrote this small utility.</p>
+<p>The way it works is straightforward. It accesses IIS application pools and recycle them all then access COM+ and recycle the specific application that my web application uses for database access. One tricky thing is to access COM+. You have to reference ComAdmin.dll in C:\windows\system32\Com and use COM interop. I could not find many examples on the Internet but finally found one at <a href="http://www.dotnet247.com/247reference/msgs/13/67515.aspx">http://www.dotnet247.com/247reference/msgs/13/67515.aspx</a>.</p>
+<p>These are the references I found through google search.</p>
+<ul>
+<li>Recycle an IIS application pool: <a href="http://blog.developers.ie/cgreen/archive/2006/10/20/2341.aspx">http://blog.developers.ie/cgreen/archive/2006/10/20/2341.aspx</a></li>
+<li>Shut down COM+ application pool: <a href="http://www.dotnet247.com/247reference/msgs/13/67515.aspx">http://www.dotnet247.com/247reference/msgs/13/67515.aspx</a></li>
+</ul>
+<p>This is my code.</p>
+<p>[sourcecode language="csharp"]<br />
+class Program<br />
+{<br />
+    static void Main(string[] args)<br />
+    {<br />
+        ResetIIS();<br />
+        RecycleComPlus();<br />
+    }</p>
+<p>    private static void ResetIIS()<br />
+    {<br />
+       DirectoryEntry appPools = new DirectoryEntry(&quot;IIS://localhost/W3SVC/AppPools&quot;);<br />
+       Console.WriteLine(&quot;Recycling the following application pools...\n&quot;);</p>
+<p>       foreach (DirectoryEntry pool in appPools.Children)<br />
+       {<br />
+       try // if some app pools are turned off, it breaks.<br />
+       {<br />
+           pool.Invoke(&quot;Recycle&quot;, null);<br />
+           Console.WriteLine(pool.Name);<br />
+       }<br />
+       catch (Exception ex) {}<br />
+    }</p>
+<p>    Console.WriteLine(&quot;\nCompleted...\n&quot;);<br />
+}</p>
+<p>    private static void RecycleComPlus()<br />
+    {<br />
+        COMAdminCatalog catalog = new COMAdminCatalog();<br />
+        COMAdminCatalogCollection applications = (COMAdminCatalogCollection)catalog.GetCollection(&quot;Applications&quot;);<br />
+        applications.Populate();</p>
+<p>        foreach (COMAdminCatalogObject app in applications)<br />
+        {<br />
+            if (string.Compare(app.Name.ToString(), &quot;DataAccess&quot;) == 0)<br />
+            {<br />
+                Console.Write(&quot;Shutting down &quot; + app.Name + &quot;..&quot;);<br />
+                catalog.ShutdownApplication(app.Name.ToString());<br />
+                Console.WriteLine(&quot;. completed.&quot;);<br />
+            }<br />
+        }<br />
+    }<br />
+}<br />
+[/sourcecode]</p>
+<p>Hope this helps and leave comment if you have any idea to improve it.</p>
+<p>Cheers</p>

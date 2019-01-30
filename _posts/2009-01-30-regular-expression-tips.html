@@ -1,0 +1,51 @@
+---
+layout: post
+title: Regular expression tips
+date: 2009-01-30 15:11:08.000000000 +00:00
+type: post
+published: true
+status: publish
+categories:
+- Programming
+tags:
+- regular expression
+- tips
+meta:
+  _edit_last: '1907066'
+  _wp_old_slug: handy-regular-expression-list
+  _wpas_skip_twitter: '1'
+  _wpas_skip_linkedin: '1'
+author:
+  login: simplelifeuk
+  email: andrew.chaa@yahoo.co.uk
+  display_name: Andy
+  first_name: Andrew
+  last_name: Chaa
+---
+<p>There are several regular expression I use more often than I thought. This will be a comprehensive list of those expressions.</p>
+<h3>Get file extension</h3>
+<p>Useful if you need to replace file extension manually as I did with Xceed component</p>
+<p><code><br />
+\.[^\.]+$<br />
+</code></p>
+<h3>Check if the input string is UK Post code</h3>
+<p><code><br />
+[A-Za-z][A-Za-z]?[0-9][0-9]?[A-Za-z]?([A-Za-z]\s?[0-9][A-Za-z][A-Za-z])?</p>
+<li>Clean up special characters that can break javascript function parameter<br />
+[\x00-\x09\x0B\x0C\x0E-\x1F\x27\x7F\x5C]|&lt;[^&gt;]*&gt;|\s+</li>
+<p></code></p>
+<p>[sourcecode language="csharp"]<br />
+_cleanupRegEx = new Regex(@&quot;[\x00-\x09\x0B\x0C\x0E-\x1F\x27\x7F\x5C]|&lt;[^&gt;]*&gt;|\s+&quot;, RegexOptions.Compiled)<br />
+[/sourcecode]</p>
+<p>Those hx codes are a bit unfriendly. Please use the below table for your reference.<br />
+<a href="http://www.asciitable.com/">www.asciitable.com</a></p>
+<h3>Named group</h3>
+<p>[sourcecode language="csharp"]<br />
+var titleRegex = new Regex(&quot;&lt;title&gt;(?&lt;title&gt;.*?)&lt;/title&gt;&quot;, RegexOptions.IgnoreCase);<br />
+var contentRegex = new Regex(&quot;&lt;content&gt;(?&lt;content&gt;.*?)&lt;/content&gt;&quot;, RegexOptions.IgnoreCase);</p>
+<p>var page = new DataPage();</p>
+<p>var titleMatch = titleRegex.Match(content);<br />
+page.Title = titleMatch.Groups[&quot;title&quot;].Value;</p>
+<p>var contentMatch = contentRegex.Match(content);<br />
+page.Content = contentMatch.Groups[&quot;content&quot;].Value;</p>
+<p>[/sourcecode]</p>

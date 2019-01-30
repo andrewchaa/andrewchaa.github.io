@@ -1,0 +1,78 @@
+---
+layout: post
+title: Use Sqlite together wtih ASP.Net MVC
+date: 2009-10-20 15:34:25.000000000 +01:00
+type: post
+published: true
+status: publish
+categories:
+- Programming
+tags:
+- ASP.Net MVC
+meta:
+  _edit_last: '1907066'
+  _oembed_ae446c7d74c60854289949093659aad7: "{{unknown}}"
+  _oembed_efc58e739290e2f41d30fe3348280e3d: "{{unknown}}"
+  _oembed_16d3a23e1361256e73b37d74fae6be17: "{{unknown}}"
+  _oembed_e0e76ad76ed95e68e14dcb3558c341c1: "{{unknown}}"
+  _oembed_982f5f5100d4fc8d0878b710ec65cf35: "{{unknown}}"
+  _oembed_2298da252bf8a52511836c302a186673: "{{unknown}}"
+author:
+  login: simplelifeuk
+  email: andrew.chaa@yahoo.co.uk
+  display_name: Andy
+  first_name: Andrew
+  last_name: Chaa
+---
+<p>Visual Studio 2008 integrates Sql server 2008 express nicely into App_Data folder. You just create the database using Server Explorer, and it inserts the connection string into web.config for you. I used it when I worked on my toy project - ToastManager. I finished coding and testing on my machine and deployed it to an integration server which belongs to my SCRUM team.</p>
+<p>A problem, as usual, arose on the integration box. My windows login had sysadmin access to my local Sql Server express, but the process that runs ToastManager did not on the box.</p>
+<p>I blindly thought that Sql Server express is a stand-alone DB and it can be deployed together with the applicaiton. It was misunderstanding. Sql Server Express is still a server application that needs to be installed on a remote machine. I looked for an alternative and soon found that many people use <a href="http://www.sqlite.org/">Sqlite</a>.</p>
+<p>Sqlite is an open source database and people testify that it is really fast. In order to use with .Net, you need to install <a href="http://sqlite.phxsoftware.com/">System.Data.SQLite</a>, which is another open source ADO.NET provider for SQLite database engine.</p>
+<p>Once you download Sqlite, you can use its own command-prompt based tool, but probably, your first reaction is to try to find some GUI management tool. Fortunately, there is one too. It is FireFox Add-on: <a href="https://addons.mozilla.org/en-US/firefox/addon/5817">SQLite Manager</a>.</p>
+<p>So, to summarise, you need to have 3 programs to use SQLite. <a href="http://www.sqlite.org/">SQLite</a>, <a href="http://sqlite.phxsoftware.com/">System.Data.SQLite</a>, and <a href="https://addons.mozilla.org/en-US/firefox/addon/5817">SQLite Manager</a>.</p>
+<p>If you  have all necessary programs, please be careful with the folloing points.</p>
+<ol>
+<li>Add "SQLite Data Provider" to your web.config. You can add it to your machine.config or web.config in .Net 2's config folder, but I prefere adding it to project's web.config.</li>
+<li>Do not use "Link To Sql" <a href="http://stackoverflow.com/questions/1500941/is-linq-to-sql-sqlite-net-stored-procedures-visual-studio-2008-possible">as it does not support SQLite</a>. Instead, use Entity Framework. It works nicely.</li>
+<li>Make sure you have System.Data.SQLite.dll and System.Data.SQLite.Linq.dll in your application's bin folder. For some reason, though I referenced those two dlls in the project, they were copied into the folder. If those dlls are not in bin folder, you will have "Failed to find or load the registered .Net Framework Data Provider". (<a href="http://">http://sqlite.phxsoftware.com/forums/t/251.aspx</a>)</li>
+<li>When you compare data using LINK, do not use .Date property. For some reason, it works with Sql Express, but not with Sqlite. I use "where o.OrderDate &gt;= DateTime.Today" instead of "where o.OrderDate.Date == DateTime.Today"</li>
+</ol>
+<p>This is my repository codes I wrote  against SQLite. Hope it helps.</p>
+<p>[sourcecode language="csharp"]<br />
+public class OrderRepositorySqlite : IOrderRepository<br />
+{<br />
+    ToastMasterSqlite _entities = new ToastMasterSqlite();<br />
+    #region IOrderRepository Members</p>
+<p>    public IEnumerable&lt;Order&gt; ListTodayOrders()<br />
+    {<br />
+        return (from o in _entities.Order<br />
+                where o.OrderDate &gt;= DateTime.Today<br />
+                select o).ToList();<br />
+    }</p>
+<p>    public Order GetOrder(long id)<br />
+    {<br />
+        return (from order in _entities.Order<br />
+                where order.OrderId == id<br />
+                select order).FirstOrDefault();<br />
+    }</p>
+<p>    public void Add(Order order)<br />
+    {<br />
+        _entities.AddToOrder(order);<br />
+        _entities.SaveChanges();<br />
+    }</p>
+<p>    public void Delete(Order order)<br />
+    {<br />
+        var originalOrder = GetOrder(order.OrderId);<br />
+        _entities.DeleteObject(originalOrder);<br />
+        _entities.SaveChanges();<br />
+    }</p>
+<p>    public Order Update(Order orderToUpdate)<br />
+    {<br />
+        var originalOrder = GetOrder(orderToUpdate.OrderId);<br />
+        _entities.ApplyPropertyChanges(originalOrder.EntityKey.EntitySetName, orderToUpdate);<br />
+        _entities.SaveChanges();</p>
+<p>        return orderToUpdate;<br />
+    }</p>
+<p>    #endregion<br />
+}</p>
+<p>[/sourcecode]</p>

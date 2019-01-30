@@ -1,0 +1,57 @@
+---
+layout: post
+title: Ninjecting ASP.NET MVC 4 Web Api
+date: 2013-03-31 19:26:48.000000000 +01:00
+type: post
+published: true
+status: publish
+categories:
+- Programming
+tags:
+- dependency injection
+- ninject
+- web api
+meta:
+  _edit_last: '1907066'
+  publicize_twitter_user: andrewchaa
+  _wpas_done_1752093: '1'
+  _publicize_done_external: a:1:{s:7:"twitter";a:1:{i:111615627;b:1;}}
+  tagazine-media: a:7:{s:7:"primary";s:0:"";s:6:"images";a:0:{}s:6:"videos";a:0:{}s:11:"image_count";i:0;s:6:"author";s:7:"1907066";s:7:"blog_id";s:7:"1833431";s:9:"mod_stamp";s:19:"2013-03-31
+    19:34:00";}
+  _wpas_skip_1752093: '1'
+author:
+  login: simplelifeuk
+  email: andrew.chaa@yahoo.co.uk
+  display_name: Andy
+  first_name: Andrew
+  last_name: Chaa
+---
+<p>Injecting dependencies into ASP.NET MVC controllers is straightforward with Ninject. Just install Ninject and Ninject.MVC3 via nuget. It will create a file "NinjectWebCommon.cs" under App_Start folder. And you add your service bindings in RegisterServices method like this.</p>
+<p>[sourcecode language="csharp"]<br />
+///<br />
+/// Load your modules or register your services here!<br />
+///<br />
+///The kernel.</p>
+<p>private static void RegisterServices(IKernel kernel)<br />
+{<br />
+    kernel.Bind&lt;IDocumentRepository&gt;().To&lt;DocumentRepository&gt;();<br />
+}<br />
+[/sourcecode]</p>
+<p>Yet, out of the box, it doesn't support web api controller dependency resolution. You need to create your own resolver class. An example is <a href="https://github.com/filipw/Ninject-resolver-for-ASP.NET-Web-API">filips's ninject resolver</a>. </p>
+<p>After you create the resolver, add it to CreateKernel() method.</p>
+<p>[sourcecode language="csharp"]<br />
+/// &lt;summary&gt;<br />
+/// Creates the kernel that will manage your application.<br />
+/// &lt;/summary&gt;<br />
+/// &lt;returns&gt;The created kernel.&lt;/returns&gt;<br />
+private static IKernel CreateKernel()<br />
+{<br />
+    var kernel = new StandardKernel();<br />
+    kernel.Bind&lt;Func&lt;IKernel&gt;&gt;().ToMethod(ctx =&gt; () =&gt; new Bootstrapper().Kernel);<br />
+    kernel.Bind&lt;IHttpModule&gt;().To&lt;HttpApplicationInitializationHttpModule&gt;();</p>
+<p>    RegisterServices(kernel);<br />
+    GlobalConfiguration.Configuration.DependencyResolver = new NinjectResolver(kernel);</p>
+<p>    return kernel;<br />
+}<br />
+[/sourcecode]</p>
+<p>Now it's all ready for both MVC controller and Web Api controller.</p>

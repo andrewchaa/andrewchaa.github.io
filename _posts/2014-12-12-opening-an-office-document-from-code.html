@@ -1,0 +1,191 @@
+---
+layout: post
+title: Opening an office document from Code
+date: 2014-12-12 15:46:06.000000000 +00:00
+type: post
+published: true
+status: publish
+categories:
+- Programming
+tags:
+- c#
+- desktop
+- huddle
+meta:
+  sharing_disabled: '1'
+  _wpas_skip_facebook: '1'
+  _wpas_skip_google_plus: '1'
+  _wpas_skip_linkedin: '1'
+  _wpas_skip_tumblr: '1'
+  _wpas_skip_path: '1'
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+  publicize_twitter_user: andrewchaa
+  publicize_twitter_url: http://t.co/fUn33O7BmS
+  _wpas_done_1752093: '1'
+  _publicize_done_external: a:1:{s:7:"twitter";a:1:{i:111615627;b:1;}}
+author:
+  login: simplelifeuk
+  email: andrew.chaa@yahoo.co.uk
+  display_name: Andy
+  first_name: Andrew
+  last_name: Chaa
+---
+<p>It's a simple job at a glance, and it should be. But we had a bug with that feature. You open a document on <a href="http://www.huddle.com/">Huddle</a> and it should be opened in an application that is associated with the file, for example, MS Word, if it is word document. You can do that if you have installed <a href="https://www.huddle.com/product-overview/huddle-for-mac-and-windows/">Huddle for Windows</a>, which is a desktop application for Huddle.</p>
+<p>It worked. Yet, customers often complained that the document opened in the background. When we open any document, it opens in the foreground on dev machine. so you are very tempted to say "it works on my machine!"</p>
+<p>This is the code that opens the document. No magic, just simple process.Start()</p>
+<p>[sourcecode language="csharp"]<br />
+var process = new Process<br />
+{<br />
+    StartInfo =<br />
+    {<br />
+        FileName = path,<br />
+        CreateNoWindow = true,<br />
+        UseShellExecute = true,<br />
+        LoadUserProfile = false,<br />
+        ErrorDialog = false,<br />
+        Verb = &amp;amp;quot;open&amp;amp;quot;<br />
+    },<br />
+    EnableRaisingEvents = true<br />
+};</p>
+<p>process.Start();<br />
+[/sourcecode]</p>
+<p>The application that's launched is supposed to be active in the foreground, and I've got that behaviour on my dev machine. Yet on non-dev machines, especially our product manager's laptop, the document opened consistently in the background, especially behind Chrome browser when it was maximised.</p>
+<p>So, we made a win api call to set it in the foreground.</p>
+<p>[sourcecode language="csharp"]</p>
+<p>[DllImport(&amp;amp;quot;User32.dll&amp;amp;quot;)]<br />
+private static extern Int32 SetForegroundWindow(IntPtr hWnd);</p>
+<p>...<br />
+var handle = process.MainWindowHandle<br />
+SetForegroundWindow(handle);<br />
+[/sourcecode]</p>
+<p>Now it was working on one of my VMs (Virtual Machines) and I thought it should be working. However it was still failing on a laptop.<br />
+Why? A little more investigation reveals that process.MainWindowHandle doesn't return the handle immediately. When MS Word splash screen pops up, the process to MS Word exists, but the main window is not fully loaded yet, so the handle was IntPtr.Zero. You have to wait until MainWindowHandle is populated, and it takes 3 to 6 seconds and up to 10 seconds, if you open Word first time on the day.</p>
+<p>So, the last missing bit was waiting for the handle.</p>
+<p>[sourcecode language="csharp"]<br />
+int threshold = 0;<br />
+while (process.MainWindowHandle == IntPtr.Zero)<br />
+{<br />
+    if (threshold &amp;amp;gt; 100) break; </p>
+<p>    _log.DebugFormat(&amp;amp;quot;Waiting for the document is fully loaded... - {0}&amp;amp;quot;, threshold);<br />
+    Thread.Sleep(TimeSpan.FromMilliseconds(100));<br />
+    threshold++;<br />
+}</p>
+<p>_log.DebugFormat(&amp;amp;quot;Bringing the application (handle: {0}) to the front&amp;amp;quot;, process.MainWindowHandle);<br />
+SetForegroundWindow(handle);</p>
+<p>[/sourcecode]</p>
+<p><del>And happy developers and customers, finally</del></p>
+<p><strong>Update as of Fri.19/12/2014</strong></p>
+<p>The journey didn't end there unfortunately. The issue was deeper than I previously assumed.</p>
+<p>Opening documents in the background had a mixture of causes.</p>
+<ol>
+<li>If there's any Excel document, Excel opens all subsequent documents are in the same instance, just flashing the icon since Windows 7</li>
+<li>Event SetForegroundWindow doesn't work, if the process that's running the command is not in the foreground. So you have to set your process foreground first, if you want to set any other process you spawn foreground.</li>
+</ol>
+<p>To sort them out, I took a different approach. First, I gave up the simple and elegant Process.Start() with UseShellExecute option. Instead, I query windows registry and <a href="http://www.pinvoke.net/default.aspx/shlwapi/AssocQueryString.html">find the associated application with the file extension</a>.</p>
+<p>[sourcecode language="csharp"]<br />
+[Flags]<br />
+public enum AssocF : uint<br />
+{<br />
+    None = 0,<br />
+    Init_NoRemapCLSID = 0x1,<br />
+    Init_ByExeName = 0x2,<br />
+    Open_ByExeName = 0x2,<br />
+    Init_DefaultToStar = 0x4,<br />
+    Init_DefaultToFolder = 0x8,<br />
+    NoUserSettings = 0x10,<br />
+    NoTruncate = 0x20,<br />
+    Verify = 0x40,<br />
+    RemapRunDll = 0x80,<br />
+    NoFixUps = 0x100,<br />
+    IgnoreBaseClass = 0x200,<br />
+    Init_IgnoreUnknown = 0x400,<br />
+    Init_FixedProgId = 0x800,<br />
+    IsProtocol = 0x1000,<br />
+    InitForFile = 0x2000,<br />
+}</p>
+<p>public enum AssocStr<br />
+{<br />
+    Command = 1,<br />
+    Executable,<br />
+    FriendlyDocName,<br />
+    FriendlyAppName,<br />
+    NoOpen,<br />
+    ShellNewValue,<br />
+    DDECommand,<br />
+    DDEIfExec,<br />
+    DDEApplication,<br />
+    DDETopic,<br />
+    InfoTip,<br />
+    QuickTip,<br />
+    TileInfo,<br />
+    ContentType,<br />
+    DefaultIcon,<br />
+    ShellExtension,<br />
+    DropTarget,<br />
+    DelegateExecute,<br />
+    SupportedUriProtocols,<br />
+    Max,<br />
+}</p>
+<p>// from http://www.pinvoke.net/default.aspx/shlwapi/AssocQueryString.html<br />
+[DllImport(&amp;quot;Shlwapi.dll&amp;quot;, CharSet = CharSet.Unicode)]<br />
+static extern uint AssocQueryString(AssocF flags, AssocStr str, string pszAssoc, string pszExtra, [Out] StringBuilder pszOut, ref uint pcchOut);</p>
+<p>public string GetApplicationPath(string extension)<br />
+{<br />
+    const int S_OK = 0;<br />
+    const int S_FALSE = 1;</p>
+<p>    uint length = 0;<br />
+    uint ret = AssocQueryString(AssocF.None, AssocStr.Executable, extension, null, null,<br />
+         ref length);<br />
+    if (ret != S_FALSE)<br />
+    {<br />
+        throw new InvalidOperationException(&amp;quot;Could not determine associated string&amp;quot;);<br />
+    }</p>
+<p>    var sb = new StringBuilder((int)length);<br />
+    ret = AssocQueryString(AssocF.None, AssocStr.Executable, extension, null,<br />
+          sb, ref length);<br />
+    if (ret != S_OK)<br />
+    {<br />
+        throw new InvalidOperationException(&amp;quot;Could not determine associated string&amp;quot;);<br />
+    }</p>
+<p>    return sb.ToString();<br />
+}<br />
+[/sourcecode]</p>
+<p>You get the application and run it with Process.Start. You pass the file name as argument. In case of office documents, you can add "/x" switch, so that it creates a new instance all the time, not reusing the existing one.</p>
+<p>[sourcecode language="csharp"]<br />
+var extension = Path.GetExtension(path);<br />
+try<br />
+{<br />
+    string application = _windowManager.GetApplicationPath(extension);<br />
+    var process = new Process<br />
+    {<br />
+        StartInfo =<br />
+        {<br />
+            FileName = application,<br />
+            Arguments = GetArguments(application, path),<br />
+            WindowStyle = ProcessWindowStyle.Normal<br />
+        }<br />
+    };</p>
+<p>    _log.Debug(string.Format(&amp;quot;Starting {0}&amp;quot;, path));</p>
+<p>    var huddleWinHandle = Process.GetCurrentProcess().MainWindowHandle;<br />
+    _windowManager.MinimiseWindow(huddleWinHandle);<br />
+    _windowManager.BringToFront(huddleWinHandle);<br />
+    process.Start();<br />
+}<br />
+...</p>
+<p>private string GetArguments(string application, string path)<br />
+{<br />
+    if (application.ToLower().Contains(&amp;quot;microsoft&amp;quot;))<br />
+    {<br />
+        return &amp;quot;/x \&amp;quot;&amp;quot; + path + &amp;quot;\&amp;quot;&amp;quot;;<br />
+    }</p>
+<p>    return &amp;quot;\&amp;quot;&amp;quot; + path + &amp;quot;\&amp;quot;&amp;quot;;<br />
+}</p>
+<p>[/sourcecode]</p>
+<p>Why do you minimise the window of the current process before setting it foreground? For some reason, SetForegroundWindow didn't work consistently, if you process main window is in normal mode, hidden behind other windows. When it was minimised programatically and set to foreground, it was always brought to the front.</p>
+<p>So, to summarise how to open documents in the foreground,</p>
+<ol>
+<li>Set your application to the foreground first by <a href="http://stackoverflow.com/questions/9254037/how-to-programmatically-minimize-opened-window-folders">minimising the window</a> and then bringing it to the front</li>
+<li>Find the associated application with the file and start it as new instance.</li>
+<li>Before you start another process, make sure your process in the foreground first. Only foreground process can make an attached process run in the foreground. There are more <a href="http://stackoverflow.com/questions/16079440/setforegroundwindow-does-not-activate-my-window">rules in setting a process in the foreground</a>.</li>
+</ol>

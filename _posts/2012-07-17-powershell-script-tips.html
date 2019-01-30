@@ -1,0 +1,44 @@
+---
+layout: post
+title: Powershell script tips
+date: 2012-07-17 16:41:28.000000000 +01:00
+type: post
+published: true
+status: publish
+categories:
+- Programming
+tags:
+- powershell
+- tips
+meta:
+  _edit_last: '1907066'
+  _wpas_skip_twitter: '1'
+  _wpas_skip_linkedin: '1'
+  tagazine-media: a:7:{s:7:"primary";s:0:"";s:6:"images";a:0:{}s:6:"videos";a:0:{}s:11:"image_count";s:1:"0";s:6:"author";s:7:"1907066";s:7:"blog_id";s:7:"1833431";s:9:"mod_stamp";s:19:"2012-07-17
+    17:03:58";}
+  _oembed_7bb3a350182bc5b6ad4cd8a8f8bc4f1b: "{{unknown}}"
+  _oembed_9e23ccebe8aefd766bf0442267a82d50: "{{unknown}}"
+author:
+  login: simplelifeuk
+  email: andrew.chaa@yahoo.co.uk
+  display_name: Andy
+  first_name: Andrew
+  last_name: Chaa
+---
+<h3>Write to a file</h3>
+<p>Use Set-Content and Add-Content</p>
+<ul>
+<li><a href="http://stackoverflow.com/questions/5287245/how-to-write-cmd-files-from-powershell">Set-Content</a></li>
+<li><a href="http://technet.microsoft.com/library/ee176959.aspx">Add-Content</a></li>
+</ul>
+<p>[sourcecode language="bash"]<br />
+Set-Content &quot;C:\Program Files\Sublime Text 2\subl.bat&quot; &quot;@echo off&quot;<br />
+Add-Content &quot;C:\Program Files\Sublime Text 2\subl.bat&quot; &quot;sublime_text.exe %1&quot;<br />
+[/sourcecode]</p>
+<h3>Adding to environmental path variable</h3>
+<p>from <a href="http://softwaresalariman.blogspot.co.uk/2008/01/add-path-environment-variable-in.html">http://softwaresalariman.blogspot.co.uk/2008/01/add-path-environment-variable-in.html</a></p>
+<p>[sourcecode language="bash"]<br />
+Set-Content &quot;C:\Program Files\Sublime Text 2\subl.bat&quot; &quot;@echo off&quot;<br />
+Add-Content &quot;C:\Program Files\Sublime Text 2\subl.bat&quot; &quot;sublime_text.exe %1&quot;<br />
+[System.Environment]::SetEnvironmentVariable(&quot;PATH&quot;, $Env:Path + &quot;;C:\Program Files\Sublime Text 2&quot;, &quot;Machine&quot;)<br />
+[/sourcecode]</p>

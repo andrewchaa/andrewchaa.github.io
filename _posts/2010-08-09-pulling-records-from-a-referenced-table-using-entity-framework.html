@@ -1,0 +1,50 @@
+---
+layout: post
+title: Pulling records from a referenced table using Entity Framework
+date: 2010-08-09 10:24:23.000000000 +01:00
+type: post
+published: true
+status: publish
+categories:
+- Programming
+tags:
+- Entity Framework
+meta:
+  _edit_last: '1907066'
+  _wp_old_slug: ''
+  _oembed_1cc5426a2ff0aed8d4ee1408a79a65b1: "{{unknown}}"
+author:
+  login: simplelifeuk
+  email: andrew.chaa@yahoo.co.uk
+  display_name: Andy
+  first_name: Andrew
+  last_name: Chaa
+---
+<p>Strangely, most of Entity Framework examples are for just one table. In real world, it is very rare, unless you use some document database. Often you get a result set from a database which joins two or three tables.</p>
+<p>There is one example of how to use navigation property.</p>
+<ul>
+<li><a href="http://msdn.microsoft.com/en-us/library/bb896321.aspx">http://msdn.microsoft.com/en-us/library/bb896321.aspx</a></li>
+</ul>
+<p>I tried it, and thanks to ReSharper, I learned that I could use "let" linq statement, if you fetch only one row</p>
+<p>my code changed like this.</p>
+<p>[sourcecode language="csharp"]<br />
+using (var context = new PLog())<br />
+{<br />
+ var prcs = (from p in context.PTableSet<br />
+ where p.UId == UId<br />
+ let c = p.Customer.FirstOrDefault()<br />
+ select new Pricing()<br />
+ {<br />
+ Ec = p.Ec,<br />
+ Fv = p.Fv,<br />
+ RoEc = p.RoEc,<br />
+ RoRwa = p.RoRwa,<br />
+ Rwa = p.Rwa,<br />
+ UId = p.UId,<br />
+ VD = p.VD,<br />
+ Customer = new Customer() {Name = c.Name},<br />
+ }<br />
+ ).ToList();</p>
+<p> return prcs.ToList();<br />
+}<br />
+[/sourcecode]</p>

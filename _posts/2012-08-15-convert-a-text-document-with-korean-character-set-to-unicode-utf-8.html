@@ -1,0 +1,54 @@
+---
+layout: post
+title: Convert a text document with korean character set to unicode utf-8
+date: 2012-08-15 12:27:42.000000000 +01:00
+type: post
+published: true
+status: publish
+categories:
+- Programming
+tags:
+- korean character set
+- utf-8
+meta:
+  tagazine-media: a:7:{s:7:"primary";s:0:"";s:6:"images";a:0:{}s:6:"videos";a:0:{}s:11:"image_count";i:0;s:6:"author";s:7:"1907066";s:7:"blog_id";s:7:"1833431";s:9:"mod_stamp";s:19:"2012-08-15
+    12:27:42";}
+  _edit_last: '1907066'
+author:
+  login: simplelifeuk
+  email: andrew.chaa@yahoo.co.uk
+  display_name: Andy
+  first_name: Andrew
+  last_name: Chaa
+---
+<p>I'm working on a Korean website. It's about zen breathing and meditation. So, I have all the documents I want to upload. I read them from the file and displayed on the web page with the hope of seeing those documents in a nicely formatted page.</p>
+<p>boom!</p>
+<p>All the characters were broken. After a couple of hours of digging, it turns out that the documents were saved in ANSI, with Korean charset. It may work on Korean windows, but didn't on my machine, and wouldn't on most of hosting environment. So, I had to convert the encoding to utf-8. </p>
+<p>What is the code page for Korean? Though I'm a Korean and developer, I don't know. After a few trials and errors, I discovered the code was 949.</p>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Extended_Unix_Code#EUC-KR">Extended Unix Code for KR</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Korean_language_and_computers">Korean language and computers</a></li>
+</ul>
+<p>This is my conversion code in C#</p>
+<p>[sourcecode language="csharp"]<br />
+static void Main(string[] args)<br />
+{<br />
+	var folder = new DirectoryInfo(@&quot;c:\temp\SundoWeb\Content\html&quot;);<br />
+	var files = folder.GetFiles();</p>
+<p>	foreach (var file in files)<br />
+	{<br />
+		Console.WriteLine(&quot;Converting {0} ...&quot;, file.Name);<br />
+		Convert(file);<br />
+	}<br />
+}</p>
+<p>private static void Convert(FileInfo file)<br />
+{<br />
+	var bytes = File.ReadAllBytes(file.FullName);<br />
+	var encodedBytes = Encoding.Convert(Encoding.GetEncoding(949), Encoding.UTF8, bytes);</p>
+<p>	File.WriteAllBytes(@&quot;c:\temp\&quot; + file.Name, encodedBytes);<br />
+}</p>
+<p>[/sourcecode]</p>
+<p>Displaying unicode file on the web is easy. You just set the meta data within head element.</p>
+<p>[sourcecode language="html"]<br />
+&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;<br />
+[/sourcecode]</p>

@@ -1,0 +1,40 @@
+---
+layout: post
+title: d3.js Data-Driven Documents
+date: 2012-02-02 15:48:35.000000000 +00:00
+type: post
+published: true
+status: publish
+categories: []
+tags:
+- d3
+- javascript library
+- mime type
+meta:
+  _edit_last: '1907066'
+  _wpas_done_linkedin: '1'
+  publicize_results: a:1:{s:7:"twitter";a:1:{i:111615627;a:2:{s:7:"user_id";s:10:"andrewchaa";s:7:"post_id";s:18:"165099320356519937";}}}
+  _wpas_done_twitter: '1'
+  _oembed_ac63fb8356c859efb1eb98589fee0dc4: "{{unknown}}"
+  _oembed_dd4144c53624557234f7dc17ec109770: "{{unknown}}"
+author:
+  login: simplelifeuk
+  email: andrew.chaa@yahoo.co.uk
+  display_name: Andy
+  first_name: Andrew
+  last_name: Chaa
+---
+<p>This is an amazing javascript library that allows you to impressively visualise your data.</p>
+<ul>
+<li><a href="http://mbostock.github.com/d3/">http://mbostock.github.com/d3/</a></li>
+</ul>
+<p>When you download it from github, you have a great number of examples (I believe they are about 100).</p>
+<p>In order to try those examples, you need to request those example htmls through http, I mean, using web server. Javascript usually don't run very well, when you open the page from file system, as you know.</p>
+<p>I tried them on a windows machine with IIS 7. One tricky bit was to set the mime type of json file. By default, IIS7 does not have json mime type, so you need to set it manually.</p>
+<p><strong>Setting json mime type</strong></p>
+<ol>
+<li>Go to "MIME Types" on IIS Manager</li>
+<li>Add .json extension with mime type of "application/json"</li>
+</ol>
+<p>Refresh the page, and your examples should run good and calm.</p>
+<p>&nbsp;</p>

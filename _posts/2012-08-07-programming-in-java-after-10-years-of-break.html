@@ -1,0 +1,62 @@
+---
+layout: post
+title: programming in java after 10 years of break
+date: 2012-08-07 10:54:13.000000000 +01:00
+type: post
+published: true
+status: publish
+categories:
+- Programming
+tags:
+- intelliJ
+- java
+- junit
+meta:
+  _edit_last: '1907066'
+  tagazine-media: a:7:{s:7:"primary";s:0:"";s:6:"images";a:0:{}s:6:"videos";a:0:{}s:11:"image_count";i:0;s:6:"author";s:7:"1907066";s:7:"blog_id";s:7:"1833431";s:9:"mod_stamp";s:19:"2012-08-07
+    10:54:13";}
+author:
+  login: simplelifeuk
+  email: andrew.chaa@yahoo.co.uk
+  display_name: Andy
+  first_name: Andrew
+  last_name: Chaa
+---
+<p>I learned java at Uni. and worked really hard. Yet, I didn't have chance to use it when I becaue a full time programmer.<br />
+I was a Delphi and VB guy and then C# man. I didn't plan it, but it turned out that my career was more oriented toward Microsoft Stack.</p>
+<p>And, now I'm reading <a href="http://www.amazon.co.uk/Driven-Development-Addison-Wesley-Signature-Series/dp/0321146530/ref=sr_1_1?ie=UTF8&amp;qid=1344332680&amp;sr=8-1">TDD By Example</a>.<br />
+This is my third read, and I thought it might be fun to try the examples in java. Previously, I converted those examples to C# code.<br />
+So, this is my experience with java.</p>
+<h3>Java IDE</h3>
+<p>You need an ide to code. as I am a loyal ReSharper user, my first choic was IntelliJ. It was funny, that most of things I loved about ReSharper, actually came from IntelliJ.<br />
+<a href="http://www.jetbrains.com/idea/download/">Community Edition</a> is free. </p>
+<h3>Hello World</h3>
+<p>Writing "Hello, World!" is a challenge, if you do not know the eco-system of the language. Java syntax is very similar to C#, yet I didn't know how to write a simple console application. jetbrains' wiki had a nice tutorial about <a href="http://wiki.jetbrains.net/intellij/Creating_and_running_your_first_Java_application">how to create the first java application</a>.</p>
+<p>This is my code, nothing clever or unusual.</p>
+<p>[sourcecode language="java"]<br />
+public class HelloWorld {<br />
+    public static void main(String[] args) {<br />
+        System.out.println(&quot;Hello, World!&quot;);<br />
+    }<br />
+}<br />
+[/sourcecode]</p>
+<p>Now, next challenge is to write the first unit test. I have no idea how to add junit. I wanted to trust IntelliJ and added @Test attribute (not sure if this is called attribute) and used "Press Alt + ENTER" that works for all. And it added junit-4.10.jar to external libraries. Also, it's interesting that import works like "org.junit.Assert.*" I thought by specifying "org.junit.Assert", all methods that belong to Assert would come, but I had to use *. It's different from C#'s name space. <a href="http://code.google.com/p/t2framework/wiki/JUnitQuickTutorial">JUnitQuickTutorial</a>  helped me to get started.</p>
+<p>[sourcecode language="java"]</p>
+<p>package com.example.helloworld;</p>
+<p>import org.junit.Test;<br />
+import static org.junit.Assert.*;</p>
+<p>/**<br />
+ * Created with IntelliJ IDEA.<br />
+ * User: andrew.chaa<br />
+ * Date: 07/08/12<br />
+ * Time: 11:12<br />
+ * To change this template use File | Settings | File Templates.<br />
+ */<br />
+public class HelloWorldTest {<br />
+    @Test<br />
+    public void test_true() {<br />
+        assertTrue(true);<br />
+    }<br />
+}</p>
+<p>[/sourcecode]</p>
+<p>For more instructions on juni, please go <a href="http://www.junit.org/">junit.org</a></p>
