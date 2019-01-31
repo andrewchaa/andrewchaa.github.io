@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: Dovonshire House, 공부방
 categories: [general]
 tags: [personal space]

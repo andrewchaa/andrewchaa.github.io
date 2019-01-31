@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: The first post
 categories: [general]
 tags: [just thinking]

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: 양치기들에게 나타나신 하나님
 date: 2016-12-24
 type: post
