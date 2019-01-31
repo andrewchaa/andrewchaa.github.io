@@ -1,8 +1,8 @@
 ---
 layout: default
+title: All My Posts
+description: Here are all my posts
 ---
-
-All my posts are below
 
 <ul>
   {% for post in site.posts %}
