@@ -1,6 +1,6 @@
 ---
 layout: default
-title: All My Posts
+title: All posts
 description: Here are all my posts
 ---
 
