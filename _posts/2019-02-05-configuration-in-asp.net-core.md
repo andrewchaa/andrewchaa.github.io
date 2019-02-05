@@ -15,7 +15,7 @@ author:
 # WILT, Configuration in ASP.NET Core
 
 When you create stateless service fabric asp.net core api, [the template doesn't add configuration builder by default.](https://marcinjuraszek.com/2018/10/asp-net-core-configuration-when-running-as-service-fabric-service.html) 
-I've spend about an hour pulling my hair why it doesn't load appsettings.json on start up. So, Add it first. 
+I've spent about an hour pulling my hair why it doesn't load appsettings.json on start up. So, Add it first. 
 
 ```csharp
 // from CreateServiceInstanceListeners()
