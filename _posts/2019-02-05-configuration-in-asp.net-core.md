@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: Configuration in ASP.NET Core
 date: 2019-02-05
 type: post

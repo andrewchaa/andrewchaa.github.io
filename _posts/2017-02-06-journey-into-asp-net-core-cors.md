@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: A journey into ASP.NET Core CORS (Cross Origin Resource Sharing)
 date: 2017-02-06
 type: post

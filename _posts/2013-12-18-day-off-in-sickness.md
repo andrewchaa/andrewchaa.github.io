@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 아프면 쉴 수 있는 삶
 categories: [general]
 tags: [personal, work in the uk]

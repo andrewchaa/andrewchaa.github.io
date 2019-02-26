@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: Get last item from List in F#
 date: 2019-02-12
 type: post
