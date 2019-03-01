@@ -1,5 +1,17 @@
 ---
 published: true
+layout: post
+title: ASP.NET Core Test Server
+date: 2019-02-12T00:00:00.000Z
+comments: true
+categories:
+  - programming
+tags: WILT
+meta: {}
+author:
+  display_name: Andy
+  first_name: Andrew
+  last_name: Chaa
 ---
 ## Unit Testing with ASP.NET Core
 
