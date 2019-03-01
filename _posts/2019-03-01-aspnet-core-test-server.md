@@ -2,7 +2,7 @@
 published: true
 layout: post
 title: ASP.NET Core Test Server
-date: 2019-02-12T00:00:00.000Z
+date: 2019-03-01T00:00:00.000Z
 comments: true
 categories:
   - programming
