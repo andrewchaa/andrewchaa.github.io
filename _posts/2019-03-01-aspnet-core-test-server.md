@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 ---
 ## Unit Testing with ASP.NET Core
 
@@ -87,6 +87,3 @@ public async Task Should_return_validation_error_message_if_validation_fails()
 }
 
 ```
-
-
-
