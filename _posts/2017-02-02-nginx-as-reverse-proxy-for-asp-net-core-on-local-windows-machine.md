@@ -13,8 +13,6 @@ author:
   last_name: Chaa
 ---
 
-# NginX as local reverse proxy
-
 NginX is a basket full of interesting features, but here, I'll focus on using it as reverse proxy.
 
 ## Resources
