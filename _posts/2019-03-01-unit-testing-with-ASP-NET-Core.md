@@ -13,7 +13,6 @@ author:
   first_name: Andrew
   last_name: Chaa
 ---
-## Unit Testing with ASP.NET Core
 
 It's important that your unit test [run against public interface of module](https://herbertograca.com/2018/08/27/distillation-of-tdd-where-did-it-all-go-wrong/). Otherwise, you do not test behaviour but your implementation of the behaviour. In case of APIs, it'll be API interface via HTTP. 
 
