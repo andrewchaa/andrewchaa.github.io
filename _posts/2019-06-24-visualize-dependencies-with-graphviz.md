@@ -49,3 +49,9 @@ The above script generate this graph
 
 ![generated prath](/assets/images/graphviz.png)
 
+### related resources
+
+* dagre-d3: https://github.com/dagrejs/dagre-d3
+* dagre.js: https://github.com/dagrejs
+* online generator: http://viz-js.com/
+* mermaid cli: https://github.com/mermaidjs/mermaid.cli
