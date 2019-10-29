@@ -13,8 +13,6 @@ author:
   last_name: Chaa
 ---
 
-## Strongly Typed Identifier
-
 GUID or UUID is the almost standard identifier for entity objects these days. It used be INT and I still do love INT as id type, but the trend is GUID.
 
 GUID is also globally unique. It’s not universally unique though 🙂
