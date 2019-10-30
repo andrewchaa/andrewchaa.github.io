@@ -2,7 +2,7 @@
 published: true
 layout: post
 title: Strongly Typed Identifier
-date: {}
+date: 2019-10-29T00:00:00.000Z
 comments: true
 categories:
   - programming
