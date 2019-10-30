@@ -2,9 +2,10 @@
 published: true
 layout: post
 title: Strongly Typed Identifier
-date: 2019-06-24T00:00:00.000Z
+date: {}
 comments: true
-categories: [programming]
+categories:
+  - programming
 tags: domain-driven-design
 meta: {}
 author:
@@ -17,7 +18,7 @@ GUID or UUID is the almost standard identifier for entity objects these days. It
 
 GUID is also globally unique. It’s not universally unique though 🙂
 
-I come across many methods and constructors that accept multiple Ids.
+I come across methods and constructors that accept multiple Ids.
 
 ```csharp
 public Shareholder GetShareholder(Guid companyId, Guid shareholderId) {
@@ -25,9 +26,9 @@ public Shareholder GetShareholder(Guid companyId, Guid shareholderId) {
 }
 ```
 
-The problem is it’s very easy to misplace ids. You can pass shareholderId first and then companyId. This primitive obsession leads to various kinds of bugs often. When you say the temperature is 20, is it in Celsius or Fahrenheit? Strongly Typing Ids can solve those issues and prevent the bugs from happening.
+The problem is all GUIDs are interchangeable and it’s very easy for you to make a mistake. You can pass shareholderId first and then companyId, instead of passing companyId and then shareholderId. This [primitive obsession](https://medium.com/@arpitjain.iec/primitive-obsession-code-smell-that-hurt-people-the-most-5cbdd70496e9) leads to various kinds of bugs often. When you say the temperature is 20, is it in Celsius or Fahrenheit? Strongly Typing Ids can solve those issues and prevent the bugs from happening.
 
-The use case of Strongly typed Id is like this.
+Give a specific type to your Id and the compiler will tell you when you make a mistake.
 
 ```csharp
 public class Shareholder {
@@ -37,7 +38,7 @@ public class Shareholder {
 }
 ```
 
-The repository signature changes now.
+With strontly typed id, The repository signature will change like the below.
 
 ```csharp
 public Shareholder GetShareholder(Id<Company> companyId, Id<Shareholder> shareholderId) {
@@ -69,3 +70,5 @@ public struct Id<T> {
   }
 }
 ```
+  
+Type system is like compile-time unit testing. If the type is not right, test fails. Primitive obsession is very common but let's not fall into it. Let's take advantage of C#'s great type system
