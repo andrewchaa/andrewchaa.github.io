@@ -1,0 +1,19 @@
+---
+published: false
+layout: post
+date: 2019-11-02T00:00:00.000Z
+comments: true
+categories:
+  - programming
+tags: 'design pattern, APIs'
+meta: {}
+author:
+  display_name: Andy
+  first_name: Andrew
+  last_name: Chaa
+---
+Outbox is a simple relational database table that stores all of your events you API service would raise as result of API requets. In Outbox pattern, the API service just store the end result events in Outbox table and a second app service accesses the Outbox table in async manner, reads the stored events, raise them, and delete them. The messages are processed in batches, so the API service can respond quicker to requests. 
+
+
+
+
