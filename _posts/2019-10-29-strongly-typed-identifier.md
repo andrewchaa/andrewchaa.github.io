@@ -1,17 +1,10 @@
 ---
-published: true
-layout: post
 title: Strongly Typed Identifier
 date: 2019-10-29T00:00:00.000Z
-comments: true
 categories:
   - programming
-tags: domain-driven-design
-meta: {}
-author:
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
+tags:
+  - domain-driven-design
 ---
 
 GUID or UUID is the almost standard identifier for entity objects these days. It used be INT and I still do love INT as id type, but the trend is GUID.
@@ -70,5 +63,5 @@ public struct Id<T> {
   }
 }
 ```
-  
+
 Type system is like compile-time unit testing. If the type is not right, test fails. Primitive obsession is very common but let's not fall into it. Let's take advantage of C#'s great type system
