@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Load Testing a Website
 date: 2012-10-01 12:44:35.000000000 +01:00
 type: post

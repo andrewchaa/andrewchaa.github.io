@@ -1,5 +1,4 @@
 ---
-layout: post
 title: ".Net Remote Debugging"
 date: 2007-11-26 11:05:56.000000000 +00:00
 type: post

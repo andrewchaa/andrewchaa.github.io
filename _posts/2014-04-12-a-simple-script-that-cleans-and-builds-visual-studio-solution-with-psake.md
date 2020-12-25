@@ -1,5 +1,4 @@
 ---
-layout: post
 title: A simple script that cleans and builds visual studio solution with psake
 date: 2014-04-12 12:51:39.000000000 +01:00
 type: post

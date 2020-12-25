@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Chrome Plaged 1 1/4" Basins Waste Changed
 date: 2007-11-30 18:06:15.000000000 +00:00
 type: post

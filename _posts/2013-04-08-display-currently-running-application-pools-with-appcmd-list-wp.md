@@ -1,5 +1,4 @@
 ---
-layout: post
 title: display currently running application pools with appcmd list wp
 date: 2013-04-08 14:25:08.000000000 +01:00
 type: post

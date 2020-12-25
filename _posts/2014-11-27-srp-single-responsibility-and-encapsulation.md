@@ -1,5 +1,4 @@
 ---
-layout: post
 title: SRP (Single Responsibility) and encapsulation
 date: 2014-11-27 11:53:35.000000000 +00:00
 type: post

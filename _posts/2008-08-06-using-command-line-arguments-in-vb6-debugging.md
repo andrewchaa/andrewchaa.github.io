@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Using Command Line Arguments in VB6 debugging
 date: 2008-08-06 15:42:11.000000000 +01:00
 type: post

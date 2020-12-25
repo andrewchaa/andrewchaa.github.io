@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Ninjecting ASP.NET MVC 4 Web Api
 date: 2013-03-31 19:26:48.000000000 +01:00
 type: post

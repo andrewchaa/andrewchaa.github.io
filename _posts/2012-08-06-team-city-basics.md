@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Team City Basics
 date: 2012-08-06 13:15:12.000000000 +01:00
 type: post

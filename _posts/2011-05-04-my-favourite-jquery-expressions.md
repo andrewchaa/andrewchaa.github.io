@@ -1,5 +1,4 @@
 ---
-layout: post
 title: My favourite jQuery expressions
 date: 2011-05-04 12:55:35.000000000 +01:00
 type: post

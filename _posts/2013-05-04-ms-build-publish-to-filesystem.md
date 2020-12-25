@@ -1,5 +1,4 @@
 ---
-layout: post
 title: MS Build - Publish to FileSystem
 date: 2013-05-04 12:47:57.000000000 +01:00
 type: post

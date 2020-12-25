@@ -1,5 +1,4 @@
 ---
-layout: post
 title: NuGet basics
 date: 2012-08-21 10:27:05.000000000 +01:00
 type: post

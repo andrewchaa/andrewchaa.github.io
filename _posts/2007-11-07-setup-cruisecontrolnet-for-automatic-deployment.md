@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Setup CruiseControl.Net for automatic deployment
 date: 2007-11-07 11:16:01.000000000 +00:00
 type: post

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: 성경공부 Check list
 date: 2008-01-15 22:33:29.000000000 +00:00
 type: post

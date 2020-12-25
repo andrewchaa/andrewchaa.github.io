@@ -1,5 +1,4 @@
 ---
-layout: post
 title: radiator에서 물이 세네.
 date: 2007-12-29 15:35:10.000000000 +00:00
 type: post

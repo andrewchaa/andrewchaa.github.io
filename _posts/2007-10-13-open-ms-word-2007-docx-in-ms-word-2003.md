@@ -1,5 +1,4 @@
 ---
-layout: post
 title: open ms word 2007 docx in ms word 2003
 date: 2007-10-13 10:32:24.000000000 +01:00
 type: post

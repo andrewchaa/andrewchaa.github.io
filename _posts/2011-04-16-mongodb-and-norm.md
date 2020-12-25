@@ -1,5 +1,4 @@
 ---
-layout: post
 title: mongodb and norm
 date: 2011-04-16 10:10:55.000000000 +01:00
 type: post

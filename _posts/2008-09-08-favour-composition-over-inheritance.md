@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Favour composition over inheritance
 date: 2008-09-08 16:08:41.000000000 +01:00
 type: post

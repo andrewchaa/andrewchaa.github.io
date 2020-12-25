@@ -1,5 +1,4 @@
 ---
-layout: post
 title: About Semantic Versioning...
 date: 2012-08-22 17:05:30.000000000 +01:00
 type: post

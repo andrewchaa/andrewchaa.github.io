@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Opening an office document from Code
 date: 2014-12-12 15:46:06.000000000 +00:00
 type: post

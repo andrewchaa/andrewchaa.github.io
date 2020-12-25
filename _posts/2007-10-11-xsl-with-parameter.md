@@ -1,5 +1,4 @@
 ---
-layout: post
 title: XSL with parameter
 date: 2007-10-11 08:17:37.000000000 +01:00
 type: post

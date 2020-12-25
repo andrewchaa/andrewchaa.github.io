@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Paul's PC setup
 date: 2007-11-13 22:09:31.000000000 +00:00
 type: post

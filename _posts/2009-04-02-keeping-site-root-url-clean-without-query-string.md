@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Keeping site root url clean without query string
 date: 2009-04-02 10:30:34.000000000 +01:00
 type: post

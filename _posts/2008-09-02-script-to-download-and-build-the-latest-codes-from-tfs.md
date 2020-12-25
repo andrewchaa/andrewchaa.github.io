@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Script to download and build the latest codes from TFS
 date: 2008-09-02 10:19:14.000000000 +01:00
 type: post

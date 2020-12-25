@@ -1,5 +1,4 @@
 ---
-layout: post
 title: 'Ruby dojo #2 reverse string, array permutation, and filtering binary numbers'
 date: 2012-02-10 13:42:31.000000000 +00:00
 type: post

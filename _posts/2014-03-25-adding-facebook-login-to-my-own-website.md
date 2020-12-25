@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Adding facebook login to my own website
 date: 2014-03-25 20:54:02.000000000 +00:00
 type: post

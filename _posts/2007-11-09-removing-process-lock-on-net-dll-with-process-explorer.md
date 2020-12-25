@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Removing process lock on .net dll with Process Explorer
 date: 2007-11-09 09:21:49.000000000 +00:00
 type: post

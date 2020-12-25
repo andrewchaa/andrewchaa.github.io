@@ -1,5 +1,4 @@
 ---
-layout: post
 title: About Castle Windsor Container
 date: 2012-06-18 08:22:41.000000000 +01:00
 type: post

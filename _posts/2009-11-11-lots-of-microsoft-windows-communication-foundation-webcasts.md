@@ -1,5 +1,4 @@
 ---
-layout: post
 title: lots of microsoft windows communication foundation webcasts
 date: 2009-11-11 13:35:54.000000000 +00:00
 type: post

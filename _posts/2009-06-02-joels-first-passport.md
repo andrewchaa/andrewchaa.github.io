@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Joel's first passport
 date: 2009-06-02 14:31:22.000000000 +01:00
 type: post

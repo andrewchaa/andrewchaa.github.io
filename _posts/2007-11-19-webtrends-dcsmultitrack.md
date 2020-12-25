@@ -1,5 +1,4 @@
 ---
-layout: post
 title: WebTrends' dcsMultiTrack
 date: 2007-11-19 16:09:45.000000000 +00:00
 type: post

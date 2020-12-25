@@ -1,6 +1,5 @@
 ---
 published: true
-layout: post
 title: Visualize your dependeicnes with graphviz
 date: 2019-06-24T00:00:00.000Z
 comments: true

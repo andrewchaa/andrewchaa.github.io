@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Don't use string concatenation for JSON string, use JSON.stringify()
 date: 2012-07-16 13:06:56.000000000 +01:00
 type: post

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: When to use static methods?
 date: 2008-11-11 15:13:40.000000000 +00:00
 type: post

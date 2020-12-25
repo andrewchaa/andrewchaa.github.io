@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Unlocking Blackberry bold
 date: 2012-09-08 14:00:32.000000000 +01:00
 type: post

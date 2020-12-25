@@ -1,5 +1,4 @@
 ---
-layout: post
 title: code formatting for blog
 date: 2007-10-16 16:15:03.000000000 +01:00
 type: post

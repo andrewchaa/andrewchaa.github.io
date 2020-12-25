@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Use transactions for select statements
 date: 2012-11-19 16:58:32.000000000 +00:00
 type: post

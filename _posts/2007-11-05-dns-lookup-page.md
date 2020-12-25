@@ -1,5 +1,4 @@
 ---
-layout: post
 title: dns lookup page
 date: 2007-11-05 11:55:24.000000000 +00:00
 type: post

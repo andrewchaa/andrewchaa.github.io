@@ -1,5 +1,4 @@
 ---
-layout: post
 title: reclaim penalty charge
 date: 2007-11-23 17:51:28.000000000 +00:00
 type: post

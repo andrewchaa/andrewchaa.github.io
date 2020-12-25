@@ -1,5 +1,4 @@
 ---
-layout: post
 title: birdman and becoming polyglot
 date: 2015-01-05 23:18:59.000000000 +00:00
 type: post

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Emit DataSet content in xml to web page
 date: 2007-12-08 15:19:46.000000000 +00:00
 type: post

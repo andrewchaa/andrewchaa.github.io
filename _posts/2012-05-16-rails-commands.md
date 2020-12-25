@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Rails Commands
 date: 2012-05-16 06:41:18.000000000 +01:00
 type: post

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Create a random strong password
 date: 2008-10-23 15:33:31.000000000 +01:00
 type: post

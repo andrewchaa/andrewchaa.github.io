@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Using NHibernate, Sqlite in your ASP.Net MVC project
 date: 2010-04-29 09:38:50.000000000 +01:00
 type: post

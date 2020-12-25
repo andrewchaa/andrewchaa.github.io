@@ -1,5 +1,4 @@
 ---
-layout: post
 title: a few things I learned in 3 hour python hacking
 date: 2013-04-23 15:42:46.000000000 +01:00
 type: post

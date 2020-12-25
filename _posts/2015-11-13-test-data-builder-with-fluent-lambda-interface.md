@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Test Data Builder with Fluent lambda interface
 date: 2015-11-13 11:19:21.000000000 +00:00
 type: post

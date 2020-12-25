@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Undo git add before the first commit
 date: 2012-03-09 18:46:05.000000000 +00:00
 type: post

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Veryfying the key and value of the dictionary passed as parameter with Moq.It
 date: 2013-04-08 12:35:53.000000000 +01:00
 type: post

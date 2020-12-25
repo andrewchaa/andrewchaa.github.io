@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Change Mac's Computer name
 date: 2013-10-25 21:50:09.000000000 +01:00
 type: post

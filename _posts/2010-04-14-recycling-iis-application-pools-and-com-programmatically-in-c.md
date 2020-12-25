@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Recycling IIS application pools and COM+ programmatically in C#
 date: 2010-04-14 09:15:59.000000000 +01:00
 type: post

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Get monocle using CVS
 date: 2007-10-11 14:14:37.000000000 +01:00
 type: post

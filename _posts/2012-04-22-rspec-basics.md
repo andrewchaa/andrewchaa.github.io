@@ -1,5 +1,4 @@
 ---
-layout: post
 title: rspec basics
 date: 2012-04-22 15:48:12.000000000 +01:00
 type: post

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: IDataReader's GetInt32() and GetOrdinal(), and performance
 date: 2012-11-23 17:06:01.000000000 +00:00
 type: post

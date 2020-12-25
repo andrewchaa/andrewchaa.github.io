@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Testing private method in unit testing
 date: 2010-11-02 10:21:17.000000000 +00:00
 type: post

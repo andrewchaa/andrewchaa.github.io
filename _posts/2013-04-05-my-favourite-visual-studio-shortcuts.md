@@ -1,5 +1,4 @@
 ---
-layout: post
 title: My Favourite Visual Studio Shortcuts
 date: 2013-04-05 08:41:20.000000000 +01:00
 type: post

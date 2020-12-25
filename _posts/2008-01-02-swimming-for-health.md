@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Swimming for health
 date: 2008-01-02 10:02:48.000000000 +00:00
 type: post

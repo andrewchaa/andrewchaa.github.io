@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Regular expression tips
 date: 2009-01-30 15:11:08.000000000 +00:00
 type: post

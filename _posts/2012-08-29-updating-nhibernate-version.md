@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Updating NHibernate version
 date: 2012-08-29 12:52:20.000000000 +01:00
 type: post

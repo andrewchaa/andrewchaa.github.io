@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Jumploader - Java File Upload Applet
 date: 2012-07-30 16:25:47.000000000 +01:00
 type: post

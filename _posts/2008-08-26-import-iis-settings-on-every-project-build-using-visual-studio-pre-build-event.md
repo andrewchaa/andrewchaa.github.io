@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Import IIS Settings on every project build  using Visual Studio pre-build event
 date: 2008-08-26 08:01:09.000000000 +01:00
 type: post

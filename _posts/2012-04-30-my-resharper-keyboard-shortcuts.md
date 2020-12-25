@@ -1,5 +1,4 @@
 ---
-layout: post
 title: My ReSharper Keyboard Shortcuts
 date: 2012-04-30 07:47:42.000000000 +01:00
 type: post

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: 'Visual Studio project, CopyLocal: true'
 date: 2009-03-11 16:03:52.000000000 +00:00
 type: post

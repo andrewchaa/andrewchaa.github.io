@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Powershell and me
 date: 2012-09-02 16:11:20.000000000 +01:00
 type: post

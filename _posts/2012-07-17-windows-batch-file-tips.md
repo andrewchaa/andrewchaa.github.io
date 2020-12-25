@@ -1,5 +1,4 @@
 ---
-layout: post
 title: windows batch file tips
 date: 2012-07-17 16:23:14.000000000 +01:00
 type: post

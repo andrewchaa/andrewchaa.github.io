@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Update a column with Case statement
 date: 2013-02-22 10:56:08.000000000 +00:00
 type: post

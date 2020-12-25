@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Use Sqlite together wtih ASP.Net MVC
 date: 2009-10-20 15:34:25.000000000 +01:00
 type: post

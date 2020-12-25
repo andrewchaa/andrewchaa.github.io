@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Pulling records from a referenced table using Entity Framework
 date: 2010-08-09 10:24:23.000000000 +01:00
 type: post

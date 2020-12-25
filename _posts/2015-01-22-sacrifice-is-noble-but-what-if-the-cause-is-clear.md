@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Sacrifice is noble, but what if the cause is not clear?
 date: 2015-01-22 16:31:56.000000000 +00:00
 type: post

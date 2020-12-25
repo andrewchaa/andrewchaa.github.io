@@ -1,5 +1,4 @@
 ---
-layout: post
 title: '"the file cannot be accessed by the system" after deleting windows home server'
 date: 2009-05-10 19:35:00.000000000 +01:00
 type: post

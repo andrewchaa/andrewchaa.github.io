@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Building Insurance로 cover가 될까?
 date: 2007-11-06 16:56:24.000000000 +00:00
 type: post

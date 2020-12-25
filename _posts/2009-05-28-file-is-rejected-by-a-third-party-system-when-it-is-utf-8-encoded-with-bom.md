@@ -1,5 +1,4 @@
 ---
-layout: post
 title: File is rejected by a third-party system, when it is utf-8 encoded with BOM
 date: 2009-05-28 10:00:05.000000000 +01:00
 type: post

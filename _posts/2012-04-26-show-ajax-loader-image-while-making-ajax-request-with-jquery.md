@@ -1,5 +1,4 @@
 ---
-layout: post
 title: show ajax loader image while making ajax request with jquery
 date: 2012-04-26 15:01:27.000000000 +01:00
 type: post

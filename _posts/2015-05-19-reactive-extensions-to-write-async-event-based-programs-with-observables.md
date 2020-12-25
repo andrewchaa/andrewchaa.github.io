@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Reactive Extensions, to write async, event-based programs with observables
 date: 2015-05-19 17:16:01.000000000 +01:00
 type: post
@@ -54,24 +53,24 @@ subscription.Dispose();</pre>
 var source = Observable.Interval(TimeSpan.FromSeconds(1));
 //creates a sequence
 
-IConnectableObservable&lt;long&gt; hot = Observable.Publish&lt;long&gt;(source);  
+IConnectableObservable&lt;long&gt; hot = Observable.Publish&lt;long&gt;(source);
 // convert the sequence into a hot sequence
 
-IDisposable subscription1 = hot.Subscribe(                        
+IDisposable subscription1 = hot.Subscribe(
     x =&gt; Console.WriteLine("Observer 1: OnNext: {0}", x),
     ex =&gt; Console.WriteLine("Observer 1: OnError: {0}", ex.Message),
     () =&gt; Console.WriteLine("Observer 1: OnCompleted"));
 Console.WriteLine("Current Time after 1st subscription: " + DateTime.Now);
 Thread.Sleep(3000);  //idle for 3 seconds
-hot.Connect();       
-// hot is connected to source and starts pushing value to subscribers 
+hot.Connect();
+// hot is connected to source and starts pushing value to subscribers
 
 Console.WriteLine("Current Time after Connect: " + DateTime.Now);
 Thread.Sleep(3000);  //idle for 3 seconds
 Console.WriteLine("Current Time just before 2nd subscription: " + DateTime.Now);
 
 // value will immediately be pushed to 2nd subscription
-IDisposable subscription2 = hot.Subscribe(     
+IDisposable subscription2 = hot.Subscribe(
     x =&gt; Console.WriteLine("Observer 2: OnNext: {0}", x),
     ex =&gt; Console.WriteLine("Observer 2: OnError: {0}", ex.Message),
     () =&gt; Console.WriteLine("Observer 2: OnCompleted"));

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: HATEOAS RESTful service
 categories: [programming]
 tags: [api, rest]
@@ -69,6 +68,6 @@ author:
         <span class="pl-s"><span class="pl-pds">"</span>rel<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>product.search<span class="pl-pds">"</span></span>,
         <span class="pl-s"><span class="pl-pds">"</span>href<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>http://localhost:8080/product/search<span class="pl-pds">"</span></span>
     } ]
-}   
+}
 </pre>
 <p><a href="http://martinfowler.com/articles/richardsonMaturityModel.html">Richardson Maturity Model</a> states that HATEOAS is Level 3, the final level of REST</p>

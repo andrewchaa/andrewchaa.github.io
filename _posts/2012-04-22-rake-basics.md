@@ -1,5 +1,4 @@
 ---
-layout: post
 title: rake basics
 date: 2012-04-22 11:06:05.000000000 +01:00
 type: post

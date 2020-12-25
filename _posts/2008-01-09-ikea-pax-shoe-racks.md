@@ -1,5 +1,4 @@
 ---
-layout: post
 title: IKEA에서 PAX로 신발장 만들기
 date: 2008-01-09 22:21:59.000000000 +00:00
 type: post

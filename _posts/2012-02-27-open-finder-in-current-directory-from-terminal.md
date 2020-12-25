@@ -1,5 +1,4 @@
 ---
-layout: post
 title: open finder in current directory from terminal
 date: 2012-02-27 22:17:07.000000000 +00:00
 type: post

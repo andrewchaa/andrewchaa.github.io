@@ -1,5 +1,4 @@
 ---
-layout: post
 title: programming in java after 10 years of break
 date: 2012-08-07 10:54:13.000000000 +01:00
 type: post

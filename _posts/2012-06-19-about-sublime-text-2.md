@@ -1,5 +1,4 @@
 ---
-layout: post
 title: About sublime text 2
 date: 2012-06-19 10:38:03.000000000 +01:00
 type: post

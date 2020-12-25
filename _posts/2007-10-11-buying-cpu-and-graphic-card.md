@@ -1,5 +1,4 @@
 ---
-layout: post
 title: CPU와 Graphic Card, 뭘 살까?
 date: 2007-10-11 05:46:10.000000000 +01:00
 type: post

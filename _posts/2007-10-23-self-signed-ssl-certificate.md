@@ -1,5 +1,4 @@
 ---
-layout: post
 title: self-signed SSL certificate
 date: 2007-10-23 12:13:36.000000000 +01:00
 type: post

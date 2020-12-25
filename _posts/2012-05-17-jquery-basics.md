@@ -1,5 +1,4 @@
 ---
-layout: post
 title: jQuery basics
 date: 2012-05-17 15:55:30.000000000 +01:00
 type: post

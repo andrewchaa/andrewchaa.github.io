@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Snowy, our beloved cat
 date: 2011-12-01 20:52:39.000000000 +00:00
 type: post

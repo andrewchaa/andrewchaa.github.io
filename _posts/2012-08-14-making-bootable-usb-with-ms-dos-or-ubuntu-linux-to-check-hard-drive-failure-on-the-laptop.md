@@ -1,5 +1,4 @@
 ---
-layout: post
 title: making bootable usb with ms-dos or ubuntu linux to check hard drive failure
   on the laptop
 date: 2012-08-14 13:20:15.000000000 +01:00

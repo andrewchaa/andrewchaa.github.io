@@ -1,5 +1,4 @@
 ---
-layout: post
 title: rails generate basics
 date: 2012-04-22 18:57:27.000000000 +01:00
 type: post

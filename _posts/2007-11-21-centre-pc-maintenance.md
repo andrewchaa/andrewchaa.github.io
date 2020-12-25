@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Centre PC Maintenance
 date: 2007-11-21 06:37:52.000000000 +00:00
 type: post

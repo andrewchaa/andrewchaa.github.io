@@ -1,5 +1,4 @@
 ---
-layout: post
 title: heroku basics
 date: 2012-04-22 11:46:31.000000000 +01:00
 type: post

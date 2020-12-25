@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Active engagement in the discussion of a user story
 date: 2009-06-03 11:30:51.000000000 +01:00
 type: post

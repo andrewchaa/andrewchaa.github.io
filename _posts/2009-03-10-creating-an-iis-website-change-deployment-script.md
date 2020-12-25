@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Creating an IIS website change deployment script
 date: 2009-03-10 10:54:19.000000000 +00:00
 type: post

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Deploying Sqlite together with ASP.Net MVC and Entity Framework
 date: 2010-04-26 14:27:19.000000000 +01:00
 type: post

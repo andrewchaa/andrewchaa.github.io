@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Git, Merging from Remote Branch
 date: 2012-03-29 08:37:18.000000000 +01:00
 type: post

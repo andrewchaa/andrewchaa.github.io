@@ -1,5 +1,4 @@
 ---
-layout: post
 title: IE crashes when i click on a link to open any office document
 date: 2008-03-03 09:27:44.000000000 +00:00
 type: post

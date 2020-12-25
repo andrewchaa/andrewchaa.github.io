@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Setting up ruby on rails on ubuntu
 date: 2012-04-19 16:22:40.000000000 +01:00
 type: post

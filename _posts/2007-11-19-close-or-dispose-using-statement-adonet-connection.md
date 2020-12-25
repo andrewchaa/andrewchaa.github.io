@@ -1,5 +1,4 @@
 ---
-layout: post
 title: close or dispose (using statement) ADO.NET connection
 date: 2007-11-19 14:27:02.000000000 +00:00
 type: post

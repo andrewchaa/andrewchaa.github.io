@@ -1,5 +1,4 @@
 ---
-layout: post
 title: 몇 가지 읽어볼만한 article들
 date: 2007-12-10 10:23:37.000000000 +00:00
 type: post

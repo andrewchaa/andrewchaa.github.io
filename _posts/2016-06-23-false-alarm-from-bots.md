@@ -1,5 +1,4 @@
 ---
-layout: post
 title: False alarm from bots
 date: 2016-06-23 14:15:58.000000000 +01:00
 type: post

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Customising Mac's terminal prompt
 date: 2013-10-25 21:56:46.000000000 +01:00
 type: post

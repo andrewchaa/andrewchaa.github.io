@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Sony VAIO NR38M drivers and utilities
 date: 2009-05-07 20:48:42.000000000 +01:00
 type: post

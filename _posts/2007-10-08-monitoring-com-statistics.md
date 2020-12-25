@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Monitoring COM+ Statistics
 date: 2007-10-08 16:00:39.000000000 +01:00
 type: post

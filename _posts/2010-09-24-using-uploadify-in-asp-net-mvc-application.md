@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Using uploadify in ASP.Net MVC application
 date: 2010-09-24 11:55:44.000000000 +01:00
 type: post

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Dell Inspirion 1300 battery
 date: 2008-01-04 10:54:43.000000000 +00:00
 type: post

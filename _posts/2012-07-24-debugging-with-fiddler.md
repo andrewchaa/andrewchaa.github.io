@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Debugging with Fiddler
 date: 2012-07-24 14:29:12.000000000 +01:00
 type: post

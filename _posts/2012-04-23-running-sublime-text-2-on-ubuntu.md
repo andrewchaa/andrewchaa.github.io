@@ -1,5 +1,4 @@
 ---
-layout: post
 title: running sublime text 2 on ubuntu
 date: 2012-04-23 14:42:54.000000000 +01:00
 type: post

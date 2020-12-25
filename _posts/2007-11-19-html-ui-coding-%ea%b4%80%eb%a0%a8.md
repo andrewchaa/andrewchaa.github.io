@@ -1,5 +1,4 @@
 ---
-layout: post
 title: HTML UI coding 관련
 date: 2007-11-19 14:52:52.000000000 +00:00
 type: post

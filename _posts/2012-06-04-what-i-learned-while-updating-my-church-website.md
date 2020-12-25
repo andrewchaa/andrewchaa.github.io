@@ -1,5 +1,4 @@
 ---
-layout: post
 title: What I learned while updating my church website
 date: 2012-06-04 20:02:48.000000000 +01:00
 type: post

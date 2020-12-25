@@ -1,5 +1,4 @@
 ---
-layout: post
 title: having a cookie with sub-keys
 date: 2007-11-13 14:46:00.000000000 +00:00
 type: post

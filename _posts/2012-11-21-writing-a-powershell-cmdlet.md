@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Writing a powershell cmdlet...
 date: 2012-11-21 18:09:53.000000000 +00:00
 type: post

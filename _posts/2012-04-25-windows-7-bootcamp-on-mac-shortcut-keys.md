@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Windows 7 Bootcamp on mac Shortcut Keys
 date: 2012-04-25 19:53:04.000000000 +01:00
 type: post

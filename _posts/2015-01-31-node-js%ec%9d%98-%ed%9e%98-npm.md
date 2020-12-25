@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Node.js의 힘, npm
 date: 2015-01-31 21:05:41.000000000 +00:00
 type: post

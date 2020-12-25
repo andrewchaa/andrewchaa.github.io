@@ -1,5 +1,4 @@
 ---
-layout: post
 title: About WPF RichTextBox
 date: 2012-10-02 12:30:38.000000000 +01:00
 type: post

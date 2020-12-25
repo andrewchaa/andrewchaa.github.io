@@ -1,5 +1,4 @@
 ---
-layout: post
 title: OS X Terminal Basics
 date: 2012-04-22 15:31:14.000000000 +01:00
 type: post

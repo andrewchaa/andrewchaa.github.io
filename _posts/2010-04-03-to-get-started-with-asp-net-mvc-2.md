@@ -1,5 +1,4 @@
 ---
-layout: post
 title: To get started with ASP.Net MVC 2
 date: 2010-04-03 17:06:11.000000000 +01:00
 type: post

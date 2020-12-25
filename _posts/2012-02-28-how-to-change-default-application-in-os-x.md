@@ -1,5 +1,4 @@
 ---
-layout: post
 title: How to change default application in OS X
 date: 2012-02-28 22:56:09.000000000 +00:00
 type: post

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: my favourite (?) HTTP status codes
 date: 2012-07-23 13:21:42.000000000 +01:00
 type: post

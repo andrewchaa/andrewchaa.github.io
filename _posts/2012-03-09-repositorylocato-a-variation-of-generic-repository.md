@@ -1,5 +1,4 @@
 ---
-layout: post
 title: RepositoryLocator, a variation of generic repository
 date: 2012-03-09 19:04:39.000000000 +00:00
 type: post

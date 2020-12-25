@@ -1,5 +1,4 @@
 ---
-layout: post
 title: git cherry-pick
 date: 2015-05-19 09:34:34.000000000 +01:00
 type: post

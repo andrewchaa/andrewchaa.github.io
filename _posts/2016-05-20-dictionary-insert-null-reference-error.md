@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Dictionary.Insert Null reference error
 date: 2016-05-20 10:05:40.000000000 +01:00
 type: post

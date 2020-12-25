@@ -1,5 +1,4 @@
 ---
-layout: post
 title: My Favourite Textmate Shortcuts
 date: 2012-05-14 19:54:41.000000000 +01:00
 type: post

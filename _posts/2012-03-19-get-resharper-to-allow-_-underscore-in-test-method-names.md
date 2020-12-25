@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Get ReSharper To Allow _ Underscore in Test Method Names
 date: 2012-03-19 09:10:32.000000000 +00:00
 type: post

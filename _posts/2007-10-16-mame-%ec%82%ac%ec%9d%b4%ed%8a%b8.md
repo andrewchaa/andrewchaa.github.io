@@ -1,5 +1,4 @@
 ---
-layout: post
 title: MAME 사이트
 date: 2007-10-16 21:32:53.000000000 +01:00
 type: post

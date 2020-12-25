@@ -1,5 +1,4 @@
 ---
-layout: post
 title: The rising tide of shipping glitter bombs
 date: 2015-01-25 23:00:55.000000000 +00:00
 type: post

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: google's canonical link
 date: 2009-09-22 15:47:49.000000000 +01:00
 type: post

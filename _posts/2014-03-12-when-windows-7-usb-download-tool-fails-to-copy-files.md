@@ -1,5 +1,4 @@
 ---
-layout: post
 title: when windows 7 usb download tool fails to copy files
 date: 2014-03-12 12:06:12.000000000 +00:00
 type: post

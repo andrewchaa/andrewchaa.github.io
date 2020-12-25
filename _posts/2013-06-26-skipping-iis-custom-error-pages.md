@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Skipping IIS Custom Error pages
 date: 2013-06-26 15:14:01.000000000 +01:00
 type: post

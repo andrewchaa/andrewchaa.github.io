@@ -1,5 +1,4 @@
 ---
-layout: post
 title: PolicyConfig encountered an error when you build on VS 2008
 date: 2008-10-23 15:29:59.000000000 +01:00
 type: post

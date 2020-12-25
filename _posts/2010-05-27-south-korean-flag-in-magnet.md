@@ -1,5 +1,4 @@
 ---
-layout: post
 title: South Korean flag in magnet
 date: 2010-05-27 15:30:31.000000000 +01:00
 type: post

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Install website in IIS using vbscript
 date: 2008-09-15 16:26:12.000000000 +01:00
 type: post

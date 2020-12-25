@@ -1,7 +1,7 @@
 ---
 title: Morning Prayer
 date: 2007-10-03 05:41:18.000000000 +01:00
-categories: []
+categories:
 tags:
 - prayer
 ---

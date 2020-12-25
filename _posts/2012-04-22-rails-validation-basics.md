@@ -1,5 +1,4 @@
 ---
-layout: post
 title: rails validation basics
 date: 2012-04-22 11:38:36.000000000 +01:00
 type: post

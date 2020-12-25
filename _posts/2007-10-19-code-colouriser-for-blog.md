@@ -1,5 +1,4 @@
 ---
-layout: post
 title: code colouriser for blog
 date: 2007-10-19 14:37:21.000000000 +01:00
 type: post

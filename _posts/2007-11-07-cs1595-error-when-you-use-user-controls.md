@@ -1,5 +1,4 @@
 ---
-layout: post
 title: CS1595 '...' is defined in multiple places error when you use a user control
 date: 2007-11-07 11:22:12.000000000 +00:00
 type: post

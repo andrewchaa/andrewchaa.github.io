@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Roy Osherove is giving an hands-on TDD Masterclass in the UK, September 21-25
 date: 2009-08-25 10:10:31.000000000 +01:00
 type: post
