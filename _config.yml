@@ -59,8 +59,8 @@ plugins:
 
 author:
   name   : "Andrew Chaa"
-  avatar : "/assets/images/bio-photo.jpg"
-  bio    : "My awesome biography constrained to a sentence or two goes here."
+  avatar : "/assets/images/bio-cat.jpg"
+  bio    : "I'm attracted to places I haven't been to and roads I haven't taken ..."
   links:
     - label: "Website"
       icon: "fas fa-fw fa-link"
