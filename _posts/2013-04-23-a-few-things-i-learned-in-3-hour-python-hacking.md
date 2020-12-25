@@ -1,9 +1,6 @@
 ---
 title: a few things I learned in 3 hour python hacking
 date: 2013-04-23 15:42:46.000000000 +01:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -16,12 +13,6 @@ meta:
   _publicize_done_external: a:1:{s:7:"twitter";a:1:{i:111615627;b:1;}}
   tagazine-media: a:7:{s:7:"primary";s:0:"";s:6:"images";a:0:{}s:6:"videos";a:0:{}s:11:"image_count";i:0;s:6:"author";s:7:"1907066";s:7:"blog_id";s:7:"1833431";s:9:"mod_stamp";s:19:"2013-04-23
     15:42:46";}
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>I don't usually use python. My daily language is C#, so it was a nice, refreshing time to code in python.</p>
 <p>A couple of weeks ago, I wrote a small plug in with <a href="http://www.linkedin.com/pub/emily-skitek/7/ab1/ab3">Emily</a>, that checks the disk free space in servers where rabbit-mq is installed. We had failing tests because rabbit-mq mal-functioned due to the storage shortage. Writing in python was a very nice experience and I learned several pythony things, the way python deals with problem. We finished coding and proudly deployed the plug-in, thinking it's done now. You know the fulfilling emotion when you deploy your stuff.</p>

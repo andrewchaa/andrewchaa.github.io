@@ -1,9 +1,6 @@
 ---
 title: Opening an office document from Code
 date: 2014-12-12 15:46:06.000000000 +00:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -23,12 +20,6 @@ meta:
   publicize_twitter_url: http://t.co/fUn33O7BmS
   _wpas_done_1752093: '1'
   _publicize_done_external: a:1:{s:7:"twitter";a:1:{i:111615627;b:1;}}
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>It's a simple job at a glance, and it should be. But we had a bug with that feature. You open a document on <a href="http://www.huddle.com/">Huddle</a> and it should be opened in an application that is associated with the file, for example, MS Word, if it is word document. You can do that if you have installed <a href="https://www.huddle.com/product-overview/huddle-for-mac-and-windows/">Huddle for Windows</a>, which is a desktop application for Huddle.</p>
 <p>It worked. Yet, customers often complained that the document opened in the background. When we open any document, it opens in the foreground on dev machine. so you are very tempted to say "it works on my machine!"</p>

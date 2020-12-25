@@ -1,18 +1,8 @@
 ---
 title: 어린이 예배 섬기기
 date: 2007-10-06 17:41:21.000000000 +01:00
-type: post
-published: true
-status: publish
 categories: []
 tags: []
-meta: {}
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>음. 한달에 한번 정도 어린이 예배를 섬기게 되는데, 어떻게 하면 어린이들을 잘 섬길 수 있을까 고민하고 기도하게 된다.</p>
 <p>먼저 네이버에서 찾아보니, 관련하여 귀한 자료들이 조금 있다.  물론 네이버자료는 아니고 다음 블로그에서 찾았다.</p>

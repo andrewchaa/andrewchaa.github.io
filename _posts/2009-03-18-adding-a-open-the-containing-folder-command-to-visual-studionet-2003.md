@@ -1,9 +1,6 @@
 ---
 title: Adding a "Open the containing folder" command to Visual Studio.Net 2003
 date: 2009-03-18 17:29:47.000000000 +00:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -17,12 +14,6 @@ meta:
   _oembed_da57184917c3549112a14332970a1baa: "{{unknown}}"
   _oembed_15229328221ad6d3c16d8f5bd63ed760: "{{unknown}}"
   _oembed_85450c0fc3359a350326fd8285f997c3: "{{unknown}}"
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>Resources</p>
 <ul>

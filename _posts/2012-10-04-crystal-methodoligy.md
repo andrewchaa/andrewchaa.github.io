@@ -1,9 +1,6 @@
 ---
 title: Crystal Methodology - draft
 date: 2012-10-04 16:55:24.000000000 +01:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -15,12 +12,6 @@ meta:
     16:55:24";}
   _wpas_done_1752093: '1'
   publicize_reach: a:2:{s:7:"twitter";a:1:{i:1752093;i:158;}s:2:"wp";a:1:{i:0;i:6;}}
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>"Methodology" is even hard to spell. Initially, I wrote "Methodoligy" and soon noticed something was wrong.</p>
 <p><a href="http://sharif.edu/~ramsin/index_files/sdmlecture12.pdf">Crystal</a> is a methodology introduced by Cockburn. Today, I did "Exploratory 360" activity, without knowing what it really is. Ha!</p>

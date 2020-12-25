@@ -1,9 +1,6 @@
 ---
 title: Show and hide hidden files on mac
 date: 2011-12-27 14:38:13.000000000 +00:00
-type: post
-published: true
-status: publish
 categories: []
 tags:
 - lion
@@ -15,12 +12,6 @@ meta:
   publicize_results: a:1:{s:7:"twitter";a:1:{i:111615627;a:2:{s:7:"user_id";s:10:"andrewchaa";s:7:"post_id";s:18:"151673266338140160";}}}
   _wpas_done_twitter: '1'
   _wpas_skip_1752093: '1'
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>This should be a simple matter, but it troubled me so much.</p>
 <p>Simply, you need to the followings, but be warned that there are slight incorrect version of command on internet, at least which didnt' work for me on Lion.</p>

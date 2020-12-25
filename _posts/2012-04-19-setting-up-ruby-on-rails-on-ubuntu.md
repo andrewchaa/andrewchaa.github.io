@@ -1,9 +1,6 @@
 ---
 title: Setting up ruby on rails on ubuntu
 date: 2012-04-19 16:22:40.000000000 +01:00
-type: post
-published: true
-status: publish
 categories: []
 tags:
 - git
@@ -19,12 +16,6 @@ meta:
   _wp_old_slug: setting-up-ruby-on-rails-on-my-windows-7-work-machine
   _oembed_2a4dca2b3723e90000676c869661354c: "{{unknown}}"
   _oembed_2206cd8492529e9c6351a7350abb9400: "{{unknown}}"
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>First of all, I am following on-line version of rails tutorial (<a href="http://ruby.railstutorial.org/ruby-on-rails-tutorial-book?version=3.2#top">http://ruby.railstutorial.org/ruby-on-rails-tutorial-book?version=3.2#top</a>). Michael recommends sublime text 2 as editor. I use textmate on my mac, but I wouldn't have the luxury of mac at work, so I am giving a try.</p>
 <p>open a terminal here</p>

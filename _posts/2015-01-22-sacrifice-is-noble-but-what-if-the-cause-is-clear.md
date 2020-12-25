@@ -1,9 +1,6 @@
 ---
 title: Sacrifice is noble, but what if the cause is not clear?
 date: 2015-01-22 16:31:56.000000000 +00:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -24,12 +21,6 @@ meta:
   _wpas_done_1752093: '1'
   _publicize_done_external: a:1:{s:7:"twitter";a:1:{i:111615627;b:1;}}
   _oembed_ba83c612420d1c39b529c3df997a2f57: "{{unknown}}"
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>I saw American Sniper last week. Undoubtedly, it's a great film to watch and it was heroic for Kyle to guard his fellow soldiers against the attack from the "savages", yet the film is so dishonest of the history. Kyle sacrificed his life and family for the country, but unfortunately it turned out Iraq wasn't responsible for 9/11 or any WMD.</p>
 <p><a href="https://simplelifeuk.files.wordpress.com/2015/01/american-sniper.jpg"><img class=" size-medium wp-image-1631 aligncenter" src="{{ site.baseurl }}/assets/american-sniper.jpg?w=300" alt="american-sniper" width="300" height="200" /></a></p>

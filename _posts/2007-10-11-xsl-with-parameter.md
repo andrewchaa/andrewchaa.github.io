@@ -1,18 +1,8 @@
 ---
 title: XSL with parameter
 date: 2007-10-11 08:17:37.000000000 +01:00
-type: post
-published: true
-status: publish
 categories: []
 tags: []
-meta: {}
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>Recently, I had an assignment of updating the existing VB 6 codes to send parameters to XSL. It was using another class asp page to use parameters with XSL. I had limited knowledge of XML and XSL and investigated it a little bit, googling a lot.</p>
 <p>Reference</p>

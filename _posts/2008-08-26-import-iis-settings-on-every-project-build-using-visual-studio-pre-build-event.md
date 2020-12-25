@@ -1,18 +1,8 @@
 ---
 title: Import IIS Settings on every project build  using Visual Studio pre-build event
 date: 2008-08-26 08:01:09.000000000 +01:00
-type: post
-published: true
-status: publish
 categories: []
 tags: []
-meta: {}
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <ul>
 <li><a href="http://www.developersdex.com/gurus/articles/190.asp?Page=1">Create and Delete IIS Directory Using WSH, VBS Script</a></li>

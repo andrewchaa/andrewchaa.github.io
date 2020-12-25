@@ -1,9 +1,6 @@
 ---
 title: SRP (Single Responsibility) and encapsulation
 date: 2014-11-27 11:53:35.000000000 +00:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags: []
@@ -20,12 +17,6 @@ meta:
   publicize_twitter_url: http://t.co/wJZPvKh9f2
   _wpas_done_1752093: '1'
   _publicize_done_external: a:1:{s:7:"twitter";a:1:{i:111615627;b:1;}}
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p><a href="http://en.wikipedia.org/wiki/Single_responsibility_principle">Single Responsibility</a> is one of key principles in writing good code, I believe. So when you change a method or a class, you should have only one reason to change it. But at the same time, you don't want to reveal too much details. You want to encapsulate the internals and nicely abstract your business logic.</p>
 <p>This morning, I had a brief chat with a colleague about method encapsulation. I was saying the method was hiding too much and he called it encapsulation. This kind of chat happens often among developers. We didn't come to conclusion and I thought about it afterward. This is my thought.</p>

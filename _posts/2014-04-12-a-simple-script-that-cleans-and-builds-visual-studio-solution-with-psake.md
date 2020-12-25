@@ -1,9 +1,6 @@
 ---
 title: A simple script that cleans and builds visual studio solution with psake
 date: 2014-04-12 12:51:39.000000000 +01:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -18,12 +15,6 @@ meta:
   _publicize_done_external: a:1:{s:7:"twitter";a:1:{i:111615627;b:1;}}
   _oembed_046ac79189769f52b694dbd24deccf9b: "{{unknown}}"
   _oembed_8de5b4d04559cdad00a062fd3dd4727f: "{{unknown}}"
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p><a href="https://github.com/psake/psake">psake</a> is a simple build automation tool written in powershell, and works well on Microsoft platform.</p>
 <p>This is a really simple example that cleans bin folder, run msbuild to build the solution, and clean up pdb and xml files afterward.</p>

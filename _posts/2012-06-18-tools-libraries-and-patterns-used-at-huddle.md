@@ -1,9 +1,6 @@
 ---
 title: Tools, libraries and patterns used at Huddle
 date: 2012-06-18 08:41:57.000000000 +01:00
-type: post
-published: true
-status: publish
 categories: []
 tags:
 - huddle
@@ -12,12 +9,6 @@ meta:
   _edit_last: '1907066'
   _wpas_done_twitter: '1'
   _wpas_skip_linkedin: '1'
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>Huddle uses extensive list of open source libraries and tools, and I love it.<br />
 This is the list of things I discovered so far.</p>

@@ -1,9 +1,6 @@
 ---
 title: Using NHibernate, Sqlite in your ASP.Net MVC project
 date: 2010-04-29 09:38:50.000000000 +01:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -12,12 +9,6 @@ tags:
 meta:
   _edit_last: '1907066'
   _wp_old_slug: copy-hibernate-cfg-xml-to-ms-test-out-directory
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>I used Entity Framework for my personal projects for a while but wanted to try NHibernate. Instead of NUnit, I tried MS Test this time.</p>
 <p>First problem was that MS Test fails, complaining that hibernate.cfg.xml does not exist. It did not copy the file to MS Test out directory. Of course, I set "Copy to Output Directory" to "Copy always". <a href="http://nhforge.org/wikis/howtonh/your-first-nhibernate-based-application.aspx">Thanks to NHibernate Getting Started Guide</a>. It is copied to bin folder, but not to output folder. "System.IO.FileNotFoundException: Could not find file '...\TestResults\684 2010-04-29 09_42_19\Out\hibernate.cfg.xml'..  " occurred each time I ran the test. Some say it is a bug in MS Test, and I agree.</p>

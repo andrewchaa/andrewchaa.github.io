@@ -1,9 +1,6 @@
 ---
 title: About Castle Windsor Container
 date: 2012-06-18 08:22:41.000000000 +01:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -27,12 +24,6 @@ meta:
   _oembed_ae2d832eacd5a04ff6c7e5e751e5cdb9: "{{unknown}}"
   _oembed_9852c239627682becbcb866fe40aa8a4: "{{unknown}}"
   _oembed_b8a93513ad4df1d075c3ab02cb0d82cd: "{{unknown}}"
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>Since I moved to Huddle, I am using Castle Windsor. This post is the summary of what I would learn while using Castle Windsor.</p>
 <h3>the source code</h3>

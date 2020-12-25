@@ -1,9 +1,6 @@
 ---
 title: London Bus
 date: 2014-03-02 16:21:48.000000000 +00:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -17,12 +14,6 @@ meta:
   _wpas_done_1752093: '1'
   _publicize_done_external: a:1:{s:7:"twitter";a:1:{i:111615627;b:1;}}
   _oembed_ba677c69059e51a6f3dc4bd89cc7d452: "{{unknown}}"
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>Recently, I'm playing with TFS's countdown apis. As I am a bus commuter, I use bus arrival check app everyday. There are free and paid apps on iPhone and my Nexus 4. Paid ones are prettier than free ones, but the user interface, I think, can be much more improved. </p>
 <p>So, I started writing an simple mobile site that checks bus arrival time. It's still primitive stage, but it works and it has features I wish other apps have. For example, when I stand at a bus stop, I want the check the arrivals of the stop, not anywhere else. I don't want to select a bus stop on the map, touch it, and wait to see the arrivals. I'd like the app to find the bus stop with my location and just show me the arrival times. This mobile site has the feature, "nearby bus stop".</p>

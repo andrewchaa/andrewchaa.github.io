@@ -1,21 +1,12 @@
 ---
 title: add a reference to assembly 'System.Web.Extensions...
 date: 2008-11-27 11:55:24.000000000 +00:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
 - asp.net
 meta:
   _edit_last: '1907066'
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>I was adding a ajax-enabled control on a page and suddenly having "... You must add a reference to assembly 'System.Web.Extensions..." error. It complained that my website assembly does not have a reference to 'System.Web.Extensions' and it was true. Definitely, I added the reference to my project, but the compiled dll does not have it.</p>
 <p>I googled a little bit. Some suggest that I need to install Microsoft Ajax framework 1.0. I did it long time ago, but I re-installed it. The problem persisted. One good document was <a href="http://www.asp.net/AJAX/Documentation/Live/ConfiguringASPNETAJAX.aspx">Configuring ASP.Net Ajax</a>. I noticed &lt;control&gt; section in the web.config</p>

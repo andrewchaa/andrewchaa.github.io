@@ -1,9 +1,6 @@
 ---
 title: My favourite helpers for ASP.NET MVC
 date: 2011-04-14 21:35:06.000000000 +01:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -13,12 +10,6 @@ meta:
   _edit_last: '1907066'
   _wp_old_slug: html-image-custom-html-helper-for-img-tag
   _wpas_skip_twitter: '1'
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>As you use ASP.NET MVC on and on, you start building and using handy html helpers. Rob Conery posted a few of his helpers on <a href="http://blog.wekeroad.com/2010/01/20/my-favorite-helpers-for-aspnet-mvc">his blog</a>. You can find some more in his ASP.NET MVC source code. Inspired by his helpers, here I post mine.</p>
 <h3>1. Html.Image</h3>

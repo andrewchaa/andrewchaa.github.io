@@ -1,15 +1,9 @@
 ---
-published: true
 title: Use Moq CallBack to Verify Object Parameter
 date: 2019-05-03T17:17:00.000Z
 comments: true
 categories: []
 tags: WILT
-meta: {}
-author:
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 
 Our repositories accept domain models as parameter to save them to the database. Moq's verify works greatly if the method has primitive types like string, int, and bool, not so good at showing error message if the paramter is an object.

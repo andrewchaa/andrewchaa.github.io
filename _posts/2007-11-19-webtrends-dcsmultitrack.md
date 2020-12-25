@@ -1,9 +1,6 @@
 ---
 title: WebTrends' dcsMultiTrack
 date: 2007-11-19 16:09:45.000000000 +00:00
-type: post
-published: true
-status: publish
 categories: []
 tags: []
 meta:
@@ -34,12 +31,6 @@ meta:
   _oembed_5087b541c7a4625a0ae7a148de7d2703: "{{unknown}}"
   _oembed_fb8f198d9639db05dec66c8c5870ab62: "{{unknown}}"
   _oembed_2fd8e8838a58e3f1b6103a8d942baf98: "{{unknown}}"
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>This is used to create a tag using javascript dynamically. In a recent project, I had to tag the content of IFrame, whenever the IFrame loads any page.</p>
 <p>To send url using dcsMultiTrack, (from <a href="http://www.websital.com/webtrends/docs/WTtechref.pdf">WebTrends Technical Reference</a>)</p>

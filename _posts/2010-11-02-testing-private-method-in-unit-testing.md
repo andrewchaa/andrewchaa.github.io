@@ -1,9 +1,6 @@
 ---
 title: Testing private method in unit testing
 date: 2010-11-02 10:21:17.000000000 +00:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -14,12 +11,6 @@ meta:
   _wp_old_slug: ''
   _oembed_4e0a8656b7364c971459d0998caf0f50: "{{unknown}}"
   _oembed_7a4661076298d1938f7e4de3d305ab7e: "{{unknown}}"
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>Ideally, it is not recommended to test private methods, as complex internals should be kept hidden and only interface be tested. Well, in real world, sometimes, you need to test your private methods, as it performs very important operation.</p>
 <p>In my case, the method was public and later I changed it to private, since it is better to be hidden. Yet, I still wanted to test it, as it does lots of things - calling several other private methods and sum up the result.</p>

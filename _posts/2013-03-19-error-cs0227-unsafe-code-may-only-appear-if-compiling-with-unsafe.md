@@ -1,9 +1,6 @@
 ---
 title: 'error CS0227: Unsafe code may only appear if compiling with /unsafe'
 date: 2013-03-19 10:39:42.000000000 +00:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -16,12 +13,6 @@ meta:
   publicize_twitter_user: andrewchaa
   _wpas_done_1752093: '1'
   _publicize_done_external: a:1:{s:7:"twitter";a:1:{i:111615627;b:1;}}
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>This is the error message you get, when you build a project with some bit of unsafe code in it.</p>
 <p>Simply you need to "Alt + Enter" on the project to see the properties and tick on "Allow unsafe code" on build tab. Then it compiles lovely in visual studio.</p>

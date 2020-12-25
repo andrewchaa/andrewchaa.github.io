@@ -1,9 +1,6 @@
 ---
 title: Remove the annoying certificate error page when running selenium tests
 date: 2012-07-19 16:17:42.000000000 +01:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -18,12 +15,6 @@ meta:
     16:17:42";}
   _wpas_skip_twitter: '1'
   _wpas_skip_linkedin: '1'
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>Selenium and webdriver tests are everywhere these days. They can be often slow and flaky, but you need to run them to make sure you didn't break anything.</p>
 <p>cf.For more information on selenium webdriver, go to <a href="http://seleniumhq.org/docs/03_webdriver.html">selenium webdriver documentation</a>.</p>

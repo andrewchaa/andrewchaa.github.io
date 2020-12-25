@@ -1,9 +1,6 @@
 ---
 title: Team City Basics
 date: 2012-08-06 13:15:12.000000000 +01:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -14,12 +11,6 @@ meta:
     13:15:12";}
   _wpas_skip_twitter: '1'
   _wpas_skip_linkedin: '1'
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>This post is about the way I use TeamCity and would not be completed for the time being.</p>
 <h3>Checkout rules</h3>

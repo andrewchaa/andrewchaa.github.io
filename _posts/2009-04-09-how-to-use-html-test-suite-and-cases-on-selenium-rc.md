@@ -1,9 +1,6 @@
 ---
 title: How to use html test suite and cases on Selenium RC
 date: 2009-04-09 14:27:29.000000000 +01:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -22,12 +19,6 @@ meta:
   _oembed_e7f33d2ce58fab23ba70f178f58def2e: "{{unknown}}"
   _oembed_df5e201803ae7fda4e0cea4bdc07c9bc: "{{unknown}}"
   _oembed_e63f3ee3a30d87164e30270a97ff8b73: "{{unknown}}"
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>References</p>
 <ul>

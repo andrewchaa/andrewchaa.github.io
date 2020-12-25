@@ -1,9 +1,6 @@
 ---
 title: when windows 7 usb download tool fails to copy files
 date: 2014-03-12 12:06:12.000000000 +00:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags: []
@@ -22,12 +19,6 @@ meta:
   _oembed_8ddf6045ba5a0cfd9049efb46b926d78: "{{unknown}}"
   _oembed_e903436bd9a22b1321bb88fc9d67b5ec: "{{unknown}}"
   _oembed_7eb62c337e3165f80a7fef9eb00afe06: "{{unknown}}"
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>http://4sysops.com/archives/windows-7-usbdvd-download-tool-wudt-is-unable-to-copy-files/</p>
 <p>diskpart's "clean" command is the key.</p>

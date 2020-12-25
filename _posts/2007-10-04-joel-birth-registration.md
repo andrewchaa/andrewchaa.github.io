@@ -1,18 +1,8 @@
 ---
 title: 셋째 조엘이 출생 신고 했어요.
 date: 2007-10-04 17:01:51.000000000 +01:00
-type: post
-published: true
-status: publish
 categories: []
 tags: []
-meta: {}
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>출생신고를 하려면, <a href="http://www.islington.gov.uk/contact/visitingoffices/townhall.asp">Islington Council Town Hall</a>에 미리 예약을 잡고, 가서 해야한다. 역시 영국은 appointment와 que가 특징이네.</p>
 <p>주소는 Registrars of Births &amp; Deaths<br />

@@ -1,9 +1,6 @@
 ---
 title: Recycling IIS application pools and COM+ programmatically in C#
 date: 2010-04-14 09:15:59.000000000 +01:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -14,12 +11,6 @@ meta:
   _oembed_15eafa52378f7fdd021b006699c350d4: "{{unknown}}"
   _oembed_d1366353ae54382892c7785879711939: "{{unknown}}"
   _oembed_33b91d953d664cda6e7a2b28de532e72: "{{unknown}}"
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>These days, I work on projects that is based on Sitecore CMS. Sitecore caches everything, so if you make any changes to your code, the web page does not reflect your change until you reset IIS or recycle the application pool. Resetting IIS often takes 10 to 20, even 30 seconds, and it is a bit obstructive that you have to reset IIS in the middle of coding. So I wrote this small utility.</p>
 <p>The way it works is straightforward. It accesses IIS application pools and recycle them all then access COM+ and recycle the specific application that my web application uses for database access. One tricky thing is to access COM+. You have to reference ComAdmin.dll in C:\windows\system32\Com and use COM interop. I could not find many examples on the Internet but finally found one at <a href="http://www.dotnet247.com/247reference/msgs/13/67515.aspx">http://www.dotnet247.com/247reference/msgs/13/67515.aspx</a>.</p>

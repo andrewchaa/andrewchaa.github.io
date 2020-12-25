@@ -1,9 +1,6 @@
 ---
 title: Jumploader - Java File Upload Applet
 date: 2012-07-30 16:25:47.000000000 +01:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -14,12 +11,6 @@ meta:
     16:49:10";}
   _wpas_skip_twitter: '1'
   _wpas_skip_linkedin: '1'
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>JumpLoader is a Java applet designed to upload files from the client to a server. Well, I know this is the age of HTML5 and you are not cool if you don’t use it like dropbox does.</p>
 <p>By the way, you can refer to this comprehensive tutorial about <a href="http://www.matlus.com/html5-file-upload-with-progress/">Html5 File Upload with Progress</a>. Also, there is a good <a href="http://blueimp.github.com/jQuery-File-Upload/">jQuery file upload</a> library. It has slick interface based on twitter bootstrap.</p>

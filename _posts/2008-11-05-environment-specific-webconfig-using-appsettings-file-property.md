@@ -1,20 +1,11 @@
 ---
 title: Environment specific web.config using appSettings file property
 date: 2008-11-05 10:29:53.000000000 +00:00
-type: post
-published: true
-status: publish
 categories: []
 tags: []
 meta:
   _edit_last: '1907066'
   _wp_old_slug: environment-dependant-webconfig-using-appsettings-file-property
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>As most companies do, you would have different environments such as INT (intergration), Staging, and Live servers. Web.config is really handy, but you cannot put environment specific settings there, because the same file is deployed across all environments.</p>
 <p>This troubleed me and my company (which is Totaljobs) for a while and I came across this <strong>file</strong> property.</p>

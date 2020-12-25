@@ -1,21 +1,12 @@
 ---
 title: Paul Hong 선교사님의 영어공부 비법 3가지
 date: 2009-07-04 14:04:18.000000000 +01:00
-type: post
-published: true
-status: publish
 categories:
 - life
 tags:
 - English Study
 meta:
   _edit_last: '1907066'
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>여러가지 비법이 있을 수 있지만, <a href="http://www.utoledo.edu/business/COBA/COBACCD/COBAFacProf.asp?I=264">Paul Hong</a> 선교사님이 자신의 체험을 바탕으로 한 영어 잘하기 비법 3가지를 공개하셨다. 이 세가지 비법이 가진 강점은 본인이 직접 실행하여 그 효과를 체험하였다는 것.</p>
 <ol>

@@ -1,16 +1,9 @@
 ---
 title: 양치기들에게 나타나신 하나님
 date: 2016-12-24
-type: post
 categories: []
 tags:
 - 말씀
-meta: {}
-author:
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 Luke 2:8-9 "And there were shepherds living out in the fields nearby, keeping watch over their flocks at night. 9 An angel of the Lord appeared to them, and the glory of the Lord shone around them, and they were terrified."
 

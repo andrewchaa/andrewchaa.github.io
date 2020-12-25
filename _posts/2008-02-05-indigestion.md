@@ -1,18 +1,8 @@
 ---
 title: 소화가 잘 안될때.
 date: 2008-02-05 15:49:13.000000000 +00:00
-type: post
-published: true
-status: publish
 categories: []
 tags: []
-meta: {}
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>먼저 GP에 한번 가보면 좋을 것 같네요. 소화불량이 너무 자주 있어서.<br />
 그리고 인터넷에서 소화에 도움되는 것들을 좀 찾아봤어요.</p>

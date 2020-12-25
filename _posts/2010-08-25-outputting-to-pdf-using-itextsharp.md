@@ -1,9 +1,6 @@
 ---
 title: Outputting to pdf using iTextSharp
 date: 2010-08-25 15:47:57.000000000 +01:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -13,12 +10,6 @@ meta:
   _wp_old_slug: ''
   _oembed_1379597d0937d5f27cdf4deb01355d5b: "{{unknown}}"
   _oembed_9a2b9bc7663acc5c0d88c2e5812087fd: "{{unknown}}"
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>Recently, I moved to Barclays. My job is still development, though. Totaljobs is a good company, and I enjoyed its casual, IT geek culture. It's the thing I miss in my new job, as I work with quants.</p>
 <p>The web application here has generally more complex UI. On public web page, you would not normally demand user to put in more than 20 textboxes or dropdowns. On financial application, it seems to be common. Nice graphs are often mandatory.</p>

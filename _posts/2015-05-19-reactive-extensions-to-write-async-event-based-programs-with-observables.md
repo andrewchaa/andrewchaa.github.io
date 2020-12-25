@@ -1,9 +1,6 @@
 ---
 title: Reactive Extensions, to write async, event-based programs with observables
 date: 2015-05-19 17:16:01.000000000 +01:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -16,12 +13,6 @@ meta:
   publicize_twitter_url: http://t.co/XlqKwcchZv
   _wpas_done_1752093: '1'
   _publicize_done_external: a:1:{s:7:"twitter";a:1:{i:111615627;b:1;}}
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <h4>Hello World in Reactive way</h4>
 <p>Reactive Programming is "<a href="http://en.wikipedia.org/wiki/Reactive_programming">a programming paradigm oriented around data flows and the propagation of change</a>" (wikipedia)</p>

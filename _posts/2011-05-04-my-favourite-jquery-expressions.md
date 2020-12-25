@@ -1,21 +1,12 @@
 ---
 title: My favourite jQuery expressions
 date: 2011-05-04 12:55:35.000000000 +01:00
-type: post
-published: true
-status: publish
 categories: []
 tags: []
 meta:
   _edit_last: '1907066'
   _wpas_done_twitter: '1'
   _oembed_e72174e0cf6eb0c1af2ab1abe5711283: "{{unknown}}"
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>This is purely for me and to remind myself of the frequently used jQuery expressions. Forgetfulness is a curse as well as a bliss!</p>
 <ul>

@@ -1,9 +1,6 @@
 ---
 title: git cherry-pick
 date: 2015-05-19 09:34:34.000000000 +01:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -16,12 +13,6 @@ meta:
   publicize_twitter_url: http://t.co/GgMKGLLQWy
   _wpas_done_1752093: '1'
   _publicize_done_external: a:1:{s:7:"twitter";a:1:{i:111615627;b:1;}}
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>Git commit's id is a hash of its contents and its history, and becomes a unique id for a specific commit. Even if it contains the same change, as the parent would be different, it'll have a different id.</p>
 <p>"git cherry-pick" takes a commit from somewhere else, and "play it back" where you are right now. Git will build a new commit with a different hash, as the parents are different, though the contents are the same. One thing to note is that git hash is branch agnostic. in Git, an branch is simply "a lightweight movable pointer to one of these commits" (from <a href="https://git-scm.com/book/no-nb/v1/Git-Branching-What-a-Branch-Is">git branching</a>)</p>

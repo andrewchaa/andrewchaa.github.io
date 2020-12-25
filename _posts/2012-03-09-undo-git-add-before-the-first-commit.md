@@ -1,9 +1,6 @@
 ---
 title: Undo git add before the first commit
 date: 2012-03-09 18:46:05.000000000 +00:00
-type: post
-published: true
-status: publish
 categories: []
 tags:
 - git
@@ -16,12 +13,6 @@ meta:
   _oembed_c1d15a8e7d60542df43f27655171668f: "{{unknown}}"
   _oembed_bb7ba4d98c3280b3a222c9f2a22a02d5: "{{unknown}}"
   _oembed_7d4581c99b455d17c4b06525e9af6f27: "{{unknown}}"
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>As git newbie, this was very tricky but it happens quite often.</p>
 <p>You create a new project, say C# project. In case of rails, when you create a new project, it automatically creates .gitignore, but Visual Studio doesn't. You do "git add . " and suddenly you realise you staged so many unnecessary files like resharper cache, dlls, etc.</p>

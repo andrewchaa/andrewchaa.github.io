@@ -1,9 +1,6 @@
 ---
 title: Install website in IIS using vbscript
 date: 2008-09-15 16:26:12.000000000 +01:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -11,12 +8,6 @@ tags:
 - IIS ASP.Net
 meta:
   _edit_last: '1907066'
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>Reference</p>
 <ul>

@@ -1,9 +1,6 @@
 ---
 title: 'Ruby dojo #2 reverse string, array permutation, and filtering binary numbers'
 date: 2012-02-10 13:42:31.000000000 +00:00
-type: post
-published: true
-status: publish
 categories: []
 tags: []
 meta:
@@ -11,12 +8,6 @@ meta:
   _wpas_skip_twitter: '1'
   _wpas_skip_linkedin: '1'
   _wp_old_slug: ruby-jodo-2-reverse-string-array-permutation-and-filtering-binary-numbers
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>It was the second ruby dojo yesterday (Thu. 9/2/2012). A few more people turned up this time. No pizza, sadly, but understandable that they can't buy pizza and drinks every time.</p>
 <p>This time, it was more organised. If you are agile, you get better at each iteration.</p>

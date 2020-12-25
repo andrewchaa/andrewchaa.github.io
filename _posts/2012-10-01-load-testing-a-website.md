@@ -1,9 +1,6 @@
 ---
 title: Load Testing a Website
 date: 2012-10-01 12:44:35.000000000 +01:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -50,12 +47,6 @@ meta:
   _oembed_6dd8c1c9bb3bd6a4a8dab79574e3ce3e: "{{unknown}}"
   _oembed_8d4fdc5069dc13d9e751618dbe47161f: "{{unknown}}"
   _oembed_7c73247b76d92310dd92763e39858c0c: "{{unknown}}"
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <h3>What is Load Testing?</h3>
 <blockquote><p>

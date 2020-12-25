@@ -1,9 +1,6 @@
 ---
 title: 'MSBUild task: Get the latest code from TFS and build'
 date: 2009-01-26 16:17:29.000000000 +00:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -19,12 +16,6 @@ meta:
   _oembed_a1085ccd107b65de3df023329a449a49: "{{unknown}}"
   _oembed_f6cacdcbb20f3c3374f77cffcfd37149: "{{unknown}}"
   _oembed_fd4adcf214a9d87d88356d64b9ddd574: "{{unknown}}"
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>Resource</p>
 <ul>

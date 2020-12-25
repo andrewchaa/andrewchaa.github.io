@@ -1,9 +1,6 @@
 ---
 title: d3.js Data-Driven Documents
 date: 2012-02-02 15:48:35.000000000 +00:00
-type: post
-published: true
-status: publish
 categories: []
 tags:
 - d3
@@ -16,12 +13,6 @@ meta:
   _wpas_done_twitter: '1'
   _oembed_ac63fb8356c859efb1eb98589fee0dc4: "{{unknown}}"
   _oembed_dd4144c53624557234f7dc17ec109770: "{{unknown}}"
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>This is an amazing javascript library that allows you to impressively visualise your data.</p>
 <ul>

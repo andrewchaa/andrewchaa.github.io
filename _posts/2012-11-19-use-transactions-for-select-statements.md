@@ -1,9 +1,6 @@
 ---
 title: Use transactions for select statements
 date: 2012-11-19 16:58:32.000000000 +00:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -15,12 +12,6 @@ meta:
   publicize_twitter_user: andrewchaa
   _wpas_done_1752093: '1'
   _publicize_done_external: a:1:{s:7:"twitter";a:1:{i:111615627;b:1;}}
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>Transactions are usually when you have insert, update or delete statements with the "atomic" behaviour. However, in a highly concurrent application, it could happen that data you've read is already modified.</p>
 <p>In this situation, you need to use a transaction to wrap your selects with the correct <a href="http://msdn.microsoft.com/en-us/library/ms173763(v=sql.100).aspx">isolation level</a>. </p>

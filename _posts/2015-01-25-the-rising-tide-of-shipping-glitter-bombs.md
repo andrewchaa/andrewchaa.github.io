@@ -1,9 +1,6 @@
 ---
 title: The rising tide of shipping glitter bombs
 date: 2015-01-25 23:00:55.000000000 +00:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags: []
@@ -31,12 +28,6 @@ meta:
   _oembed_b8288108c097443a55522a03e334c0b1: "{{unknown}}"
   _oembed_b387f7875078a068d3c59a8d24bc49f0: "{{unknown}}"
   _oembed_745c9e951e7a611c05730ca2f7358946: "{{unknown}}"
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>It seems that people are suddenly mad with the sweet revenge of bombing people with glitter. Shipping enemies glitter is becoming world-wide phenomenon. This is the list of web sites that sell glitter, promising to bomb the buyer's enemy.</p>
 <p>The original stunt: <a href="http://www.shipyourenemiesglitter.com/">http://www.shipyourenemiesglitter.com/</a></p>

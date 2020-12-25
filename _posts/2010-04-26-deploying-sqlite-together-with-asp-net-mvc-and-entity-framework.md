@@ -1,9 +1,6 @@
 ---
 title: Deploying Sqlite together with ASP.Net MVC and Entity Framework
 date: 2010-04-26 14:27:19.000000000 +01:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -12,12 +9,6 @@ meta:
   _edit_last: '1907066'
   _oembed_78f8ae5cca2941d2aeb963edc2334aae: "{{unknown}}"
   _oembed_b778f4bd8d05ca04bac49143661847e4: "{{unknown}}"
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>Of course, you need to install sqlite or deploy the dll together. Yet I keep forgetting that I need to register ".Net Framework Data Provider for Sqlite" You don't need it on your dev machine, as Sqlite installation register it with your version of .Net machine.config.</p>
 <p>If  you not register it, you will have an error "Unable to find the requested .Net Framework Data Provider."</p>

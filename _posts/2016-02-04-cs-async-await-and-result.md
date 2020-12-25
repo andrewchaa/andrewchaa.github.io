@@ -1,9 +1,6 @@
 ---
 title: C#'s async, await, and .Result
 date: 2016-02-04 18:46:38.000000000 +00:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -16,12 +13,6 @@ meta:
   _publicize_done_2230353: '1'
   _wpas_done_1752093: '1'
   publicize_twitter_user: andrewchaa
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>In Market Invoice, there are many places where async and await are used. Recently, I introduced a bug that an operation gets deadlocked by replacing await with .Result. I was bitten hard :-)</p>
 <h3>Non-blocking execution</h3>

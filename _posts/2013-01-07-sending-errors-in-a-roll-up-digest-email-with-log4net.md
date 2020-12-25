@@ -1,9 +1,6 @@
 ---
 title: Sending errors in a roll up digest email with log4net
 date: 2013-01-07 12:39:08.000000000 +00:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -17,12 +14,6 @@ meta:
   _wpas_done_1752093: '1'
   _publicize_done_external: a:1:{s:7:"twitter";a:1:{i:111615627;b:1;}}
   _oembed_1c01ee08dff283a033243403ab9c1ef7: "{{unknown}}"
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>On production, there are many alerts in a short period. It's nice to get error emails, but you would want to avoid receiving hundreds of emails in a few minutes, when something fails. Also, people get used to alert emails and later nobody would care about the blizzard of emails. </p>
 <p>So what we want are</p>

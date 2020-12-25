@@ -1,9 +1,6 @@
 ---
 title: Inverting the direction of mouse scroll wheel in Windows
 date: 2015-06-02 15:28:03.000000000 +01:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -17,12 +14,6 @@ meta:
   _publicize_done_2230353: '1'
   _wpas_done_1752093: '1'
   publicize_twitter_user: andrewchaa
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>Why would you do that?</p>
 <p>It's because since in Mac OS X Lion, they've reversed the wheel scroll direction. I've always reversed it back in system preference. Then I've upgraded it to Yosemite and didn't bother to change it. I just change myself to follow it. A few days later, the Mac mouse scroll wheel direction became natural to me.</p>

@@ -1,21 +1,12 @@
 ---
 title: Sony VAIO NR38M drivers and utilities
 date: 2009-05-07 20:48:42.000000000 +01:00
-type: post
-published: true
-status: publish
 categories: []
 tags: []
 meta:
   _edit_last: '1907066'
   _oembed_8d70e2c9e1034beb14447f7d4f17d550: "{{unknown}}"
   _oembed_28c0515632a7701c00877b5e907dfd67: "{{unknown}}"
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>I bought a refurbished vaio NR38M earlier 2 months ago. It is a nice laptop with good price and has Vista installed with lots of other programs. I wanted to use Windows 7 on it, and usually windows 7 performs better than Vista.</p>
 <p>I can find all drivers, but it is very difficult to find a utility programs that enable keyboard function key. I don't understand why Sony did in this way, using special program to enable function key.</p>

@@ -1,9 +1,6 @@
 ---
 title: programming in java after 10 years of break
 date: 2012-08-07 10:54:13.000000000 +01:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -14,12 +11,6 @@ meta:
   _edit_last: '1907066'
   tagazine-media: a:7:{s:7:"primary";s:0:"";s:6:"images";a:0:{}s:6:"videos";a:0:{}s:11:"image_count";i:0;s:6:"author";s:7:"1907066";s:7:"blog_id";s:7:"1833431";s:9:"mod_stamp";s:19:"2012-08-07
     10:54:13";}
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>I learned java at Uni. and worked really hard. Yet, I didn't have chance to use it when I becaue a full time programmer.<br />
 I was a Delphi and VB guy and then C# man. I didn't plan it, but it turned out that my career was more oriented toward Microsoft Stack.</p>

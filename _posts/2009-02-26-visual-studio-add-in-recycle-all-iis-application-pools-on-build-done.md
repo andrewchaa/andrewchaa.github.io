@@ -1,9 +1,6 @@
 ---
 title: 'Visual Studio Add-in: Recycle all IIS application pools on build done'
 date: 2009-02-26 15:14:12.000000000 +00:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -14,12 +11,6 @@ meta:
   _oembed_878d2ddf48ed8eee7f5cc192bb50b762: "{{unknown}}"
   _oembed_b8f32e1e716445c03ed90553f3368948: "{{unknown}}"
   _oembed_1c251db5ac8083f12ee4d41d0cc9d33c: "{{unknown}}"
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <ul>
 <li>related post: <a href="http://simplelifeuk.wordpress.com/2007/10/05/writing-a-visual-studionet-2003-add-in/">http://simplelifeuk.wordpress.com/2007/10/05/writing-a-visual-studionet-2003-add-in/</a></li>

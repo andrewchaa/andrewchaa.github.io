@@ -1,18 +1,8 @@
 ---
 title: 2007 Autumn Bible Conference를 다녀와서.
 date: 2007-11-13 11:09:32.000000000 +00:00
-type: post
-published: true
-status: publish
 categories: []
 tags: []
-meta: {}
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>전병옥 목사님 말대로, conference를 다녀온 직후 새로운 insight들이 생생할 때 이를 기록하고 다음 수양회를 준비하는 것이 지혜로운 일인 것 같다.</p>
 <p>좋았지만 더 개선할 수 있는 것들</p>

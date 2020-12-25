@@ -1,9 +1,6 @@
 ---
 title: Writing a powershell cmdlet...
 date: 2012-11-21 18:09:53.000000000 +00:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -17,12 +14,6 @@ meta:
   publicize_twitter_user: andrewchaa
   _wpas_done_1752093: '1'
   _publicize_done_external: a:1:{s:7:"twitter";a:1:{i:111615627;b:1;}}
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>A cmdlet (reads "command-lit") is a lightweight command used in Powershell environment. The Powershell runtime invokes cmdlets within the context of automation scripts that are provided at the command line. </p>
 <p>Cmdlets perform an action. Through Powershell pipiline, they can return a .NET object. </p>

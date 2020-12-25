@@ -1,9 +1,6 @@
 ---
 title: Converting SqlDataReader's value to C# types
 date: 2012-11-26 17:57:31.000000000 +00:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -18,12 +15,6 @@ meta:
   publicize_twitter_user: andrewchaa
   _wpas_done_1752093: '1'
   _publicize_done_external: a:1:{s:7:"twitter";a:1:{i:111615627;b:1;}}
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>I spent another day working with SqlDataReader, and actually I enjoyed it. It's pure geek joy to learn a new thing a day. </p>
 <p>With SqlDataReader, you get the value and convert it in order to assign it to C# variable.</p>

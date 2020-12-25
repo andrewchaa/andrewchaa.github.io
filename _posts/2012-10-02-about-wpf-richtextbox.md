@@ -1,9 +1,6 @@
 ---
 title: About WPF RichTextBox
 date: 2012-10-02 12:30:38.000000000 +01:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -14,12 +11,6 @@ meta:
     12:30:38";}
   _edit_last: '1907066'
   _wpas_done_1752093: '1'
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>This content is moved from <a href="http://andrewchaa.me.uk/2012/09/09/building-console-an-enhanced-hopefully-interface-to-windows-shells/">Console+ post</a>, as I use <a href="http://www.codeproject.com/Articles/42490/Using-AvalonEdit-WPF-Text-Editor">Avalon Text Editor</a>, not RichTextBox, for the project.</p>
 <p>It's an interesting control. Because now I can read the shell's screen buffer and write it into textbox, I wanted to use RichTextBox, to change the colors of some texts. It behaves very similar to textbox and the internal seems to be quite different. Maybe it's a victory of OOP, that TextBox and RichTextBox share large part of the interface, even thought the internals are so different. </p>

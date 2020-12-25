@@ -1,9 +1,6 @@
 ---
 title: About sublime text 2
 date: 2012-06-19 10:38:03.000000000 +01:00
-type: post
-published: true
-status: publish
 categories: []
 tags:
 - About
@@ -18,12 +15,6 @@ meta:
   _oembed_15f725225c0a0342bf94581474b910da: "{{unknown}}"
   _oembed_c61c1a18537e084bf996a2bd0fb370d3: "{{unknown}}"
   _oembed_2805b80b7b90b66b86cd2400e2be9ed6: "{{unknown}}"
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>Another great text editor, free to everyone, but you can contribute to the project by paying for the license.</p>
 <p>sublime text 2: <a href="http://www.sublimetext.com/2">http://www.sublimetext.com/2</a></p>

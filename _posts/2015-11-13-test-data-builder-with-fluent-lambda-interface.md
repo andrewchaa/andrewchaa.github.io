@@ -1,9 +1,6 @@
 ---
 title: Test Data Builder with Fluent lambda interface
 date: 2015-11-13 11:19:21.000000000 +00:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags: []
@@ -16,12 +13,6 @@ meta:
   _publicize_done_2230353: '1'
   _wpas_done_1752093: '1'
   publicize_twitter_user: andrewchaa
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>With the builder pattern, you can create an object in a more flexible and explicit way. And C# lamdba syntax makes the fluent interface more succinct</p>
 <p>For example,</p>

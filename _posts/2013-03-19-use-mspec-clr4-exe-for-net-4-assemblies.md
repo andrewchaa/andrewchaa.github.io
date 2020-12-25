@@ -1,9 +1,6 @@
 ---
 title: Use mspec-clr4.exe for .NET 4 assemblies
 date: 2013-03-19 14:42:57.000000000 +00:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -16,12 +13,6 @@ meta:
   _publicize_done_external: a:1:{s:7:"twitter";a:1:{i:111615627;b:1;}}
   tagazine-media: a:7:{s:7:"primary";s:0:"";s:6:"images";a:0:{}s:6:"videos";a:0:{}s:11:"image_count";i:0;s:6:"author";s:7:"1907066";s:7:"blog_id";s:7:"1833431";s:9:"mod_stamp";s:19:"2013-03-19
     14:42:57";}
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>Otherwise, you get an error like</p>
 <blockquote><p>19/03/2013 14:31:39: An Error Occurred:<br />

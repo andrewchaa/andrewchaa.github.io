@@ -1,9 +1,6 @@
 ---
 title: Adding facebook login to my own website
 date: 2014-03-25 20:54:02.000000000 +00:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -18,12 +15,6 @@ meta:
   _publicize_done_external: a:1:{s:7:"twitter";a:1:{i:111615627;b:1;}}
   _oembed_ef79b9fcadd51ca2b9a0c5dd0782cc9e: "{{unknown}}"
   _oembed_8b4b39d71684948bb22241bf9cc0e1f5: "{{unknown}}"
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>The official document (<a href="https://developers.facebook.com/docs/facebook-login/login-flow-for-web">https://developers.facebook.com/docs/facebook-login/login-flow-for-web</a>) is the best tutorial. But when you follow it, there's a few things you have to take notice.</p>
 <p>First, you need to get your app id, if you don't have it. You can create an app by visiting app dashboard (<a href="https://developers.facebook.com/apps/">https://developers.facebook.com/apps/</a>). Fill all the details but make sure you set it to "Website" by clicking "+ Add Platform"</p>

@@ -1,9 +1,6 @@
 ---
 title: 요즘 근황 (2014. 11월)
 date: 2014-11-10 22:18:44.000000000 +00:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -21,12 +18,6 @@ meta:
   publicize_twitter_url: http://t.co/zSJfSe7XCu
   _wpas_done_1752093: '1'
   _publicize_done_external: a:1:{s:7:"twitter";a:1:{i:111615627;b:1;}}
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>며칠전에 Skype 채용 담당자로부터 메일이 왔다. Skype Web App 팀에서 사람을 구하고 있다고. 지금 회사인 Huddle도 마음에 들지만, <a href="http://theonion.egloos.com/">양파님의 블로그</a> 글을 읽다보니 웬지 Skype에 가볼까 하는 생각도 생긴다. 근데 웬지 마소는 좀 지는 해 같아서. 이번에 구조 조정도 엄청하던데, 괜히 갔다가 피보는 것 아닐까 싶기도.</p>
 <p>최근 Desktop 팀으로 옮겼다. 전에 있던 팀은 로그인 인증 (Authentication)과 Pipe and Filter를 이용한 파이프라인 시스템 관련하여 주로 작업하는 팀이었는데, 별다른 이유는 없고, 그냥 Desktop 개발을 한 번 해보고 싶었다. Windows와 Mac, Cross platform 개발을 하는 팀인데, C#, Mono, Webkit, javascript, CEX 등을 쓴다. 안 하던걸 하니 좀 재밌기도 하고, 새로운 사람들과 일하다 보니, 같은 회사인데도 상당히 다른 느낌이 들고 그래서 좋은 것 같다.</p>

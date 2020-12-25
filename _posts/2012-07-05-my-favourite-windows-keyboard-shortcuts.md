@@ -1,9 +1,6 @@
 ---
 title: My favourite keyboard shortcuts on windows-based applications
 date: 2012-07-05 11:03:03.000000000 +01:00
-type: post
-published: true
-status: publish
 categories: []
 tags:
 - shortcuts
@@ -12,12 +9,6 @@ meta:
   _wpas_done_twitter: '1'
   _wpas_skip_linkedin: '1'
   _wpas_skip_1752093: '1'
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <h3>Windows common</h3>
 <ul>

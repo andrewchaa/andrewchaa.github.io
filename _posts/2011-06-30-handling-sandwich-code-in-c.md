@@ -1,9 +1,6 @@
 ---
 title: Handling Sandwich Code in C#
 date: 2011-06-30 19:57:57.000000000 +01:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -13,12 +10,6 @@ tags:
 meta:
   _edit_last: '1907066'
   _wpas_done_twitter: '1'
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>What is "Sandwich Code"? I found it in <a href="http://rubykoans.com/">Ruby Koans</a>.</p>
 <p>Often, you have to do something at the beginning and at the end, even though your main lock is in the middle. Let's say, you want to retrieve data from database. You have to create a connection, open it, use it to load data, and close it. You are interested in loading data, but you have to do some chores like opening a connection and closing it.</p>

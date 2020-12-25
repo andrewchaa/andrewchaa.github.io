@@ -1,20 +1,11 @@
 ---
 title: 김창준님의 좀 더 나은 사회를 위한 몇 가지 방법 - 어쩌면 IT 기술을 사용해서
 date: 2009-03-01 10:38:38.000000000 +00:00
-type: post
-published: true
-status: publish
 categories: []
 tags:
 - 김창준
 meta:
   _edit_last: '1907066'
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>마침 김창준님의 블로그 RSS를 구독하던 터라 <a href="http://agile.egloos.com/4811209">김창준님의 presentation</a>을 보게 되었습니다. 많은 생각을 하게 하는 presentation이였습니다. 먼저 presentation zen을 언급하셨는데, 저역시 이책을 읽고 이에 따라 prensetation을 하려고 애쓰던 중이라 약간 뜨끔했습니다. 하지만 창준님이 가지고 나오신 한장 짜리 슬라이드는 동영상으로는 눈에 잘 안들어 오더군요. 역시 슬라이드에는 그림이나 사진이 들어가야 제맛인게 아닐까요?^^</p>
 <p>엥겔바르트와 Allan Kay. 개발자이지만 저도 잘 몰랐다는 사실이 좀 부끄럽습니다. 컴퓨터와 붓 (혹은 연필)이 같은 도구라는 그런 명언을 알란 케이가 했다니. 확 깨는, 생각이 전환되는 순가이었습니다. Kay가 말했던 것처럼 컴퓨터를 똑똑하게 하는 것보다 컴퓨터를 통해 사람이 똑똑해지는 것이 올바른 방향이요, 무궁무진한 가능성이 있는 방향이란 생각이 듭니다.</p>

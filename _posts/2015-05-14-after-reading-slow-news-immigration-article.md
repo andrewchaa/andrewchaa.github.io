@@ -1,9 +1,6 @@
 ---
 title: 이민, 새로운 기회와 도전
 date: 2015-05-14 15:57:14.000000000 +01:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -16,12 +13,6 @@ meta:
   publicize_twitter_url: http://t.co/UUqrKPbKUT
   _wpas_done_1752093: '1'
   _publicize_done_external: a:1:{s:7:"twitter";a:1:{i:111615627;b:1;}}
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p><a href="http://slownews.kr/15083">"당신의 미국 이민이 망하는 다섯 가지 이유"</a> 제목의 슬로우 뉴스 기사를 트위터를 통해 접하고는 잠깐 "광분" 했었다. 그럴꺼 까지는 없었는데. 문든 옛 생각이 났다. 대학원 가기 전, 준비를 위해 석사 1년차이던 선배에게 조언을 구했던 일이. 선배의 답변에 너무 놀랬었다. "야 넌 이길로 오지 마라. 사람이 할 짓이 아니다" 왜 그 선배는, 적어도 내가 보기에는, 석사 과정을 잘 하고 있었으면서도, 후배의 기를 팍 죽이는 말들을 내뱉었던걸까? 그후, 사회생활을 통해, 여러 부류의 사람들을 만나면서 좀 더 이해하게 되었다. 걔 중에는 자신이 가고 있는 길이 얼마나 힘들고 어려운지를 강조함으로써 자신을 높이려는 사람들이 있다는 것을.</p>
 <p>좀 흥분이 가라앉은 후, 곰곰히 생각해 봤다. 왜 내가 저 글을 싫어하는지.</p>

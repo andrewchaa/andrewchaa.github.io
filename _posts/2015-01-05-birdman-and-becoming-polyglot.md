@@ -1,9 +1,6 @@
 ---
 title: birdman and becoming polyglot
 date: 2015-01-05 23:18:59.000000000 +00:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -24,12 +21,6 @@ meta:
   _wpas_done_1752093: '1'
   _publicize_done_external: a:1:{s:7:"twitter";a:1:{i:111615627;b:1;}}
   _oembed_063a300d08a2018c77202055bd516339: "{{unknown}}"
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p><a href="http://en.wikipedia.org/wiki/Birdman_%28film%29">Birdman</a> is an American black comdy that features a faded Hollywood actor famous for his superhero role. While seeing the film, I kind of thought I have something in common with the character. He doesn't wanted to be labelled as Hollywood superhero junkie, but to be seen as an artist, a Broadway actor.</p>
 <p>I like the word, "polyglot programming". I'm fascinated by people who code in different language on cross-platforms. Though I mostly use C# and .NET framework on windows at work. I strive to be polyglot. Also I want to be seen as a polyglot developer, capable of using multiple sets of language. On <a href="https://www.linkedin.com/in/andrewchaa">my linkedin profile</a>, I proudly wrote that I've got skills of F#, javascript (includindg Node.js), Python, and Ruby. I consciously spend time to learn those languages. For my side projects, I use Node.js, express, and angular. I wrote a couple of simple android apps in Java. I spent quite bit of time learning ruby, went through Ruby Koans twice, and did one project in ruby and rails.</p>

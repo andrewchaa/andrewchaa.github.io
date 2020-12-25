@@ -1,9 +1,6 @@
 ---
 title: Disable browser cache for ajax request on ASP.NET MVC
 date: 2012-04-25 15:14:34.000000000 +01:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -19,12 +16,6 @@ meta:
   _wpas_done_linkedin: '1'
   publicize_results: a:1:{s:7:"twitter";a:1:{i:111615627;a:2:{s:7:"user_id";s:10:"andrewchaa";s:7:"post_id";s:18:"195168936009019392";}}}
   _wpas_done_twitter: '1'
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>The application reloads the list of jobs, if any job is reposted or expired. We display different labels, such as "reposted", "expired", depending on the action. It worked well with browsers but IE 8.</p>
 <p>Simply, IE was cacheing the part of html. Though we request the partial view by post.</p>

@@ -2,9 +2,6 @@
 title: making bootable usb with ms-dos or ubuntu linux to check hard drive failure
   on the laptop
 date: 2012-08-14 13:20:15.000000000 +01:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -15,12 +12,6 @@ meta:
   _edit_last: '1907066'
   _wpas_skip_twitter: '1'
   _wpas_skip_linkedin: '1'
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>Quite descriptive title.</p>
 <p>My friend had a laptop failure. It has windows 7 installed, but it didn't boot. I tried to boot in safe mode, but it still failed. It stops at reading "ati..." file.<br />

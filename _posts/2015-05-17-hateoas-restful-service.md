@@ -4,15 +4,6 @@ categories: [programming]
 tags: [api, rest]
 description: Sample placeholder post.
 date: 2015-05-17 10:25:28.000000000 +01:00
-type: post
-published: true
-status: publish
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>HATEOAS stands for Hypermedia as the Engine of Application State. It's a concept I encountered about 5 years ago, in an after work technical talk that was held in the old ThoughtWorks London office near Holborn.</p>
 <p>HATEOAS is one of REST application architecture constraints that a client should interacts with a network application entirely through <a title="Hypermedia" href="http://en.wikipedia.org/wiki/Hypermedia">hypermedia</a> provided dynamically by application servers.</p>

@@ -1,18 +1,8 @@
 ---
 title: self-signed SSL certificate
 date: 2007-10-23 12:13:36.000000000 +01:00
-type: post
-published: true
-status: publish
 categories: []
 tags: []
-meta: {}
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>Safari를 테스트하면서, 작업용 PC에 SSL certificate를 새로 설치해야 하는 경우가 생겼다. 이 Safari 브라우저란 놈이 기존의 certificate은 아예 인정도 안해주고, 페이지를 열수 없다고 자빠지는게 아닌가? 잠깐 구글 형님을 이용해 보니, 좋은 참고자료가 있다.</p>
 <ul>

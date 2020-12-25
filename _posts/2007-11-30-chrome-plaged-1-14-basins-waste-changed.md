@@ -1,18 +1,8 @@
 ---
 title: Chrome Plaged 1 1/4" Basins Waste Changed
 date: 2007-11-30 18:06:15.000000000 +00:00
-type: post
-published: true
-status: publish
 categories: []
 tags: []
-meta: {}
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>음 사실 이 post는 안까먹을려고 적는 거다. 전 목사님 말씀하셨듯이, 막 일을 끝내고 아직 insight가 사라지지 않았을 때 적어놔야 놓치지 않는다. <a href="http://en.wikipedia.org/wiki/Owl_of_Minerva">An owl of Minerva spreads its wings only with the falling of the dusk.</a></p>
 <ol>

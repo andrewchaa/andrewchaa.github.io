@@ -1,9 +1,6 @@
 ---
 title: Customising Mac's terminal prompt
 date: 2013-10-25 21:56:46.000000000 +01:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -16,12 +13,6 @@ meta:
   _publicize_done_external: a:1:{s:7:"twitter";a:1:{i:111615627;b:1;}}
   _edit_last: '1907066'
   _wpas_skip_1752093: '1'
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>You can <a href="http://lifehacker.com/202042/ask-lifehacker--how-do-i-customize-my-command-line-prompt">colourise it</a>, if you want.</p>
 <p>Open .bash_profile in your editor (I used sublime)</p>

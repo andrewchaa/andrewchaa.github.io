@@ -1,9 +1,6 @@
 ---
 title: NuGet basics
 date: 2012-08-21 10:27:05.000000000 +01:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -15,12 +12,6 @@ meta:
     17:46:40";}
   _wpas_skip_linkedin: '1'
   _wpas_skip_twitter: '1'
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>The definitive documentation is <a href="http://docs.nuget.org/">nuget.org</a>.<br />
 If you are a console person and don't like nody UI stuff, you can <a href="http://docs.nuget.org/docs/start-here/Using-the-Package-Manager-Console">use the Package Manager Console</a>.</p>

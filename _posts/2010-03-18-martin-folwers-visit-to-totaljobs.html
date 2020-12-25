@@ -1,19 +1,10 @@
 ---
 title: Martin Fowler's visit to Totaljobs
 date: 2010-03-18 15:37:42.000000000 +00:00
-type: post
-published: true
-status: publish
 categories: []
 tags: []
 meta:
   _edit_last: '1907066'
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>Yes. He was here, in the office in Holborn. Many of us, mere IT geeks, pulled mobiles to take a photo. He gave us two presentations, which were very insightful.</p>
 <ul>

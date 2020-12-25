@@ -1,20 +1,11 @@
 ---
 title: Create a random strong password
 date: 2008-10-23 15:33:31.000000000 +01:00
-type: post
-published: true
-status: publish
 categories: []
 tags:
 - c# programming
 meta:
   _edit_last: '1907066'
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>This is to create a random strong password. I don't want to make it too strong, for example password with special character. 1 number and 1 upper case will be sufficient.</p>
 <p>There are a few good articles. I get the idea from these posts.</p>

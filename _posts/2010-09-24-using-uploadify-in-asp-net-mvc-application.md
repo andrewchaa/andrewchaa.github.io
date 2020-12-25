@@ -1,20 +1,11 @@
 ---
 title: Using uploadify in ASP.Net MVC application
 date: 2010-09-24 11:55:44.000000000 +01:00
-type: post
-published: true
-status: publish
 categories: []
 tags: []
 meta:
   _edit_last: '1907066'
   _wp_old_slug: ''
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p><a href="http://www.dropbox.com">Dropbox</a> is getting more and more popular. I use it on my desktop, laptop, iphone, and ipad. Once I went to a post office to post a document, and realised that I don't know the address. I had my iphone with me, so used Dropbox to get the address. It was so useful, and ever since, I became a fan of Dropbox.</p>
 <p>Anyway, Dropbox has nice Flash-based upload functionality, and I wanted to mimic the feature in my asp.net application. <a href="http://krystalware.com/Products/SlickUpload/">SlickUpload</a> is a very good component, but commercial. I googled and came across <a href="http://www.uploadify.com/">uploadify</a>.</p>

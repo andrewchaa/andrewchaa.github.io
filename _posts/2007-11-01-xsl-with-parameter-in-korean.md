@@ -1,18 +1,8 @@
 ---
 title: XSL with parameter (in korean)
 date: 2007-11-01 09:06:07.000000000 +00:00
-type: post
-published: true
-status: publish
 categories: []
 tags: []
-meta: {}
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>맡은 일 중에 하나가 XSL에 param을 넣어서 처리하는 것인데, XSL에 대해서 아는 거는, 그냥 XML에 있는 값들을 사이 사이에 집어넣는 거라서 좀 쪽팔렸다. 이미 족은 팔렸고 열심히 공부해서 일을 해내야지. 아자! 열심히 해보자.</p>
 <p>Reference</p>

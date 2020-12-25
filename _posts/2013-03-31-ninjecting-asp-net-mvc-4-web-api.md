@@ -1,9 +1,6 @@
 ---
 title: Ninjecting ASP.NET MVC 4 Web Api
 date: 2013-03-31 19:26:48.000000000 +01:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -18,12 +15,6 @@ meta:
   tagazine-media: a:7:{s:7:"primary";s:0:"";s:6:"images";a:0:{}s:6:"videos";a:0:{}s:11:"image_count";i:0;s:6:"author";s:7:"1907066";s:7:"blog_id";s:7:"1833431";s:9:"mod_stamp";s:19:"2013-03-31
     19:34:00";}
   _wpas_skip_1752093: '1'
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>Injecting dependencies into ASP.NET MVC controllers is straightforward with Ninject. Just install Ninject and Ninject.MVC3 via nuget. It will create a file "NinjectWebCommon.cs" under App_Start folder. And you add your service bindings in RegisterServices method like this.</p>
 <p>[sourcecode language="csharp"]<br />

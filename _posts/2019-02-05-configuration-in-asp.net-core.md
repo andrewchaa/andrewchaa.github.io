@@ -1,14 +1,8 @@
 ---
 title: Configuration in ASP.NET Core
 date: 2019-02-05
-type: post
 categories: [programming]
 tags: WILT
-meta: {}
-author:
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 
 When you create stateless service fabric asp.net core api, [the template doesn't add configuration builder by default.](https://marcinjuraszek.com/2018/10/asp-net-core-configuration-when-running-as-service-fabric-service.html)

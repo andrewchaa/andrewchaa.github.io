@@ -1,9 +1,6 @@
 ---
 title: display currently running application pools with appcmd list wp
 date: 2013-04-08 14:25:08.000000000 +01:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -17,12 +14,6 @@ meta:
     14:25:08";}
   publicize_twitter_user: andrewchaa
   _wpas_done_1752093: '1'
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>When you try to debug your website locally, often Visual Studio shows more than one w3p.exe processes, if you run multiple application pools. Attaching to all of them is a bit annoying.</p>
 <p><a href="http://simplelifeuk.files.wordpress.com/2013/04/vsprocesses1.jpg"><img class="aligncenter size-full wp-image-1507" alt="vsprocesses" src="{{ site.baseurl }}/assets/vsprocesses1.jpg" width="640" height="431" /></a></p>

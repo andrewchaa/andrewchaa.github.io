@@ -1,19 +1,10 @@
 ---
 title: nested using staments
 date: 2008-11-06 16:44:37.000000000 +00:00
-type: post
-published: true
-status: publish
 categories: []
 tags: []
 meta:
   _edit_last: '1907066'
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>I love using statement for database access. It closes the connection automatically when all the codes within the using statment are executed. Recently I had to nest using staments for the project I was working on, and there were guys who thought it wasn't elegant. The arguments were, first, they doubted if nesting using actually work. Second, it did not conform to the standard.</p>
 <p>[sourcecode language='xml']<br />

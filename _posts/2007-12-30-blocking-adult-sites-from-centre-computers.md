@@ -1,18 +1,8 @@
 ---
 title: blocking adult sites from centre computers
 date: 2007-12-30 12:43:54.000000000 +00:00
-type: post
-published: true
-status: publish
 categories: []
 tags: []
-meta: {}
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>먼저 공짜로 쓸 수 있는 좋은 DNS서버가 있지롱. 바로 <a href="http://www.opendns.com/">OpenDNS</a> 그러면 이상한 사이트들은 DNS 변환이 안되어 막아지게 된다.</p>
 <ul>

@@ -1,9 +1,6 @@
 ---
 title: Visual Studio 2010 Command Prompt Here On the Context Menu of Windows Explorer
 date: 2012-02-18 22:08:31.000000000 +00:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -28,12 +25,6 @@ meta:
   _oembed_9f16273e37f19aedf48251725baa5b08: "{{unknown}}"
   _oembed_21869b2b4694b1f265f30794afacfcb1: "{{unknown}}"
   _oembed_69480ec41188b2ba0662ae2ff180b7a8: "{{unknown}}"
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>You use keyboards and command line more and more, as you get more experienced with the tools in development. If you install git on windows, it creates "Git bash here" context menu on Windows Explorer. It is really handy, and I like it. I believe Visual Studio installation should do the same.</p>
 <p>Well, it doesn't, but you can create it, if you want, with the little manipulation of windows registry.</p>

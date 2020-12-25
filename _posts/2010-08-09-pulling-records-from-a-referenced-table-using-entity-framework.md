@@ -1,9 +1,6 @@
 ---
 title: Pulling records from a referenced table using Entity Framework
 date: 2010-08-09 10:24:23.000000000 +01:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -12,12 +9,6 @@ meta:
   _edit_last: '1907066'
   _wp_old_slug: ''
   _oembed_1cc5426a2ff0aed8d4ee1408a79a65b1: "{{unknown}}"
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>Strangely, most of Entity Framework examples are for just one table. In real world, it is very rare, unless you use some document database. Often you get a result set from a database which joins two or three tables.</p>
 <p>There is one example of how to use navigation property.</p>

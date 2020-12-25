@@ -1,9 +1,6 @@
 ---
 title: Add paypal buy now button on the web site - draft
 date: 2012-10-10 12:24:33.000000000 +01:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -15,12 +12,6 @@ meta:
   _publicize_done_external: a:1:{s:7:"twitter";a:1:{i:111615627;b:1;}}
   tagazine-media: a:7:{s:7:"primary";s:0:"";s:6:"images";a:0:{}s:6:"videos";a:0:{}s:11:"image_count";i:0;s:6:"author";s:7:"1907066";s:7:"blog_id";s:7:"1833431";s:9:"mod_stamp";s:19:"2012-10-13
     11:51:00";}
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>I'm working on <a href="http://www.sushiwa.co.uk/">the website of a restaurant</a> that Sue's friend owns. Recently, her friend wanted to add online order feature, and her preferred payment method was PayPal. </p>
 <p>Though I'm a web developer with quite diverse experience, I haven't done it. I mostly worked on large scale web sites, and PayPal was never an considered option there. It's kind of fun and refreshing to work on small scale website where I have to look after the whole aspects, not just small part of big thing. </p>

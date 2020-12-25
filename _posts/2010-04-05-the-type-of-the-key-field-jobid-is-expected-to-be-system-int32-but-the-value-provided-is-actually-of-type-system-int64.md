@@ -2,19 +2,10 @@
 title: The type of the key field 'JobId' is expected to be 'System.Int32', but the
   value provided is actually of type 'System.Int64'.
 date: 2010-04-05 10:49:13.000000000 +01:00
-type: post
-published: true
-status: publish
 categories: []
 tags: []
 meta:
   _edit_last: '1907066'
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>It's a Easter Monday, very quiet everywhere. I have been working with Sqlite and had an weird error. When I try to update a record in sqlite, using Entity Framework, it complains that the type of primary key id is system.int64.</p>
 <p>My code is below</p>

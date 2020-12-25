@@ -1,19 +1,10 @@
 ---
 title: Writing text stream in VB6
 date: 2007-10-15 09:39:11.000000000 +01:00
-type: post
-published: true
-status: publish
 categories: []
 tags: []
 meta:
   _edit_last: '1907066'
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>I had rather unusual experience of writing VB6 code in 2007. I had to support one of old applications, written probably around 2001. It is to write XML file into text stream. The codes are like the followings.</p>
 <p>[sourcecode language='vb']</p>

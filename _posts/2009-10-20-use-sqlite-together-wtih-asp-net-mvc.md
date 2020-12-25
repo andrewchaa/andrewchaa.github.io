@@ -1,9 +1,6 @@
 ---
 title: Use Sqlite together wtih ASP.Net MVC
 date: 2009-10-20 15:34:25.000000000 +01:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -16,12 +13,6 @@ meta:
   _oembed_e0e76ad76ed95e68e14dcb3558c341c1: "{{unknown}}"
   _oembed_982f5f5100d4fc8d0878b710ec65cf35: "{{unknown}}"
   _oembed_2298da252bf8a52511836c302a186673: "{{unknown}}"
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>Visual Studio 2008 integrates Sql server 2008 express nicely into App_Data folder. You just create the database using Server Explorer, and it inserts the connection string into web.config for you. I used it when I worked on my toy project - ToastManager. I finished coding and testing on my machine and deployed it to an integration server which belongs to my SCRUM team.</p>
 <p>A problem, as usual, arose on the integration box. My windows login had sysadmin access to my local Sql Server express, but the process that runs ToastManager did not on the box.</p>

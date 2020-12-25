@@ -1,9 +1,6 @@
 ---
 title: Update a column with Case statement
 date: 2013-02-22 10:56:08.000000000 +00:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -16,12 +13,6 @@ meta:
   publicize_twitter_user: andrewchaa
   _wpas_done_1752093: '1'
   _publicize_done_external: a:1:{s:7:"twitter";a:1:{i:111615627;b:1;}}
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>It's handy syntax. just a reminder for myself, as I don't use sql often.</p>
 <p>[sourcecode language="sql"]<br />

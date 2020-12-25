@@ -1,9 +1,6 @@
 ---
 title: windows batch file tips
 date: 2012-07-17 16:23:14.000000000 +01:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -17,12 +14,6 @@ meta:
   _wpas_skip_linkedin: '1'
   _oembed_ed38b06a23cd87a496e36bb2931132d6: "{{unknown}}"
   _oembed_1d27a53c87830c40396dff812e928d25: "{{unknown}}"
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <h3>using batch parameter</h3>
 <ul>

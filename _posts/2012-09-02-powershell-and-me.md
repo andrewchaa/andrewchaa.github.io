@@ -1,9 +1,6 @@
 ---
 title: Powershell and me
 date: 2012-09-02 16:11:20.000000000 +01:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -20,12 +17,6 @@ meta:
     video/asf
   _oembed_214e28c5c1d4d948e4e1f22be4fd7040: "{{unknown}}"
   _oembed_d361aedfe06ff42ed524b5d4f4d3ff26: "{{unknown}}"
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>It's an interesting scripting language. Well, scripting has been for a long time in *nix systems, and I feel it's quite late that Windows catch up now. But still it's better than nothing, and I appreciate Microsoft for it. MS seems to be losing it's power to be blamed for it's evil or laziness in this post-pc era, anyway. </p>
 <h3>Learning Powershell</h3>

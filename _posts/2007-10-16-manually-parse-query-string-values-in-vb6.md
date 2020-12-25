@@ -1,19 +1,10 @@
 ---
 title: Manually parse query string values in VB6
 date: 2007-10-16 10:43:53.000000000 +01:00
-type: post
-published: true
-status: publish
 categories: []
 tags: []
 meta:
   _edit_last: '1907066'
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p><!-- code formatted by http://manoli.net/csharpformat/ --></p>
 <pre>

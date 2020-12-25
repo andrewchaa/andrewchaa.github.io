@@ -1,9 +1,6 @@
 ---
 title: What I learned while updating my church website
 date: 2012-06-04 20:02:48.000000000 +01:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -42,12 +39,6 @@ meta:
   _oembed_ae2917f281c28184b9bcece45de90776: "{{unknown}}"
   _oembed_bb485c935e5a0c4acff5bf651db3b711: "{{unknown}}"
   _oembed_0c5e1d8191159d9492cfac751fd1b898: "{{unknown}}"
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>Working on a person project is lots of fun. You have a whole control over your project, what to do, how to do, and when to do. Also, it gives an opportunity to learn things to a deeper level. Last 3 months, I was learning ruby on rails, following ruby koans and rails book. Honestly, it is not much of a fun just to follow examples on the book, as you just type the code for the sake of practice, not to build anything relevant and meaningful to you.</p>
 <p>Anyway, I am happy that I am back to my personal project and actually building something important to me. This post is about what I would learn in the journey - well this sounds like I'm doing something very important, but it's actually my hobby project. </p>

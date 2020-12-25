@@ -1,18 +1,8 @@
 ---
 title: CPU와 Graphic Card, 뭘 살까?
 date: 2007-10-11 05:46:10.000000000 +01:00
-type: post
-published: true
-status: publish
 categories: []
 tags: []
-meta: {}
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 
 <ul>

@@ -1,9 +1,6 @@
 ---
 title: Webdriver tips
 date: 2012-09-20 10:01:28.000000000 +01:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -15,12 +12,6 @@ meta:
   _wp_old_slug: webdriver-basics
   _wpas_skip_twitter: '1'
   _wpas_skip_linkedin: '1'
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p><a href="http://code.google.com/p/selenium/">Webdriver</a> is still a useful testing framework, thought <a href="http://phantomjs.org/">phantom.js</a> may be a better fit for javascript-intensive for SPA(Single Page Application).</p>
 <p>The below are a few usages I encounter often.</p>

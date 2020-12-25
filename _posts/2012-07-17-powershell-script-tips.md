@@ -1,9 +1,6 @@
 ---
 title: Powershell script tips
 date: 2012-07-17 16:41:28.000000000 +01:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -17,12 +14,6 @@ meta:
     17:03:58";}
   _oembed_7bb3a350182bc5b6ad4cd8a8f8bc4f1b: "{{unknown}}"
   _oembed_9e23ccebe8aefd766bf0442267a82d50: "{{unknown}}"
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <h3>Write to a file</h3>
 <p>Use Set-Content and Add-Content</p>

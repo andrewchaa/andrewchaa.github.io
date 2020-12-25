@@ -1,18 +1,8 @@
 ---
 title: Monitoring COM+ Statistics
 date: 2007-10-08 16:00:39.000000000 +01:00
-type: post
-published: true
-status: publish
 categories: []
 tags: []
-meta: {}
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>There is a good MSDN page for this</p>
 <ul>

@@ -1,9 +1,6 @@
 ---
 title: IDataReader's GetInt32() and GetOrdinal(), and performance
 date: 2012-11-23 17:06:01.000000000 +00:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -19,12 +16,6 @@ meta:
   _publicize_done_external: a:1:{s:7:"twitter";a:1:{i:111615627;b:1;}}
   _oembed_b5db2d1aa9733f9137f47f1a56976c72: "{{unknown}}"
   _oembed_53ece208be385f769f78eb10cbb0f8fc: "{{unknown}}"
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>Yesterday, I came across a code that simply pulls data with DataReader. These days, you would usually use NHibernate, Entity Framework, or whatever you like to access data. They hide away unnecessary details from you and you can enjoy easy access to your data, instantly and conveniently. </p>
 <p>This is what I found.</p>

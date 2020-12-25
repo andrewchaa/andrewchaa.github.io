@@ -1,9 +1,6 @@
 ---
 title: False alarm from bots
 date: 2016-06-23 14:15:58.000000000 +01:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags: []
@@ -23,12 +20,6 @@ meta:
   publicize_linkedin_url: https://www.linkedin.com/updates?discuss=&scope=30731027&stype=M&topic=6151749459823910913&type=U&a=730m
   _publicize_done_14908853: '1'
   _wpas_done_14793711: '1'
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>I'm on call this week, and whenever there's alert, it comes to my mobile. I've had Error rate &gt; 5% alert from <a href="https://www.pagerduty.com/">PagerDuty</a> the other day. I've acknowledged the alert, (otherwise it keeps sending me the alerts) and investigated it.</p>
 <blockquote><p>A public action method 'Login' was not found on controller 'xxxxWeb.Controllers.HomeController'</p></blockquote>

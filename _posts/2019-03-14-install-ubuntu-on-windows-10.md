@@ -1,16 +1,10 @@
 ---
-published: true
 title: Installing Ubuntu on Windows 10
 date: 2019-03-01T00:00:00.000Z
 comments: true
 categories:
   - programming
 tags: WILT
-meta: {}
-author:
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 
 It's really nice that I can use linux shell on windows. One of big part of me using MacBook was to have linux / unix-like shell and development environment.

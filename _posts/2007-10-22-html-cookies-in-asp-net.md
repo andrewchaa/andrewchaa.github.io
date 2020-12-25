@@ -1,18 +1,8 @@
 ---
 title: cookie에 관하여 (in asp.net terms)
 date: 2007-10-22 11:17:54.000000000 +01:00
-type: post
-published: true
-status: publish
 categories: []
 tags: []
-meta: {}
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>cookier 쓰기</p>
 <pre>

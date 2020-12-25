@@ -1,18 +1,8 @@
 ---
 title: Script to download and build the latest codes from TFS
 date: 2008-09-02 10:19:14.000000000 +01:00
-type: post
-published: true
-status: publish
 categories: []
 tags: []
-meta: {}
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 </p>
 <pre class="csharpcode"><span class="kwrd"></span>@<span class="kwrd"></span>c<span class="kwrd"></span>l<span class="kwrd"></span>s<span class="kwrd"></span>

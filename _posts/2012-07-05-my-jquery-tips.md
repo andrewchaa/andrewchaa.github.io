@@ -1,9 +1,6 @@
 ---
 title: my jQuery tips
 date: 2012-07-05 12:38:01.000000000 +01:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -14,12 +11,6 @@ meta:
     12:38:01";}
   _wpas_skip_twitter: '1'
   _wpas_skip_linkedin: '1'
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>A collection of jQuery examples and tips</p>
 <h3>adding background image to an element</h3>

@@ -1,9 +1,6 @@
 ---
 title: Indexing CreatedDate
 date: 2012-11-19 16:46:31.000000000 +00:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -15,12 +12,6 @@ meta:
   _publicize_done_external: a:1:{s:7:"twitter";a:1:{i:111615627;b:1;}}
   tagazine-media: a:7:{s:7:"primary";s:67:"http://simplelifeuk.files.wordpress.com/2012/11/execution_stats.png";s:6:"images";a:1:{s:67:"http://simplelifeuk.files.wordpress.com/2012/11/execution_stats.png";a:6:{s:8:"file_url";s:67:"http://simplelifeuk.files.wordpress.com/2012/11/execution_stats.png";s:5:"width";i:671;s:6:"height";i:430;s:4:"type";s:5:"image";s:4:"area";i:288530;s:9:"file_path";b:0;}}s:6:"videos";a:0:{}s:11:"image_count";i:1;s:6:"author";s:7:"1907066";s:7:"blog_id";s:7:"1833431";s:9:"mod_stamp";s:19:"2012-11-19
     16:46:31";}
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>Indexing columns is a joy and adventure.<br />
 I have just indexed a datetime column to boost performance. The query had a date range, and the column didn't have index yet.</p>

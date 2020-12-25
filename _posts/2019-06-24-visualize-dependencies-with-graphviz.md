@@ -1,15 +1,9 @@
 ---
-published: true
 title: Visualize your dependeicnes with graphviz
 date: 2019-06-24T00:00:00.000Z
 comments: true
 categories: [tools]
 tags: WILT, tools
-meta: {}
-author:
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 
 [Graphviz](https://dreampuf.github.io/GraphvizOnline/) use simple markdown-like syntax to draw complex graphs. Initially I tried mermaid but it was more for flowchart, where things flow in one way. Graphviz was able to express complex web of objects much better.

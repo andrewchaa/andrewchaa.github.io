@@ -1,18 +1,8 @@
 ---
 title: Regular expression to check password strength
 date: 2008-08-11 14:51:40.000000000 +01:00
-type: post
-published: true
-status: publish
 categories: []
 tags: []
-meta: {}
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>The requirement was to enforce a strong password which consists of </p>
 <p><font color="#0000ff">at least one number or space, and one upper case letter.</font></p>

@@ -1,18 +1,8 @@
 ---
 title: Using Command Line Arguments in VB6 debugging
 date: 2008-08-06 15:42:11.000000000 +01:00
-type: post
-published: true
-status: publish
 categories: []
 tags: []
-meta: {}
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 </p>
 <p>VB6 had a powerful debugging support. Most of debugging is done within IDE, but there are some cases, you may find it hard to test within IDE. For example, command line utility accepts arguments, well at least I did. You can by specifying command line arguments on the project property. </p>

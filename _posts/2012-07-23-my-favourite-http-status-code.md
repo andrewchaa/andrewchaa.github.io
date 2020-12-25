@@ -1,9 +1,6 @@
 ---
 title: my favourite (?) HTTP status codes
 date: 2012-07-23 13:21:42.000000000 +01:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -14,12 +11,6 @@ meta:
     13:21:42";}
   _wpas_skip_twitter: '1'
   _wpas_skip_linkedin: '1'
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>Sourced from </p>
 <ul>

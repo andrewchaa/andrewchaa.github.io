@@ -1,9 +1,6 @@
 ---
 title: MS Build - Publish to FileSystem
 date: 2013-05-04 12:47:57.000000000 +01:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -18,12 +15,6 @@ meta:
   _publicize_done_external: a:1:{s:7:"twitter";a:1:{i:111615627;b:1;}}
   tagazine-media: a:7:{s:7:"primary";s:0:"";s:6:"images";a:0:{}s:6:"videos";a:0:{}s:11:"image_count";i:0;s:6:"author";s:7:"1907066";s:7:"blog_id";s:7:"1833431";s:9:"mod_stamp";s:19:"2013-05-04
     12:47:57";}
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>I'm working for a simple project and wanted to deploy it to the webserver in my church. I installed <a href="http://www.jetbrains.com/teamcity/">TeamCity</a> and set it up to pull the source code from github and build it.</p>
 <p>The challenge was, unexpectedly, publish. Initially, I used MS Web Deploy. For some reason I couldn't figure out, it didn't work. Also, I had to install an extra service. So I went for a simple msbuild file system deploy.</p>

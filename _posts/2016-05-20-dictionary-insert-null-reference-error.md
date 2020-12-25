@@ -1,9 +1,6 @@
 ---
 title: Dictionary.Insert Null reference error
 date: 2016-05-20 10:05:40.000000000 +01:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -19,12 +16,6 @@ meta:
   _publicize_done_2230353: '1'
   _wpas_done_1752093: '1'
   publicize_twitter_user: andrewchaa
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>최근에 OAuth를 이용한 로그인 시스템을 구현하면서 login client를 NuGet Package로 만들었었다. 다른 개발자들이 쉽게 로그인 기능을 이용할 수 있도록. 그런데 자꾸만 acquired token을 저장하는 static Dicionary에서 Null Reference error가 나는게 아닌가. Dictionary.Insert에서...<br />
 Dictionary.Get에서 나면 몰라도 Insert에서 Null error가 나서 쫌 구글해보니, StackOverflow의 어느 고수께서 이미 답변. Threading 이슈라고.<br />

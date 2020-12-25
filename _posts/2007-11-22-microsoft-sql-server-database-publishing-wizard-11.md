@@ -1,19 +1,10 @@
 ---
 title: Microsoft SQL Server Database Publishing Wizard 1.1
 date: 2007-11-22 15:59:54.000000000 +00:00
-type: post
-published: true
-status: publish
 categories: []
 tags: []
 meta:
   _edit_last: '1907066'
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>웹사이트를 주기적으로 deploy 할때, 정말 요긴할 것 같은 tool.  아직 한번도 안써봐서 잘 모르겠지만, 한번 꼭 써봐야지.  앞으로 매주 월요일에 SMS를 deploy 해야 하는데.</p>
 <ul>

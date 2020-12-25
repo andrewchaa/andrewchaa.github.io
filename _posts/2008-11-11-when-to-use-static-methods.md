@@ -1,21 +1,12 @@
 ---
 title: When to use static methods?
 date: 2008-11-11 15:13:40.000000000 +00:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
 - c# programming
 meta:
   _edit_last: '1907066'
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>This is a question that hanuts me since I installed Resharper recently. Resharper keeps suggesting that the method can be static. I can see that it can be static. The method does not depend on any properties or methods of the class. But does that mean it should change to static?</p>
 <p>I wasn't sure, so I asked google. Often, I think google is like a wizard or rabbi. I ask a question, and it answers. Anyway, there were people who were curios and thought about it.</p>

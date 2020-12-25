@@ -1,9 +1,6 @@
 ---
 title: jQuery basics
 date: 2012-05-17 15:55:30.000000000 +01:00
-type: post
-published: true
-status: publish
 categories: []
 tags:
 - basics
@@ -17,12 +14,6 @@ meta:
     width="640" height="352" frameborder="0" webkitAllowFullScreen mozallowfullscreen
     allowFullScreen></iframe></div>
   _oembed_597716efcee86a40b688cbb56e52a3e5: "{{unknown}}"
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>This is the summary of "Fundamentals of Great jQuery Development", which is available at <a href="http://vimeo.com/18511621">http://vimeo.com/18511621</a>.</p>
 <p>javascript is a functional language, not in a useful way, but because it treats function as its first-class citizen. It is also Object-oriented language, as it treats everything as object.</p>

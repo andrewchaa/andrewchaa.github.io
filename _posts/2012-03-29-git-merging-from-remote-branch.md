@@ -1,9 +1,6 @@
 ---
 title: Git, Merging from Remote Branch
 date: 2012-03-29 08:37:18.000000000 +01:00
-type: post
-published: true
-status: publish
 categories: []
 tags:
 - git
@@ -13,12 +10,6 @@ meta:
   _wpas_done_linkedin: '1'
   publicize_results: a:1:{s:7:"twitter";a:1:{i:111615627;a:2:{s:7:"user_id";s:10:"andrewchaa";s:7:"post_id";s:18:"185284488253800448";}}}
   _wpas_done_twitter: '1'
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>I did this on Bash on Windows 7 (64bit) against my github account.</p>
 <p>I tried to push my change to github, and found it's not possible.</p>

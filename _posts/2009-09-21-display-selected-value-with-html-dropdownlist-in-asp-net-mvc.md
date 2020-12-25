@@ -1,21 +1,12 @@
 ---
 title: Display Selected value with Html.DropDownList in ASP.Net MVC
 date: 2009-09-21 17:15:49.000000000 +01:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
 - ASP.Net MVC
 meta:
   _edit_last: '1907066'
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>I wrote ToastManager about two months ago, and not try to covert it into ASP.Net. What ToastManager does is to collect people's toast order for the morning toast run.</p>
 <p>Why? I just think MVC is cool. It separate programming logic into 3 different layers nicely.</p>

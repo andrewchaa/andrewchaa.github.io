@@ -1,9 +1,6 @@
 ---
 title: Reading Kent Beck's "Test-Driven Development By Example"
 date: 2012-07-31 15:53:51.000000000 +01:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -18,12 +15,6 @@ meta:
   _oembed_7412f5051eb3269f37ae5b2b7e248939: "{{unknown}}"
   _oembed_386945b1485452fac715e9a77c882f48: "{{unknown}}"
   _oembed_c671a74a2429ef30b3157a9b497839e3: "{{unknown}}"
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>This is my third time read. When I read it first time, I didn't know much of TDD and wanted to grasp its concept. Now, it's been several years since I learned and practised TDD. TDD is the part of development culture and mandatory pactices. I am thrilled what this book can give me this time. I hope I would catch everything I missed years ago.</p>
 <h3>"Clean code that works"</h3>

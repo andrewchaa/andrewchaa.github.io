@@ -1,9 +1,6 @@
 ---
 title: Keeping site root url clean without query string
 date: 2009-04-02 10:30:34.000000000 +01:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -11,12 +8,6 @@ tags:
 - reflection
 meta:
   _edit_last: '1907066'
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>References</p>
 <ul>

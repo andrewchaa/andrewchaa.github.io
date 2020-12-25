@@ -1,9 +1,6 @@
 ---
 title: Regular expression tips
 date: 2009-01-30 15:11:08.000000000 +00:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -14,12 +11,6 @@ meta:
   _wp_old_slug: handy-regular-expression-list
   _wpas_skip_twitter: '1'
   _wpas_skip_linkedin: '1'
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>There are several regular expression I use more often than I thought. This will be a comprehensive list of those expressions.</p>
 <h3>Get file extension</h3>

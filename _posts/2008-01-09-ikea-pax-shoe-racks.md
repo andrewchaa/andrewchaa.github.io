@@ -1,18 +1,8 @@
 ---
 title: IKEA에서 PAX로 신발장 만들기
 date: 2008-01-09 22:21:59.000000000 +00:00
-type: post
-published: true
-status: publish
 categories: []
 tags: []
-meta: {}
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>영국에서 살다 보니 IKEA를 많이 이용하게 된다. 의외로 괜찮은 물건들이 꽤 싸다. 쓸만하고.</p>
 <p>이번에는 PAX wardrobe 시리즈로 신발장을 만들어보려고 한다. 사실 내가 이런 거 만드는 거 좋아하거든.</p>

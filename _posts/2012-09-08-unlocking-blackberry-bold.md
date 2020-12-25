@@ -1,9 +1,6 @@
 ---
 title: Unlocking Blackberry bold
 date: 2012-09-08 14:00:32.000000000 +01:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -14,12 +11,6 @@ meta:
     14:01:46";}
   _wpas_skip_twitter: '1'
   _wpas_skip_linkedin: '1'
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>It seems Blackberry is the coolest phone among secondary school kids. My daughter has longed for it for long time, and finally got it from my wife's friend. </p>
 <p>Anyway, I had to unlock the phone, as it is locked to Orange network. I googled a little bit, and there are so many people who demands 10 or 20 pounds to send the unlock key. Well, as a man with the identity of hacker, I couldn't stand it, so googled a bit more.</p>

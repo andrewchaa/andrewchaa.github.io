@@ -4,11 +4,6 @@ date: 2019-02-12
 comments: true
 categories: [programming]
 tags: WILT
-meta: {}
-author:
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 
 In C#, you use bang (!) to negate a boolean expression. Unfortunately, not in F#. it's ["not"](https://stackoverflow.com/questions/239888/logical-negation-operator-in-f-equivalent)

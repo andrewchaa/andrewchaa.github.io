@@ -1,9 +1,6 @@
 ---
 title: list of javascript quirks
 date: 2012-07-25 14:19:30.000000000 +01:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -14,12 +11,6 @@ meta:
     14:19:30";}
   _oembed_d654be883355e4e181dd1447fc30b022: "{{unknown}}"
   _oembed_a4fe2039c324098ab14bbd1cad5981e6: "{{unknown}}"
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>This post is to remind myself of mistakes I did or encountered with javascript.</p>
 <h3>Do not use window.location.origin</h3>

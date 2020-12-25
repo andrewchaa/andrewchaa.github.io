@@ -1,18 +1,8 @@
 ---
 title: Swimming for health
 date: 2008-01-02 10:02:48.000000000 +00:00
-type: post
-published: true
-status: publish
 categories: []
 tags: []
-meta: {}
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>건강에 적신호가 오기 시작했다. 조금만 일이 있어도 다음날 드러눕고, 크리스마스 휴일 내내 넘 피곤했다. 제대로 쉰 것 같지도 않고. 겔겔겔 누워있기나 하고. 양마가 목자님, 안나 사모님들께서 오셔서 수영을 계속 하라고 encourage 하셨는데, 하나님의 방향 인 것 같다.</p>
 <p>수영을 위한 준비</p>

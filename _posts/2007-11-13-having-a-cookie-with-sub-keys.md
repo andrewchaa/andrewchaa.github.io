@@ -1,18 +1,8 @@
 ---
 title: having a cookie with sub-keys
 date: 2007-11-13 14:46:00.000000000 +00:00
-type: post
-published: true
-status: publish
 categories: []
 tags: []
-meta: {}
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>This is from <a href="http://msdn2.microsoft.com/en-us/library/ms178194.aspx">ASP.NET Cookies Overviewe</a></p>
 <p>example</p>

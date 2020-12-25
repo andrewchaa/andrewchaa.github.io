@@ -1,9 +1,6 @@
 ---
 title: Building Console+, an enhanced (hopefully) interface to windows shells
 date: 2012-09-09 17:17:45.000000000 +01:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -17,12 +14,6 @@ meta:
     16:39:38";}
   _wpas_skip_twitter: '1'
   _wpas_skip_linkedin: '1'
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>Everyday, almost, I use three different shells, Command Prompt, PowerShell, and Bash for Git. I think the interface of those shells has lots to improve. As I am spoiled by good editors like Visual Studio, TextMate, Sublime, Notepad+, (but no Vim yet), I expected the similar level of maturity and convenience. </p>
 <p>Console+ is on <a href="https://github.com/andrewchaa/ConsolePlus">github</a> now. Please bear in mind, it is code in progress.</p>

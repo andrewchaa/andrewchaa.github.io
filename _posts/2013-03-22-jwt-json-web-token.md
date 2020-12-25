@@ -1,9 +1,6 @@
 ---
 title: JWT - JSON Web Token
 date: 2013-03-22 10:56:45.000000000 +00:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -22,12 +19,6 @@ meta:
   _oembed_d7344b3c97760859ed3df45463fe5e69: "{{unknown}}"
   _oembed_cfd232dbbdbecd91c5094c7c04750d26: "{{unknown}}"
   _oembed_9ad4aff471d85f2443496cb758ead446: "{{unknown}}"
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <h2>JWT is</h2>
 <p>JWT (JSON Web Token) is "a compact URL-safe means of representing claims to be transferred between two parties," by its definition. (<a href="http://self-issued.info/docs/draft-ietf-oauth-json-web-token.html">http://self-issued.info/docs/draft-ietf-oauth-json-web-token.html</a>)</p>

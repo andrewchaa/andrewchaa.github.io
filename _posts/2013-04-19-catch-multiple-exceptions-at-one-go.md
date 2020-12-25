@@ -1,9 +1,6 @@
 ---
 title: Catch multiple Exceptions at one go
 date: 2013-04-19 14:48:52.000000000 +01:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -20,12 +17,6 @@ meta:
   _oembed_84815189340720aaa28270156834b451: "{{unknown}}"
   _oembed_866e6993f763f077505e6e1841dd536f: "{{unknown}}"
   _oembed_d85103f7df1dfe905485837cd43b72f1: "{{unknown}}"
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>It is not a good practice to catch System.Exception, as the catch block will be executed with unexpected exceptions and it will hide the real error. But sometimes, you want to catch multiple exceptions in order to avoid unnecessary repetitive code. For example,</p>
 <p>[sourcecode language="csharp"]<br />

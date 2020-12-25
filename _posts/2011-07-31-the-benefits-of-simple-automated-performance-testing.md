@@ -1,9 +1,6 @@
 ---
 title: The benefits of simple, automated performance testing by Kristoffer Dyrkorn
 date: 2011-07-31 21:41:17.000000000 +01:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -18,12 +15,6 @@ meta:
     http://ndc2011.macsimum.no/SAL5/Onsdag/1140-1240.wmv
     424971340
     video/asf
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>It is so good that all those videos are published after conference. If you are not a speaker at the conference, not sponsored by your company, or not have a free ticket, often you can't simply afford to attend it. This is the first of "My learnings from NDC Conference Videos" series.</p>
 <p><a href="http://ndc2011.macsimum.no/SAL5/Onsdag/1140-1240.wmv">The benefits of simple, automated performance testing</a> by Kristoffer Dyrkorn</p>

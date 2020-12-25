@@ -1,18 +1,8 @@
 ---
 title: 한글 고어 corpus 만들기
 date: 2007-11-19 17:32:05.000000000 +00:00
-type: post
-published: true
-status: publish
 categories: []
 tags: []
-meta: {}
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>먼저 한글 고문을 윈도우에서 표현할 수 있어야 한다.</p>
 <ul>

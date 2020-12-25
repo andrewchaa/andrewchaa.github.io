@@ -1,9 +1,6 @@
 ---
 title: NuGet restore
 date: 2015-05-05 09:51:34.000000000 +01:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -16,12 +13,6 @@ meta:
   publicize_twitter_url: http://t.co/UmzVggdMxd
   _wpas_done_1752093: '1'
   _publicize_done_external: a:1:{s:7:"twitter";a:1:{i:111615627;b:1;}}
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p><a href="https://docs.nuget.org/">NuGet</a> is a package manager like NPM for node.js or Gem for Ruby, and it is a dominant one in .NET.</p>
 <p>You can handle dependency packages in two ways. You download them from NuGet server but also store them in your source control. Or, you just remember what packages you use in your project, and restore them on build. Node and Ruby guys always go for the 2nd option. .NET people used to do the first one, but now prefer the 2nd option. I agree to the 2nd option, restoring packages on build, rather than storing them in git repository. Git is for source code, NuGet repository is for packages.</p>

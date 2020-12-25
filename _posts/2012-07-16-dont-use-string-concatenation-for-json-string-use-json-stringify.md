@@ -1,9 +1,6 @@
 ---
 title: Don't use string concatenation for JSON string, use JSON.stringify()
 date: 2012-07-16 13:06:56.000000000 +01:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -13,12 +10,6 @@ meta:
   tagazine-media: a:7:{s:7:"primary";s:0:"";s:6:"images";a:0:{}s:6:"videos";a:0:{}s:11:"image_count";s:1:"0";s:6:"author";s:7:"1907066";s:7:"blog_id";s:7:"1833431";s:9:"mod_stamp";s:19:"2012-07-16
     13:06:56";}
   _edit_last: '1907066'
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>As javascript newbie, this is what I did.</p>
 <p>[sourcecode language="javascript"]</p>

@@ -1,9 +1,6 @@
 ---
 title: Veryfying the key and value of the dictionary passed as parameter with Moq.It
 date: 2013-04-08 12:35:53.000000000 +01:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -24,12 +21,6 @@ meta:
   _oembed_b1dc1c03bfe9d2fdfd677b2cffa72f8b: "{{unknown}}"
   _oembed_aa11d69417bc088a1364a606ed4fa80e: "{{unknown}}"
   _oembed_9b729f858e7beeb8b97e26b515a9a05e: "{{unknown}}"
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>In unit-tests, you mock out external dependencies. With Mock framework, you can verify that a correct value is passed into the dependency. Today, I had a case that a dictionary object is passed into the dictionary. I wasn't sure how to verify that the value is correct, as what I wanted was just to check the dictionary has two keys and those keys have correct values.</p>
 <p>Simply, I learned I can use Moq.It.Is...</p>

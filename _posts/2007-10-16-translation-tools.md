@@ -1,19 +1,9 @@
 ---
 title: 번역 작업에 도움이 되는 도구들
 date: 2007-10-16 21:31:31.000000000 +01:00
-type: post
-published: true
-status: publish
 categories: []
 tags:
 - Translation
-meta: {}
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>누나가 부탁해서 안경 관련 번역을 하고 있는데, 구글 Docs를 써보니 꽤 괜찮다. 구글 번역도 일단 한번 돌린다음, 정리하는 식으로 하니 좀 도움이 되고.</p>
 <ul>

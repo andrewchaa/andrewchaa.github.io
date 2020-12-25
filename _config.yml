@@ -57,7 +57,6 @@ plugins:
   - jemoji
   - jekyll-include-cache
 
-author:
   name   : "First Lastname"
   avatar : "/assets/images/bio-photo.jpg"
   bio    : "My awesome biography constrained to a sentence or two goes here."

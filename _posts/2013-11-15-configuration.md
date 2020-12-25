@@ -9,7 +9,6 @@ In your config file change these settings
 
 {% highlight yaml %}
 title: dbyll
-author:
   name: yourname
   email: youremail
   github: asd123

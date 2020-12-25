@@ -1,9 +1,6 @@
 ---
 title: Open sublime text 2 from command line on windows
 date: 2012-07-17 21:29:26.000000000 +01:00
-type: post
-published: true
-status: publish
 categories:
 - Programming
 tags:
@@ -17,12 +14,6 @@ meta:
   _wpas_skip_linkedin: '1'
   _oembed_52bf44ab6c231574936100cec6f8fb9e: "{{unknown}}"
   _oembed_834206a5a02439a66e45222454c5484a: "{{unknown}}"
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>In Mac, you can open sublime text 2 from terminal, and it’s really handy.</p>
 <p>I wanted to replicate the same thing on windows, so wrote a simple script that enables it.<br />

@@ -1,9 +1,6 @@
 ---
 title: Snowy, our beloved cat
 date: 2011-12-01 20:52:39.000000000 +00:00
-type: post
-published: true
-status: publish
 categories:
 - life
 tags:
@@ -15,12 +12,6 @@ meta:
   _wpas_done_linkedin: '1'
   publicize_results: a:1:{s:7:"twitter";a:1:{i:111615627;a:2:{s:7:"user_id";s:10:"andrewchaa";s:7:"post_id";s:18:"142345393282359296";}}}
   _wpas_done_twitter: '1'
-author:
-  login: simplelifeuk
-  email: andrew.chaa@yahoo.co.uk
-  display_name: Andy
-  first_name: Andrew
-  last_name: Chaa
 ---
 <p>This is a reminder for myself not to forget snowy's details</p>
 <ul>
