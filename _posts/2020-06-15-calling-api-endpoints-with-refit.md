@@ -3,6 +3,8 @@ title: Calling api endpoints with Refit
 date: 2020-06-15T13:56:08
 categories:
   - technical
+tags:
+  
 ---
 
 

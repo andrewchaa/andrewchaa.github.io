@@ -3,6 +3,8 @@ title: Static website hosting in Azure Blob Storage
 date: 2020-05-15T08:19:45
 categories:
   - technical
+tags:
+  
 ---
 
 

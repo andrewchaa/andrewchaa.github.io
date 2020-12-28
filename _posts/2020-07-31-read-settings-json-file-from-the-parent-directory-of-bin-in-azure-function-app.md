@@ -3,6 +3,8 @@ title: Read settings json file from the parent directory of "bin" in Azure Funct
 date: 2020-07-31T15:31:17
 categories:
   - technical
+tags:
+  
 ---
 
 

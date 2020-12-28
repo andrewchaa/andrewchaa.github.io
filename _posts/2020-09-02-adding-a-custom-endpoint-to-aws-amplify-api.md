@@ -3,6 +3,8 @@ title: Adding a custom endpoint to AWS Amplify API
 date: 2020-09-02T09:00:32
 categories:
   - technical
+tags:
+  
 ---
 
 

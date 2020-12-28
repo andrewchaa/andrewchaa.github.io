@@ -3,6 +3,8 @@ title: Serialize and deserialize enum as string with System.Text.Json
 date: 2020-07-20T09:15:10
 categories:
   - technical
+tags:
+  
 ---
 
 

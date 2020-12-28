@@ -3,6 +3,8 @@ title: Deploy Service Fabric type when one of its services needs deletion
 date: 2020-05-21T07:51:02
 categories:
   - technical
+tags:
+  
 ---
 
 

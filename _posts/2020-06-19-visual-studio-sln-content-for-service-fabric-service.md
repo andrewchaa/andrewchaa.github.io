@@ -3,6 +3,8 @@ title: Any CPU settings in Visual Studio sln content for Service Fabric service
 date: 2020-06-19T15:47:36
 categories:
   - technical
+tags:
+  
 ---
 
 

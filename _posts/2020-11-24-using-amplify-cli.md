@@ -3,6 +3,8 @@ title: Using Amplify CLI
 date: 2020-11-24T16:54:34
 categories:
   - technical
+tags:
+  
 ---
 
 

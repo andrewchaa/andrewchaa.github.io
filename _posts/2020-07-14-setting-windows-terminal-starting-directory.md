@@ -3,6 +3,8 @@ title: Setting Windows Terminal Starting Directory
 date: 2020-07-14T06:56:33
 categories:
   - technical
+tags:
+  
 ---
 
 

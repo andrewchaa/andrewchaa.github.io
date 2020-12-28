@@ -1,8 +1,10 @@
 ---
 title: Send message to a Teams' channel
-date: 2020-07-08T17:52:51
+date: 2020-07-08T10:13:31
 categories:
   - technical
+tags:
+  - drafts
 ---
 
 
@@ -12,7 +14,7 @@ We started posting pending PRs in the group chat. Soon, it became a chore. So I 
 
 Click ... on the top right corner to open the menu and choose Connector
 
-![](.gitbook/assets/image%20%2814%29.png)
+![](../.gitbook/assets/image%20%2814%29.png)
 
 Select Incoming Webhook. It'll give you an api endpoint for you to use.
 

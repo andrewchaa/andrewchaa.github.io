@@ -3,6 +3,8 @@ title: Azure Blob storage in 3 different tiers
 date: 2020-10-09T19:35:26
 categories:
   - technical
+tags:
+  
 ---
 
 

@@ -3,6 +3,8 @@ title: Service Fabric skeleton service
 date: 2020-05-27T16:14:05
 categories:
   - technical
+tags:
+  
 ---
 
 

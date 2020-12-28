@@ -3,6 +3,8 @@ title: Provision Azure Storage with Terraform
 date: 2020-09-30T09:55:40
 categories:
   - technical
+tags:
+  
 ---
 
 

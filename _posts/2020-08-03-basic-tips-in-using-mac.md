@@ -3,6 +3,8 @@ title: Handy apps for Mac
 date: 2020-08-03T07:13:03
 categories:
   - technical
+tags:
+  
 ---
 
 * cmd + tab to switch to another window

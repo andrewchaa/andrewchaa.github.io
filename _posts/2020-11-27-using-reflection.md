@@ -3,6 +3,8 @@ title: Using reflection
 date: 2020-11-27T15:07:11
 categories:
   - technical
+tags:
+  
 ---
 
 

@@ -3,6 +3,8 @@ title: Logging on AWS Lambda with .NET Core
 date: 2020-06-02T21:56:17
 categories:
   - technical
+tags:
+  
 ---
 
 

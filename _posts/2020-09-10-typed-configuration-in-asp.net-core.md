@@ -3,6 +3,8 @@ title: Typed Configuration in ASP.NET Core
 date: 2020-09-10T10:18:45
 categories:
   - technical
+tags:
+  
 ---
 
 

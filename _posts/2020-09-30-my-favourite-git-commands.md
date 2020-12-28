@@ -3,6 +3,8 @@ title: My favourite Git commands
 date: 2020-09-30T08:45:45
 categories:
   - technical
+tags:
+  
 ---
 
 # create a new branch

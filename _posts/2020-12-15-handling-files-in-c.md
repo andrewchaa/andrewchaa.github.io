@@ -3,6 +3,8 @@ title: Handling files in c\#
 date: 2020-12-15T15:11:19
 categories:
   - technical
+tags:
+  
 ---
 
 
