@@ -100,6 +100,7 @@ defaults:
       share: true
       related: true
       classes: wide
+      comments: true
 
   # _pages
   - scope:
@@ -122,3 +123,8 @@ analytics:
   google:
     tracking_id: "UA-88409534-2"
     anonymize_ip: false # default
+
+comments:
+  provider: "disqus"
+  disqus:
+    shortname: "andrew_chaa"
