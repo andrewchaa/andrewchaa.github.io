@@ -3,7 +3,6 @@ title: List active \(pending\) Pull Requests on Microsoft Teams chat room
 date: 2020-07-31T15:11:38
 categories:
   - technical
-classes: wide
 ---
 
 

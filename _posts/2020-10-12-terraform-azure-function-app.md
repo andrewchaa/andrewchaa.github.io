@@ -3,7 +3,6 @@ title: Terraform Azure Function App
 date: 2020-10-12T17:00:17
 categories:
   - technical
-classes: wide
 ---
 
 

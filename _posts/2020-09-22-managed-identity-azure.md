@@ -3,7 +3,6 @@ title: Managed Identity @ Azure
 date: 2020-09-22T10:49:57
 categories:
   - technical
-classes: wide
 ---
 
 

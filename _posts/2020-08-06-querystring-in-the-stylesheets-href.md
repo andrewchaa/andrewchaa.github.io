@@ -3,7 +3,6 @@ title: QueryString in the Stylesheet's href
 date: 2020-08-06T19:04:47
 categories:
   - technical
-classes: wide
 ---
 
 

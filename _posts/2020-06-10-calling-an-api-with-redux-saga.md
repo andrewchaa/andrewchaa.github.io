@@ -3,7 +3,6 @@ title: Calling an API with redux saga
 date: 2020-06-10T21:37:04
 categories:
   - technical
-classes: wide
 ---
 
 

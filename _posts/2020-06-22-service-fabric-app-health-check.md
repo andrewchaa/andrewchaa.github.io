@@ -3,7 +3,6 @@ title: Service Fabric app health check
 date: 2020-06-22T08:41:39
 categories:
   - technical
-classes: wide
 ---
 
 

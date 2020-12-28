@@ -3,7 +3,6 @@ title: How I'm setting my Windows developer machine
 date: 2020-08-12T09:38:47
 categories:
   - technical
-classes: wide
 ---
 
 

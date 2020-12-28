@@ -3,7 +3,6 @@ title: VS Code Keyboard Shortcuts
 date: 2020-09-09T15:27:16
 categories:
   - technical
-classes: wide
 ---
 
 | :--- | :--- |

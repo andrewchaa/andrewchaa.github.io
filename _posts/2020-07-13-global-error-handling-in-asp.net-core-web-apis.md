@@ -3,7 +3,6 @@ title: Global error handling in ASP.NET Core web APIs
 date: 2020-07-13T08:32:15
 categories:
   - technical
-classes: wide
 ---
 
 

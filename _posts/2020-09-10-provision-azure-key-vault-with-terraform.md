@@ -3,7 +3,6 @@ title: Provision Azure Key Vault with Terraform
 date: 2020-09-10T17:45:19
 categories:
   - technical
-classes: wide
 ---
 
 

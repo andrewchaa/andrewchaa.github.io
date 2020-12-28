@@ -3,7 +3,6 @@ title: Setting up my Mac
 date: 2020-11-21T21:56:57
 categories:
   - technical
-classes: wide
 ---
 
 

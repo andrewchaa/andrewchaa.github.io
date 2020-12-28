@@ -3,7 +3,6 @@ title: React Native TextInput
 date: 2020-08-23T19:00:45
 categories:
   - technical
-classes: wide
 ---
 
 

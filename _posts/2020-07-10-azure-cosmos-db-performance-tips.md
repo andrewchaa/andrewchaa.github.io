@@ -3,7 +3,6 @@ title: Azure Cosmos DB performance tips
 date: 2020-07-10T19:19:02
 categories:
   - technical
-classes: wide
 ---
 
 

@@ -3,7 +3,6 @@ title: Using TimeSpan configuration values in .NET Core
 date: 2020-06-30T10:44:03
 categories:
   - technical
-classes: wide
 ---
 
 

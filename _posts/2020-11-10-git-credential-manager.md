@@ -3,7 +3,6 @@ title: git credential manager
 date: 2020-11-10T10:53:51
 categories:
   - technical
-classes: wide
 ---
 
 

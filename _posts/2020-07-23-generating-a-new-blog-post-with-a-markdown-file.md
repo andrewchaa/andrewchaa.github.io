@@ -3,7 +3,6 @@ title: Generating a new blog post with a markdown file
 date: 2020-07-23T07:19:41
 categories:
   - technical
-classes: wide
 ---
 
 

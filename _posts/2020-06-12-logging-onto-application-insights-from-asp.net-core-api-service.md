@@ -3,7 +3,6 @@ title: Logging onto Application Insights from ASP.NET Core api service
 date: 2020-06-12T16:02:18
 categories:
   - technical
-classes: wide
 ---
 
 

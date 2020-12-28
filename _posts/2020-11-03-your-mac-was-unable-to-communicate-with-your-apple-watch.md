@@ -3,7 +3,6 @@ title: Your Mac was unable to communicate with your Apple Watch
 date: 2020-11-03T07:46:56
 categories:
   - technical
-classes: wide
 ---
 
 

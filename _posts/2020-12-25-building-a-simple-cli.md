@@ -3,7 +3,6 @@ title: Building a simple CLI
 date: 2020-12-25T12:23:08
 categories:
   - technical
-classes: wide
 ---
 
 

@@ -3,7 +3,6 @@ title: Encrypt a sensitive information with Azure Key Vault
 date: 2020-10-05T16:01:32
 categories:
   - technical
-classes: wide
 ---
 
 

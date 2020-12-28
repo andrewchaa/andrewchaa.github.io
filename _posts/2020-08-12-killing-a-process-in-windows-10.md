@@ -3,7 +3,6 @@ title: Killing a Process in Windows 10
 date: 2020-08-12T09:38:58
 categories:
   - technical
-classes: wide
 ---
 
 
