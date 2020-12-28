@@ -3,6 +3,7 @@ title: NET Core Service Registrations
 date: 2020-10-23T14:12:17
 categories:
   - technical
+classes: wide
 ---
 
 

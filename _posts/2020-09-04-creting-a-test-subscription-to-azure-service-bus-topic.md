@@ -3,6 +3,7 @@ title: Creating a test Subscription to Azure Service Bus Topic
 date: 2020-09-04T06:48:36
 categories:
   - technical
+classes: wide
 ---
 
 

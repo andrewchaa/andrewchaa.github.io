@@ -3,6 +3,7 @@ title: C\# LINQ in the wild
 date: 2020-11-12T19:34:23
 categories:
   - technical
+classes: wide
 ---
 
 

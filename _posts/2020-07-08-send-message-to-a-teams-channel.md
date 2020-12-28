@@ -3,6 +3,7 @@ title: Send message to a Teams' channel
 date: 2020-07-08T17:52:51
 categories:
   - technical
+classes: wide
 ---
 
 

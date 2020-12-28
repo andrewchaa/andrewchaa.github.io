@@ -3,6 +3,7 @@ title: Prettify JSON with C\#
 date: 2020-10-05T16:13:28
 categories:
   - technical
+classes: wide
 ---
 
 

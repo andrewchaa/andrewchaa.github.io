@@ -3,6 +3,7 @@ title: My favourite Libraries and Frameworks
 date: 2020-12-09T17:26:47
 categories:
   - technical
+classes: wide
 ---
 
 | :--- | :--- |

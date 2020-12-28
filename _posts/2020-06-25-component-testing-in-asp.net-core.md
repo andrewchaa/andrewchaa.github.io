@@ -3,6 +3,7 @@ title: Component testing in ASP.NET Core
 date: 2020-06-25T23:10:17
 categories:
   - technical
+classes: wide
 ---
 
 

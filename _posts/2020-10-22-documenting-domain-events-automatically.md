@@ -3,6 +3,7 @@ title: Documenting Domain Events automatically
 date: 2020-10-22T09:40:26
 categories:
   - technical
+classes: wide
 ---
 
 

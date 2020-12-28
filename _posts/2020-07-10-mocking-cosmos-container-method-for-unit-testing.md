@@ -3,6 +3,7 @@ title: Mocking Cosmos Container method for unit testing
 date: 2020-07-10T19:35:04
 categories:
   - technical
+classes: wide
 ---
 
 

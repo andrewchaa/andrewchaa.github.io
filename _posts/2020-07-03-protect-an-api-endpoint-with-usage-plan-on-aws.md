@@ -3,6 +3,7 @@ title: Protect an API endpoint with usage plan on AWS
 date: 2020-07-03T18:39:32
 categories:
   - technical
+classes: wide
 ---
 
 

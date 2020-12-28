@@ -3,6 +3,7 @@ title: Fix Port number for Service Fabric ASP.NET Core on the local development 
 date: 2020-06-05T18:45:31
 categories:
   - technical
+classes: wide
 ---
 
 

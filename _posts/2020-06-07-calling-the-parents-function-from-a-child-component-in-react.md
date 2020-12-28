@@ -3,6 +3,7 @@ title: Calling the parent's function from a child component in React
 date: 2020-06-07T20:09:49
 categories:
   - technical
+classes: wide
 ---
 
 

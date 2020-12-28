@@ -3,6 +3,7 @@ title: Access HttpContext inside a service
 date: 2020-08-11T14:15:33
 categories:
   - technical
+classes: wide
 ---
 
 

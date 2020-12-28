@@ -3,6 +3,7 @@ title: iPhone Simulator shortcuts
 date: 2020-11-07T23:29:30
 categories:
   - technical
+classes: wide
 ---
 
 

@@ -3,6 +3,7 @@ title: Packing in Nuget
 date: 2020-12-09T15:44:09
 categories:
   - technical
+classes: wide
 ---
 
 

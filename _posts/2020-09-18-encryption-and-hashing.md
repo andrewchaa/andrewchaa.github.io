@@ -3,6 +3,7 @@ title: Encryption and Hashing
 date: 2020-09-18T13:37:13
 categories:
   - technical
+classes: wide
 ---
 
 

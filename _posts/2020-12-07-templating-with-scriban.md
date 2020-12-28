@@ -3,6 +3,7 @@ title: Templating with scriban
 date: 2020-12-07T18:43:11
 categories:
   - technical
+classes: wide
 ---
 
 
