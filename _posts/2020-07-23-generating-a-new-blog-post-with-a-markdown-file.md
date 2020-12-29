@@ -45,9 +45,9 @@ const octokit = new Octokit({
 })
 
 const convertImagePath = (path) =>
-  path.replace(/\.gitbook\/assets\/image\s?\(?([0-9]*)\)?\.png/g,
+  path.replace(/\\/assets\/image\s?\(?([0-9]*)\)?\.png/g,
     'assets\/image$1\.png')
-    .replace(/\.gitbook\/assets\/image%20%28([0-9]+)%29\.png/g,
+    .replace(/\\/assets\/image%20%28([0-9]+)%29\.png/g,
     'assets\/image$1\.png'
     )
 
@@ -60,7 +60,7 @@ const getFiles = async (path) => {
   })
 
   var files = response.data
-    .filter(x => !(['.gitbook', 'README.md', 'SUMMARY.md', 'drafts'].includes(x.path)))
+    .filter(x => !(['', 'README.md', 'SUMMARY.md', 'drafts'].includes(x.path)))
     .map(x => ({
       name: x.name,
       slugName: slugify(x.name.slice(0, -3), { lower: true, strict: true }) + '.md',
@@ -158,7 +158,7 @@ const generatePosts = async () => {
 
   });
 
-  const files = await getFiles('.gitbook/assets')
+  const files = await getFiles('/assets')
   files.forEach(async (file) => {
 
     console.log(`Transferring image ${file.imageName} ...`)

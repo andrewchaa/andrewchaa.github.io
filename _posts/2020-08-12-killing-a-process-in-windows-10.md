@@ -11,7 +11,7 @@ tags:
 * Open the powershell prompt. I use [Windows Terminal](https://devblogs.microsoft.com/commandline/introducing-windows-terminal/)
 * Type tasklist to see the list of all running processes and their PIDs. You can use a pipe with the more command
 
-![](.gitbook/assets/image%20%2815%29.png)
+![](/assets/image%20%2815%29.png)
 
 * To kill a process by its PID, type like the below
 

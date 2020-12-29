@@ -12,11 +12,11 @@ tags:
 
 Create a storage account with blob storage. Then enable static website on the storage account. It'll ask you what would be the name of the default file. I chose index.html, as it's the default html file of my react app. 
 
-![Enable Static website](.gitbook/assets/image%20%281%29.png)
+![Enable Static website](/assets/image%20%281%29.png)
 
 Once enabled, it'll create $web directory / folder on the blob container.
 
-![](.gitbook/assets/image.png)
+![](/assets/image.png)
 
 It shows the endpoint: https://contoso.web.core.windows.net 
 
@@ -37,7 +37,7 @@ I used Azure Storage Explorer for testing purpose, but would set up an Azure Pip
 
 The files at the primary static website endpoint are served through anonymous access requests, which means public read-only access to  all files. 
 
-![](.gitbook/assets/image%20%282%29.png)
+![](/assets/image%20%282%29.png)
 
 I used Public access level: Blob, so that the primary static website endpoint would be [https://contosoblobaccount.z22.web.core.windows.net/index.html](https://contosoblobaccount.z22.web.core.windows.net/index.html).
 
@@ -49,11 +49,11 @@ You can enable Azure CDN for your static website
 * Under the Blob Service menu, select Azure CDN to open the Azure CDN page
 * Specify your static website endpoint in the Origin hostname field. 
 
-![](.gitbook/assets/image%20%284%29.png)
+![](/assets/image%20%284%29.png)
 
 * Update Origin fields like these. Otherwise, you would have the infamous XML error
 
-![](.gitbook/assets/image%20%285%29.png)
+![](/assets/image%20%285%29.png)
 
 ## Map a custom domain
 

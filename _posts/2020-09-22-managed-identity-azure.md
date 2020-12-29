@@ -23,7 +23,7 @@ The managed identities for Azure resources feature in Azure Active Directory \(A
 
 This is the diagram that shows how managed identities work with Azure VMs.
 
-![](.gitbook/assets/image%20%2816%29.png)
+![](/assets/image%20%2816%29.png)
 
 
 

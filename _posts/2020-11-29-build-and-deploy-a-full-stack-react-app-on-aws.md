@@ -30,7 +30,7 @@ Recently, Github changed their default branch to main.
 
 Go to amplify and follow Get Started on "Deliver with the amplify console"
 
-![](../.gitbook/assets/image%20%2823%29.png)
+![](/assets/image%20%2823%29.png)
 
 
 

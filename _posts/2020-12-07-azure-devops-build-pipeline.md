@@ -8,7 +8,7 @@ tags:
 ---
 
 
-![](../.gitbook/assets/image%20%2818%29.png)
+![](/assets/image%20%2818%29.png)
 
 * A trigger tells a Pipeline to run
 * A pipeline is made of one or more stages. A pipeline can deploy to one or more environments

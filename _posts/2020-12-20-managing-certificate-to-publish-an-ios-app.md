@@ -14,7 +14,7 @@ tags:
 
 #### Create a certificate
 
-![](../.gitbook/assets/image%20%2824%29.png)
+![](/assets/image%20%2824%29.png)
 
 I used "Managed Certificates" on XCode. Easy.
 

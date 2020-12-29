@@ -29,7 +29,7 @@ Another option is to use VS Code key map in rider or any other intellij IDE
 
 Find the plugin and install it. Then choose the scheme.
 
-![](../.gitbook/assets/image%20%2821%29.png)
+![](/assets/image%20%2821%29.png)
 
-![](../.gitbook/assets/image%20%2822%29.png)
+![](/assets/image%20%2822%29.png)
 

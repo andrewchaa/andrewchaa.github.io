@@ -14,7 +14,7 @@ We started posting pending PRs in the group chat. Soon, it became a chore. So I 
 
 Click ... on the top right corner to open the menu and choose Connector
 
-![](../.gitbook/assets/image%20%2814%29.png)
+![](/assets/image%20%2814%29.png)
 
 Select Incoming Webhook. It'll give you an api endpoint for you to use.
 

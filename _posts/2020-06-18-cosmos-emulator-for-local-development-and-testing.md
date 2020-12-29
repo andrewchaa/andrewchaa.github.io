@@ -21,9 +21,9 @@ C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67
 
 The Quick start shows the connection string to your local emulator
 
-![](.gitbook/assets/image%20%2812%29.png)
+![](/assets/image%20%2812%29.png)
 
 The data explorer has the identitical UI and look as the real one on Azure
 
-![](.gitbook/assets/image%20%2813%29.png)
+![](/assets/image%20%2813%29.png)
 

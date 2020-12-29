@@ -42,5 +42,5 @@ zstyle ':prezto:load' pmodule \
 
 Go to System Preferences &gt; Keyboard &gt; Shortcuts. Select function keys and add your apps.
 
-![](.gitbook/assets/image%20%2820%29.png)
+![](/assets/image%20%2820%29.png)
 
