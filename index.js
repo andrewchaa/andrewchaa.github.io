@@ -17,7 +17,6 @@ const response = await notion.databases.query({
   database_id: process.env.NOTION_DATABASE_ID,
 })
 
-// console.log(response)
 const pages = response
   .results
   .filter(x => x.properties.Name.title.length > 0)
