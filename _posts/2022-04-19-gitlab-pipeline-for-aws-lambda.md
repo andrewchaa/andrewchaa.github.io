@@ -1,4 +1,3 @@
-
 ---
 title: gitlab-pipeline-for-aws-lambda
 date: 2022-04-19T10:22:00.000Z

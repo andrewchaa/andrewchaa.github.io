@@ -35,8 +35,7 @@ pages.map(async x => {
     .map(x => `  - ${x.name}`)
     .join('\n')
   const pageContent =
-`
----
+`---
 title: ${title}
 date: ${createdTime}
 tags:
