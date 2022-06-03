@@ -1,9 +1,9 @@
-name: CI
+name: Build Notion Posts
 
 on:
   schedule:
   - cron: "0 1 * * *"
-  
+
   workflow_dispatch:
 
 jobs:
@@ -19,7 +19,7 @@ jobs:
           touch .env
           echo 'NOTION_TOKEN=${{ secrets.NOTION_TOKEN }}' >> .env
           echo 'NOTION_DATABASE_ID=${{ secrets.NOTION_DATABASE_ID }}' >> .env
-          npm i          
+          npm i
           npm start
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
