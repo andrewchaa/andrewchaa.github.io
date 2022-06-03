@@ -19,8 +19,8 @@ jobs:
           touch .env
           echo 'NOTION_TOKEN=${{ secrets.NOTION_TOKEN }}' >> .env
           echo 'NOTION_DATABASE_ID=${{ secrets.NOTION_DATABASE_ID }}' >> .env
-          npm i
-          npm start
+          yarn
+          yarn start
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: build pages from notion
