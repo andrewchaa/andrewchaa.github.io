@@ -30,7 +30,8 @@ pages.map(async x => {
 
   const createdDate = x.created_time.split('T')[0]
   const createdTime = x.created_time
-  const title = kebabCase(x.properties.Name.title[0].plain_text)
+  const title = x.properties.Name.title[0].plain_text
+  const filename = kebabCase(title)
   const tags = x.properties.Tags.multi_select
     .map(x => `  - ${x.name}`)
     .join('\n')
@@ -53,7 +54,7 @@ ${content}
   //   - vs code
   // ---
 
-  fs.writeFile(`./_posts/${createdDate}-${title}.md`, pageContent, (err) => {
+  fs.writeFile(`./_posts/${createdDate}-${filename}.md`, pageContent, (err) => {
     console.log(err);
   });
 
