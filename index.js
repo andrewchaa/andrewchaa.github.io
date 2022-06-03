@@ -23,8 +23,6 @@ const pages = response
   .filter(x => x.properties.Name.title.length > 0)
 
 pages.map(async x => {
-  console.dir(x, {depth: null})
-
   const mdBlocks = await n2m.pageToMarkdown(x.id)
   const content = n2m.toMarkdownString(mdBlocks)
 
@@ -44,32 +42,8 @@ ${tags}
 ---
 ${content}
 `
-  // ---
-  // title: Customise VS Code Javascript Formatter
-  // date: 2022-03-5T10:10:00
-  // categories:
-  //   - technical
-  // tags:
-  //   - javascript
-  //   - vs code
-  // ---
-
   fs.writeFile(`./_posts/${createdDate}-${filename}.md`, pageContent, (err) => {
     console.log(err);
   });
-
-  // console.log(mdString)
-  // const blockResponse = await notion.blocks.children.list({
-  //   block_id:x.id
-  // })
-  // const blocks = blockResponse.results
-  // blocks.map(x => {
-  //   console.dir(x, {depth: null``})
-
-
-  //   return
-  // })
-
-
   return
 });
