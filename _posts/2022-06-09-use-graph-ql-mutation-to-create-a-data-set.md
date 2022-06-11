@@ -2,7 +2,7 @@
 title: use GraphQL mutation to create a data set
 date: 2022-06-09T17:30:00.000Z
 tags:
-
+  - graphql
 ---
 
 I have developed a mobile app for one of my main side-hustle customers. Recently, they asked for a offline feature, in which their boiler engineers can enter the boiler information on their phone even though there isn’t any wifi or 4/5G network. 
@@ -137,7 +137,7 @@ export const handler = async (ev: any) => {
 }
 ```
 
-I used the AWS SDK v3. It has nicer async await support. I’m not a big fan of call back functions.
+I used the [AWS SDK v3](https://www.rwilinski.me/blog/migrating-to-aws-sdk-v3/). It has nicer async await support. I’m not a big fan of call back functions.
 
 I’m new to typescript. I followed [AWS’s guide on typescript lambda](https://docs.aws.amazon.com/lambda/latest/dg/lambda-typescript.html) but it wasn’t still very clear how I can do it. Some examples use SAM. Others CDK. 
 
