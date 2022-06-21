@@ -1,0 +1,64 @@
+---
+title: What I have learned in June 2022
+date: 2022-06-13T13:57:00.000Z
+tags:
+  - til
+---
+
+21 June
+
+### Network Link Coordinator
+
+This is a handy tool to test the network connectivity of your mobile application. To use it, download AdditionalTools from [apple developer website](https://developer.apple.com/download). 
+
+Once it’s downloaded, open the `.dmg` file and install `Network Link Condition.prefPane` by double-clicking it in `Hardware` folder. It’ll be installed in the system preference, so you can search it there from next time. 
+
+![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/ee064a04-3de4-43d4-b868-5dd4a811ff24/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220621%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220621T205429Z&X-Amz-Expires=3600&X-Amz-Signature=8c3b64f0cf93ea41819bd5ddad4befc678ad2c67e102318621d7ae6cfa5835b3&X-Amz-SignedHeaders=host&x-id=GetObject)
+
+Querying DynamoDB data with javascript SDK v3
+
+[DynamoDBDocumentClient](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/DynamoDB/DocumentClient.html#query-property) has [different syntax](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html). Use `KeyConditionExpression` instead of `KeyConditions`
+
+```javascript
+import { Context } from 'aws-lambda'
+import { QueryCommand } from '@aws-sdk/lib-dynamodb'
+
+import { ddbDocClient } from '../services/dynamodbClient'
+
+export const handler = async (ev: any, context: Context) => {
+  console.log(ev)
+  const params = {
+    TableName: `table-${process.env.run_env}`,
+    KeyConditionExpression: 'userId = :userId',
+    ExpressionAttributeValues: {
+      ':userId': ev.arguments.userId
+    }
+  }
+
+  try {
+    const data = await ddbDocClient.send(new QueryCommand(params))
+    return data.Items
+  } catch (error) {
+    throw error
+  }
+}
+```
+
+You can run the code locally with `yarn` command.
+
+```json
+"run-list-registrations-by-userid": 
+  "yarn build && node -e \"require('./dist/list-by-userid').handler(require('./list-by-userid-event.json')).then(x => console.log(x));\"",
+```
+
+### PBXResourcesBuildPhase unknown UUID
+
+I did `pod install` and had an error saying “PBXResourcesBuildPhase attempted to initialize an object with an unknown UUID”
+
+There seem to be a merge issue when I installed a couple of react-native pod packages. [A stackoverflow answer](https://stackoverflow.com/questions/36597286/pbxresourcesbuildphase-uuid-attempted-to-initialize-an-object-with-an-unkno) helped me out. 
+
+```bash
+pod deintegrate app.xcodeproj
+pod install
+```
+
