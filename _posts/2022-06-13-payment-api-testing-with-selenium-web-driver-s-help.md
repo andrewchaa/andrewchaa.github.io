@@ -1,6 +1,6 @@
 ---
 title: Payment API Testing with Selenium WebDriver’s help
-date: 2022-06-13T13:58:00.000Z
+date: 2022-06-13
 tags:
   - webdriver
   - e2e test

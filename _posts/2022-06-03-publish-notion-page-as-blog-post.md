@@ -1,6 +1,6 @@
 ---
 title: Publish Notion page as blog post
-date: 2022-06-03T19:34:00.000Z
+date: 2022-06-03
 tags:
   - javascript
   - notion

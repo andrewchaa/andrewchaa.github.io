@@ -1,6 +1,6 @@
 ---
 title: use GraphQL mutation to create a data set
-date: 2022-06-09T17:30:00.000Z
+date: 2022-06-09
 tags:
   - graphql
 ---

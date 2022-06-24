@@ -19,14 +19,14 @@ const response = await notion.databases.query({
 
 const pages = response
   .results
-  .filter(x => x.properties.Name.title.length > 0)
+  .filter(x => x?.properties.Name.title.length > 0)
 
 pages.map(async x => {
+  console.dir(x, {depth: null})
   const mdBlocks = await n2m.pageToMarkdown(x.id)
   const content = n2m.toMarkdownString(mdBlocks)
 
-  const createdDate = x.created_time.split('T')[0]
-  const createdTime = x.created_time
+  const publishedDate = x.properties['Published Date'].date.start
   const title = x.properties.Name.title[0].plain_text
   const filename = kebabCase(title)
   const tags = x.properties.Tags.multi_select
@@ -35,13 +35,13 @@ pages.map(async x => {
   const pageContent =
 `---
 title: ${title}
-date: ${createdTime}
+date: ${publishedDate}
 tags:
 ${tags}
 ---
 ${content}
 `
-  fs.writeFile(`./_posts/${createdDate}-${filename}.md`, pageContent, (err) => {
+  fs.writeFile(`./_posts/${publishedDate}-${filename}.md`, pageContent, (err) => {
     console.log(err);
   });
   return

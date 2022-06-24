@@ -1,6 +1,6 @@
 ---
 title: Scripting react website deployment on Windows Server
-date: 2022-06-07T13:06:00.000Z
+date: 2022-06-07
 tags:
   - powershell
   - scripting
