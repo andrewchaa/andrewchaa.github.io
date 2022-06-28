@@ -5,6 +5,16 @@ tags:
   - til
 ---
 
+Mon. 27 June
+
+You can [run Cisco AnyConnect command from the terminal](https://superuser.com/questions/649614/connect-using-anyconnect-from-command-line)
+
+```bash
+printf 'USERNAME\nPASSWORD\ny' | /opt/cisco/anyconnect/bin/vpn -s connect HOST
+```
+
+It’s the same as you type your user id and password but you can script it so that you don’t have to type in the same details
+
 26 June
 
 In typescript, `interface` and `type` are almost the same, except `interface` has merge capability. I’m not sure if I would ever use interface merge, though.
@@ -64,7 +74,7 @@ This is a handy tool to test the network connectivity of your mobile application
 
 Once it’s downloaded, open the `.dmg` file and install `Network Link Condition.prefPane` by double-clicking it in `Hardware` folder. It’ll be installed in the system preference, so you can search it there from next time. 
 
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/ee064a04-3de4-43d4-b868-5dd4a811ff24/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220627%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220627T013206Z&X-Amz-Expires=3600&X-Amz-Signature=1dd7bb2506ad69eb116ecb5737121fbae04017d8d8c2bd8a983747c82f40a53e&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/ee064a04-3de4-43d4-b868-5dd4a811ff24/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220628%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220628T013255Z&X-Amz-Expires=3600&X-Amz-Signature=3485e0114b6cd5707955ffdedf5260e133ef4ff0dc5d15b2f10e42041af8c078&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 Querying DynamoDB data with javascript SDK v3
 
