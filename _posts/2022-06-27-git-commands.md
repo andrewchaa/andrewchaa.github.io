@@ -21,4 +21,5 @@ Usage|Description
 `git push --tags`|create a tag locally and remotely
 `git tag -d 9.9.0`
 `git push --delete origin 9.9.0`|delete the tag locally and remotely
+`cat ~/.ssh/id_rsa.pub`|print public ssh key
 
