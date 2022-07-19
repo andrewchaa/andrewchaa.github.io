@@ -5,9 +5,26 @@ tags:
   - til
 ---
 
-Tue. 12
+[Swashbuckle](https://github.com/domaindrivendev/Swashbuckle.AspNetCore) generate schema automatically. Out of the box, it uses class name as the schema id and if you have the same classname from two different namespaces, you get an error. 
 
-Javascript regex.
+```bash
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Failed to generate Operation for action - PayController.RequestTransfer (PlaygroundApi). See inner exception
+ ---> System.InvalidOperationException: Can't use schemaId "$PostalAddress24" for type "$ISO20022.Messages.Camt_054_001.V09.PostalAddress24". The same schemaId is already used for type "$ISO20022.Messages.Pacs_008_001.V10.PostalAddress24"
+```
+
+[To fix it](https://stackoverflow.com/questions/61881770/invalidoperationexception-cant-use-schemaid-the-same-schemaid-is-already-us), you have to instruct Swashbuckle to use `fullname`
+
+```bash
+builder.Services.AddSwaggerGen(o =>
+		{
+			o.OperationFilter<CallbacksOperationFilter>();
+			o.CustomSchemaIds(type => type.ToString());
+		});
+```
+
+(Mon. 18)
+
+### Javascript regex. Tue. 12
 
 I had to capture an error message.
 
