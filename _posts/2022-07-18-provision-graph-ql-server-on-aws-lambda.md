@@ -72,3 +72,61 @@ resource "aws_lambda_permission" "graphql_server_invoke_permission" {
 }
 ```
 
+```bash
+resource "aws_cloudwatch_log_group" "graphql_server" {
+  name = "/aws/lambda/${aws_lambda_function.graphql_server.function_name}"
+
+  retention_in_days = 14
+}
+```
+
+```bash
+data "archive_file" "graphql_server" {
+  type        = "zip"
+  source_dir  = "../dist/graphql-server"
+  output_path = "../dist/graphql-server.zip"
+}
+
+resource "aws_lambda_function" "graphql_server" {
+  function_name = "${var.component}_${var.environment}_graphql_server"
+  filename      = data.archive_file.graphql_server.output_path
+
+  runtime = "nodejs16.x"
+  handler = "index.handler"
+
+  source_code_hash = data.archive_file.graphql_server.output_base64sha256
+  role             = aws_iam_role.iam_lambda_role.arn
+
+  environment {
+    variables = {
+      run_env                 = var.environment
+    }
+  }
+}
+```
+
+```bash
+data "aws_iam_policy_document" "iam_lambda_log_policy_document" {
+  statement {
+    actions = [
+      "logs:CreateLogGroup",
+      "logs:CreateLogStream",
+      "logs:PutLogEvents"
+    ]
+    resources = [
+      "${aws_cloudwatch_log_group.graphql_server.arn}:*"
+    ]
+  }
+}
+
+resource "aws_iam_policy" "iam_lambda_log_policy" {
+  name   = "${var.component}_${var.environment}_iam_lambda_log_policy"
+  policy = data.aws_iam_policy_document.iam_lambda_log_policy_document.json
+}
+
+resource "aws_iam_role_policy_attachment" "lambda_logs" {
+  role       = aws_iam_role.iam_lambda_role.name
+  policy_arn = aws_iam_policy.iam_lambda_log_policy.arn
+}
+```
+
