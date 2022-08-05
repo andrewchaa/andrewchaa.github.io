@@ -2,6 +2,7 @@ import { Client } from '@notionhq/client'
 import dotenv from 'dotenv'
 import { NotionToMarkdown } from 'notion-to-md'
 import * as fs from 'fs'
+import dayjs from 'dayjs'
 
 dotenv.config()
 const notion = new Client({
@@ -19,19 +20,26 @@ const response = await notion.databases.query({
 
 const pages = response
   .results
-  .filter(x => x?.properties.Name.title.length > 0)
+  .filter(x => x?.object === 'page')
 
 pages.map(async x => {
-  console.dir(x, {depth: null})
+  const title = (await notion.pages.properties.retrieve({
+    page_id: x.id,
+    property_id: 'title',
+  })).results[0].title.plain_text
+
+  const tags = (await notion.pages.properties.retrieve({
+    page_id: x.id,
+    property_id: 'mntZ',
+    }))
+    .multi_select
+    .map(t => `  - ${t.name}`)
+    .join('\n')
+
+  const publishedDate = dayjs(x.created_time).format('YYYY-MM-DD')
   const mdBlocks = await n2m.pageToMarkdown(x.id)
   const content = n2m.toMarkdownString(mdBlocks)
-
-  const publishedDate = x.properties['Published Date'].date.start
-  const title = x.properties.Name.title[0].plain_text
   const filename = kebabCase(title)
-  const tags = x.properties.Tags.multi_select
-    .map(x => `  - ${x.name}`)
-    .join('\n')
   const pageContent =
 `---
 title: ${title}
@@ -41,8 +49,6 @@ ${tags}
 ---
 ${content}
 `
-  fs.writeFile(`./_posts/${publishedDate}-${filename}.md`, pageContent, (err) => {
-    console.log(err);
-  });
+  fs.writeFileSync(`./_posts/${publishedDate}-${filename}.md`, pageContent);
   return
 });

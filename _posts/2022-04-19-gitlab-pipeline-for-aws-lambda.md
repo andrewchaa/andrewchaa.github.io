@@ -1,6 +1,6 @@
 ---
 title: Gitlab Pipeline for AWS Lambda
-date: 2022-05-30
+date: 2022-04-19
 tags:
   - pipeline
   - gitlab

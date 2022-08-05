@@ -1,6 +1,6 @@
 ---
 title: Optimistic Locking Using a Version Number with DynamoDB
-date: 2022-05-30
+date: 2022-02-12
 tags:
   - dynamodb
 ---

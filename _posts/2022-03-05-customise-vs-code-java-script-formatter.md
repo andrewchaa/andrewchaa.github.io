@@ -1,6 +1,6 @@
 ---
 title: Customise VS Code JavaScript Formatter
-date: 2022-06-02
+date: 2022-03-05
 tags:
   - vs code
 ---

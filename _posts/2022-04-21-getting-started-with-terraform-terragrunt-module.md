@@ -1,6 +1,6 @@
 ---
 title: Getting started with terraform / terragrunt module
-date: 2022-05-30
+date: 2022-04-21
 tags:
   - terraform
   - terragrunt

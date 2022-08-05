@@ -1,6 +1,6 @@
 ---
 title: Handle Jest’s precision failure
-date: 2022-04-27
+date: 2022-04-17
 tags:
   - jest
 ---
