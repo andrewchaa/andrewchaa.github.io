@@ -19,7 +19,7 @@ The app will be based on
 Create a typescript react website
 
 ```bash
-yarn create-react-app my-app --template typescript
+npx create-react-app my-app --template typescript
 ```
 
 Follow [the tailwindcss installation instruction for create-react-app](https://tailwindcss.com/docs/guides/create-react-app)
