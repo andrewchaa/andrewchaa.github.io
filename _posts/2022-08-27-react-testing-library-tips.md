@@ -41,3 +41,23 @@ module.exports = {
 };
 ```
 
+### Test if an element has focus
+
+```javascript
+it('should focus on name input when component mounts', () => {
+  renderApollo(<Add />)
+
+  expect(screen.getByRole('textbox')).toHaveFocus()
+})
+```
+
+### Test if an element has value of
+
+```javascript
+it('should have a default quantity of 1', () => {
+  renderApollo(<Add />)
+
+  expect(screen.getByRole('spinbutton')).toHaveValue(1)
+})
+```
+
