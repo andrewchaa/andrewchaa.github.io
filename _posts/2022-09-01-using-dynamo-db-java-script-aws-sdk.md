@@ -64,3 +64,38 @@ export async function getJob(email: string, jobId: string)
 }
 ```
 
+### Query
+
+You have to [convert DynamoDB Record to JavaScript](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/modules/_aws_sdk_util_dynamodb.html) object with `unmarshall`
+
+```javascript
+export async function getJobs(email: string)
+  : Promise<[Job[], string, string]> {
+
+  const params = {
+    TableName: tableName,
+    KeyConditionExpression: "email = :email",
+    ExpressionAttributeValues: {
+      ":email": { S: email },
+    }
+  }
+
+  try {
+    const result = await ddbDocClient.send(new QueryCommand(params))
+
+    return [
+      result.Items?.map(x => unmarshall(x)) as Job[],
+      result.$metadata.httpStatusCode.toString(),
+      ''
+    ]
+  } catch (error) {
+    console.log(error)
+    return [
+      {} as Job[],
+      error.$metadata.httpStatusCode,
+      (error as Error).message
+    ]
+  }
+}
+```
+
