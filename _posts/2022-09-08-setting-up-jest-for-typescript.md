@@ -11,7 +11,7 @@ It takes a few steps to [run typescript jest tests](https://jestjs.io/docs/getti
 ```bash
 npm init # to create package.json. also create an empty yarn.lock file
 
-yarn add -D jest
+yarn add -D jest ts-jest
 
 jest --init # to initialise jest
 
@@ -32,7 +32,11 @@ export default {
     "/node_modules/"
   ],
   coverageProvider: "v8",
-};
+	preset: 'ts-jest',
+  transform: {
+    '^.+\\.(ts|tsx)?$': 'ts-jest',
+    "^.+\\.(js|jsx)$": "babel-jest",
+  }};
 ```
 
 `babel` needs config file too
@@ -47,7 +51,7 @@ module.exports = {
 };
 ```
 
-Finally “test” to npm script
+Finally “test” to `npm script`
 
 ```json
 "scripts": {
@@ -70,4 +74,10 @@ it('should calculate average', () => {
   expect(average).toBe(80)
 })
 ```
+
+Often you have an error, `Cannot use import statement outside a module`
+
+Make sure you have `babel.config.ts` and `jest.config.ts`
+
+[https://stackoverflow.com/questions/58613492/how-to-resolve-cannot-use-import-statement-outside-a-module-in-jest](https://stackoverflow.com/questions/58613492/how-to-resolve-cannot-use-import-statement-outside-a-module-in-jest)
 
