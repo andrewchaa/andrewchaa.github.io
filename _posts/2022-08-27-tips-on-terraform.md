@@ -6,6 +6,21 @@ tags:
   - tips
 ---
 
+### Functions
+
+`replace`: replace string
+
+```bash
+resource "aws_s3_bucket" "photo_storage" {
+  bucket = replace("${var.component}-${var.env}-photo-storage", "_", "-")
+
+  tags = {
+    Name        = "Photo Storage"
+    Environment = var.env
+  }
+}
+```
+
 ### AWS Lambda Integration
 
 The integration method is always `POST` even though your incoming request http method is `GET`

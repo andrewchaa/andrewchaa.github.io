@@ -6,7 +6,41 @@ tags:
   - react native
 ---
 
-Tips I use
+## Tips I use
+
+### Upload an image from file system
+
+`expo-file-system` provides [access to a file system](https://docs.expo.dev/versions/latest/sdk/filesystem/#filesystemuploadasyncurl-fileuri-options) stored locally on the device.
+
+```typescript
+import { uploadAsync } from 'expo-file-system'
+
+export default async function uploadToS3(photo: Photo) {
+  const signedUrlResponse = await apis.getSignedUrl(photo.shortFilename)
+
+  if (signedUrlResponse.status === 201) {
+    try {
+      await uploadAsync(
+        signedUrlResponse.data.signedUrl,
+        photo.filename,
+        {
+          httpMethod: 'PUT',
+        }
+      )
+    } catch(error) {
+      console.log(error)
+    }
+  }
+}
+```
+
+### Install package
+
+Use `npx expo install <:package>`
+
+```bash
+npm expo install @sentry/react-native
+```
 
 ### To use an image from the local project folder
 
