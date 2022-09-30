@@ -6,7 +6,29 @@ tags:
   - react native
 ---
 
-## Tips I use
+### Storing `string` data in Async Storage
+
+[**Async Storage**](https://react-native-async-storage.github.io/async-storage/docs/usage) can only store `string` data, so in order to store object data you need to serialize it first. For data that can be serialized to JSON you can use `JSON.stringify()` when saving the data and `JSON.parse()` when loading the data.
+
+```javascript
+const storeData = async (value) => {
+  try {
+    const jsonValue = JSON.stringify(value)
+    await AsyncStorage.setItem('@storage_Key', jsonValue)
+  } catch (e) {
+    // saving error
+  }
+}
+
+const getData = async () => {
+  try {
+    const jsonValue = await AsyncStorage.getItem('@storage_Key')
+    return jsonValue != null ? JSON.parse(jsonValue) : null;
+  } catch(e) {
+    // error reading value
+  }
+}
+```
 
 ### Upload an image from file system
 
