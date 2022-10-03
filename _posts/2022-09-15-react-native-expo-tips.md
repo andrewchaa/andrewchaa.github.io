@@ -6,6 +6,14 @@ tags:
   - react native
 ---
 
+There are tips and tricks I use for React Native Development.
+
+### Reactotron
+
+[Reactotron](https://github.com/infinitered/reactotron) is a desktop app for inspecting your React JS and React Native projects
+
+- [Debugging and Beyond with Reactotron](https://www.youtube.com/watch?v=UiPo9A9k7xc)
+
 ### Storing `string` data in Async Storage
 
 [**Async Storage**](https://react-native-async-storage.github.io/async-storage/docs/usage) can only store `string` data, so in order to store object data you need to serialize it first. For data that can be serialized to JSON you can use `JSON.stringify()` when saving the data and `JSON.parse()` when loading the data.
