@@ -13,6 +13,8 @@ It’s a task I repeat when I get a new laptop. It has 3 steps
 
 - Add the public key to your Account settings
 
+## Windows
+
 ### Set up your default identity
 
 ```bash
@@ -35,5 +37,12 @@ $ ssh-add ~/.ssh/id_rsa
 ```bash
 code ~/.ssh/id_rsa.pub # to copy the public key
 $ ssh -T git@bitbucket.org # to verify the configuration
+```
+
+## WSL on Windows
+
+```bash
+sudo apt install openssh-client
+ssh-keygen -t rsa
 ```
 
