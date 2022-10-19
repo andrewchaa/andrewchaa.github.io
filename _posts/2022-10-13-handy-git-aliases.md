@@ -5,11 +5,10 @@ tags:
   - git
 ---
 
-List of handy git aliases I use.
-
-To list git aliases
+Recently, I started a new gig at New Day. A new job, a new team, and a new laptop. I use git in the terminal a fair amount of time and noticed lost all my favourite git aliases I used to use in the terminal of my personal Macbook. So I wrote down a list of git aliases I find useful. 
 
 ```bash
+# list of handy git aliases I use.
 git config --get-regexp alias
 ```
 
