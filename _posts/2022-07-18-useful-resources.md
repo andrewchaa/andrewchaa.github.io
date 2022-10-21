@@ -11,3 +11,5 @@ tags:
 
 - [AWS JavaScript SDK v3](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/index.html)
 
+- [tremor](https://github.com/tremorlabs/tremor): The react library to build dashboards fast
+
