@@ -10,6 +10,9 @@ tags:
 # delete all local branches except master
 git branch \| grep -v "master" \| xargs git branch -D
 
+# on windows
+git branch | select-string -NotMatch -Pattern "master" | %{ git branch -D $_.ToString().Trim() }
+
 # rename branch
 git branch -m feature/4810-feature-flag
 
