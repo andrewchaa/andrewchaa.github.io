@@ -24,5 +24,6 @@ git config --global alias.cm 'commit -m'
 git config --global alias.rv 'remote -v'
 git config --global alias.gl 'config --global -l'
 git config --global alias.se '!git rev-list --all | xargs git grep -F'
+git config --global alias.dnm '!git branch | grep -v "master\|main" | xargs git branch -D'
 ```
 
