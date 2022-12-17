@@ -20,7 +20,7 @@ Alternatively, you can use the **`&`** operator instead of **`&&`**. This operat
 
 ```json
 "scripts": {
-  "build-and-test": "npm run build &&& npm run test"
+  "build-and-test": "npm run build & npm run test"
 }
 ```
 
