@@ -19,8 +19,7 @@ Here is a possible way to structure your jest tests for an AWS lambda project:
 
 Here is an example of how your directory structure could look like:
 
-```plain text
-Copy code
+```bash
 project
 ├── __tests__
 │   ├── __mocks__
