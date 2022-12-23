@@ -17,7 +17,9 @@ Trackpad
 
 Function keys
 
-	- Use function keys without `fn`. As developer, I use function keys much more often than volume control. System Preference > Keyboard > Use F1, F2, etc. keys as standard function keys
+	- Use function keys without `fn`. 
+	System Preference > Keyboard > Keyboard Shortcuts > Use F1, F2, etc. keys as standard function keys
+	As developer, I use function keys much more often than volume control. 
 
 Dock
 
@@ -35,7 +37,15 @@ Download and install apps
 
 - [Microsoft Teams](https://www.microsoft.com/en-gb/microsoft-teams/download-app)
 
+- [Discord](https://discord.com/download)
+
 - [Amphetamine](https://apps.apple.com/us/app/amphetamine/id937984704?mt=12)
+
+- Install Rosetta if you are Apple Silicon
+
+```bash
+sudo softwareupdate --install-rosetta
+```
 
 ### Development
 
@@ -43,31 +53,49 @@ Tweaks
 
 - Install [Fira Code](https://github.com/tonsky/FiraCode) font
 
-	- `brew tap homebrew/cask-fonts`
-
-	- `brew install --cask font-fira-code`
+```bash
+brew tap homebrew/cask-fonts
+brew install --cask font-fira-code
+```
 
 SDKs and CLIs
 
-- [.NET 6](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
+- [.NET 6](https://dotnet.microsoft.com/en-us/download/dotnet/6.0), .[NET 7](https://dotnet.microsoft.com/en-us/download/dotnet/7.0)
 
 - node
 
-	- `brew install node`
+```bash
+brew install node
+```
 
 - [yarn](https://yarnpkg.com/getting-started/install)
 
-	- `brew install corepack`
+```bash
+brew install corepack
+```
 
 - Azure Cli
 
-	- `brew update && brew install azure-cli`
+```bash
+brew update && brew install azure-cli
+```
+
+- [AWS Cli](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
+
+```bash
+aws configure
+
+AWS Access Key ID [None]: AKIAIOSFODNN7EXAMPLE
+AWS Secret Access Key [None]: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+Default region name [None]: us-west-2
+Default output format [None]: json
+```
 
 Development tools and apps
 
 - [warp](https://www.warp.dev/): The terminal for the 21st century 
 
-- [brew](/d06094fb0c1d4ff28328e9ef35073787): The Missing Package Manager for macOS
+- [brew](https://brew.sh/): The Missing Package Manager for macOS
 
 - [xcode](https://apps.apple.com/us/app/xcode/id497799835?mt=12)
 
@@ -79,17 +107,21 @@ Development tools and apps
 
 	- `git config --global user.email "email`[`@example.com`](mailto:MY_NAME@example.com)`"`
 
+	- Add [alias](/29fa5b1b7bf645ec8e3c8b38e3c566b9)
+
 - [ohmyzsh](https://github.com/ohmyzsh/ohmyzsh)
 
 - [Visual Studio code](https://code.visualstudio.com/)
 
 	- `shft + cmd + p` and `Shell command: Install code command in PATH`
 
-- [raycast](https://www.raycast.com/): a blazingly fast, totally extendable launcher. It lets you complete tasks, calculate, share common links, and much more
-
 - [Rider](https://www.jetbrains.com/rider/download/#section=mac): .NET IDE with the power of ReSharper
 
 - [Docker](https://docs.docker.com/desktop/install/mac-install/)
+
+- [Postman](https://www.postman.com/downloads/)
+
+- [Authy](https://authy.com/download/)
 
 Instructions
 
