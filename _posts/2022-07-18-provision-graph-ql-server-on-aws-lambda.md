@@ -7,6 +7,8 @@ tags:
 
 It’s the same as to create a REST API. Provision API Gateway endpoint and connect the endpoint to a lambda that hosts GraphQL server.
 
+Provision API Gateway resources
+
 ```bash
 # API Gateway
 resource "aws_api_gateway_rest_api" "graphql_server" {
@@ -72,6 +74,8 @@ resource "aws_lambda_permission" "graphql_server_invoke_permission" {
 }
 ```
 
+Provision cloudwatch log group
+
 ```bash
 resource "aws_cloudwatch_log_group" "graphql_server" {
   name = "/aws/lambda/${aws_lambda_function.graphql_server.function_name}"
@@ -79,6 +83,8 @@ resource "aws_cloudwatch_log_group" "graphql_server" {
   retention_in_days = 14
 }
 ```
+
+Provision lambda
 
 ```bash
 data "archive_file" "graphql_server" {
@@ -104,6 +110,8 @@ resource "aws_lambda_function" "graphql_server" {
   }
 }
 ```
+
+Provision lambda log policy
 
 ```bash
 data "aws_iam_policy_document" "iam_lambda_log_policy_document" {
