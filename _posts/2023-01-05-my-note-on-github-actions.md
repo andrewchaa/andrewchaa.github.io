@@ -100,13 +100,10 @@ In this example, the **`Deploy to staging`** step will be run only if the branch
 
 You can also use the **`unless`** keyword to specify conditions that should be negated. For example:
 
-```plain text
-Copy code
+```yaml
       - name: Deploy to staging
         run: npm run deploy-staging
-        unless: ${{ github.ref == 'refs/heads/production' }}
-
-
+        unless: github.ref == 'refs/heads/main'
 ```
 
 This step will be run unless the branch being pushed is **`production`**.
