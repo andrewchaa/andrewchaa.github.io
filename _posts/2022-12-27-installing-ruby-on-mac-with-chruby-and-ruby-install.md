@@ -45,12 +45,6 @@ ruby-install ruby
 
 This will download and install the latest stable version of Ruby. 
 
-```bash
-ruby-install ruby
-```
-
-This will install Ruby version 2.7.3.
-
 Once the installation is complete, you can use chruby to switch between different versions of Ruby. For example, to switch to the latest stable version of Ruby, enter the following command:
 
 ```bash
