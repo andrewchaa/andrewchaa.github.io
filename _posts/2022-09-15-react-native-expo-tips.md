@@ -84,7 +84,9 @@ Use `require`
 
 ### Expo
 
-`shft + i` on terminal: you can select simulator iPhone version
+Keyboard Shortcuts
 
-`npx expo start --ios` to run the app on the simulator. 
+- `shft + i` on terminal: you can select simulator iPhone version
+
+- `npx expo start --ios` to run the app on the simulator. 
 

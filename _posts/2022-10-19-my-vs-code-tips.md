@@ -7,9 +7,29 @@ tags:
 
 A few tips and tricks I use for the wonderful code editor, VS Code.
 
+### Keyboard Shortcuts
+
+- close a tab: ⌘ W
+
+- close all tabs: ⌘ k ⌘ W
+
+- close other tabs: ⌘ ⌥ T
+
+- show file explorer: ⌘ ⇧ E
+
+- show / hide left pane: ⌘ B
+
+- open a terminal: ^ `
+
+- open a new terminal: ⇧ ^ `
+
+- search files by name: ⌘ P
+
+- search actions by name: ⌘ ⇧ P
+
 ### Change the indentation
 
 In the toolbar in the bottom right corner.
 
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/e655c596-1040-4dac-b2d3-2c998f9dcc83/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230110%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230110T012945Z&X-Amz-Expires=3600&X-Amz-Signature=ac7a7816ae79439f282afdf47eaa031c589eefaa6d0b2ec9be6fc282be0ad58c&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/e655c596-1040-4dac-b2d3-2c998f9dcc83/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230111%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230111T012926Z&X-Amz-Expires=3600&X-Amz-Signature=89c4ad483bcbbe2291b0496576977957fd1f66b6164a01e69e355e38d242eadc&X-Amz-SignedHeaders=host&x-id=GetObject)
 
