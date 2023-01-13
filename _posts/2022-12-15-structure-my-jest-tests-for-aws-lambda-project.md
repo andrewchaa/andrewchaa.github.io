@@ -40,3 +40,13 @@ project
 
 This structure allows you to keep your tests organized and easily maintainable. You can also use jest's **`--testPathPattern`** option to run only specific tests or groups of tests.
 
+By default, jest consider every file under `__tests__` as test. Add the following to ignore those helper functions.
+
+```typescript
+"jest": {
+    ...
+    "testPathIgnorePatterns": [
+      "/__tests__/helpers/"
+    ],
+```
+
