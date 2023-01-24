@@ -9,27 +9,31 @@ A few tips and tricks I use for the wonderful code editor, VS Code.
 
 ### Keyboard Shortcuts
 
-- close a tab: ⌘ W
+- Close a tab: ⌘ W
 
-- close all tabs: ⌘ k ⌘ W
+- Close all tabs: ⌘ k ⌘ W
 
-- close other tabs: ⌘ ⌥ T
+- Close other tabs: ⌘ ⌥ T
 
-- show file explorer: ⌘ ⇧ E
+- Save a file: ⌘ S
 
-- show / hide left pane: ⌘ B
+- Show file explorer: ⌘ ⇧ E
 
-- open a terminal: ^ `
+- Show / hide left pane: ⌘ B
 
-- open a new terminal: ⇧ ^ `
+- Open a new tab: ⌘ N
 
-- search files by name: ⌘ P
+- Open a terminal: ^ `
 
-- search actions by name: ⌘ ⇧ P
+- Open a new terminal: ⇧ ^ `
+
+- Search files by name: ⌘ P
+
+- Search actions by name: ⌘ ⇧ P
 
 ### Change the indentation
 
 In the toolbar in the bottom right corner.
 
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/e655c596-1040-4dac-b2d3-2c998f9dcc83/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230123%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230123T012933Z&X-Amz-Expires=3600&X-Amz-Signature=0350bc972b0d52df21ac3fc8a6085b9c9731a24912a29cc805ad48721d01b241&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/e655c596-1040-4dac-b2d3-2c998f9dcc83/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230124%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230124T021155Z&X-Amz-Expires=3600&X-Amz-Signature=e3b360d04d2ef50fbb118b234c430509676cacd7a2218a783eff6a808c4ea9e6&X-Amz-SignedHeaders=host&x-id=GetObject)
 
