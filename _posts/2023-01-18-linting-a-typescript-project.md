@@ -55,8 +55,9 @@ You can also add a script in your package.json file to run eslint in your typesc
 
 ```json
 "scripts": {
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-  },
+  "lint": "eslint . && prettier-eslint --list-different **/*.ts",
+  "format": "prettier-eslint --write '**/*.ts'"
+},
 ```
 
 Then you can run the script by typing **`yarn lint`** in your command prompt.
@@ -76,9 +77,11 @@ yarn add -D prettier-eslint-cli
 ```javascript
 // **.eslintrc.cjs**
 rules: {
-    quotes: ['error', 'single', { avoidEscape: true }],
-    'comma-dangle': ['error', 'always-multiline'], 
-  },
+  quotes: ['error', 'single', { avoidEscape: true }],
+  'comma-dangle': ['error', 'always-multiline'],
+  'no-console': 'off',
+	'max-len': ["error", { "code": 80 }],
+}
 ```
 
 ### How to fix lint errors
