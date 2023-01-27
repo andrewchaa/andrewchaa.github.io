@@ -128,3 +128,15 @@ return {
 
 ```
 
+‘jest’ is not defined
+
+Add `jest/globals` to `env`
+
+```javascript
+env: {
+  es6: true,
+  node: true,
+  'jest/globals': true,
+},
+```
+
