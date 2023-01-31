@@ -9,6 +9,30 @@ tags:
 
 In order to test whether a button click works in a React Native app using Jest, you can use the **`fireEvent`** method from the **`@testing-library/react-native`** library.
 
+### Debug()
+
+When retrieving an element fails, use `debug()` to inspect the rendered screen in code
+
+```typescript
+<RNCSafeAreaProvider
+      onInsetsChange={[Function anonymous]}
+      style={
+        Array [
+          Object {
+            "flex": 1,
+          },
+          undefined,
+        ]
+      }
+    >
+      <View
+        style={
+          Object {
+            "backgroundColor": "background",
+            "elevation": 1,
+            ...
+```
+
 ### Button
 
 Here is an example of how you might test a button click:
