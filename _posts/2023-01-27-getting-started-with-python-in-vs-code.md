@@ -25,6 +25,13 @@ Verify the Python installation
 python3 --version
 ```
 
+If you need to set a specific version of python3 as python, then set it in `~/.zshrc`
+
+```bash
+export PATH="$HOMEBREW_PREFIX/opt/python@3.11/libexec/bin:$PATH"
+alias python=python3
+```
+
 Start VS Code in a project (workspace) folder. I’m following a tutorial about Pandas and sckit-learn, so this is the name of the folder
 
 ```bash
@@ -53,6 +60,6 @@ When you create a new virtual environment, you should be prompted by VS Code to 
 Then install the packages
 
 ```bash
-python3 -m pip install matplotlib
+python3 -m pip install numpy pandas matplotlib
 ```
 

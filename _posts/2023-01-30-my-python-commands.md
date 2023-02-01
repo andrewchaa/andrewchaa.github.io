@@ -207,3 +207,57 @@ vol.plot(figsize=(10, 8), ax=ax)
 fig.savefig('vol.png')
 ```
 
+EMA signals
+
+```typescript
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+
+df = pd.read_csv('apple_stock_eod_prices.csv', 
+    parse_dates=True, header=0, index_col=0)
+
+short_window = 50
+long_window = 120
+alpha = 0.1
+signals = pd.DataFrame(index=df.index)
+
+signals['ema_signal'] = 0.0
+signals['ema'] = df['Close'].ewm(alpha=alpha, adjust=False).mean()
+signals['ema_positions'] = 0.0
+signals['short_mavg'] = df['Close'].rolling(window=short_window, 
+    min_periods=1, 
+    center=False).mean()
+signals['long_mavg'] = df['Close'].rolling(window=long_window, 
+    min_periods=1, 
+    center=False).mean()
+signals['sma_positions'] = 0.0
+
+signals['ema_signal'] = np.where(signals['ema'] > df['Close'], 1.0, 0.0)
+signals['ema_positions'] = signals['ema_signal'].diff()
+
+fig = plt.figure(figsize=(12,10))
+ax1 = fig.add_subplot(111, ylabel='Price in $')
+signals2 = signals.loc['2018-01-01':,:]
+
+df.loc['2018-01-01':,'Close'].plot(ax=ax1, color='r', lw=2., label='Close Price')
+signals2.loc[:,'ema'].plot(ax=ax1, lw=2.)
+
+# Plot the buy signals
+ax1.plot(signals2.loc[signals2.ema_positions == 1.0].index,
+         signals2.ema[signals2.ema_positions == 1.0],
+         'o', markersize=10, color='r')
+
+# Plot the sell signals
+ax1.plot(signals2.loc[signals2.ema_positions == -1.0].index,
+         signals2.ema[signals2.ema_positions == -1.0],
+         '^', markersize=10, color='g')
+
+plt.legend()
+
+fig.savefig('strategy_1_signals.png')
+
+print(signals)
+print(signals.tail())
+```
+
