@@ -39,6 +39,9 @@ git push --tags
 # reset to origin/HEAD leaving files uncommitted
 git reset --mixed origin/HEAD
 
+# git pull force
+git reset --hard origin/main
+
 # to fix error: cannot lock ref ...
 git remote prune origin
 

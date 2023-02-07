@@ -11,9 +11,13 @@ In order to test whether a button click works in a React Native app using Jest, 
 
 ### Debug()
 
-When retrieving an element fails, use `debug()` to inspect the rendered screen in code
+When retrieving an element fails, use `screen.debug()` to inspect the rendered screen in code
 
 ```typescript
+screen.debug()
+screen.debug({ mapProps: ({ style, ...props }) => ({ props }) })
+---
+
 <RNCSafeAreaProvider
       onInsetsChange={[Function anonymous]}
       style={
@@ -105,7 +109,6 @@ root
 ```typescript
 export const KeyboardAwareScrollView = () =>
   jest.fn().mockImplementation(
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     ({ children }) => children
   )
 ```
@@ -116,5 +119,50 @@ export const KeyboardAwareScrollView = () =>
 
 ```typescript
 export const KeyboardAwareScrollView = ({ children }) => children
+```
+
+### Verify that a mocked api is called with the expected parameters
+
+To verify that a mocked API is called with the expected parameters in Jest, you can use **`expect.toHaveBeenCalledWith(arg1, arg2, ...)`** method on the mock function.
+
+```typescript
+describe('SignIn', () => {
+  const email = 'email'
+  const password = 'password'
+
+  apis.authSignIn = jest.fn()
+
+  it('should sign in with given email and password', () => {
+    render(<SignIn />, {wrapper})
+
+    fireEvent.changeText(screen.getByTestId('email'), email)
+    fireEvent.changeText(screen.getByTestId('password'), password)
+    fireEvent.press(screen.getByTestId('sign-in-button'))
+
+    expect(apis.authSignIn).toHaveBeenCalledWith({
+      email: email,
+      password: password,
+    })
+  })
+})
+```
+
+### Capture the parameters that are passed to a mocked function
+
+You can capture the parameters that are passed to a mocked function by accessing the **`.mock.calls`** property of the mock function.
+
+```typescript
+describe('JobDetails', () => {
+  apis.updateJob = jest.fn()
+
+  it('should complete job on confirm', async () => {
+    render(<JobDetails />, {wrapper})
+
+    fireEvent.press(await waitFor(() => screen.getByTestId('complete-button')))
+    fireEvent.press(screen.getByTestId('alert-dialog-action-button'))
+
+    const job = apis.updateJob.mock.calls[0][0] as Job
+    expect(job.jobStatus).toBe('COMPLETED')
+  })
 ```
 
