@@ -12,7 +12,7 @@ Azure Databricks is a fully managed platform for running Apache Spark on Microso
 
 In Azure Databricks, a notebook is a web-based interface that allows users to interactively work with their data, write and run code, and create visualizations. The notebook is based on the open-source Jupyter notebook and supports multiple programming languages including Python, R, SQL, and Scala.
 
-### Sqls
+### SQLs
 
 Get current timestamp and unix timestamp
 

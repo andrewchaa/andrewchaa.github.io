@@ -113,6 +113,39 @@ export const KeyboardAwareScrollView = () =>
   )
 ```
 
+### spyOn
+
+**`spyOn`** is a method provided by Jest that allows you to create a mock function (i.e., a spy) that wraps the original function. A spy allows you to monitor the behaviour of the original function, including how many times it was called, what arguments it was called with, and what it returned.
+
+```typescript
+import React from 'react'
+import {fireEvent, render, screen, waitFor} from '@testing-library/react-native'
+import AddService from '../../src/screens/JobEdit/AddService'
+import * as Navigation from '@react-navigation/native'
+import  wrapper from '../helpers/wrapper'
+import { mockJob } from '../helpers/apiMocks'
+import { RouteNames } from '../../src/constants/RouteNames'
+import { ServiceType } from '../../src/constants/ServiceType'
+
+describe('AddService', () => {
+  const mockNavigate = jest.fn()
+  jest.spyOn(Navigation, 'useNavigation').mockReturnValue({
+    navigate: mockNavigate,
+  })
+
+  it('should navigate to ServiceParentList', () => {
+    render(<AddService />, {wrapper})
+
+    fireEvent.press(screen.getByTestId('pressable-symptom'))
+
+    expect(mockNavigate).toHaveBeenCalledWith(
+      RouteNames.ServiceParentList,
+      { job: mockJob, type: ServiceType.SYMPTOM }
+    )
+  })
+})
+```
+
 ### KeyboardAwareScrollView Issue
 
 `render()` doesn’t render `KeyboardAwareScrollView` very well. Mock it so that it just render the children.
@@ -164,5 +197,71 @@ describe('JobDetails', () => {
     const job = apis.updateJob.mock.calls[0][0] as Job
     expect(job.jobStatus).toBe('COMPLETED')
   })
+```
+
+### **The module factory of** **`jest.mock()`** **is not allowed to reference any out-of-scope variables**
+
+I got this error when I use an object I imported from another module to return it as mocked response. You have to change the name of the variable to start with `mock`
+
+```typescript
+// apiMocks.ts
+export const mockJob = {
+  companyId: '0003100000',
+  jobNo: '2023011700001',
+  customerComment: 'Test- Jan.17,2023',
+  engineer: {
+    company: 'Newhaven',
+    gasSafetyNumber: '145764',
+    name: 'testsvc',
+  },
+  estimatedSymptom: 'A0100004',
+  jobNotes: '2/1 test',
+  jobStatus: 'IN_PROGRESS',
+  photos: [],
+  product: {
+    fuel: 'LNG',
+    id: 'PLCB0021SH001',
+    name: 'LCB;0021,Kerosene,S,I,GB,CE',
+    serialNumber: '1134234612123123',
+  },
+  reportDate: '2023-02-01T00:12:51.359Z',
+  serviceRequestDate: '2023-01-17',
+}
+```
+
+```typescript
+// addService.test.tsx
+import React from 'react'
+import {fireEvent, render, screen} from '@testing-library/react-native'
+import AddService from '../../src/screens/JobEdit/AddService'
+import '@react-navigation/native'
+import wrapper from '../helpers/wrapper'
+import { mockJob } from '../helpers/apiMocks'
+import { RouteNames } from '../../src/constants/RouteNames'
+
+describe('AddService', () => {
+  jest.mock('@react-navigation/native', () => ({
+      useNavigation: () => {
+        return { navigate: jest.fn() }
+      },
+      useRoute: () => ({
+        params: {
+          job: mockJob,
+        },
+      }),
+    })
+  )
+
+  it('should navigate to ServiceParentList', () => {
+    const navigate = jest.fn()
+    render(<AddService navigate={navigate} />, {wrapper})
+
+    fireEvent.press(screen.getByText('Select a symptom (*)'))
+    expect(navigate).toHaveBeenCalledWith(
+      RouteNames.ServiceParentList,
+      { job: mockJob }
+    )
+  })
+})
 ```
 
