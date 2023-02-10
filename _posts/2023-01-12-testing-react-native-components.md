@@ -9,6 +9,8 @@ tags:
 
 In order to test whether a button click works in a React Native app using Jest, you can use the **`fireEvent`** method from the **`@testing-library/react-native`** library.
 
+## Debugging
+
 ### Debug()
 
 When retrieving an element fails, use `screen.debug()` to inspect the rendered screen in code
@@ -42,6 +44,10 @@ Sometimes, adding an intentional delay helps in debugging the issue.
 ```typescript
 await new Promise((r) => setTimeout(r, 2000))
 ```
+
+## Examples
+
+You can find many good examples from [Testing Library Example page](https://testing-library.com/docs/react-testing-library/example-intro/).
 
 ### Button
 
@@ -82,7 +88,7 @@ In this example, we first import the **`render`** and **`fireEvent`** methods fr
 
 After that, we use the **`getByTestId`** to fetch the button element from the render tree and store it in a variable named button, then we use **`fireEvent.press(button)`** to simulate the button click. Finally, we use **`expect(onPress).toHaveBeenCalled()`** to check if the **`onPress`** callback was called during the simulation.
 
-## Mocking
+## Mock and Verify
 
 ### Manual mock
 
@@ -118,14 +124,6 @@ export const KeyboardAwareScrollView = () =>
 **`spyOn`** is a method provided by Jest that allows you to create a mock function (i.e., a spy) that wraps the original function. A spy allows you to monitor the behaviour of the original function, including how many times it was called, what arguments it was called with, and what it returned.
 
 ```typescript
-import React from 'react'
-import {fireEvent, render, screen, waitFor} from '@testing-library/react-native'
-import AddService from '../../src/screens/JobEdit/AddService'
-import * as Navigation from '@react-navigation/native'
-import  wrapper from '../helpers/wrapper'
-import { mockJob } from '../helpers/apiMocks'
-import { RouteNames } from '../../src/constants/RouteNames'
-import { ServiceType } from '../../src/constants/ServiceType'
 
 describe('AddService', () => {
   const mockNavigate = jest.fn()
@@ -231,14 +229,6 @@ export const mockJob = {
 
 ```typescript
 // addService.test.tsx
-import React from 'react'
-import {fireEvent, render, screen} from '@testing-library/react-native'
-import AddService from '../../src/screens/JobEdit/AddService'
-import '@react-navigation/native'
-import wrapper from '../helpers/wrapper'
-import { mockJob } from '../helpers/apiMocks'
-import { RouteNames } from '../../src/constants/RouteNames'
-
 describe('AddService', () => {
   jest.mock('@react-navigation/native', () => ({
       useNavigation: () => {
@@ -263,5 +253,78 @@ describe('AddService', () => {
     )
   })
 })
+```
+
+### Verify that the element has the expected value
+
+You can use `toHaveTextContent()`
+
+```typescript
+it('should render quantity', () => {
+    const code = '000000000092000044'
+    const name = 'Shipping Charge'
+
+    jest.spyOn(Navigation, 'useRoute').mockReturnValue({
+      params: {
+        job: mockJob,
+        item: { code: code, name: name },
+        type: ServiceType.PART,
+      },
+      key: '',
+      name: '',
+    })
+
+    render(<AddService />, { wrapper })
+
+    fireEvent.press(screen.getByTestId('pressable-plus'))
+    expect(screen.getByTestId('text-value')).toHaveTextContent('1')
+
+    fireEvent.press(screen.getByTestId('pressable-plus'))
+    expect(screen.getByTestId('text-value')).toHaveTextContent('2')
+
+    fireEvent.press(screen.getByTestId('pressable-minus'))
+    expect(screen.getByTestId('text-value')).toHaveTextContent('1')
+  })
+```
+
+### Verify that the element doesn’t exist
+
+Use `queryByText`
+
+```typescript
+describe('AddService', () => {
+  const mockNavigate = jest.fn()
+  jest.spyOn(Navigation, 'useNavigation').mockReturnValue({
+    navigate: mockNavigate,
+  })
+
+  jest.spyOn(Navigation, 'useRoute').mockReturnValue({
+    params: {
+      job: mockJob,
+      type: ServiceType.SYMPTOM,
+    },
+    key: '',
+    name: ''
+  })
+
+
+  it('should filter the list by Gas', () => {
+    render(<ServiceParentList />, { wrapper })
+
+    const searchName = 'Gas Smell/Leak'
+    fireEvent.changeText(screen.getByTestId('input-search'), searchName)
+
+    expect(screen.getByText(searchName)).toBeTruthy()
+    expect(screen.queryByText('Temperature Fluctuation')).toBeFalsy()
+  })
+})
+```
+
+### Verify that the input has the expected value
+
+Use `screen.getByDisplayValue()`
+
+```typescript
+expect(screen.getByDisplayValue('test')).toBeTruthy()
 ```
 
