@@ -26,11 +26,12 @@ resource "aws_api_gateway_resource" "graphql_server" {
   path_part   = "graphql"
 }
 
-resource "aws_api_gateway_method" "graphql_method" {
-  rest_api_id   = aws_api_gateway_rest_api.graphql_server.id
-  resource_id   = aws_api_gateway_resource.graphql_server.id
-  http_method   = "ANY"
-  authorization = "NONE"
+resource "aws_api_gateway_method" "graphql_server" {
+  rest_api_id      = aws_api_gateway_rest_api.service_agent.id
+  resource_id      = aws_api_gateway_resource.graphql.id
+  http_method      = "ANY"
+  authorization    = "NONE"
+  api_key_required = true
 }
 
 resource "aws_api_gateway_integration" "graphql_integration" {
@@ -97,7 +98,7 @@ resource "aws_lambda_function" "graphql_server" {
   function_name = "${var.component}_${var.environment}_graphql_server"
   filename      = data.archive_file.graphql_server.output_path
 
-  runtime = "nodejs16.x"
+  runtime = "nodejs18.x"
   handler = "index.handler"
 
   source_code_hash = data.archive_file.graphql_server.output_base64sha256
