@@ -144,6 +144,33 @@ describe('AddService', () => {
 })
 ```
 
+### Mock ES6 class
+
+`@aws-sdk/client-s3` package is a javascript class. To use, you have to create an instance.
+
+```graphql
+import { S3 } from '@aws-sdk/client-s3'
+
+const s3 = new S3({ region: config.region })
+job.photos.forEach(async photo => {
+  await s3.copyObject({
+    Bucket: config.photo_storage_bucket_name,
+    CopySource: `${config.photo_storage_bucket_name}/${photo.shortFilename}`,
+    Key: photo.shortFilename,
+    MetadataDirective: 'REPLACE',
+    ContentType: 'image/jpeg',
+  })
+})
+```
+
+To mock this, you can simply use `jest.mock()`
+
+Calling `jest.mock('')` returns a useful "automatic mock" you can use to spy on calls to the class constructor and all of its methods. It replaces the ES6 class with a mock constructor, and replaces all of its methods with [mock functions](https://jestjs.io/docs/mock-functions) that always return `undefined`. Method calls are saved in `theAutomaticMock.mock.instances[index].methodName.mock.calls`
+
+```graphql
+jest.mock('@aws-sdk/client-s3')
+```
+
 ### KeyboardAwareScrollView Issue
 
 `render()` doesn’t render `KeyboardAwareScrollView` very well. Mock it so that it just render the children.

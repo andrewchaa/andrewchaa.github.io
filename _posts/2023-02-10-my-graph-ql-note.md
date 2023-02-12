@@ -36,3 +36,25 @@ type Pizza {
 }
 ```
 
+```graphql
+// operation, operation name
+query getPizzas{
+  pizzas{
+    pizza
+  }
+}
+
+{
+  "data": {
+    "pizzas": [
+      {
+        "pizza": "Neapolitan Pizza"
+      },
+      {
+        "pizza": "Chicago Pizza"
+      }
+    ]
+  }
+}
+```
+
