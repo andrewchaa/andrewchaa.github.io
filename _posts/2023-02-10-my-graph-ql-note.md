@@ -19,6 +19,10 @@ One of the main advantages of GraphQL is that it allows for more efficient and f
 
 - [Graphiql](https://github.com/graphql/graphiql)
 
+To use Apollo Studio, follow the tutorial: 
+
+[bookmark](https://www.apollographql.com/docs/federation/quickstart/setup/)
+
 ## Queries
 
 Schema Definition Language, SDL, is the syntax for writing schemas.
