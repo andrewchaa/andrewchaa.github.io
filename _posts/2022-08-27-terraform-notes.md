@@ -106,3 +106,34 @@ export TF_VAR_list='[1,2,3]'
 export TF_VAR_map='{ foo = "bar", baz = "qux" }'
 ```
 
+## Examples
+
+### AWS Lambda
+
+```bash
+data "archive_file" "update_job" {
+  type        = "zip"
+  source_dir  = "../dist/update-job"
+  output_path = "../dist/update-job.zip"
+}
+
+resource "aws_lambda_function" "update_job" {
+  function_name = "${var.component}_${var.env}_update_job"
+  filename      = data.archive_file.update_job.output_path
+
+  runtime     = "nodejs18.x"
+  memory_size = var.memory_size
+  timeout     = var.timeout
+  handler     = "index.handler"
+
+  source_code_hash = data.archive_file.update_job.output_base64sha256
+  role             = aws_iam_role.iam_lambda_role.arn
+
+  environment {
+    variables = {
+      run_env = var.env
+    }
+  }
+}
+```
+
