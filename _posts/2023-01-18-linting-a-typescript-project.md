@@ -19,6 +19,18 @@ Linting a TypeScript project with ESLint can provide several benefits, including
 
 - Customisability: ESLint is highly configurable and allows you to create custom rules specific to your project, this way you can add your own custom rule
 
+### VS Code Set up
+
+You need to install a few extensions to make it easier. 
+
+- Prettier
+
+- ESLint
+
+It’s nice to set Prettier to format documents on save. One caveat is it will format documents for all projects. In my case, I [disabled the prettier option if a project doesn’t have prettier configuration](https://dev.to/gulshansaini/how-to-disable-prettier-in-vscode-for-a-specific-project-2a48). 
+
+### Linting
+
 To run ESLint on a TypeScript project, you need to do the following:
 
 Install ESLint and the necessary TypeScript parser and plugin by running the command

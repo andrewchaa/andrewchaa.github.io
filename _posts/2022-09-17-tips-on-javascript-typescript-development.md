@@ -6,7 +6,9 @@ tags:
   - node.js
 ---
 
-### update object with spread operator
+## Spread
+
+### Update object with spread operator
 
 In React and React Native, the common patter is to map an object to form inputs and update the values of the properties. Spread operator, `...`, comes really handy for the purpose. 
 
@@ -41,5 +43,28 @@ Your old server processor is still running and when you do `yarn stardt` it asks
 ```bash
 ps aux | grep node
 killall -9 node
+```
+
+## Promise
+
+### Create a promise from a non-async function
+
+Sometimes, I have to do this to match the expected signature.
+
+```typescript
+export const handler = startServerAndCreateLambdaHandler(
+  server,
+  handlers.createAPIGatewayProxyEventRequestHandler(),
+  {
+    middleware: [
+      async event => {
+        return new Promise(result => {
+          console.log('event', event, result)
+          result()
+        })
+      },
+    ],
+  }
+)
 ```
 
