@@ -42,12 +42,13 @@ type Pizza {
 
 ### Query
 
-The `Query` type is a special object type that defines all of the top-level **entry points** for queries that clients execute against your server.
+The `Query` type is a special object type that defines all of the top-level **entry points** for queries that clients execute against your server. Each field of the `Query` type defines the name and return type of a different entry point
 
 ```typescript
 type Query {
   hello: String
   jobs(companyId: Int!): [Job]
+  user(email: String!): User
 }
 ```
 
@@ -72,6 +73,18 @@ query getPizzas{
       }
     ]
   }
+}
+```
+
+### The Mutation type
+
+The `Mutation` type is similar in structure and purpose to the [`Query`](https://www.apollographql.com/docs/apollo-server/schema/schema#the-query-type)[ type](https://www.apollographql.com/docs/apollo-server/schema/schema#the-query-type). Whereas the `Query` type defines entry points for _read_ operations, the `Mutation` type defines entry points for _write_ operations.
+
+Each field of the `Mutation` type defines the signature and return type of a different entry point
+
+```graphql
+type Mutation {
+  addBook(title: String, author: String): Book
 }
 ```
 
