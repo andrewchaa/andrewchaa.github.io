@@ -6,6 +6,19 @@ tags:
   - git
 ---
 
+### Resources
+
+- [https://stackoverflow.com/questions/50525244/git-command-output-is-in-editor-vim-and-not-directly-to-terminal-output](https://stackoverflow.com/questions/50525244/git-command-output-is-in-editor-vim-and-not-directly-to-terminal-output)
+
+### Set up commands
+
+```bash
+# output the list of git branches to the terminal directly
+git config --global pager.branch false
+```
+
+### Often used commands
+
 ```bash
 # delete all local branches except master
 git branch \| grep -v "master" \| xargs git branch -D

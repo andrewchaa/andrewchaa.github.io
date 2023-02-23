@@ -36,33 +36,55 @@ yarn add @apollo/server graphql @as-integrations/aws-lambda
 `src/graphql-post/index.ts`
 
 ```typescript
+require('dotenv').config()
+
 import { ApolloServer } from '@apollo/server'
-import { startServerAndCreateLambdaHandler } from '@as-integrations/aws-lambda'
+import {
+  ApolloServerPluginLandingPageLocalDefault,
+  ApolloServerPluginLandingPageProductionDefault,
+} from '@apollo/server/plugin/landingPage/default'
+import {
+  startServerAndCreateLambdaHandler,
+  handlers,
+} from '@as-integrations/aws-lambda'
 
-const typeDefs = gql`
-  type Query {
-    hello: String
-  }
-`
+import resolvers from './resolvers'
 
-const resolvers = {
-  Query: {
-    hello: () => {
-      return 'Hello world!'
-    }
-  }
-}
-
+const typeDefs = require('./schema.graphql')
 const server = new ApolloServer({
   typeDefs,
   resolvers,
+  introspection: true,
   csrfPrevention: true,
   cache: 'bounded',
+  plugins: [
+    process.env.NODE_ENV === 'production'
+      ? ApolloServerPluginLandingPageProductionDefault()
+      : ApolloServerPluginLandingPageLocalDefault({ embed: true }),
+  ],
 })
 
-console.log('Starting graphql server')
+console.info('Starting graphql server')
 
-export const handler = server.createHandler()
+export const handler = startServerAndCreateLambdaHandler(
+  server,
+  handlers.createAPIGatewayProxyEventRequestHandler(),
+  {
+    middleware: [
+      // to support CORS for Apollo Studio
+      async event => {
+        return async result => {
+          result.headers = {
+            ...result.headers,
+            'access-control-allow-headers': 'Content-Type',
+            'access-control-allow-origin': '*',
+            'access-control-allow-methods': 'GET, POST, OPTIONS',
+          }
+        }
+      },
+    ],
+  }
+)
 ```
 
 ## **Provision AWS lambda function**
