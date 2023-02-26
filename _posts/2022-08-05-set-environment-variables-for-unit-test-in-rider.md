@@ -8,5 +8,5 @@ tags:
 
 Sometimes, your unit or integration tests require some config values or secrets from environment variables. You wouldn’t want to commit the secret to the source control. Rider’s Test Runner setting comes in handy in this case. 
 
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/687ba543-3467-4d3d-be40-8a1349a41e45/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230225%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230225T012946Z&X-Amz-Expires=3600&X-Amz-Signature=ceacd87494a86539cda95c07cd18251d9bbda4ab07f54db243b69c8eb6ea3b37&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/687ba543-3467-4d3d-be40-8a1349a41e45/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230226%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230226T013020Z&X-Amz-Expires=3600&X-Amz-Signature=9570098875d5d1dafc48f19b9eb577f329de1e5519b1399417fa951077110682&X-Amz-SignedHeaders=host&x-id=GetObject)
 
