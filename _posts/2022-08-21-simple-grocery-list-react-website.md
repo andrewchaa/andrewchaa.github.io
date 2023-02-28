@@ -6,20 +6,51 @@ tags:
   - typescript
 ---
 
-The app will be based on 
+This is a simple project for my coding assignment. I want to do the following things for this app but will see how it goes. 
 
-- graphql
+- [x] TypeScript
 
-- typescript
+- [ ] GraphQL
 
-- tailwind css
+- [ ] Tailwind CSS
 
-- jest
+- [ ] Jest
 
-Create a typescript react website
+- [ ] Custom type in TypeScript
+
+Using TypeScript was easy with react. Just use `create-react-app` and give TypeScript template, like the below.  I named the app client as the repository will have two directories, `server` and `client`. 
 
 ```bash
-npx create-react-app my-app --template typescript
+npx create-react-app client --template typescript
+cd client
+yarn start
+```
+
+The initial commit is to have a list page with canned data.
+
+```typescript
+export default function List(
+  { items }: { items: { name: string, done: boolean }[] }
+) {
+
+  const toggleDone = (name: string) => {
+    console.log('toggleDone', name);
+  }
+
+  return (
+    <ul>
+      {items.map((item) => (
+        <li
+          key={item.name}
+          onClick={() => toggleDone(item.name)}
+          style={{ textDecoration: item.done ? 'line-through' : 'none' }}
+        >
+          {item.name}
+        </li>
+      ))}
+    </ul>
+  );
+}
 ```
 
 Follow [the tailwindcss installation instruction for create-react-app](https://tailwindcss.com/docs/guides/create-react-app)
