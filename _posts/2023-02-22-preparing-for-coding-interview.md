@@ -87,6 +87,34 @@ export function findSumOfThree(nums: number[], target: number) {
 }
 ```
 
+```typescript
+// reverse words
+// Hello World -> World Hello
+export default function reverseWords(sentence: string): string {
+  return reverse(sentence.replace(/\s+/g, ' '))
+    .split(' ')
+    .map(word => reverse(word))
+    .join(' ')
+}
+
+function reverse(sentence: string): string {
+  let low = 0
+  let high = sentence.length - 1
+
+  const characters = [...sentence]
+
+  while (low < high) {
+    const temp = characters[low]
+    characters[low] = characters[high]
+    characters[high] = temp
+    low++
+    high--
+  }
+
+  return characters.join('')
+}
+```
+
 ### Sliding Window
 
 The **sliding window** pattern is used to efficiently solve problems involving arrays or lists by creating a window of elements and moving it over the array. This is useful for problems that require finding a contiguous sequence of elements that satisfy a certain condition. The window starts at the beginning and moves until the end of the array is reached, while keeping track of the elements contained within the window.
