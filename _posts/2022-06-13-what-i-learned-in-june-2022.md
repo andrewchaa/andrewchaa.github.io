@@ -74,7 +74,7 @@ This is a handy tool to test the network connectivity of your mobile application
 
 Once it’s downloaded, open the `.dmg` file and install `Network Link Condition.prefPane` by double-clicking it in `Hardware` folder. It’ll be installed in the system preference, so you can search it there from next time. 
 
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/ee064a04-3de4-43d4-b868-5dd4a811ff24/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230301%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230301T013035Z&X-Amz-Expires=3600&X-Amz-Signature=d59946868349b5eb4573e0b994716f1133ec80b937fc0bcff86e3d494f516309&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/ee064a04-3de4-43d4-b868-5dd4a811ff24/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230302%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230302T013052Z&X-Amz-Expires=3600&X-Amz-Signature=8d41768af9f52bbf9cce21056d4885487fe750e4fb47cc45639f39ffb1f83460&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 Querying DynamoDB data with javascript SDK v3
 

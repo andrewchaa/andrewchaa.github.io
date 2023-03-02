@@ -18,12 +18,48 @@ This is a simple project for my coding assignment. I want to do the following th
 
 - [ ] Custom type in TypeScript
 
+### Resources
+
+- [https://tailwindcss.com/docs/guides/create-react-app](https://tailwindcss.com/docs/guides/create-react-app)
+
+### Create React App
+
 Using TypeScript was easy with react. Just use `create-react-app` and give TypeScript template, like the below.  I named the app client as the repository will have two directories, `server` and `client`. 
 
 ```bash
 npx create-react-app client --template typescript
 cd client
 yarn start
+```
+
+### Install tailwind css
+
+```bash
+npm install -D tailwindcss @tailwindcss/forms
+npx tailwindcss init
+```
+
+Configure template paths
+
+```typescript
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [require('@tailwindcss/forms')],
+}
+```
+
+Add the Tailwind directives to the CSS file
+
+```typescript
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 ```
 
 The initial commit is to have a list page with canned data.
