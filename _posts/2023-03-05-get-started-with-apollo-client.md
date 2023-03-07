@@ -16,6 +16,10 @@ Applications that use Apollo Client require two top-level dependencies:
 
 - [https://www.apollographql.com/docs/react/get-started](https://www.apollographql.com/docs/react/get-started)
 
+- [https://www.apollographql.com/docs/react/development-testing/testing](https://www.apollographql.com/docs/react/development-testing/testing)
+
+- [https://jkettmann.com/testing-apollo-how-to-test-if-a-mutation-was-called-with-mockedprovider](https://jkettmann.com/testing-apollo-how-to-test-if-a-mutation-was-called-with-mockedprovider)
+
 ### Install the client and test run
 
 ```bash
@@ -114,4 +118,10 @@ root.render(
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
 ```
+
+## Testing React components
+
+Every test for a React component that uses Apollo Client must make Apollo Client available on [React's context](https://reactjs.org/docs/context.html). In application code, you achieve this by wrapping your component tree with the `ApolloProvider` component. In your tests, you use the `MockedProvider` component instead.
+
+### Test mutation
 

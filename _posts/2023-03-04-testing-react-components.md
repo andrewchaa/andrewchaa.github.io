@@ -171,7 +171,7 @@ describe('Add', () => {
 })
 ```
 
-## Issues
+## Gotchas
 
 ### react-script test is not finding any test
 
@@ -180,4 +180,24 @@ The **`react-scripts test`** command is used to run tests in a React project cre
 - Test files are not named correctly: By default, **`create-react-app`** looks for files with the **`.test.(j|t)s`** or **`.spec.(j|t)s`** file extension to run tests. Make sure your test files are named appropriately.
 
 - Test files are not in the correct directory: By default, **`create-react-app`** looks for test files in the **`src`** directory. Make sure your test files are located in the **`src`** directory or a subdirectory of **`src`**.
+
+### The input element doesn’t have the new value
+
+Make sure you find the element again to check the new value. Don’t use a variable that holds the element as the value of the input is not updated.
+
+```typescript
+it('clears the input when the button is clicked', async () => {
+    render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <Add />
+      </MockedProvider>
+    )
+
+    await user.type(screen.getByRole('textbox'), item)
+    await user.click(screen.getByRole('button'))
+
+    await waitFor(() => expect(screen.getByRole('textbox')).toHaveValue(''))
+		// do screen.getByRole('textbox') again.
+  })
+```
 
