@@ -41,6 +41,9 @@ git config --global core.editor "code --wait"
 # print public ssh key
 cat ~/.ssh/id_rsa.pub
 
+# prune local git cache
+git fetch -p
+
 # delete the tag locally and remotely
 git tag -d 9.9.0
 git push --delete origin 9.9.0

@@ -17,7 +17,55 @@ Preparing for a coding interview is important for a number of reasons:
 
 Overall, preparing for a coding interview is crucial if you want to succeed in the highly competitive tech industry. By investing time and effort into your preparation, you can demonstrate your technical skills, feel more confident during the interview, and increase your chances of getting hired.
 
-## Coding Interview Patterns
+## Concepts to understand
+
+### Runtime vs. Space Trade-Off
+
+Runtime vs space trade-off refers to the balance between the amount of time a program takes to run (runtime) and the amount of memory space it requires to execute (space). In computer science, there is often a trade-off between the runtime and space complexity of an algorithm.
+
+Runtime complexity refers to the amount of time it takes for an algorithm to complete, usually measured in terms of the number of operations performed by the algorithm as a function of the input size. Space complexity, on the other hand, refers to the amount of memory required by the algorithm to execute.
+
+In general, there is often a trade-off between runtime and space complexity. Algorithms that are more efficient in terms of runtime may require more memory space to execute, while algorithms that are more efficient in terms of space may require more time to execute.
+
+When designing algorithms, it is important to consider both the runtime and space complexity, and to strike an appropriate balance based on the specific requirements of the problem at hand. For example, if a program needs to process very large datasets, it may be necessary to use an algorithm with high space complexity in order to reduce the runtime. Conversely, if memory is limited, it may be necessary to use an algorithm with lower space complexity, even if it means sacrificing some runtime efficiency
+
+## Coding Interview Problems
+
+### First recurring character
+
+```typescript
+// Find the first recurring character of the following lists and analyze the runtime vs space trade-off of your solution
+
+const task1 = [
+ [2,5,1,2,3,5,1,2,4], // Should return 2
+ [2,1,1,2,3,5,1,2,4], // Should return 1
+ [2,3,4,5], // Should return undefined
+ [2,5,5,2,3,5,1,2,4] // Should return 5
+]
+
+function firstRecurringCharacter(numbers) {
+  const hashTable = {}
+  for (let i = 0; i < numbers.length; i++) {
+    if (hashTable[numbers[i]]) {
+      return numbers[i]
+    } else {
+      hashTable[numbers[i]] = 1
+    }
+  }
+  return undefined
+}
+
+function logResult(result, expected, message) {
+  console.log(result, expected, result === expected ? 'PASS' : 'FAIL')
+}
+
+logResult(firstRecurringCharacter(task1[0]), 2)
+logResult(firstRecurringCharacter(task1[1]), 1)
+logResult(firstRecurringCharacter(task1[2]), undefined)
+logResult(firstRecurringCharacter(task1[3]), 5)
+```
+
+This approach has a time complexity of O(n) since we only need to iterate through the array once, and a space complexity of O(n) since we need to store each element in the hash table.
 
 ### Two Pointers
 
