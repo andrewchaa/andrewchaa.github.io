@@ -163,6 +163,50 @@ function reverse(sentence: string): string {
 }
 ```
 
+### Palindrome with 1 mismatch
+
+Another two pointer patter
+
+```bash
+export default function isPalindrome(s: string) {
+  let start = 0
+  let end = s.length - 1
+  let mismatchOccurrence = 0
+
+  while (true) {
+    console.log(
+      'start',
+      start,
+      s[start],
+      'end',
+      end,
+      s[end],
+      'mismatchOccurrence',
+      mismatchOccurrence
+    )
+    if (s[start] !== s[end]) {
+      mismatchOccurrence++
+      if (s[start + 1] === s[end]) {
+        start++
+      } else if (s[start] === s[end - 1]) {
+        end--
+      }
+    }
+
+    if (mismatchOccurrence > 1 || s[start] !== s[end]) {
+      return false
+    }
+
+    if (Math.abs(start - end) <= 1) {
+      return true
+    }
+
+    start++
+    end--
+  }
+}
+```
+
 ### Sliding Window
 
 The **sliding window** pattern is used to efficiently solve problems involving arrays or lists by creating a window of elements and moving it over the array. This is useful for problems that require finding a contiguous sequence of elements that satisfy a certain condition. The window starts at the beginning and moves until the end of the array is reached, while keeping track of the elements contained within the window.
