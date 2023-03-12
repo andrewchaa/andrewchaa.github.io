@@ -119,3 +119,58 @@ Click the "Play" button to send the query. You should see a response like:
 }
 ```
 
+## Testing
+
+```bash
+import { handler as graphqlJobs } from '../../src/graphql/index'
+import getJobGraphQlEvent from '../../events/graphql-event-job'
+import {
+  APIGatewayProxyEvent,
+  APIGatewayProxyResult,
+  Context,
+} from 'aws-lambda'
+import { ddbDocClient } from '../../src/common/dynamodbClient'
+
+describe('job tests', () => {
+  const context: Context = {
+    callbackWaitsForEmptyEventLoop: false,
+    functionName: 'string',
+    functionVersion: 'string',
+    invokedFunctionArn: 'string',
+    memoryLimitInMB: 'string',
+    awsRequestId: 'string',
+    logGroupName: 'string',
+    logStreamName: 'string',
+    getRemainingTimeInMillis() {
+      return 1
+    },
+    done() {},
+    fail() {},
+    succeed() {},
+  }
+
+  const job = {
+    jobNo: 'jobNo',
+    jobStatus: 'COMPLETED',
+    jobNotes:
+      'replaced bent clip and hose.  hose would not fit into manifold so had to replace it.',
+    reportDateTime: null,
+    creationDateTime: '2023-01-10T15:20:32.275Z',
+  }
+
+  ddbDocClient.send = jest.fn().mockResolvedValue({ Item: job })
+
+  it('should return the list of jobs given companyId', async () => {
+    const result = (await graphqlJobs(
+      getJobGraphQlEvent as APIGatewayProxyEvent,
+      context,
+      () => {}
+    )) as APIGatewayProxyResult
+
+    expect(JSON.parse(result.body)).toEqual({
+      data: { job },
+    })
+  })
+})
+```
+

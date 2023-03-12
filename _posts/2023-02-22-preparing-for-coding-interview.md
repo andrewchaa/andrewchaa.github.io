@@ -31,7 +31,38 @@ When designing algorithms, it is important to consider both the runtime and spac
 
 ## Coding Interview Problems
 
-### First recurring character
+### Happy Number
+
+Use the slow and fast pointer patter
+
+```typescript
+export default function isHappyNumber(n: number): Boolean {
+  let slow = n
+  let fast = getNext(n)
+
+  console.log('slow', slow, 'fast', fast)
+
+  while (slow !== fast && fast !== 1) {
+    slow = getNext(slow)
+    fast = getNext(getNext(fast))
+    console.log('slow', slow, 'fast', fast)
+  }
+
+  return fast === 1
+}
+
+function getNext(n: number): number {
+  let sum = 0
+  while (n > 0) {
+    const d = n % 10
+    sum += d ** 2
+    n = Math.floor(n / 10)
+  }
+  return sum
+}
+```
+
+### First Recurring Character
 
 ```typescript
 // Find the first recurring character of the following lists and analyze the runtime vs space trade-off of your solution
