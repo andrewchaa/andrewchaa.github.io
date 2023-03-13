@@ -75,12 +75,12 @@ const task1 = [
 ]
 
 function firstRecurringCharacter(numbers) {
-  const hashTable = {}
+  const hashTable = {} // { '1':1, '5':1, '1':1 }
   for (let i = 0; i < numbers.length; i++) {
     if (hashTable[numbers[i]]) {
       return numbers[i]
     } else {
-      hashTable[numbers[i]] = 1
+      hashTable[numbers[i]] = 1 // hashTable['1'] = 1
     }
   }
   return undefined
