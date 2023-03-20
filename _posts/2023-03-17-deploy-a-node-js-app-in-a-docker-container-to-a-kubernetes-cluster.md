@@ -122,7 +122,7 @@ app.listen(PORT, () => {
 
 And run the service: `yarn start`
 
-### Dockerise the app
+### Build the Docker image and test-run it
 
 Create a Dockerfile for the Node.js application:
 
@@ -144,11 +144,15 @@ EXPOSE 3002
 CMD [ "node", "app.js" ]
 ```
 
-Build the docker image
+Build the docker image and run a Docker container using the image. It should show “Hello World!” in the GET request: [http://localhost:8080/](http://localhost:8080/)
 
 ```bash
 docker build -t nodejs-docker-k8s .
+docker run -d -p 8080:3000 --name nodejs-docker-k8s nodejs-docker-k8s
+54a0b3e605ab3572a75a3407e08b5adbce457301df1fcc17174f027f9d8ba470
 ```
+
+### Deploy the image to Kubernetes cluster
 
 Push the docker image to a container registry
 
@@ -180,7 +184,7 @@ spec:
       - name: nodejs-docker-k8s
         image: nodejs-docker-k8s
         ports:
-        - containerPort: 8080
+        - containerPort: 3000
 ```
 
 ```yaml
@@ -195,7 +199,7 @@ spec:
   ports:
     - protocol: TCP
       port: 80
-      targetPort: 8080
+      targetPort: 3000
   type: LoadBalancer
 ```
 

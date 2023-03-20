@@ -6,32 +6,41 @@ tags:
   - commands
 ---
 
-### Container
+Here are some Docker commands I use with examples:
 
-Commands|Description
----|---
-docker ps -a|list all running containers
-docker rm CONTAINER|Remove one or more containers
-docker rm -f $(docker ps -a -q)|remove all docker containers
-`docker build .`|build an image from a Dockerfile
-`docker exec -it 21 /bin/bash`|connect to the running docker instance and it's bash
-docker exec 21 ls -al|execute ls -al command in the docker instance
-docker exec b7 cat /var/jenkins_home/secrets/initialAdminPassword|execute cat command
-docker image prune|remove all dangling images
-docker image rm f6e71ff7ed6b|delete the docker image
-docker image rm acrfonoadev.azurecr.io/emulator/20210823|untag the image from the given tag name
-docker inspect f7|show the docker instance's details in json file
-docker kill my_container|send a kill signal to the container
-docker network create --driver=bridge --subnet=182.0.1.1/16 isolatedNetwork|create a bridge network
-docker network prune|delete all networks
-docker pull ubuntu|download the latest ubuntu image
-docker run ubuntu|run the ubuntu image
-docker run -itd ubuntu|run the ubnutu image interactively but detached
-docker run -d -p 80:8080 jenkins/jenkins|run jeninks image in a detached mode with port mapping of 80 to 8080
-docker stop $(docker ps -aq)|remove all docker containers
-docker run IMAGE [COMMAND]|creates a writeable container layer over the specified image, and then starts it using the specified command
-`docker stop $(docker ps -aq)|stop all running containers. -aq gives you the id of the containers
-`docker tag dd540af7cc77 playground-api`|name a image
+```bash
+# Build a Docker image from a Dockerfile.
+docker build -t your-image-name .
+
+# Run a Docker container using a Docker image.
+docker run -d -p 8080:3000 --name your-container-name your-image-name
+
+# List running Docker containers.
+docker ps
+
+# List Docker images.
+docker images
+
+# Execute a command inside a running Docker container.
+docker exec -it your-container-name bash
+
+# Stop a running Docker container.
+docker stop your-container-name
+
+# Remove a stopped Docker container.
+docker rm your-container-name
+
+# Remove a Docker image.
+docker rmi your-image-name
+
+# Pull a Docker image from a registry (e.g., Docker Hub).
+docker pull node:14
+
+# Show logs of a Docker container.
+docker logs your-container-name
+```
+
+### Container
 
 ### Image
 
