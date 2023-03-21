@@ -20,6 +20,11 @@ git config --global pager.branch false
 ### Often used commands
 
 ```bash
+# stash
+git stash save "work in progress"
+git stash list
+git stash apply 0
+
 # delete all local branches except master
 git branch \| grep -v "master" \| xargs git branch -D
 
