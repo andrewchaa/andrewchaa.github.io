@@ -17,7 +17,9 @@ When retrieving an element fails, use `screen.debug()` to inspect the rendered s
 
 ```typescript
 screen.debug()
+await new Promise(r => setTimeout(r, 2000))
 screen.debug({ mapProps: ({ style, ...props }) => ({ props }) })
+screen.debug({ mapProps: ({ ...props }) => ({}) })
 ---
 
 <RNCSafeAreaProvider
