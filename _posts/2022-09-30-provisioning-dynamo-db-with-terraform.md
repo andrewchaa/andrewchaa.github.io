@@ -6,7 +6,9 @@ tags:
   - dynamodb
 ---
 
-This is how I provision DynamoDB with terraform
+My Terraform scripts for Dynamo DB table and policies.
+
+### Provision the table
 
 ```bash
 # dynamodb: jobs
@@ -33,8 +35,11 @@ resource "aws_dynamodb_table" "jobs_table" {
     Environment = var.env
   }
 }
+```
 
-# policy for lambda to access dynamodb
+### Policy for lambda to access the database
+
+```typescript
 data "aws_iam_policy_document" "iam_lambda_dynamodb_policy_document" {
   statement {
     effect = "Allow"
@@ -61,6 +66,47 @@ resource "aws_iam_policy" "iam_lambda_dynamodb_policy" {
 resource "aws_iam_role_policy_attachment" "lambda_dynamodb_policy_attachment" {
   role       = aws_iam_role.iam_lambda_role.name
   policy_arn = aws_iam_policy.iam_lambda_dynamodb_policy.arn
+}
+```
+
+### Create a table with GSI
+
+```typescript
+resource "aws_dynamodb_table" "users_table" {
+  name           = "${var.component}-users-${var.env}"
+  billing_mode   = "PROVISIONED"
+  read_capacity  = 5
+  write_capacity = 5
+  hash_key       = "companyId"
+  range_key      = "email"
+
+  attribute {
+    name = "companyId"
+    type = "S"
+  }
+
+  attribute {
+    name = "email"
+    type = "S"
+  }
+
+  point_in_time_recovery {
+    enabled = true
+  }
+
+  global_secondary_index {
+    name            = "emailIndex"
+    hash_key        = "email"
+    write_capacity  = 5
+    read_capacity   = 5
+    projection_type = "ALL"
+  }
+
+
+  tags = {
+    Name        = var.component
+    Environment = var.env
+  }
 }
 ```
 
