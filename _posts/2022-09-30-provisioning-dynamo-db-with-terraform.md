@@ -39,6 +39,8 @@ resource "aws_dynamodb_table" "jobs_table" {
 
 ### Policy for lambda to access the database
 
+Index comes as a sub-resource to the table. So put `*` if you want to include all sub-resources.
+
 ```typescript
 data "aws_iam_policy_document" "iam_lambda_dynamodb_policy_document" {
   statement {
@@ -52,9 +54,10 @@ data "aws_iam_policy_document" "iam_lambda_dynamodb_policy_document" {
       "dynamodb:DescribeTable"
     ]
     resources = [
-      "arn:aws:dynamodb:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:table/${aws_dynamodb_table.jobs_table.name}",
-      "arn:aws:dynamodb:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:table/${aws_dynamodb_table.users_table.name}"
-    ]
+			"arn:aws:dynamodb:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:table/${aws_dynamodb_table.jobs_table.name}",
+      "arn:aws:dynamodb:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:table/${aws_dynamodb_table.jobs_table.name}/*",
+      "arn:aws:dynamodb:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:table/${aws_dynamodb_table.users_table.name}",
+      "arn:aws:dynamodb:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:table/${aws_dynamodb_table.users_table.name}/*"    ]
   }
 }
 
