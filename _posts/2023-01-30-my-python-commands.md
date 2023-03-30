@@ -13,6 +13,12 @@ Exit the Python shell
 exit()
 ```
 
+### Update pip
+
+```bash
+pip install --upgrade pip
+```
+
 ### pandas, numpy, and matplotlib
 
 Install the libraries that facilitate data from Yahoo Finance and FRED
