@@ -180,3 +180,7 @@ import other_file
 
 Replace **`/path/to/directory`** with the path to the directory containing **`other_file.py`**. After adding the directory to **`sys.path`**, you can import and use the file as usual
 
+### Building and testing Python with Github actions
+
+[https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python](https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python)
+
