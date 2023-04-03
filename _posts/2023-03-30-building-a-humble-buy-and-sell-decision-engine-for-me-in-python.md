@@ -102,54 +102,61 @@ import yfinance as yf
 def get_nasdaq_data():
     nasdaq = yf.Ticker("^IXIC")
     nasdaq_data = nasdaq.history(period="3mo", interval="1d")
-    nasdaq_data.to_csv("nasdaq.csv")
     return nasdaq_data
 
 
+def get_signals(df):
+    short_window = 5
+    long_window = 15
+    alpha = 0.1
+    signals = pd.DataFrame(index=df.index)
+
+    signals['ema_signal'] = 0.0
+    signals['ema'] = df['Close'].ewm(alpha=alpha, adjust=False).mean()
+    signals['ema_positions'] = 0.0
+    signals['short_mavg'] = df['Close'].rolling(window=short_window,
+                                                min_periods=1,
+                                                center=False).mean()
+    signals['long_mavg'] = df['Close'].rolling(window=long_window,
+                                               min_periods=1,
+                                               center=False).mean()
+    signals['sma_positions'] = 0.0
+
+    signals['ema_signal'] = np.where(signals['ema'] < df['Close'], 1.0, 0.0)
+    signals['ema_positions'] = signals['ema_signal'].diff()
+    return signals
+
+
+def get_figure(df, signals):
+    fig = plt.figure(figsize=(12, 10))
+    ax1 = fig.add_subplot(111, ylabel='Price in $')
+
+    df.loc['2018-01-01':, 'Close'].plot(ax=ax1,
+                                        color='r', lw=2., label='Close Price')
+    signals.loc[:, 'ema'].plot(ax=ax1, lw=2.)
+
+    # Plot the buy signals
+    ax1.plot(signals.loc[signals.ema_positions == 1.0].index,
+             signals.ema[signals.ema_positions == 1.0],
+             '^', markersize=10, color='g')
+
+    # Plot the sell signals
+    ax1.plot(signals.loc[signals.ema_positions == -1.0].index,
+             signals.ema[signals.ema_positions == -1.0],
+             'v', markersize=10, color='r')
+
+    plt.legend()
+    return fig
+
+
 df = get_nasdaq_data()
-short_window = 5
-long_window = 15
-alpha = 0.1
-signals = pd.DataFrame(index=df.index)
+signals = get_signals(df)
+chart = get_figure(df, signals)
 
-signals['ema_signal'] = 0.0
-signals['ema'] = df['Close'].ewm(alpha=alpha, adjust=False).mean()
-signals['ema_positions'] = 0.0
-signals['short_mavg'] = df['Close'].rolling(window=short_window,
-                                            min_periods=1,
-                                            center=False).mean()
-signals['long_mavg'] = df['Close'].rolling(window=long_window,
-                                           min_periods=1,
-                                           center=False).mean()
-signals['sma_positions'] = 0.0
-
-signals['ema_signal'] = np.where(signals['ema'] > df['Close'], 1.0, 0.0)
-signals['ema_positions'] = signals['ema_signal'].diff()
-
-fig = plt.figure(figsize=(12, 10))
-ax1 = fig.add_subplot(111, ylabel='Price in $')
-# signals2 = signals.loc['2018-01-01':, :]
-
-df.loc['2018-01-01':, 'Close'].plot(ax=ax1,
-                                    color='r', lw=2., label='Close Price')
-signals.loc[:, 'ema'].plot(ax=ax1, lw=2.)
-
-# Plot the buy signals
-ax1.plot(signals.loc[signals.ema_positions == 1.0].index,
-         signals.ema[signals.ema_positions == 1.0],
-         'o', markersize=10, color='r')
-
-# Plot the sell signals
-ax1.plot(signals.loc[signals.ema_positions == -1.0].index,
-         signals.ema[signals.ema_positions == -1.0],
-         '^', markersize=10, color='g')
-
-plt.legend()
-plt.show()
-# fig.savefig(j'strategy_1_signals.png')
-
-print(signals)
+chart.savefig('signals.png')
 print(signals.tail())
+
+# plt.show()
 ```
 
 ### alpha factor
@@ -183,4 +190,12 @@ Replace **`/path/to/directory`** with the path to the directory containing **`ot
 ### Building and testing Python with Github actions
 
 [https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python](https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python)
+
+### Send email using sendgrid
+
+Install `sendgrid` library.
+
+```python
+pip install sendgrid
+```
 
