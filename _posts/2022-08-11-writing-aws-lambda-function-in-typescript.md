@@ -42,7 +42,7 @@ You may have typescript installed globally, yet you need to install it locally a
 
 I’ve created `/src` and `/dist` in the root directory. Now my project folder looks like this.
 
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/51c30a94-770e-4bc6-8f2e-0289d1cf1e33/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230403%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230403T012824Z&X-Amz-Expires=3600&X-Amz-Signature=158dd4c02ec4059a752d9e596c095baeb8fd9d267dc74274e90a89cebbe8e6f3&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/51c30a94-770e-4bc6-8f2e-0289d1cf1e33/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230404%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230404T012902Z&X-Amz-Expires=3600&X-Amz-Signature=171e5a00a081b06ee00d7eba1715d1ab293cc0524f39450eb3a199b7f298f7c4&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 Let’s add `webpack.config` to transpile and bundle the typescripts. 
 

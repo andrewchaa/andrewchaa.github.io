@@ -11,3 +11,11 @@ My favourite bash commands
 
 - `printenv` : print all environment variables
 
+```bash
+# print path
+echo "$PATH"
+
+# restart the shell
+exec "$SHELL" 
+```
+
