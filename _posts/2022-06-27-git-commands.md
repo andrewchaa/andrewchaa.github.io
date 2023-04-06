@@ -34,6 +34,11 @@ git branch | select-string -NotMatch -Pattern "master" | %{ git branch -D $_.ToS
 # rename branch
 git branch -m feature/4810-feature-flag
 
+# pick a specific commit by sha
+git cherry-pick 5910d4e72906d33bef36f0062fe1aaac1ac6a77b
+# skip this commit as either it has a duplicate change or merge conflict
+git cherry-pick skip
+
 # revert the file with the file from the master branch
 git co master -- source/graphql/yarn.lock
 
