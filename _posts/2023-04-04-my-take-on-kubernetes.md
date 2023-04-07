@@ -20,11 +20,11 @@ Usually, Master Nodes are referred to as “Masters” and Worker Nodes are call
 
 ### Hosted Kubernetes
 
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/ff003436-784e-48e0-9f34-025c07180152/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230406%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230406T012851Z&X-Amz-Expires=3600&X-Amz-Signature=b75658bd0566244f1f0bf3c0ecc0d8498b83e8fb57baaadd24c4c996e1030127&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/ff003436-784e-48e0-9f34-025c07180152/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230407%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230407T012728Z&X-Amz-Expires=3600&X-Amz-Signature=53c794ff6f398174b35ba5fb77de6b41bcc4b1bb9489e6ea5bf1299db5850dae&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 ### Workflow
 
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/ec49fcda-41bd-406f-a0c7-dc711519d9ac/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230406%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230406T012851Z&X-Amz-Expires=3600&X-Amz-Signature=253f461bc7fa3592c8c539fb31970da45df17bd4498f482093a7fce5b680e25b&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/ec49fcda-41bd-406f-a0c7-dc711519d9ac/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230407%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230407T012728Z&X-Amz-Expires=3600&X-Amz-Signature=bbf5092b785531da1e01b6dc97029636ccbd6c34fc66571b811da61069d4d846&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 ### Breaking down the Dockerfile
 
@@ -89,15 +89,15 @@ kubectl logs --follow nginx
 
 Where our applications actually run.
 
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/9d124f90-f002-4158-9dd9-b9d4621c9648/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230406%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230406T012851Z&X-Amz-Expires=3600&X-Amz-Signature=c733289a66c18d7b8224d6e7fefbc3213e0a4729d59625579a464fe39b6b250b&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/9d124f90-f002-4158-9dd9-b9d4621c9648/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230407%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230407T012728Z&X-Amz-Expires=3600&X-Amz-Signature=fc366d608aa801bcab29d6f747b82536c42e38b11de128b49b774cd2e004e93d&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 ### The master
 
 In the reconciliation loop, the master compares the current state with the desired state and makes the necessary changes
 
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/d483043c-6684-480e-9b9b-b565ac3ad805/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230406%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230406T012851Z&X-Amz-Expires=3600&X-Amz-Signature=9a274f0d9aa02826e74aa781ebb2b2bf1f183fb3bfe9265349234854cc7cf0b9&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/d483043c-6684-480e-9b9b-b565ac3ad805/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230407%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230407T012728Z&X-Amz-Expires=3600&X-Amz-Signature=1a848e7a7c4db96232af1a92495e71120385a67adbc010e7e5344a0b100c3a5c&X-Amz-SignedHeaders=host&x-id=GetObject)
 
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/c7ef6efa-2163-4bff-946b-5b9ad32fcecb/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230406%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230406T012851Z&X-Amz-Expires=3600&X-Amz-Signature=bb3c56e8f2550589fedc014b7fe1557133675f901e08f73089f5d304f625193e&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/c7ef6efa-2163-4bff-946b-5b9ad32fcecb/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230407%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230407T012728Z&X-Amz-Expires=3600&X-Amz-Signature=85649364803e76b19fcda866fe70e645b278b04164a684a87cdb653a16eff73b&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 ### Difference between pods and containers
 
@@ -120,5 +120,48 @@ kubectl delete pod nginx
 kubectl delete -f nginx.yaml
 
 kubectl get pods
+```
+
+### Deployment
+
+- Scale the applications by increasing or decreasing the number of replicas
+
+- Roll out new versions of the application without downtime
+
+- Easily rollback bad releases
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hellok8s # unique name for the deployment
+spec:
+  replicas: 1
+  selector:      # manage all the pods tha have a label called app with
+    matchLabels: # the value hellok8s
+      app: hellok8s
+  template:
+    metadata:
+      labels:
+        app: hellok8s
+    spec:
+      containers:
+      - image: brianstorti/hellok8s:v1
+        name: hellok8s-container
+```
+
+```bash
+kubectl apply -f deployment.yaml
+# deployment.apps/hellok8s created
+
+kubectl get deployments
+# NAME       DESIRED   CURRENT   UP-TO-DATE   AVAILABLE
+# hellok8s   1         1         1            1
+
+kubectl get pods
+# NAME                        READY   STATUS    RESTARTS
+# hellok8s-6678f66cb8-42jtr   1/1     Running   0
+
+kubectl port-forward hellok8s-78997b6f8f-zwv62 --address 0.0.0.0 3004567
 ```
 

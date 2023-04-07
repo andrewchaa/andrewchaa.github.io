@@ -16,6 +16,12 @@ gcloud auth login
 
 ### Set up IDC
 
+[https://cloud.google.com/intrusion-detection-system/docs/configuring-ids](https://cloud.google.com/intrusion-detection-system/docs/configuring-ids)
+
+Set up IAM permissions
+
+Set up private services access by enabling the Service Networking API
+
 ```bash
 # Enable Service Networking API
 gcloud services enable servicenetworking.googleapis.com --project :project-name
