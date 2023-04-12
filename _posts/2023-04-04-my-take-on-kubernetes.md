@@ -20,11 +20,11 @@ Usually, Master Nodes are referred to as “Masters” and Worker Nodes are call
 
 ### Hosted Kubernetes
 
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/ff003436-784e-48e0-9f34-025c07180152/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230411%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230411T012854Z&X-Amz-Expires=3600&X-Amz-Signature=605f15e3064b63095713600da1d966c8d4cbdf1c0cec2ca4fd1fa9b08f798a59&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/ff003436-784e-48e0-9f34-025c07180152/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230412%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230412T012922Z&X-Amz-Expires=3600&X-Amz-Signature=934c0d31d2dabb7234c52179cd977968fc6cc587765bcdb949363bef5371d6b9&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 ### Workflow
 
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/ec49fcda-41bd-406f-a0c7-dc711519d9ac/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230411%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230411T012854Z&X-Amz-Expires=3600&X-Amz-Signature=368174c5f85fe08252b9d27c9d83dd044514c0f2a83a731a2ec907d1096e29be&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/ec49fcda-41bd-406f-a0c7-dc711519d9ac/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230412%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230412T012925Z&X-Amz-Expires=3600&X-Amz-Signature=8a1e804de2afe4ed12de794080b1a081fc2dbd4a3a76acaf395621d45224b44d&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 ### Breaking down the Dockerfile
 
@@ -89,15 +89,15 @@ kubectl logs --follow nginx
 
 Where our applications actually run.
 
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/9d124f90-f002-4158-9dd9-b9d4621c9648/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230411%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230411T012854Z&X-Amz-Expires=3600&X-Amz-Signature=c6b7c4c2000ad4027912f125d30c7da3cf5f85b849df131d8fed3d064a63947c&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/9d124f90-f002-4158-9dd9-b9d4621c9648/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230412%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230412T012922Z&X-Amz-Expires=3600&X-Amz-Signature=d178f6281242cb51f7e7586b586f401435a9842b028b1aac20f9235ee6c39b63&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 ### The master
 
 In the reconciliation loop, the master compares the current state with the desired state and makes the necessary changes
 
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/d483043c-6684-480e-9b9b-b565ac3ad805/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230411%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230411T012854Z&X-Amz-Expires=3600&X-Amz-Signature=b922c0e71456033f0e05634f7f65444943a0a887c3635b9de874460c7a8435a2&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/d483043c-6684-480e-9b9b-b565ac3ad805/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230412%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230412T012922Z&X-Amz-Expires=3600&X-Amz-Signature=8f42ac192e8a509030580a572fc16edd210072ff43a0111e89817de9deca1efb&X-Amz-SignedHeaders=host&x-id=GetObject)
 
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/c7ef6efa-2163-4bff-946b-5b9ad32fcecb/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230411%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230411T012854Z&X-Amz-Expires=3600&X-Amz-Signature=6b1d80e5c38f5585029a918a813aa615e7fd8a73f87751084ed31f4e21a4b4c0&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/c7ef6efa-2163-4bff-946b-5b9ad32fcecb/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230412%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230412T012922Z&X-Amz-Expires=3600&X-Amz-Signature=7920e5c82f5724c1bfa027c2cd72e8e5c2a6f7385082d114b3d8324f2c6a6930&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 ### Difference between pods and containers
 
@@ -163,5 +163,57 @@ kubectl get pods
 # hellok8s-6678f66cb8-42jtr   1/1     Running   0
 
 kubectl port-forward hellok8s-78997b6f8f-zwv62 --address 0.0.0.0 3004567
+```
+
+### Controlling the Rollout Rate
+
+- `maxSurge`: define how many pods we can have exceeding our desired `replica` count. The default value is 25%
+
+- `maxUnavailable`: defines how many pods we can have below the desired count
+
+```yaml
+spec:
+  strategy:
+     rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+```
+
+### Probing bad releases
+
+- `readinessProbe`: make the container ready to start receiving requests only after it has received a specified number of successful responses
+
+```yaml
+spec:
+    spec:
+      containers:
+      - image: brianstorti/hellok8s:buggy # Adding a buggy version
+        name: hellok8s-container
+        readinessProbe:
+          periodSeconds: 1
+          successThreshold: 5
+          httpGet:
+            path: /
+            port: 4567
+```
+
+- `livenessProbe`: Kubernetes will keep calling this probe periodically to make sure the pod is healthy.
+
+```yaml
+spec:
+    spec:
+      containers:
+      - image: brianstorti/hellok8s:v2
+        name: hellok8s-container
+        readinessProbe:
+          periodSeconds: 1
+          successThreshold: 5
+          httpGet:
+            path: /
+            port: 4567
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 4567
 ```
 

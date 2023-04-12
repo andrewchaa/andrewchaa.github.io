@@ -12,9 +12,12 @@ This is my exploration into the unchartered territory of Google Cloud, delving i
 ```bash
 # to obtain access credentials for the user account
 gcloud auth login
+
+# list all available networks
+gcloud compute networks list --project=:project-name
 ```
 
-### Set up IDC
+### Set up IDS
 
 [https://cloud.google.com/intrusion-detection-system/docs/configuring-ids](https://cloud.google.com/intrusion-detection-system/docs/configuring-ids)
 
