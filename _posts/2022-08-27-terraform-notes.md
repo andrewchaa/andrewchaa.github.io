@@ -48,7 +48,7 @@ terraform -v
 
 You should see the version number of Terraform displayed in your terminal.
 
-### Terraform Functions
+### Terraform functions and statements
 
 `replace`: replace string
 
@@ -62,6 +62,41 @@ resource "aws_s3_bucket" "photo_storage" {
   }
 }
 ```
+
+**`for_each`**: used with resources and data sources to create multiple instances based on a set or a map. It allows you to iterate over a collection and create a separate instance of the resource or data source for each item in the collection.
+
+In the example:
+
+```bash
+data "google_compute_subnetwork" "all_subnets" {
+  for_each = toset(data.google_compute_network.ids_network.subnetworks_self_links)
+
+  self_link = each.value
+  project   = var.project_id
+}
+```
+
+**`for_each`** is used with the **`google_compute_subnetwork`** data source to fetch information about all subnetworks in the given network. The **`toset()`** function is used to convert the list of subnetwork self-links to a set. The **`each.value`** reference represents the current item in the iteration.
+
+**`dynamic`**: used within resource blocks to dynamically generate nested blocks based on a given set of data. It allows you to create a nested block for each item in a collection without having to write out each block manually.
+
+In the example:
+
+```bash
+resource "google_compute_packet_mirroring" "ids_packet_mirroring" {
+  ...
+  mirrored_resources {
+    dynamic "subnetworks" {
+      for_each = data.google_compute_subnetwork.all_subnets
+      content {
+        url = subnetworks.value.id
+      }
+    }
+  }
+}
+```
+
+**`dynamic`** is used within the **`mirrored_resources`** block of the **`google_compute_packet_mirroring`** resource to create a **`subnetworks`** block for each subnetwork in the **`data.google_compute_subnetwork.all_subnets`** data source. The **`for_each`** statement iterates over the subnetworks, and the **`content`** block defines the structure of the generated **`subnetworks`** block. The **`subnetworks.value`** reference represents the current item in the iteration, in this case, a subnetwork object.
 
 ### AWS Lambda Integration
 
