@@ -17,16 +17,18 @@ gcloud auth login
 gcloud compute networks list --project=:project-name
 ```
 
-### Set up IDS
+### IDS
 
 [https://cloud.google.com/intrusion-detection-system/docs/configuring-ids](https://cloud.google.com/intrusion-detection-system/docs/configuring-ids)
 
-Set up IAM permissions
-
-Set up private services access by enabling the Service Networking API
+### Query IDS endpoints across projects
 
 ```bash
-# Enable Service Networking API
-gcloud services enable servicenetworking.googleapis.com --project :project-name
+gcloud projects list --format="value(projectId)"
+
+for project_id in $(gcloud projects list --format="value(projectId)"); do
+  echo "Project: $project_id"
+  gcloud ids endpoints list --project=$project_id
+done
 ```
 
