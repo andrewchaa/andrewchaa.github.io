@@ -1,5 +1,5 @@
 ---
-title: How to Fix the "node: command not found" Error When Building a React Native App in Xcode
+title: How to Fix the "node command not found" Error When Building a React Native App in Xcode
 date: 2023-04-26
 tags:
   - react native
