@@ -128,3 +128,41 @@ jobs:
       TF_VAR_website_signout_urls: '["http://localhost/signout"]'
 ```
 
+### Trigger a workflow at a scheduled time
+
+Cron syntax has five fields separated by a space, and each field represents a unit of time.
+
+```bash
+┌───────────── minute (0 - 59)
+│ ┌───────────── hour (0 - 23)
+│ │ ┌───────────── day of the month (1 - 31)
+│ │ │ ┌───────────── month (1 - 12 or JAN-DEC)
+│ │ │ │ ┌───────────── day of the week (0 - 6 or SUN-SAT)
+│ │ │ │ │
+│ │ │ │ │
+│ │ │ │ │
+* * * * *
+```
+
+You can use these operators in any of the five fields:
+
+Operator|Description|Example
+---|---|---
+*|Any value|`15 * * * *` runs at every minute 15 of every hour of every day.
+,|Value list separator|`2,10 4,5 * * *` runs at minute 2 and 10 of the 4th and 5th hour of every day.
+-|Range of values|`30 4-6 * * *` runs at minute 30 of the 4th, 5th, and 6th hour.
+/|Step values|`20/15 * * * *` runs every 15 minutes starting from minute 20 through 59 (minutes 20, 35, and 50).
+
+```yaml
+name: Hourly Summary
+
+on:
+  schedule:
+    - cron: '0 8-23 * * 1,2,3,4,5'
+    - cron: '0 22,23 * * 0'
+
+  workflow_dispatch:
+```
+
+You can validate your cron expression with [cron tab](https://crontab.guru/examples.html). 
+
