@@ -20,11 +20,11 @@ Usually, Master Nodes are referred to as “Masters” and Worker Nodes are call
 
 ### Hosted Kubernetes
 
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/ff003436-784e-48e0-9f34-025c07180152/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230519%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230519T012908Z&X-Amz-Expires=3600&X-Amz-Signature=404e37494f27ba76038fe3b0d14b9da26a1e0efed02d05f09dc8b1bc8146b2a1&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/ff003436-784e-48e0-9f34-025c07180152/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230520%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230520T012946Z&X-Amz-Expires=3600&X-Amz-Signature=03b22ec36fb08ff8c8e123c2c12aba49c5b2108d201ceab90fe3752cc791ae82&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 ### Workflow
 
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/ec49fcda-41bd-406f-a0c7-dc711519d9ac/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230519%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230519T012908Z&X-Amz-Expires=3600&X-Amz-Signature=3001e3fcecae5c5a31edb9c686ed32f2695491960ca87ad876aae9938aea92a6&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/ec49fcda-41bd-406f-a0c7-dc711519d9ac/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230520%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230520T012946Z&X-Amz-Expires=3600&X-Amz-Signature=9245c49dc541c044803807785c427cd90751f3a36b058a50b15c16aca7aeac2a&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 ### Breaking down the Dockerfile
 
@@ -89,15 +89,15 @@ kubectl logs --follow nginx
 
 Where our applications actually run.
 
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/9d124f90-f002-4158-9dd9-b9d4621c9648/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230519%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230519T012908Z&X-Amz-Expires=3600&X-Amz-Signature=3fd3f55b3e4a453ee14eda08a719da2e887c9597f132a83f9a25966520fa15b2&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/9d124f90-f002-4158-9dd9-b9d4621c9648/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230520%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230520T012946Z&X-Amz-Expires=3600&X-Amz-Signature=31a4f398ae052a8965734bc31e61b7e2ae05c3d3ac84b91f4430a125355d2a9b&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 ### The master
 
 In the reconciliation loop, the master compares the current state with the desired state and makes the necessary changes
 
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/d483043c-6684-480e-9b9b-b565ac3ad805/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230519%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230519T012908Z&X-Amz-Expires=3600&X-Amz-Signature=92a26aabec9f36e43801c8631ec0d9f94e8f7a63ad373e49fcf8f77cb0c04985&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/d483043c-6684-480e-9b9b-b565ac3ad805/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230520%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230520T012946Z&X-Amz-Expires=3600&X-Amz-Signature=694db496a79c167cac494e5bf08ec2e36a58ffefa6a47d0a0c58f716d34ecc4b&X-Amz-SignedHeaders=host&x-id=GetObject)
 
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/c7ef6efa-2163-4bff-946b-5b9ad32fcecb/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230519%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230519T012908Z&X-Amz-Expires=3600&X-Amz-Signature=e2e9f8236f670da506beaa5b5be443e67cb5b34c17c15952ba64403ea2e89bfe&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/c7ef6efa-2163-4bff-946b-5b9ad32fcecb/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230520%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230520T012946Z&X-Amz-Expires=3600&X-Amz-Signature=9084e9f77f5ed13142de1bcd4c2627f1f2aff29a276a0daadc069f4c2df05565&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 ### Difference between pods and containers
 
