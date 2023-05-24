@@ -1801,3 +1801,75 @@ function getArea(shape: Shape): number {
 }
 ```
 
+## S
+
+### What is Big O Notation
+
+- In computer science, describes the performance or complexity of an algorithm
+
+- Express the upper bound of an algorithm’s time complexity, showing the worst-case scenario or the maximum time required
+
+- O(1): constant time
+
+- O(N): linear time. The performance grow linearly to the size of the input data set
+
+- O(log N): the computation grows logarithmically in proportion to the input. Better than linear time
+
+- O(N^2): proportional to the square of the size of the input. Common with algorithms that involves nested iterations such as bubble sort
+
+- O(2^N): growth doubles with each addition to the input data set. Brut-force search algorithm
+
+### What is polymorphism in OO
+
+- An object can behave differently in different contexts
+
+- Compile-Time Polymorphism: method overloading. multiple methods with the same name but different parameters
+
+- Run-Time Polymorphism: method overriding. or different objects that implement the same interface
+
+- Structure code to be more flexible and easier maintain
+
+### What do foreign keys do
+
+- A field or key that references a primary key in another table
+
+- Maintain referential integrity by ensuring the relationship between two tables: You can’t add a record with non-existent primary key in the parent table
+
+- Used for navigation and joining tables
+
+### How does cascade on delete work in SQL
+
+- Automatically delete records from child tables when the corresponding records in the parent table are deleted
+
+### What is responder chain in iOS
+
+- a series of linked responder objects that inehrit from the UIResponder class. Event bubbling. 
+
+### The difference between a reference type and a value type
+
+- value type: A block of memory is allocated to store the value and the variable holds the actual data. Primitive types: int, float, bool, char, struct
+
+- reference type: the variable stores a reference to the data’s location in memory: custom types. 
+
+- strings are reference types in C# and Java and stored in heap, but value types in Swift
+
+### What is the importance of DTOs
+
+- Encapsulate data as a single object
+
+- A container for transferring data between different parts of an application.
+
+- Data Transformation and mapping
+
+- Versioning and compatibility
+
+How do you keep up to date on tech news
+
+What you do you understand by operability and how do you use it in your current role
+
+Model a loan system database
+
+Walk us through a possible system solution for a banking transaction
+
+Whiteboard a database design for a payments system
+
