@@ -69,3 +69,17 @@ gcloud auth configure-docker
 docker pull eu.gcr.io/live/gcf/europe-west2/5f4029542275:latest
 ```
 
+### List compute instances
+
+```bash
+gcloud compute instances list --project dev-test
+
+NAME                             ZONE            MACHINE_TYPE   PREEMPTIBLE  INTERNAL_IP  EXTERNAL_IP     STATUS
+europe-west2-a-gke-bastion    europe-west2-a  e2-small                    x.1.0.1    x.100.147.90     RUNNING
+gateway-europe-west2-a-8kxt   europe-west2-a  n1-standard-1               x.0.0.2    x.100.147.10     RUNNING
+green-europe-west2-a-0h84     europe-west2-a  n1-standard-2               x.1.0.3                     RUNNING
+gateway-europe-west2-b-dwb2   europe-west2-b  n1-standard-1               x.0.0.4    x.100.76.10      RUNNING
+green-europe-west2-b-bzbk     europe-west2-b  n1-standard-2               x.1.0.5                     RUNNING
+green-europe-west2-c-sz0p     europe-west2-c  n1-standard-2               x.1.0.6                     RUNNING
+```
+
