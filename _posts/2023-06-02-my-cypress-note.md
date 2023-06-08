@@ -5,6 +5,12 @@ tags:
   - cypress
 ---
 
+### Resource
+
+- [Cypress Scenario Recorder](https://chrome.google.com/webstore/detail/cypress-scenario-recorder/fmpgoobcionmfneadjapdabmjfkmfekb/related?hl=en)
+
+- [Cypress Network Requests](https://docs.cypress.io/guides/guides/network-requests)
+
 ### Lint error
 
 ```javascript
@@ -123,5 +129,59 @@ Cypress.Commands.add('login', (overrides = {}) => {
     );
   });
 });
+```
+
+## Parameterised tests
+
+You can use parameterized tests in Cypress, which is an excellent way to reduce code duplication when you need to run the same tests with different data.
+
+Use **`[].forEach`** 
+
+```javascript
+[
+    {
+      fixture: 'general-notes.json',
+      noteType: 'GeneralNote',
+      noteContent: 'Note case note description',
+    },
+    {
+      fixture: 'caseNotes/flagged-notes.json',
+      noteType: 'FlaggedNote',
+      noteContent: 'Flagged case note description',
+    },
+  ].forEach(({ fixture, noteType, noteContent }) => {
+    it(`should be possible to add, save and then view a case note, of type "${noteType}"`, () => {
+      cy.intercept('POST', '/users/**/notes', {
+        fixture,
+      });
+
+      cy.visit(`/dashboard/users/${serviceUser}`);
+
+      cy.get('[data-test-id="createButton"]').click();
+      cy.get('h2').should('have.text', 'Add Case Note');
+
+      cy.get(`input[value="${noteType}"]`).click();
+
+      cy.get('textarea').should('have.attr', 'name', 'description').type(noteContent);
+
+      cy.contains('SAVE').click();
+      cy.wait(['@get-case-note']);
+
+      cy.get('td').contains(noteContent).should('be.visible');
+    });
+  });
+```
+
+### Select a button that contains a text
+
+```javascript
+<button tabindex="0" 
+	class="c1392 c1626 c1637 c1638 c1640 c1641" 
+	type="button">
+	<span class="c1627">Add incident</span>
+	<span class="c1402"></span>
+</button>
+
+cy.get('button').contains('Add incident').click();
 ```
 
