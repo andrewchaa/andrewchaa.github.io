@@ -11,6 +11,8 @@ tags:
 
 - [Cypress Network Requests](https://docs.cypress.io/guides/guides/network-requests)
 
+- [Playground](https://docs.cypress.io/guides/core-concepts/cypress-app#Selector-Playground)
+
 ### Lint error
 
 ```javascript
