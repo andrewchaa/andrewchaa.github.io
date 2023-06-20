@@ -105,6 +105,15 @@ describe('Add', () => {
 })
 ```
 
+## Selectors
+
+### getByRole
+
+```c#
+// select a button with the label
+const submitButton = screen.getByRole('button', { name: /ACTION/i })
+```
+
 ## Assertions
 
 ### toBeInTheDocument()
