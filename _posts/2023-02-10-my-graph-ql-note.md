@@ -15,7 +15,7 @@ One of the main advantages of GraphQL is that it allows for more efficient and f
 
 ### GraphQL IDE
 
-- [Apollo Studio](https://studio.apollographql.com) 
+- [Apollo Studio](https://studio.apollographql.com/) 
 
 - [Graphiql](https://github.com/graphql/graphiql)
 

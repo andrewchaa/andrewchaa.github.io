@@ -39,7 +39,7 @@ az sql server ad-admin create --resource-group <resoure group> \
 
 Now the object id is associated with the chosen login id.
 
-Once Managed Identity is enabled, add `Microsoft.Azure.Services.AppAuthentication` package to your [ASP.NET](http://ASP.NET) app. Then you can use the following code to connect to the Azure SQL database from your ASP.NET app:
+Once Managed Identity is enabled, add `Microsoft.Azure.Services.AppAuthentication` package to your [ASP.NET](http://asp.net/) app. Then you can use the following code to connect to the Azure SQL database from your ASP.NET app:
 
 ```c#
 var connectionString = "Server=tcp:<server>.database.windows.net,1433;Initial Catalog=<database>;Persist Security Info=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
