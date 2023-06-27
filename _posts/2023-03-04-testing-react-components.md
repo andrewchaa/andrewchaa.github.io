@@ -75,13 +75,17 @@ describe('List', () => {
 })
 ```
 
-### User Interactions
+## User Interactions
 
 [`user-event`](https://github.com/testing-library/user-event) is a companion library for Testing Library that simulates user interactions by dispatching the events that would happen if the interaction took place in a browser. Take note that all the functions return `promise` so use it with `await` 
 
 ```typescript
 yarn add -D @testing-library/user-event
 ```
+
+- type
+
+- click
 
 ```typescript
 import * as React from 'react'
@@ -109,12 +113,29 @@ describe('Add', () => {
 
 ### getByRole
 
+- `textbox`
+
+- `checkbox`
+
+- `button`
+
 ```c#
 // select a button with the label
 const submitButton = screen.getByRole('button', { name: /ACTION/i })
 ```
 
 ## Assertions
+
+### toBeDefined()
+
+Ensure that a variable is not undefined
+
+```c#
+it('should render the label text', () => {
+  renderWithTheme(<ConfirmationBox {...props} />);
+  expect(screen.getByText('I confirm that I have followed the')).toBeDefined();
+});
+```
 
 ### toBeInTheDocument()
 
