@@ -35,5 +35,5 @@ A few tips and tricks I use for the wonderful code editor, VS Code.
 
 In the toolbar in the bottom right corner.
 
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/e655c596-1040-4dac-b2d3-2c998f9dcc83/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230629%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230629T013027Z&X-Amz-Expires=3600&X-Amz-Signature=4dccdcdd6ef3388c0b579d222ce85e401d835d5e16b5fa8cc08a995d217dabcd&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/e655c596-1040-4dac-b2d3-2c998f9dcc83/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230630%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230630T013026Z&X-Amz-Expires=3600&X-Amz-Signature=8652147607c09ad8c82670c4025126451a77d03588f8646ebf064a736b2f941e&X-Amz-SignedHeaders=host&x-id=GetObject)
 
