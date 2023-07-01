@@ -10,6 +10,8 @@ tags:
 
 - [https://www.apollographql.com/docs/react/integrations/react-native/](https://www.apollographql.com/docs/react/integrations/react-native/)
 
+- [https://github.com/GraphQLGuide/guide-react-native](https://github.com/GraphQLGuide/guide-react-native)
+
 Install it with `npm` or `yarn`
 
 ```bash
@@ -41,5 +43,35 @@ function App() {
     </NativeBaseProvider>
   )
 }
+```
+
+Create a gql query
+
+```typescript
+// graphql/queries.ts
+import { gql } from '@apollo/client';
+
+export const jobs = gql`
+  query Jobs($companyId: String!) {
+    jobs(companyId: $companyId) {
+      jobNo
+      companyId
+      customer {
+        name
+        phone
+      }
+      product {
+        id
+        name
+        fuel
+        serialNumber
+        modelName
+        installationDate
+        warrantyExpiryDate
+      }
+      ...
+    }
+  }
+`
 ```
 

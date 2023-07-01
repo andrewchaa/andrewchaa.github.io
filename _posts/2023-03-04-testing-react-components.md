@@ -17,7 +17,9 @@ React Testing Library is a popular testing library that allows developers to wri
 
 First, set up [Jest for TypeScript](/a47f33b2d33845ebb9ca3685ee9b28c5). 
 
-Add `jest-dom` package for additional test helper functions
+- Add `jest-dom` package for additional test helper functions
+
+- `import '@testing-library/jest-dom/extend-expect'` to use utility functions like `toBeInTheDocument()`
 
 ```bash
 yarn add -D @testing-library/jest-dom
@@ -119,9 +121,23 @@ describe('Add', () => {
 
 - `button`
 
+One thing to note is `name` doesn’t mean the name attribute in the element. It’s the text in the associated label. 
+
 ```c#
 // select a button with the label
 const submitButton = screen.getByRole('button', { name: /ACTION/i })
+
+it('save button should be enabled when all required inputs are done', async () => {
+  await act(async () => {
+    renderWithKompass(<AdminNoteForm formMode={FORM.CREATE} onSubmit={jest.fn()} />);
+    await userEvent.type(
+      screen.getByRole('textbox', { name: 'Note description' }),
+      'Note description'
+    );
+
+    expect(screen.getByRole('button', { name: 'SAVE' })).toHaveProperty('disabled', false);
+  });
+});
 ```
 
 ## Assertions
