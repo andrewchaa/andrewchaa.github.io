@@ -101,6 +101,7 @@ const client = new ApolloClient({
   uri: 'http://localhost:4000',
   cache: new InMemoryCache()
 })
+)
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -117,6 +118,35 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+```
+
+### Refetch queries
+
+To refetch a specific query by name, use the `include` option.
+
+```typescript
+import { useApolloClient } from '@apollo/client'
+
+const JobItems = ({ items }: { items: Job[] }) => {
+  ...
+  const client = useApolloClient()
+
+  return (
+     ...
+     <KeyboardAwareScrollView
+        contentContainerStyle={{ flexGrow: 1 }}
+        refreshControl={
+          <RefreshControl
+            refreshing={refreshing}
+            onRefresh={() => {
+              void client.refetchQueries({ include: ['MyJobs'] }).then().catch()
+            }
+          }
+          />
+        }
+      > 
+      ...
+  )
 ```
 
 ## Testing React components
