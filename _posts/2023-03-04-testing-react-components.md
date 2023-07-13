@@ -111,6 +111,20 @@ describe('Add', () => {
 })
 ```
 
+```typescript
+await userEvent.click(screen.getByRole('radio', { name: 'Yes' }));
+await userEvent.selectOptions(
+  screen.getByRole('combobox'),
+  'Indication or potential indication of significant harm'
+);
+await userEvent.type(
+  screen.getByRole('textbox', { name: 'Agreed action' }),
+  agreedActionDescription
+);
+await userEvent.click(screen.getByRole('checkbox'));
+await userEvent.click(screen.getByRole('button', { name: /next/i }));
+```
+
 ## Selectors
 
 ### getByRole
