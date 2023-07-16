@@ -20,6 +20,14 @@ SQL databases
 
 - strong consistency and ACID (Atomicity, Consistency, Isolation, Durability) support
 
+	- Atomicity: In a traction, either all of the pieces are committed or none are
+
+	- Consistency: If any failure occurs, a transaction returns all data to the earlier state
+
+	- Each transaction is isolated from any other
+
+	- Durability: Committed data is saved and available after system restart
+
 - Scale vertically, requiring more powerful hardware
 
 NoSQL databases
