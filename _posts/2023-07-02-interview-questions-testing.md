@@ -1,5 +1,5 @@
 ---
-title: Interview Questions - Testing연
+title: Interview Questions - Testing
 date: 2023-07-02
 tags:
   - react-testing-library
