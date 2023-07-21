@@ -80,7 +80,56 @@ const JobItems = (props: JobItemsProps)  => {
   >
 ```
 
+## Mutation
+
+Use `useMutation` to save or update data.
+
+Do `refetch` after the mutation succeeds
+
+```javascript
+const completeMutation = useMutation(async (job: Job) => {
+  const response = await apis.updateJob({
+    ...job,
+    jobStatus: JobStatus.COMPLETED,
+  })
+
+  if (response.status !== 200) {
+    toast.show({
+      title: 'Job failed to update into the app server',
+      status: 'error',
+      description: response.message,
+    })
+
+    throw new Error('Job failed to update into the app server')
+  }
+
+  toast.show({
+    title: 'Successfuly updated',
+    status: 'success',
+    description: `Job status has been successfully updated to '${response.data.jobStatus}.'`,
+  })
+
+  await getJobQuery.refetch()
+  return response
+})
+
+const handleComplete = (job?: Job) => {
+  setShowCompletedModal(false)
+
+  if (!job) {
+    return
+  }
+
+  ...
+  completeMutation.mutate(job)
+}
+```
+
 ## Testing
 
 React Query works by means of hooks. Writing unit tests for the custom hooks can be done by means of the [react-hooks-testing-library](https://react-hooks-testing-library.com/). 
+
+## Offline
+
+I use React Query in my React Native mobile app to support offline feature. To test offline feature, you can install [Network Link Conditioner from Apple](https://developer.apple.com/download/more/?q=Additional%20Tools). 
 
