@@ -127,7 +127,89 @@ const handleComplete = (job?: Job) => {
 
 ## Testing
 
-React Query works by means of hooks. Writing unit tests for the custom hooks can be done by means of the [react-hooks-testing-library](https://react-hooks-testing-library.com/). 
+React Query works by means of hooks. Unit tests for custom hooks can be written using the [react-hooks-testing-library](https://react-hooks-testing-library.com/). 
+
+Alternatively, you can mock API calls within the query hook. This will allow your Jest tests to test all the features of react query as if it were running in production. This is a better approach because you are testing your code, not mocks. 
+
+### wrapper
+
+To test components, you need to wrap them with `<ReactClientProvider />`. I have a wrapper function for this. Here is the code.
+
+```javascript
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { NativeBaseProvider } from 'native-base'
+import React from 'react'
+
+const queryClient = new QueryClient()
+queryClient.setDefaultOptions({
+  queries: {
+    cacheTime: 0,
+  }
+})
+
+type Props = {
+  children: React.ReactNode;
+}
+
+const wrapper = ({children}: Props) => (
+  <QueryClientProvider client={queryClient}>
+    <NativeBaseProvider
+      initialWindowMetrics={{
+        frame: {x: 0, y: 0, width: 0, height: 0},
+        insets: {top: 0, left: 0, right: 0, bottom: 0},
+      }}>
+      {children}
+    </NativeBaseProvider>
+  </QueryClientProvider>
+)
+
+export default wrapper
+```
+
+```javascript
+describe('JobDetails', () => {
+  apis.getJob = jest.fn().mockImplementation(() => {
+    return getJobResponse
+  })
+
+  apis.updateJob = jest.fn()
+
+  it('should render JobDetails successfully', async () => {
+    render(<JobDetails />, {wrapper})
+
+    await waitFor(() => expect(screen.getByText('Job Details')).toBeTruthy())
+
+    const completeButton = await waitFor(() => screen.getByRole('button', {name: 'COMPLETE'}))
+    expect(completeButton).toBeTruthy()
+  })
+```
+
+This will ensure that your component is always wrapped in `<ReactClientProvider />`. 
+
+### Jest did not exit one second after the test run has completed
+
+The issue is caused by the `react-query` garbage collection timer running, which defaults to 5 minutes: [https://stackoverflow.com/questions/71881322/react-native-jest-did-not-exit-one-second-after-the-test-run-has-completed-wi](https://stackoverflow.com/questions/71881322/react-native-jest-did-not-exit-one-second-after-the-test-run-has-completed-wi)
+
+To sort it, do one the followings
+
+- Set `cacheTime` to 0 for the test. 
+
+```javascript
+const queryClient = new QueryClient()
+queryClient.setDefaultOptions({
+  queries: {
+    cacheTime: 0,
+  }
+})
+```
+
+- Clean the query cache after each test
+
+```javascript
+afterEach(() => { queryClient.clear() })
+```
+
+- use `jest.useFakeTimers()`
 
 ## Offline
 
