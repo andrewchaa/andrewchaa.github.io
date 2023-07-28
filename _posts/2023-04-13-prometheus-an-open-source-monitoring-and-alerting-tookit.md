@@ -10,7 +10,7 @@ Prometheus is an open-source monitoring and alerting toolkit that was designed f
 
 Prometheus can serve as the intermediary between the application pods and Grafana. 
 
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/cc00c70b-eb95-494b-b2ac-79554507d101/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230727%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230727T012721Z&X-Amz-Expires=3600&X-Amz-Signature=84ccba6e17d9aa07acf4292a12ad29f56f79a311819f4f236d87ffa352a67420&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/cc00c70b-eb95-494b-b2ac-79554507d101/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230728%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230728T012825Z&X-Amz-Expires=3600&X-Amz-Signature=2d4f475fe3d12ff55492231f3e7b47496f525a9bbfa18c4c1eb76ea1454ab8c9&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 Here's an overview of its role:
 

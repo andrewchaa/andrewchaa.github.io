@@ -7,6 +7,8 @@ tags:
 
 [React Query](https://tanstack.com/query/v3/docs/react/overview) is a data-fetching library for React and for React Native. It makes fetching, caching, synchronising, and updating server state in your react application easier. 
 
+### Table of Contents
+
 Install the package
 
 ```bash
@@ -214,4 +216,60 @@ afterEach(() => { queryClient.clear() })
 ## Offline
 
 I use React Query in my React Native mobile app to support offline feature. To test offline feature, you can install [Network Link Conditioner from Apple](https://developer.apple.com/download/more/?q=Additional%20Tools). 
+
+### QueryClient with AsyncStoragePersister
+
+To benefit from offline support, you have to use `queryClient` with `AsyncStorage`. 
+
+Install the following 2 packages
+
+- @tanstack/query-async-storage-persister
+
+- @tanstack/react-query-persist-client
+
+```javascript
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: 0,
+      cacheTime: 1000 * 60 * 60 * 24, // 24 hours
+      staleTime: 2000,
+    },
+  },
+  mutationCache: new MutationCache({
+    onSuccess: (data) => {
+      // toast.success('Success')
+    },
+    onError: (error) => {
+      // toast.error((error as Error).message)
+      Sentry.Native.captureException(error)
+    },
+  }),
+})
+
+const asyncPersist = createAsyncStoragePersister({
+  storage: AsyncStorage,
+})
+
+function App() {
+  ...
+return (
+		<PersistQueryClientProvider
+      client={queryClient}
+      persistOptions={{
+        maxAge: 1000 * 60 * 60 * 24, // 24 hours
+        persister: asyncPersist,
+      }}
+      onSuccess={() => {
+        console.log('Persisted query client successfully')
+        void queryClient
+          .resumePausedMutations()
+          .then(() => queryClient.invalidateQueries())
+      }}
+    >
+      {signedIn ? <MainContainer /> : <AuthContainer />}
+    </PersistQueryClientProvider>
+)
+}
+```
 
