@@ -215,7 +215,7 @@ afterEach(() => { queryClient.clear() })
 
 ## Offline
 
-I use React Query in my React Native mobile app to support offline feature. To test offline feature, you can install [Network Link Conditioner from Apple](https://developer.apple.com/download/more/?q=Additional%20Tools). 
+I use React Query in my React Native mobile app to support offline feature. To test offline feature, you can install [Network Link Conditioner from Apple](https://developer.apple.com/download/more/?q=Additional%20Tools). Check the version of you Xcode and download “Additional Tools for XCode {your version}”. “Network Link Conditioner.prefPane” is in “Hardware” directory of the downloaded package.
 
 ### QueryClient with AsyncStoragePersister
 
@@ -272,4 +272,10 @@ return (
 )
 }
 ```
+
+### Persisting Offline mutations
+
+If you [persist offline mutations](https://tanstack.com/query/v4/docs/react/guides/mutations#persisting-offline-mutations) with the [**persistQueryClient plugin**](https://tanstack.com/query/v4/docs/react/plugins/persistQueryClient), mutations cannot be resumed when the page is reloaded unless you provide a default mutation function.
+
+This is because when persisting to an external storage, only the state of mutations is persisted, as functions cannot be serialized. After hydration, the component that triggers the mutation might not be mounted, so calling **`resumePausedMutations`** might yield an error: **`No mutationFn found`**.
 
