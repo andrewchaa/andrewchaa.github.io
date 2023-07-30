@@ -227,15 +227,15 @@ Install the following 2 packages
 
 - @tanstack/react-query-persist-client
 
-```javascript
+```typescript
+import { MutationCache, QueryClient } from '@tanstack/react-query'
+
+type UpdateJobContext = {
+  original: Job | undefined
+  new: Job
+}
+
 const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      retry: 0,
-      cacheTime: 1000 * 60 * 60 * 24, // 24 hours
-      staleTime: 2000,
-    },
-  },
   mutationCache: new MutationCache({
     onSuccess: (data) => {
       // toast.success('Success')
@@ -247,6 +247,59 @@ const queryClient = new QueryClient({
   }),
 })
 
+queryClient.setDefaultOptions({
+  queries: {
+    retry: 0,
+    cacheTime: 1000 * 60 * 60 * 24, // 24 hours
+    staleTime: 2000,
+    networkMode: 'offlineFirst',
+  },
+  mutations: {
+    retry: 3,
+    networkMode: 'offlineFirst',
+  },
+
+})
+
+queryClient.setMutationDefaults([QueryKeys.updateJob], {
+  mutationFn: async (job: Job) => {
+    const response = await apis.updateJob(job)
+    return response.data || {} as Job
+  },
+  onMutate: async (variables: Job): Promise<UpdateJobContext> => {
+    await queryClient.cancelQueries({ queryKey: [QueryKeys.jobs]})
+    await queryClient.cancelQueries({ queryKey: [QueryKeys.job, variables.jobNo]})
+
+    // replace the old job with the optimistic new one
+    const original = queryClient.getQueryData([QueryKeys.job, variables.jobNo]) as Job
+    queryClient.setQueryData([QueryKeys.job, variables.jobNo], () => {
+      return variables
+    })
+    queryClient.setQueryData([QueryKeys.jobs], (old: Job[] | undefined) =>
+      old?.map(j => j.jobNo === variables.jobNo ? variables : j)
+    )
+    return { original, new: variables }
+  },
+  onError: (error, variables: Job, context: UpdateJobContext) => {
+    // rollback to the old job
+    queryClient.setQueryData([QueryKeys.job, variables.jobNo], context.original)
+    queryClient.setQueryData([QueryKeys.jobs], (olds: Job[] | undefined) => {
+      if (!olds) return []
+      return olds.map(
+        x => x.jobNo === variables.jobNo
+          ? context.original || x
+          : x
+      )
+    })
+    Sentry.Native.captureException(error)
+  },
+  retry: 3,
+})
+
+export default queryClient
+```
+
+```typescript
 const asyncPersist = createAsyncStoragePersister({
   storage: AsyncStorage,
 })
@@ -254,22 +307,22 @@ const asyncPersist = createAsyncStoragePersister({
 function App() {
   ...
 return (
-		<PersistQueryClientProvider
-      client={queryClient}
-      persistOptions={{
-        maxAge: 1000 * 60 * 60 * 24, // 24 hours
-        persister: asyncPersist,
-      }}
-      onSuccess={() => {
-        console.log('Persisted query client successfully')
-        void queryClient
-          .resumePausedMutations()
-          .then(() => queryClient.invalidateQueries())
-      }}
-    >
-      {signedIn ? <MainContainer /> : <AuthContainer />}
-    </PersistQueryClientProvider>
-)
+	<PersistQueryClientProvider
+	  client={queryClient}
+	  persistOptions={{
+	    maxAge: 1000 * 60 * 60 * 24, // 24 hours
+	    persister: asyncPersist,
+	  }}
+	  onSuccess={() => {
+	    console.log('Persisted query client successfully')
+	    void queryClient
+	      .resumePausedMutations()
+	      .then(() => queryClient.invalidateQueries())
+	  }}
+	>
+	  {signedIn ? <MainContainer /> : <AuthContainer />}
+	</PersistQueryClientProvider>
+	)
 }
 ```
 
