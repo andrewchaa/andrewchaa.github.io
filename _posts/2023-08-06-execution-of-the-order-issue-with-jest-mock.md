@@ -30,19 +30,29 @@ What’s the difference then?
 
 **`jest.mock`** is used to replace an entire module with a mock implementation. When you use **`jest.mock`**, every function or variable exported from that module will be replaced with a mock version.
 
-- **Execution Order**: **`jest.mock`** calls are hoisted to the top of the code block, meaning they are run before any import statements. This ensures that the mocked module is used throughout the entire test file.
+**`jest.mock`** calls are hoisted to the top of the code block, meaning they are run before any import statements. This ensures that the mocked module is used throughout the entire test file. You use **`jest.mock`** when you want to replace a whole module with mock implementations, or when you want to mock the behavior of third-party libraries.
 
-- **Usage**: You use **`jest.mock`** when you want to replace a whole module with mock implementations, or when you want to mock the behavior of third-party libraries.
+**`jest.spyOn`** is used to replace a specific method on an object with a mock function, while keeping the rest of the object intact. This allows you to spy on calls to that method, record its usage, or replace its implementation for certain test cases. Unlike **`jest.mock`**, **`jest.spyOn`** is not hoisted. It's executed in the order it appears in the code. Because of this, you can use **`jest.spyOn`** to conditionally spy on methods in individual test cases. You use **`jest.spyOn`** when you want to mock or track a specific method without affecting other parts of the object.
 
-### **`jest.spyOn`**
+```typescript
+const mockGoBack = jest.fn()
+const mockNavigate = jest.fn()
+jest.spyOn(Navigation, 'useNavigation').mockReturnValue({
+  goBack: mockGoBack,
+  navigate: mockNavigate,
+})
 
-- **Purpose**: **`jest.spyOn`** is used to replace a specific method on an object with a mock function, while keeping the rest of the object intact. This allows you to spy on calls to that method, record its usage, or replace its implementation for certain test cases.
+it('should render Back Button', () => {
 
-- **Execution Order**: Unlike **`jest.mock`**, **`jest.spyOn`** is not hoisted. It's executed in the order it appears in the code. Because of this, you can use **`jest.spyOn`** to conditionally spy on methods in individual test cases.
+  render(<SignIn />, {wrapper})
 
-- **Usage**: You use **`jest.spyOn`** when you want to mock or track a specific method without affecting other parts of the object.
+  expect(screen.getByTestId('back-button')).toBeTruthy()
+  fireEvent.press(screen.getByTestId('back-button'))
 
-In your original case, **`jest.mock`** was replacing the entire **`useNavigation`** function with a mock implementation, and it seems like it wasn't providing the complete expected object. Since **`jest.mock`** is hoisted, it could also lead to issues related to the order of execution.
+  expect(mockGoBack).toHaveBeenCalled()
+
+})
+```
 
 By using **`jest.spyOn`**, you can target the specific method (**`goBack`**) that you want to spy on or mock, without affecting the rest of the object or other parts of the module. This provides more control and can be more suitable for your test case
 
