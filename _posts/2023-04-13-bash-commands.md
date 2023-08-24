@@ -12,5 +12,7 @@ lsof -i :5000
 # kill the process with PID 546
 kill 546
 
+# print all environment variables
+printenv
 ```
 
