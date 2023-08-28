@@ -197,18 +197,58 @@ To sort it, do one the followings
 - Set `cacheTime` to 0 for the test. 
 
 ```javascript
-const queryClient = new QueryClient()
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { NativeBaseProvider } from 'native-base'
+import React from 'react'
+
+export const queryClient = new QueryClient()
 queryClient.setDefaultOptions({
   queries: {
     cacheTime: 0,
-  }
+    retry: false,
+  },
+  mutations: {
+    retry: false,
+    cacheTime: 0,
+  },
 })
+
+type Props = {
+  children: React.ReactNode;
+}
+
+const wrapper = ({children}: Props) => (
+  <QueryClientProvider client={queryClient}>
+    <NativeBaseProvider
+      initialWindowMetrics={{
+        frame: {x: 0, y: 0, width: 0, height: 0},
+        insets: {top: 0, left: 0, right: 0, bottom: 0},
+      }}>
+      {children}
+    </NativeBaseProvider>
+  </QueryClientProvider>
+)
+
+export default wrapper
 ```
 
-- Clean the query cache after each test
+- `clear()` the `queryClient` after each test run.
 
 ```javascript
-afterEach(() => { queryClient.clear() })
+describe('Activate account', () => {
+  ...
+  afterEach(() => {
+    queryClient.clear()
+  })
+
+  it('should render ActivateAccount', () => {
+    render(<ActivateAccount />, { wrapper })
+
+    expect(screen.getByText(email)).toBeTruthy()
+    expect(screen.getByTestId('activation-code')).toBeTruthy()
+    expect(screen.getByTestId('resend-code')).toBeTruthy()
+    expect(screen.getByTestId('activate-button')).toBeTruthy()
+  })
 ```
 
 - use `jest.useFakeTimers()`
