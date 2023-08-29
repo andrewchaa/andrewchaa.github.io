@@ -8,7 +8,7 @@ tags:
 
 - **Open the command palette**: ⌘ + shft + p - Access various VS Code commands and features quickly.
 
-- **Toggle terminal**: **`Ctrl+~`** - Open or close the integrated terminal.
+- **Toggle terminal**: ^ + ~ - Open or close the integrated terminal.
 
 - **Quick open**: ⌘ + p - Quickly open any file in your project.
 
@@ -32,17 +32,17 @@ tags:
 
 - **Duplicate line**: **`Shift+Alt+Up/Down`** - Duplicate the current line or selected lines above or below.
 
-- **Go to line number**: **`Ctrl+G`** - Quickly navigate to a specific line number.
+- **Go to line number**: ^ + G - Quickly navigate to a specific line number.
 
 - **Go to previous/next error or warning**: **`F8`** / **`Shift+F8`** - Navigate through the errors and warnings in your code.
 
 - **Multi-cursor selection**: ⌘ + Click  - Place multiple cursors in the editor for simultaneous editing.
 
-- **Expand/shrink selection**: **`Ctrl+Shift+Cmd+Right/Left`** - Increase or decrease the current selection based on language semantics.
+- **Expand/shrink selection**:  **`^+Shift+Cmd+Right/Left`** - Increase or decrease the current selection based on language semantics.
 
 - **Format document**: **`Shift+Alt+F`** - Automatically format your code based on the configured formatter.
 
 - **Fold/unfold code**: ⌘ + ALT + [  / ⌘ + ALT + ] - Collapse or expand code blocks, functions, or objects.
 
-- **Open shortcuts menu**: ⌘ + K ⌘ + S  `cmd+K cmd+s`
+- **Open shortcuts menu**: ⌘ + K ⌘ + S
 
