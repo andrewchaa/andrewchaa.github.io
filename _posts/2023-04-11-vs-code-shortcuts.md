@@ -6,9 +6,9 @@ tags:
   - vs code
 ---
 
-- **Open the command palette**: ⌘ + shft + p - Access various VS Code commands and features quickly.
+Key symbols: ⌘ **⇧ ⌥ ⌃**
 
-- **Toggle terminal**: ^ + ~ - Open or close the integrated terminal.
+- **Open the command palette**: ⌘ + shft + p - Access various VS Code commands and features quickly.
 
 - **Quick open**: ⌘ + p - Quickly open any file in your project.
 
@@ -23,6 +23,8 @@ tags:
 - **Find and replace in files**: ⌘ + SHFT + H - Find and replace a specific text pattern throughout your project files.
 
 - **Focus the editor**: ⌘ + 1
+
+- **Save all**: **⌥** ⌘ S
 
 - **Toggle line comment**: ⌘ + /  - Comment or uncomment the current line or selected lines.
 
@@ -45,4 +47,12 @@ tags:
 - **Fold/unfold code**: ⌘ + ALT + [  / ⌘ + ALT + ] - Collapse or expand code blocks, functions, or objects.
 
 - **Open shortcuts menu**: ⌘ + K ⌘ + S
+
+### Terminal
+
+- **Toggle terminal**: ^ ` : Open or close the integrated terminal.
+
+- **Create a new terminal**: **⇧** ^ ` 
+
+- Navigate between terminal groups: **⇧** ⌘ ] or **⇧** ⌘ [
 

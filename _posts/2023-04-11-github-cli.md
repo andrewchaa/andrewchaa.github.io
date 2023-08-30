@@ -12,7 +12,9 @@ Here's a brief introduction to GitHub CLI and some examples of common actions:
 
 ### Installation:
 
-To install GitHub CLI, follow the installation instructions for your operating system on the official GitHub CLI page: [**https://cli.github.com**](https://cli.github.com/)
+```typescript
+brew install gh
+```
 
 ### Authentication:
 
