@@ -5,6 +5,8 @@ tags:
   - shortcuts
 ---
 
+Key symbols: ⌥
+
 - Add an emoji: ⌘ **⇧ \**
 
 - React to a message with an emoji: R
