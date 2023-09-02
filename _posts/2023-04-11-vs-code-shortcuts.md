@@ -54,5 +54,5 @@ Key symbols: ⌘ **⇧ ⌥ ⌃**
 
 - **Create a new terminal**: **⇧** ^ ` 
 
-- Navigate between terminal groups: **⇧** ⌘ ] or **⇧** ⌘ [
+- **Navigate between terminal groups**: **⇧** ⌘ ] or **⇧** ⌘ [
 

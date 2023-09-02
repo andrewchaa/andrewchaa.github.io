@@ -41,3 +41,21 @@ public class CreateChatRequest {
 }
 ```
 
+### Request and Response DTO
+
+```java
+public class SendChatResponse {
+	@NotNull
+  private final String chatResponse;
+
+  @JsonCreator
+  public SendChatResponse(
+		@JsonProperty("chatResponse") String chatResponse
+  ) {
+		this.chattResponse = chatResponse;
+	}
+
+	public String getChatResponse() { return chatResponse; }
+}
+```
+
