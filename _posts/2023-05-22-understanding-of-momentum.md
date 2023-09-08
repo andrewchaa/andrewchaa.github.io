@@ -13,7 +13,7 @@ tags:
 
 - Momentum is a lagging indicator
 
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/5119430c-de3b-4cc5-b50f-d2c542ce9ad8/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230907%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230907T012254Z&X-Amz-Expires=3600&X-Amz-Signature=1dda20aa20e31e8d62f653e6f6a3e1b0f32e7ebe5366a04a9e83fbb426f81d2d&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/5119430c-de3b-4cc5-b50f-d2c542ce9ad8/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230908%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230908T012301Z&X-Amz-Expires=3600&X-Amz-Signature=300deef55fd4dee5f5a348ec6846805851dc7b14efec2acc0bb8a8b68cecd4fd&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 ## Moving Averages
 
@@ -31,7 +31,7 @@ tags:
 
 - Most reversal activity takes place at or near resistance or support
 
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/d732e202-24fa-4862-99ce-4f0068d89501/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230907%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230907T012255Z&X-Amz-Expires=3600&X-Amz-Signature=cebeb68f5b5c8f17403948613a4b5d01d123cedb0d3019d3053de8a806c10a14&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/d732e202-24fa-4862-99ce-4f0068d89501/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230908%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230908T012301Z&X-Amz-Expires=3600&X-Amz-Signature=2471b85b602f119a0061f0b04584e701a39be3294c0f98e2dd7a031fa7b4426b&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 - MA is a lagging indicator but together with price above or below Bollinger Bands it can predict the price movement
 
