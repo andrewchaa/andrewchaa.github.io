@@ -153,6 +153,8 @@ public interface Supplier<T> {
 }
 ```
 
+## Testing
+
 ### Mocking with Mockito
 
 **Mockito** is a mocking framework that allows you to create and configure mock objects. Using Mockito, you can mock interfaces, generate stubs, and verify interactions between objects in your tests. It's a favorite tool in the Java world for unit testing because it enables you to write clean tests with a clear API.Let's discuss the code snippet you provided with Mockito in mind:
@@ -191,6 +193,39 @@ class ChatServiceTest {
 		var response = underTest
 			.sendPrompt(new SendPromptRequest("Explain what Mockto is"));
 		assertThat(response.getPromptResponse()).isNotEmpty();
+	}
+}
+```
+
+### Unit test with mokito
+
+```java
+class ChatServiceTest {
+  @Inject
+  private ChatService underTest;
+  private final PredictionService predictionService = mock(PredictionService.class);
+  private final String promptResponse = "The bank is awesome";
+  private final String model = "text-bison@001";
+  private final String prompt = "Explain the bank";
+
+	@BeforeEach
+	void setUp() throws IOException {
+		Guice.createInjector(
+			binder -> {
+				binder.bind(PredictionService.class)
+					.toInstance(predictionService);
+			}
+		).injectMember(this)
+
+		when(predictionService.predict(model, prompt)).thenReturn(promptResponse);
+		underTest = new ChatService(chatServiceConfiguraton);
+  }
+
+	@Test
+	void sendPrompt() {
+		var response = underTest
+			.sendPrompt(new SendPromptRequest(model, prompt));
+		assertThat(response.getPromptResponse()).isEqualTo(promptResponse);
 	}
 }
 ```
