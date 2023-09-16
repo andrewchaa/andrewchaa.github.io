@@ -41,11 +41,82 @@ public class CreateChatRequest {
 }
 ```
 
-### Request and Response DTO
+## DTO
+
+### Request
+
+```java
+public class SendChatRequest {
+  @NotNull @NotEmpty
+  private final String prompt;
+
+  @NotNull @NotEmpty
+  private final String model;
+
+  public SendChatRequest(
+    @JsonProperty("model") String model,
+    @JsonProperty("prompt") String prompt
+  ) {
+    this.model = model;
+    this.prompt = prompt;
+  }
+
+  @JsonProperty("prompt")
+  publicl String getPrompt() { return prompt; }
+
+  @JsonProperty("model")
+  publicl String getModel() { return model; }
+}
+```
+
+### ApiResponse
+
+It's pretty cool to have a structured response, no matter if it's a success or not. This way, the client using the endpoint doesn't need to deal with the response in a special way based on the API response's status. 
+
+```json
+# 200 OK
+{
+  "data": {
+    "promptResponse": "This is an awesome place to live"
+  }
+}
+
+# 400 Bad Request
+{
+  "errors": [
+		"The model name is not provided"
+  ]
+}
+```
+
+```java
+public class ApiResponse<T> {
+  private final T data;
+  private final String[] errors;
+
+  public ApiResponse(
+    @JsonProperty("data") T data
+  ) {
+    this.data = data;
+    this.errors = new String[]{};
+	}
+
+  public ApiDataResponse(
+    @JsonProperty("errors") String[] errors
+  ) {
+    this.data = null;
+    this.errors = errors;
+  }
+
+  public T getData() { return data; }
+  public String[] getErrors() { return errors; }
+}
+```
+
+### Response
 
 ```java
 public class SendChatResponse {
-	@NotNull
   private final String chatResponse;
 
   @JsonCreator

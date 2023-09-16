@@ -6,17 +6,21 @@ tags:
   - shortcuts
 ---
 
+## Set up
+
 ### Track active file in the Project
 
 Right click the Project toolbar and from the context menu, select “Always Select Opened File”.
 
 ### Shortcuts
 
+Knowing shortcut keys in an IDE is essential because it significantly enhances efficiency and productivity. These shortcuts enable quick access to common actions, reduce distractions, and maintain focus on coding tasks. 
+
 Keyboard symbols: ⌘ **⇧ ^** ⌥
 
 These are VS Code keymap shortcuts on Intellij.
 
-Code
+**Coding**
 
 - Show parameter info: **⇧** ⌘ SPACE
 
@@ -26,8 +30,6 @@ Code
 
 - Build: **⇧** ⌘ B
 
-- Go to File: ⌘
-
 - Refactor this: **⇧ ^** R
 
 - Rename: F2
@@ -36,7 +38,13 @@ Code
 
 - Show commands: **⇧** ⌘ P
 
-Terminal
+**Navigation**
+
+- Go to next highlighted error: ⌥ F8
+
+- Go to file: ⌘
+
+**Terminal**
 
 - Open terminal window: ^ `
 
