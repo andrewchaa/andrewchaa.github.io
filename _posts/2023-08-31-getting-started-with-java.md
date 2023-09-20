@@ -41,7 +41,7 @@ public class CreateChatRequest {
 }
 ```
 
-## DTO
+## POJO (Plain Old Java Object)
 
 ### Request
 
@@ -224,6 +224,52 @@ public interface Supplier<T> {
 }
 ```
 
+## Google Protocol Buffers
+
+Protocol Buffers (often abbreviated as protobuf) is a method developed by Google to serialize structured data, similar to XML or JSON. It is both simpler and more efficient than both XML and JSON. Google's Protocol Buffers are defined in `.proto` files, which is a kind of schema for the serialized data.
+
+The `Value` message is part of the protobuf's "well-known type" for working with a dynamic or loosely structured data model, similar to how you might use JSON in other contexts. Specifically, `Value` is a part of the `Struct` type which allows for flexible, map-like data structures.
+
+Here's a breakdown of the `Value` message:
+
+- **null_value**: A special value that represents an empty value.
+
+- **number_value**: Represents a double value.
+
+- **string_value**: Represents a string value.
+
+- **bool_value**: Represents a boolean value.
+
+- **struct_value**: Represents a structured value using the `Struct` message type.
+
+- **list_value**: Represents a list of values using the `ListValue` message type.
+
+The `Value` message allows for flexibility since any `Value` can contain any kind of data - be it a simple number, a string, a more complex structure, or even a list of other values.
+
+An example of its utility is when using Google Cloud services, such as the Datastore, which can store a variety of data types. The `Value` type can encapsulate all these varieties.
+
+### Holding JSON in Value
+
+```java
+private static Value getParametersValue(Parameters parameters) {
+  var = Map.of(
+    "temperature", Value
+			.newBuilder()
+			.setNumberValue(parameters.getTemperature())
+			.build(),
+    "maxOutputTokens", Value
+			.newBuilder()
+			.setNumberValue(parameters.getMaxOutputTokens())
+			.build(),
+  );
+
+  return Value
+		.newBuilder()
+		.setStructValue(Struct.newBuilder().putAllFields(valueMap))
+		.build();
+}
+```
+
 ## Testing
 
 ### Mocking with Mockito
@@ -298,6 +344,28 @@ class ChatServiceTest {
 			.sendPrompt(new SendPromptRequest(model, prompt));
 		assertThat(response.getPromptResponse()).isEqualTo(promptResponse);
 	}
+}
+```
+
+### Assert exception
+
+```java
+@Test
+void sendPrompt_returns_error_message() throws IOException {
+  String exceptionMessage = "Value conversion failed";
+  when(languageModelResource.predict(
+    model,
+    temperature,
+    tokenLimit,
+    prompt
+  )).thenThrow(new RuntimeException(exceptionMessage));
+
+  var exception = assertThrows(RuntimeException.class, () -> {
+    underTest.sendPrompt(promptRequest);
+  });
+
+  assertThat(exception.getMessage())
+    .isEqualTo("java.lang.RuntimeException: " + exceptionMessage);
 }
 ```
 

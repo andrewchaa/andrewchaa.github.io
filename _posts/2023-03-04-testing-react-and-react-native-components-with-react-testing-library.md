@@ -154,7 +154,7 @@ it('save button should be enabled when all required inputs are done', async () =
 ```
 
 ```javascript
-expect(screen.getByRole('textbox', { name: 'Concern' })).toHaveValue('Concern description')
+[expect(screen.getByRole('textbox', { name: 'Concern' })).toHaveValue('Concern description')](/b574656a518e4d608780613bb9cee7a0)
 expect(screen.getByRole('textbox', { name: 'Agreed action' })).toHaveValue(
   'Agreed action description'
 );
@@ -277,10 +277,12 @@ await waitFor(() => expect(screen.getByRole('textbox', { name: 'Concern' }))
 
 ## **Common Issues**
 
-- **`react-scripts test`** **Not Detecting Tests**:
+### react-script test cannot detect any tests
+
 Ensure your test files have the **`.test.(j|t)s`** or **`.spec.(j|t)s`** extensions and are within the **`src`** directory or its subdirectories.
 
-- **Input Element Value Doesn't Update**:
+### Input Element Value Doesn't Update:
+
 Always re-query the input element instead of relying on a previously stored reference, as the input value might not be updated in the reference
 
 ```javascript
@@ -296,6 +298,36 @@ it('clears the input when the button is clicked', async () => {
 
     await waitFor(() => expect(screen.getByRole('textbox')).toHaveValue(''))
 		// do screen.getByRole('textbox') again.
+  })
+```
+
+### `unstable_batchedUpdates` error with expo, react native, jest, and react query
+
+This is due to the 5 minute default timeout of react query. use `jest.fakeTimers()`
+
+```java
+jest.useFakeTimers()
+
+it('should display the scheduled date', async () => {
+
+    render(<JobEdit />, { wrapper })
+
+    await waitFor(() => {
+      expect(screen.getByText('Scheduled Visit Date')).toBeTruthy()
+    })
+
+    const inputElement = screen.getByTestId('scheduled-visit-date')
+    expect(inputElement.props.value).toBe('28/09/2023')
+    fireEvent.changeText(screen.getByTestId('scheduled-visit-date'), '30/09/2023')
+    fireEvent.press(screen.getByTestId('job-save-button'))
+
+    await waitFor(() => expect(apis.updateJob).toHaveBeenCalledWith({
+      ...mockJob,
+      scheduledVisit: {
+        date: '2023-09-28',
+        time: 'AM',
+      },
+    } as Job))
   })
 ```
 
