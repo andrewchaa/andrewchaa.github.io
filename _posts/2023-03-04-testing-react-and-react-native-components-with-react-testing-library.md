@@ -331,3 +331,19 @@ it('should display the scheduled date', async () => {
   })
 ```
 
+### [RNC] Async Storage is null
+
+Async Storage module is tightly coupled with its `NativeModule` part. [In order to use it in tests](https://react-native-async-storage.github.io/async-storage/docs/advanced/jest/), you have to provide its separate implementation.
+
+With **mocks** directory[](https://react-native-async-storage.github.io/async-storage/docs/advanced/jest/#with-mocks-directory)
+
+- In your project root directory, create `__mocks__/@react-native-async-storage` directory.
+
+- Inside that folder, create `async-storage.js` file.
+
+- Inside that file, export `Async Storage` mock.
+
+```shell
+export * from '@react-native-async-storage/async-storage/jest/async-storage-mock';
+```
+

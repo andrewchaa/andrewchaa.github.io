@@ -44,20 +44,6 @@ export default NextAuth(authOptions)
 
 Set up a Google OAuth 2.0 Client ID and secret by following these steps:
 
-	a. Go to the [**Google Cloud Console**](https://console.cloud.google.com/).
-
-	b. Create a new project or select an existing one.
-
-	c. Navigate to "APIs & Services" > "Credentials" and click "Create credentials" > "OAuth client ID".
-
-	d. Select "Web application" as the application type.
-
-	e. Set "Authorized JavaScript origins" to your app's domain (e.g., **`http://localhost:3000`** for development or your production domain).
-
-	f. Set "Authorized redirect URIs" to your app's domain followed by **`/api/auth/callback/google`** (e.g., **`http://localhost:3000/api/auth/callback/google`** for development or the equivalent for your production domain).
-
-	g. Save the settings, and you'll get a client ID and secret.
-
 ### Environment variables
 
 In your Next.js project, create a **`.env.local`** file in the root directory and add the Google client ID and secret as environment variables. You should also add a secret for NextAuth.js. Remember not to commit this file to your repository.
