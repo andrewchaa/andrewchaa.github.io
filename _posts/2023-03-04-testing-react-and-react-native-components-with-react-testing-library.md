@@ -158,6 +158,7 @@ it('save button should be enabled when all required inputs are done', async () =
 expect(screen.getByRole('textbox', { name: 'Agreed action' })).toHaveValue(
   'Agreed action description'
 );
+expect(screen.getByRole('radio', { name: 'Yes' })).toBeInTheDocument();
 expect(screen.getByRole('radio', { name: 'Yes' })).toBeChecked();
 expect(screen.getByRole('combobox', { name: 'Primary reason for review' })).toHaveValue(
   'Indication or potential indication of significant harm'
