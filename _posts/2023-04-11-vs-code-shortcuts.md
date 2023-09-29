@@ -22,8 +22,6 @@ Key symbols: ⌘ **⇧ ⌥ ⌃**
 
 - **Find and replace in files**: ⌘ + SHFT + H - Find and replace a specific text pattern throughout your project files.
 
-- **Focus the editor**: ⌘ + 1
-
 - **Save all**: **⌥** ⌘ S
 
 - **Toggle line comment**: ⌘ + /  - Comment or uncomment the current line or selected lines.
@@ -48,6 +46,10 @@ Key symbols: ⌘ **⇧ ⌥ ⌃**
 
 - **Open shortcuts menu**: ⌘ + K ⌘ + S
 
+### Tab
+
+- **Copy path**: **⌥** ⌘ C
+
 ### Terminal
 
 - **Toggle terminal**: ^ ` : Open or close the integrated terminal.
@@ -55,4 +57,8 @@ Key symbols: ⌘ **⇧ ⌥ ⌃**
 - **Create a new terminal**: **⇧** ^ ` 
 
 - **Navigate between terminal groups**: **⇧** ⌘ ] or **⇧** ⌘ [
+
+### Window
+
+- **Focus the editor**: ⌘ + 1
 
