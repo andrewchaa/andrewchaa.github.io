@@ -82,6 +82,8 @@ Interactions include:
 
 - click
 
+- `clear`: select the text and delete it 
+
 And a sample usage:
 
 ```typescript
@@ -98,6 +100,7 @@ describe('Add', () => {
   it('calls addToItems when the button is clicked', async () => {
     render(<Add addToItems={addToItems} />)
 
+    await user.clear(screen.getByRole('textbox')
     await user.type(screen.getByRole('textbox'), item)
     await user.click(screen.getByRole('button'))
 
