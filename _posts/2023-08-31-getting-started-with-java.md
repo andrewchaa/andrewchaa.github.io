@@ -41,7 +41,52 @@ public class CreateChatRequest {
 }
 ```
 
-## POJO (Plain Old Java Object)
+### Arrays
+
+Arrays have a fixed size once they're created like other programming languages.
+
+Java doesn't have a spread operator like JavaScript. However, you can achieve this operation using the `System.arraycopy` method or using libraries like Apache Commons Lang and its `ArrayUtils` class.
+
+```java
+import org.apache.commons.lang3.ArrayUtils;
+
+YourClass[] originalArray = ...;
+YourClass newElement = ...;
+
+YourClass[] newArray = ArrayUtils.add(originalArray, newElement);
+```
+
+### Constants class
+
+I like chucking in all constants in one place
+
+```java
+public final class Constants {
+  static final String user = "user";
+  static final String publisher = "publisher";
+  static final String content = "content";
+}
+```
+
+### Generic Value converter
+
+To make your method generic, you can introduce a type parameter, say `<T>`, and then use this type parameter in the method signature. Here's your updated method using generics:
+
+```java
+private static <T> Value getValue(T parameters) 
+	throws InvalidProtocolBufferException {
+    Value.Builder parameterValueBuilder = Value.newBuilder();
+    JsonFormat
+			.parser()
+			.merge(new Gson().toJson(parameters), parameterValueBuilder);
+
+  return parameterValueBuilder.build();
+}
+```
+
+Now the `getValue` method can accept any type of object as its `parameters` argument, and it will convert it to a `Value` using the provided logic. This approach makes the method more flexible and reusable.
+
+### POJO (Plain Old Java Object)
 
 ### Request
 
