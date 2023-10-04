@@ -14,7 +14,40 @@ Since I host all my APIs and websites on AWS, I needed to deploy the Next.js app
 
 [https://www.telerik.com/blogs/how-to-implement-google-authentication-nextjs-app-using-nextauth](https://www.telerik.com/blogs/how-to-implement-google-authentication-nextjs-app-using-nextauth)
 
-```bash
-yarn add next-auth
+### Update query string to persist state across page reload or revisits
+
+- Use `useRouter` to add or update the query string
+
+- Use useSearchParams to [retrieve a value from the query string](https://nextjs.org/docs/app/api-reference/functions/use-search-params)
+
+```typescript
+'use client'
+import { useRouter, useSearchParams } from 'next/navigation'
+
+export default function RegistrationsPage() {
+  const router = useRouter()
+  const searchParams = useSearchParams()
+	const [warrantyYear, setWarrantyYear] = useState('-1')
+	const query = useQuery(['registrations', warrantyYear], async () => {
+	  const resposne = await querybyWarrantyYear(warrantyYear)
+	  return resposne.data
+	}, { enabled: !!warrantyYear })
+	
+	useEffect(() => {
+	  setWarrantyYear(searchParams?.get('warrantyYear') || '-1')
+	}, [searchParams])
+	
+  return(
+    ...
+		<LabeledListBox
+		  label='Warranty Year'
+		  listOptions={warrantyYearListOptions}
+		  selectedValue={warrantyYear}
+		  onChange={(e) => {
+		    setWarrantyYear(e)
+		    router.push(`/warranty/registrations?warrantyYear=${e}`)
+		  }}
+		...
+  )
 ```
 

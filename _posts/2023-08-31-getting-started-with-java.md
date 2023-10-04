@@ -270,6 +270,50 @@ private static Value getParametersValue(Parameters parameters) {
 }
 ```
 
+### Array vs. Lists
+
+Both `Array` and `List` are fundamental concepts in Java, but they have distinct characteristics and use cases. Let's delve into each:
+
+**Array**:
+
+- **Definition**: An array in Java is a low-level data structure that holds a fixed number of values of a single type.
+
+- **Size**: Once you declare the size of an array, it's fixed. You cannot change it without creating a new array.
+
+- **Types**: Java supports both primitive and reference type arrays.
+
+	- Primitive type arrays: `int[]`, `char[]`, `float[]`, etc.
+
+	- Reference type arrays: `String[]`, `Object[]`, `CustomClass[]`, etc.
+
+- **Memory**: Arrays are stored in contiguous memory locations.
+
+- **Performance**: Access to an array element by its index is very fast, O(1). However, operations like inserting and removing an element in the middle require manual shifting of elements and are O(n).
+
+- **Usage**: Arrays are beneficial when the data size is known in advance, and changes to the data size are infrequent.
+
+**List:**
+
+- **Definition**: `List` is a part of the Java Collections Framework and implements the `Collection` interface. It is a higher-level, dynamic data structure compared to arrays. The `List` interface has various implementations such as `ArrayList`, `LinkedList`, etc.
+
+- **Size**: Lists are dynamic. You can add or remove elements, and the list will resize dynamically.
+
+- **Types**: Lists only support reference types. Even when you have a list of primitives (like `int`), Java uses their wrapper classes (like `Integer`).
+
+- **Memory**: Depending on the implementation, the memory structure may differ:
+
+	- `ArrayList` internally uses an array to store its elements. When it reaches its capacity, a new, larger array is created, and the old elements are transferred.
+
+	- `LinkedList` uses a doubly-linked list data structure, where each element (node) contains a value and references to the next and previous nodes.
+
+- **Performance**:
+
+	- `ArrayList` offers constant-time performance for indexed access and iteration, but O(n) for insertions and deletions in the middle.
+
+	- `LinkedList` provides O(1) for insertions and deletions (if the node is known), but O(n) for indexed access.
+
+- **Usage**: Lists, especially `ArrayList`, are more common in standard applications due to their dynamic nature and the vast set of built-in methods provided by the Java Collections Framework.
+
 ## Testing
 
 ### Mocking with Mockito
