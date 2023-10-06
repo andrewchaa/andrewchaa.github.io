@@ -56,6 +56,15 @@ YourClass newElement = ...;
 YourClass[] newArray = ArrayUtils.add(originalArray, newElement);
 ```
 
+### Constants
+
+Constant is a value that cannot be changed once assigned. Constants are not supported directly in Java. Instead, there is an alternative way to define a constant in Java by using the `static` and `final` keywords.
+
+```java
+static final String location = "us-central1";
+static final String publisher = "google";
+```
+
 ### Constants class
 
 I like chucking in all constants in one place
@@ -458,12 +467,15 @@ void sendPrompt_returns_error_message() throws IOException {
 }
 ```
 
-### Constants
+### Match any parameter
 
-Constant is a value that cannot be changed once assigned. Constants are not supported directly in Java. Instead, there is an alternative way to define a constant in Java by using the `static` and `final` keywords.
+To make a Mockito mock return the same value regardless of the parameters it receives, you can use the `any()` matcher for the arguments.
 
 ```java
-static final String location = "us-central1";
-static final String publisher = "google";
+import static org.mockito.ArgumentMatchers.any;
+
+when(resource.predict(eq(model), any(), any())).thenReturn(messages);
 ```
+
+Here, `eq(model)` ensures that the method `predict` is called with the exact `model` you specified, while `any()` matches any value for the subsequent parameters. This way, no matter what `parameters` and `message` values the `predict` method is called with, it will always return the `messages`.
 
