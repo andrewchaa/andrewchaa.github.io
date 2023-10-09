@@ -351,3 +351,17 @@ With **mocks** directory[](https://react-native-async-storage.github.io/async-
 export * from '@react-native-async-storage/async-storage/jest/async-storage-mock';
 ```
 
+### "ResizeObserver is not defined” error
+
+[link_preview](https://github.com/ZeeCoder/use-resize-observer/issues/40)
+
+Use polypill to handle the event in `jest` tests
+
+```shell
+yarn add -D resize-observer-polyfill
+```
+
+```typescript
+global.ResizeObserver = require('resize-observer-polyfill')
+```
+
