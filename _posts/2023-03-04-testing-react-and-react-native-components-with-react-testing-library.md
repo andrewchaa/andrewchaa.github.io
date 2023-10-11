@@ -182,6 +182,17 @@ it('should display the name of estimated symptom field', async () => {
   })
 ```
 
+### getByTestId
+
+A shortcut to `container.querySelector(`[data-testid="${yourId}"]`)`
+
+```typescript
+<div data-testid="custom-element" />
+
+import {screen} from '@testing-library/dom'
+const element = screen.getByTestId('custom-element')
+```
+
 ## **Assertions**
 
 Various assertions can be used to validate test conditions. Some examples include:
