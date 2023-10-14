@@ -290,6 +290,63 @@ await waitFor(() => expect(screen.getByRole('textbox', { name: 'Concern' }))
 	      );
 ```
 
+### **Appearance and Disappearance**
+
+If you need to wait for an element to appear, the [async wait utilities](https://testing-library.com/docs/dom-testing-library/api-async) allow you to wait for an assertion to be satisfied before proceeding. The wait utilities retry until the query passes or times out. _The async methods return a Promise, so you must always use_ _`await`_ _or_ _`.then(done)`_ _when calling them._
+
+**Using** **`findBy`** **Queries**[](https://testing-library.com/docs/guide-disappearance/#1-using-findby-queries)
+
+```javascript
+test('movie title appears',async () => {
+// element is initially not present...
+// wait for appearance and return the element
+const movie =await findByText('the lion king')
+})
+
+```
+
+**Using** **`waitFor`**[](https://testing-library.com/docs/guide-disappearance/#2-using-waitfor)
+
+```javascript
+test('movie title appears',async () => {
+// element is initially not present...
+
+// wait for appearance inside an assertion
+await waitFor(() => {
+    expect(getByText('the lion king')).toBeInTheDocument()
+  })
+})
+
+```
+
+**Waiting for disappearance**[](https://testing-library.com/docs/guide-disappearance/#waiting-for-disappearance)
+
+The `waitForElementToBeRemoved` [async helper](https://testing-library.com/docs/dom-testing-library/api-async) function uses a callback to query for the element on each DOM mutation and resolves to `true` when the element is removed.
+
+```javascript
+test('movie title no longer present in DOM',async () => {
+// element is removed
+await waitForElementToBeRemoved(() => queryByText('the mummy'))
+})
+
+```
+
+Using [`MutationObserver`](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver) is more efficient than polling the DOM at regular intervals with `waitFor`.
+
+The `waitFor` [async helper](https://testing-library.com/docs/dom-testing-library/api-async) function retries until the wrapped function stops throwing an error. This can be used to assert that an element disappears from the page.
+
+```javascript
+test('movie title goes away',async () => {
+// element is initially present...
+// note use of queryBy instead of getBy to return null
+// instead of throwing in the query itself
+await waitFor(() => {
+    expect(queryByText('i, robot')).not.toBeInTheDocument()
+  })
+})
+
+```
+
 ## **Common Issues**
 
 ### react-script test cannot detect any tests
