@@ -319,7 +319,7 @@ await waitFor(() => {
 
 ```
 
-**Waiting for disappearance**[](https://testing-library.com/docs/guide-disappearance/#waiting-for-disappearance)
+[**Waiting for disappearance**](/65b0f85a518e4c959ac4d7117a21780d)[](https://testing-library.com/docs/guide-disappearance/#waiting-for-disappearance)
 
 The `waitForElementToBeRemoved` [async helper](https://testing-library.com/docs/dom-testing-library/api-async) function uses a callback to query for the element on each DOM mutation and resolves to `true` when the element is removed.
 
