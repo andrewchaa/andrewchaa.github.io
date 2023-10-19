@@ -8,6 +8,13 @@ tags:
 
 Building React Native app sometimes can be very challenging. It emits loads of different errors. This is the collection of errors I encountered and was able to fix with the help of many other guys on the Internet. 
 
+### Sentry - API request failed
+
+Wed. 18/10/2023
+
+error: API request failed
+caused by: sentry reported an error: unknown error (http status: 507)
+
 ### **node command not found**
 
 This is a common error that can happen if you're using nvm (Node Version Manager). NVM allows you to install and manage multiple versions of Node.js on your computer. When you use NVM, the node executable is installed in a directory that's not in Xcode's default search path. This is why you get the error "node: command not found" when you try to build your app.
