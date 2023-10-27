@@ -61,31 +61,52 @@ But make sure `jest.mock` is outside `describe` block. Otherwise, it wouldn’t 
 
 ### Mock and verify
 
+Import the function and mock it with `jest.mock` to perform verification.
+
 ```typescript
-// isAtLeast18.spec.js
-const isAtLeast18 = require("./isAtLeast18");
-const isInteger = require("./isInteger");
+import { createRegistration } from './registrations'
+import { upsertRegistration } from '../repositories'
+import dayjs from 'dayjs'
 
-// The mock factory returns a mocked function
-jest.mock("./isInteger", () => jest.fn());
+const today = new Date()
 
-describe("isAtLeast18", () => {
-    it("fails if value is not recognised as integer", () => {
-        // For this test we'll mock isInteger to return `false`
-        isInteger.mockImplementation(() => false);
+jest.mock('../repositories/registrations', () => ({
+  upsertRegistration: jest.fn(),
+}))
 
-        expect(isAtLeast18(123)).toBe(false);
-        expect(isAtLeast18("abc")).toBe(false);
-    });
+describe('registrations', () => {
+  it('should create a registration with registrationDate', async () => {
+    const registration = {
+      userId: 'userId',
+      registrationId: 'registrationId',
+      serialNumber: 'serialNumber',
+      model: 'model',
+      installationDate: '2021-01-01',
+      firstName: 'firstName',
+      lastName: 'lastName',
+      contactNo: 'contactNo',
+      emailAddress: 'emailAddress',
+      door: 'door',
+      street: 'street',
+      county: 'county',
+      city: 'city',
+      postcode: 'postcode',
+      country: 'country',
+    }
 
-    it("passes if value is recognised as integer and is at least 18", () => {
-        // For this test we'll mock isInteger to return `true`
-        isInteger.mockImplementation(() => true);
+    await createRegistration(registration)
 
-        expect(isAtLeast18(123)).toBe(true);
-        expect(isAtLeast18("abc")).toBe(false);
-    });
-});
+    expect(upsertRegistration).toHaveBeenCalledWith({
+      ...registration,
+      postCode: 'postcode',
+      registrationDate: dayjs(today).format('DD/MM/YYYY'),
+      registrationDateIso: expect.any(String),
+      updateDateIso: expect.any(String),
+      warrantyDate: '',
+      warrantyYear: -1,
+    })
+  })
+})
 ```
 
 ### Manual mock
@@ -364,6 +385,58 @@ it('should return a 201 response when a company is created', async () => {
   expect(axios).toHaveBeenCalledTimes(1)
 })
 ```
+
+## Verification
+
+You can verify that the arguments are correctly passed. 
+
+```typescript
+import { createRegistration } from './registrations'
+import { upsertRegistration } from '../repositories'
+import dayjs from 'dayjs'
+
+const today = new Date()
+
+jest.mock('../repositories/registrations', () => ({
+  upsertRegistration: jest.fn(),
+}))
+
+describe('registrations', () => {
+  it('should create a registration with registrationDate', async () => {
+    const registration = {
+      userId: 'userId',
+      registrationId: 'registrationId',
+      serialNumber: 'serialNumber',
+      model: 'model',
+      installationDate: '2021-01-01',
+      firstName: 'firstName',
+      lastName: 'lastName',
+      contactNo: 'contactNo',
+      emailAddress: 'emailAddress',
+      door: 'door',
+      street: 'street',
+      county: 'county',
+      city: 'city',
+      postcode: 'postcode',
+      country: 'country',
+    }
+
+    await createRegistration(registration)
+
+    expect(upsertRegistration).toHaveBeenCalledWith({
+      ...registration,
+      postCode: 'postcode',
+      registrationDate: dayjs(today).format('DD/MM/YYYY'),
+      registrationDateIso: expect.any(String),
+      updateDateIso: expect.any(String),
+      warrantyDate: '',
+      warrantyYear: -1,
+    })
+  })
+})
+```
+
+Use `expect.any(String)`and `expect.any(Number)` if the values are not important.
 
 ## Errors
 

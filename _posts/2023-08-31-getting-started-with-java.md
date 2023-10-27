@@ -41,6 +41,8 @@ public class CreateChatRequest {
 }
 ```
 
+## Collections
+
 ### Arrays
 
 Arrays have a fixed size once they're created like other programming languages.
@@ -54,6 +56,16 @@ YourClass[] originalArray = ...;
 YourClass newElement = ...;
 
 YourClass[] newArray = ArrayUtils.add(originalArray, newElement);
+```
+
+### Filtering array
+
+Create a `Stream` and filter with the predicate lambda function
+
+```typescript
+var messages = Array.stream(messages)
+	.filter(x => x.getAuthor().equals(bot))
+  .toArray(Message[]::new);
 ```
 
 ### Constants

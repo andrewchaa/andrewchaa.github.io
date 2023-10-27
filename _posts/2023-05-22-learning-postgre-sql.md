@@ -39,7 +39,7 @@ brew link --force libpq
 # connect
 psql -h localhost -p 15432 -u <user>
 
-# list tables
+# list databases
 \l
 
 # connect to database

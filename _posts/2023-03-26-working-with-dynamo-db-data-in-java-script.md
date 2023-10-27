@@ -9,6 +9,8 @@ tags:
 
 AWS DynamoDB is a fully managed NoSQL database service provided by Amazon Web Services (AWS). It is designed to deliver fast and predictable performance with seamless scalability, making it suitable for various use cases, such as gaming, mobile applications, Internet of Things (IoT), web applications, and more.
 
+## Query
+
 ### Query all items in the partition by the partition key
 
 ```typescript
@@ -99,6 +101,41 @@ export async function getUser(email: string): Promise<[User, string, string]> {
       (error as Error).message,
     ]
   }
+}
+```
+
+## Scan
+
+`scan` let you go through all items in the collection. Of course, you pay more for scanning the data.
+
+### Scan through all items
+
+Use `LastEvaluatedKey` and `ExclusiveStartKey`
+
+```typescript
+const dynamoDbClient = new DynamoDBClient({ region: config.region });
+
+let registrations: Registration[] = [];
+let params = {
+  TableName: "registrations-dev",
+  ExclusiveStartKey: undefined as any
+};
+
+async function run() {
+  do {
+    const result = await dynamoDbClient.send(
+      new ScanCommand(params)
+    );
+
+    params.ExclusiveStartKey = result.LastEvaluatedKey
+    registrations = registrations.concat(result.Items?.map((x) => unmarshall(x)) as Registration[])
+  }
+  while (params.ExclusiveStartKey !== undefined)
+
+  // csv
+  const csv = Papa.unparse(registrations, {})
+
+  fs.writeFileSync("registrations.csv", csv);
 }
 ```
 
