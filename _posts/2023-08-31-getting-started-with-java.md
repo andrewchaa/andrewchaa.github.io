@@ -382,20 +382,6 @@ Both `Array` and `List` are fundamental concepts in Java, but they have distinct
 
 ## Testing
 
-### Mocking with Mockito
-
-**Mockito** is a mocking framework that allows you to create and configure mock objects. Using Mockito, you can mock interfaces, generate stubs, and verify interactions between objects in your tests. It's a favorite tool in the Java world for unit testing because it enables you to write clean tests with a clear API.Let's discuss the code snippet you provided with Mockito in mind:
-
-When you use mocks in tests, you typically follow these steps:
-
-- **Mock Creation**: You create a mock object for the dependency.
-
-- **Stubbing**: You provide a "fake" behavior or return value for some methods of the mock object.
-
-- **Running Code**: You run your code under test.
-
-- **Verification**: You verify if certain methods on the mock object were called.
-
 ```java
 class ChatServiceTest {
   @Inject
@@ -424,7 +410,19 @@ class ChatServiceTest {
 }
 ```
 
-### Unit test with mokito
+### Mocking with Mockito
+
+**Mockito** is a mocking framework that allows you to create and configure mock objects. Using Mockito, you can mock interfaces, generate stubs, and verify interactions between objects in your tests. It's a favorite tool in the Java world for unit testing because it enables you to write clean tests with a clear API.Let's discuss the code snippet you provided with Mockito in mind:
+
+When you use mocks in tests, you typically follow these steps:
+
+- **Mock Creation**: You create a mock object for the dependency.
+
+- **Stubbing**: You provide a "fake" behavior or return value for some methods of the mock object.
+
+- **Running Code**: You run your code under test.
+
+- **Verification**: You verify if certain methods on the mock object were called.
 
 ```java
 class ChatServiceTest {
@@ -486,7 +484,11 @@ To make a Mockito mock return the same value regardless of the parameters it rec
 ```java
 import static org.mockito.ArgumentMatchers.any;
 
-when(resource.predict(eq(model), any(), any())).thenReturn(messages);
+when(resource.predict(
+	eq(model), 
+	any(), 
+	any())
+).thenReturn(messages);
 ```
 
 Here, `eq(model)` ensures that the method `predict` is called with the exact `model` you specified, while `any()` matches any value for the subsequent parameters. This way, no matter what `parameters` and `message` values the `predict` method is called with, it will always return the `messages`.
