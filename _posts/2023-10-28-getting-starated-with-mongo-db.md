@@ -6,13 +6,21 @@ tags:
   - database
 ---
 
-## Tools
+### Tools
 
 - VS Code extension: [https://www.mongodb.com/docs/mongodb-vscode/](https://www.mongodb.com/docs/mongodb-vscode/)
 
 - Compass: [https://www.mongodb.com/products/tools/compass](https://www.mongodb.com/products/tools/compass)
 
-## Usage examples
+### Retrieve all documents in the collection
+
+The **`find()`** method in MongoDB Node.js driver returns a cursor to the documents, not the documents themselves. To retrieve all documents from a query, you need to iterate over the cursor or convert it to an array.
+
+```javascript
+use('warranty')
+
+db.getCollection('registrations').find().toArray()
+```
 
 ### Upsert a document
 
