@@ -290,6 +290,149 @@ public interface Supplier<T> {
 }
 ```
 
+## Enum
+
+An enumeration (enum) is a special data type that enables for a variable to be a set of predefined constants. The variable must be equal to one of the values that have been predefined for it. Enumerations are used when you have values that you know aren't going to change, like month days, days, colors, deck of cards, etc.
+
+Here is a simple example of an enumeration in Java:
+
+```java
+public enum Day {
+    SUNDAY, MONDAY, TUESDAY, WEDNESDAY,
+    THURSDAY, FRIDAY, SATURDAY
+}
+```
+
+### Features of Enum:
+
+**Compatible with String**: This is the best feature of Java enum, in my opinion. In C#, enum is from `int` and gets converted to number by default. It can cause an error if you change the order of enum values as `SUNDAY` was 0 until yesterday but 1 from today if you change the order. Java enum converts to `String` and you don’t have the same issue. 31/10/2023
+
+**Strongly Typed**: Enumerations are strongly typed, meaning that an enum of one type cannot be assigned to an enum of another type even if their underlying values are the same.
+
+**Namespace**: Enums are implicitly static final, meaning they have a fixed set of constants. The constants are always in uppercase letters.
+
+**Ability to Use Enum in Switch Statements**: Enumerations can be used in switch statements.
+
+**Values() Method**: You can iterate over the values of an enum class with the `values()` method.
+
+**ValueOf() Method**: You can use the `valueOf()` method to get the enum constant of the specified string value, if it exists.
+
+**Constructors, Fields, and Methods**: Enumerations can have constructors, fields, and methods.
+
+### Example with Constructors, Fields, and Methods:
+
+```java
+public enum Planet {
+    MERCURY (3.303e+23, 2.4397e6),
+    VENUS   (4.869e+24, 6.0518e6),
+    EARTH   (5.976e+24, 6.37814e6),
+    // ... other planets ...
+
+    private final double mass;   // in kilograms
+    private final double radius; // in meters
+
+    Planet(double mass, double radius) {
+        this.mass = mass;
+        this.radius = radius;
+    }
+
+    private double mass() { return mass; }
+    private double radius() { return radius; }
+
+    // universal gravitational constant  (m3 kg-1 s-2)
+    public static final double G = 6.67300E-11;
+
+    double surfaceGravity() {
+        return G * mass / (radius * radius);
+    }
+    double surfaceWeight(double otherMass) {
+        return otherMass * surfaceGravity();
+    }
+}
+
+```
+
+In this example, each enum constant is declared with values for mass and radius. These values are passed to the constructor when the constant is created. Java requires that the constants be defined first, prior to any fields or methods. Also, when there are fields and methods, the list of enum constants must end with a semicolon.
+
+Note that the constructor for an enum type must be package-private or private access. It automatically creates the constants that are defined at the beginning of the enum body. You cannot invoke an enum constructor yourself.
+
+## Record
+
+Java records were introduced as a feature in Java 14 as a preview feature and were stabilized in Java 16. They provide a quick and compact way to model immutable data in Java. A record class is a special kind of class in Java that is designed to model immutable data in applications.
+
+### Characteristics of Records:
+
+**Immutable**: Once a record is created, its state cannot change. All fields in a record are final.
+
+**Conciseness**: You do not need to write boilerplate code such as getters, setters, `equals()`, `hashCode()`, and `toString()` methods. The Java compiler automatically generates these for you.
+
+**Public Fields**: All fields in a record are public and final.
+
+**Canonical Constructor**: A record comes with a canonical constructor, which is a constructor with parameters for all the fields in the record.
+
+**Compact Syntax**: You can define a record with a very compact syntax compared to regular classes.
+
+### Syntax:
+
+```java
+public record RecordName(Type field1, Type field2, ...) {
+    // Additional methods and annotations can go here
+}
+```
+
+### Example:
+
+```java
+public record Person(String name, int age) { }
+```
+
+In this example, `Person` is a record with two fields: `name` and `age`. You do not need to manually create a constructor, getters, or `equals()`, `hashCode()`, and `toString()` methods. The Java compiler generates these for you.
+
+### Using Records:
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        Person person = new Person("John", 25);
+        System.out.println(person.name());  // Prints: John
+        System.out.println(person.age());   // Prints: 25
+        System.out.println(person);         // Prints: Person[name=John, age=25]
+    }
+}
+```
+
+### When to Use Records:
+
+- Use records when you want to model immutable data.
+
+- They are great for data transfer objects (DTOs), value objects, and messages.
+
+### Limitations of Records:
+
+- Records cannot extend any other class and cannot be extended. They implicitly extend `java.lang.Record`.
+
+- They cannot declare instance fields other than the private final fields which correspond to components of the state description. Any other fields must be static.
+
+- They are implicitly final, so you cannot create a subclass of a record.
+
+Records provide a clean and concise way to model immutable data in Java, reducing boilerplate code and improving readability.
+
+### Override toString()
+
+By default, it’ll return the content of the fields. If the `record` contains any sensitive information, override the `toString()` so that it doesn’t get logged in any logging.
+
+```javascript
+public record Message(Author author, String content) {
+  @Override
+  public String toString() {
+    return "Message{" + 
+			"author='" + author + "\'" +
+			", content='...'" +
+			"}";
+  }
+}
+```
+
 ## Google Protocol Buffers
 
 Protocol Buffers (often abbreviated as protobuf) is a method developed by Google to serialize structured data, similar to XML or JSON. It is both simpler and more efficient than both XML and JSON. Google's Protocol Buffers are defined in `.proto` files, which is a kind of schema for the serialized data.
@@ -379,6 +522,109 @@ Both `Array` and `List` are fundamental concepts in Java, but they have distinct
 	- `LinkedList` provides O(1) for insertions and deletions (if the node is known), but O(n) for indexed access.
 
 - **Usage**: Lists, especially `ArrayList`, are more common in standard applications due to their dynamic nature and the vast set of built-in methods provided by the Java Collections Framework.
+
+## Google Guice
+
+Google Guice (pronounced “juice”) is a lightweight dependency injection framework for Java 5 and above, brought to you by Google. Dependency injection is a design pattern that allows for more modular and testable code by removing hard-coded dependencies between classes, making it easier to swap out components for testing or maintenance.
+
+### Core Concepts:
+
+**Injection**: This is the process by which the dependencies of a class are ‘injected’ or provided to the class by an external entity, instead of the class creating them internally.
+
+**Binder**: Guice uses a binding API to configure the injector, which is responsible for injecting dependencies. This is usually done in a Module.
+
+**Module**: A module is where you define your bindings, which tell Guice how to map your injections. This is where you can configure which implementation of an interface to use, or what constant values to inject.
+
+**Injector**: The injector is what creates objects and provides dependencies. You ask the injector to provide an instance of a particular class, and it takes care of creating that object and any dependencies that it has.
+
+**Provider**: A provider is a factory for creating instances. Guice will use a provider when you need to provide a custom way of creating an instance of a type.
+
+**Scope**: Guice allows you to control the lifecycle of your objects via scopes. The most common scopes are Singleton (one instance per Injector) and Prototype (a new instance every time).
+
+**Example:**
+
+Here is a simple example of how to use Guice:
+
+```java
+public interface MessageService {
+    String getMessage();
+}
+
+public class EmailService implements MessageService {
+    public String getMessage() {
+        return "Sent via Email";
+    }
+}
+
+public class MessageModule extends AbstractModule {
+    @Override
+    protected void configure() {
+        bind(MessageService.class).to(EmailService.class);
+    }
+}
+
+public class Application {
+    private final MessageService service;
+
+    @Inject
+    public Application(MessageService service) {
+        this.service = service;
+    }
+
+    public void sendMessage() {
+        System.out.println(service.getMessage());
+    }
+
+    public static void main(String[] args) {
+        Injector injector = Guice.createInjector(new MessageModule());
+        Application app = injector.getInstance(Application.class);
+        app.sendMessage();
+    }
+}
+
+```
+
+In this example, we have a `MessageService` interface with an implementation `EmailService`. The `MessageModule` class is our Guice module where we define our bindings. The `Application` class has a dependency on `MessageService`, which is injected through its constructor.
+
+When we run the application, Guice takes care of creating the `Application` object, figuring out that it needs a `MessageService`, creating an `EmailService` to satisfy this dependency, and then injecting it.
+
+This results in a flexible and decoupled design, where the `Application` class doesn’t need to know about how to create a `MessageService`, and it's easy to replace `EmailService` with a different implementation of `MessageService` if needed.
+
+### Provides
+
+You can provide a concrete class by using `@Provides`. Used in Provider pattern injection
+
+```javascript
+public class ModelModule extends AbstractModule {
+  @Provides
+  public ServiceClient serviceClient(ServiceConfiguration config) 
+		throws IOException {
+		var endpoint = String.format("%s-...", config.getLocation());
+    var credentials = config.getCredentials();
+    var credentialsProvider = FixedCredentialsProvider.create(credentials);
+    var setting = ServiceSettings
+			.newBuilder()
+			.setCredentialsProvider(credentialsProvider)
+			.setEndpoint(endpoint)
+			.build();
+
+		return ServiceClient.create(settings);
+	}
+}
+
+public class ModelService {
+  private final Provider<ServiceClient> serviceClientProvider;
+  public ModelService(
+	  Provider<ServiceClient> serviceClientProvider
+  ) {
+		this.serviceClientProvider = serviceClientProvider;
+	}
+
+	try (var serviceClient = serviceClientProvider.get()) {
+  ...
+  }
+}
+```
 
 ## Testing
 
