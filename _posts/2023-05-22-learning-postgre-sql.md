@@ -12,9 +12,7 @@ tags:
 
 - POST-Ingres: Michael Stonebraker developed Ingress and then a post-Ingres project
 
-## psql
-
-### Installation
+### Installing psql
 
 First check if you have `psql` is installed.
 
@@ -86,5 +84,18 @@ CREATE TABLE messages (
 )
 
 CREATE INDEX idx_messages_conversation_id ON messages (conversation_id);
+```
+
+### Deleting table
+
+```sql
+DROP TABLE Conversations
+DROP TABLE Messages
+```
+
+### Deleting enum
+
+```sql
+DROP TYPE author_type
 ```
 
