@@ -225,3 +225,38 @@ Inside this function, it splits the `property` string by the dot (`.`) to get ea
 
 This code takes the array of `expectedProperties` and filters out those properties that do exist on the `request` object. It uses the `deepCheck` function to determine the existence of each property. If `deepCheck` returns `false` (meaning the property doesn't exist), the property will be included in the final array that the function returns.
 
+### Calling await function within a loop
+
+Use `Promise.all()`
+
+```typescript
+export async function getUsers (page: number, pageSize: number)
+  : Promise<[User[], string, string]> {
+  logger.info('getting all users...')
+
+
+  try {
+    const users = await selectUsersMongo(page, pageSize)
+    const usersWithCognitoInfo = await Promise.all(users.map(async (user, i) => {
+      const cognitoUser = await selectUserCognito(user.email)
+      if (!cognitoUser) {
+        logger.warn(`a user not found at Cognito by email: ${user.email} / userId: ${user.userId}`)
+      }
+      return {
+        ...user,
+        userStatus: cognitoUser?.UserStatus || 'UNKNOWN',
+      }
+    }))
+
+    return [
+      usersWithCognitoInfo,
+      '200',
+      ''
+    ]
+  } catch (error) {
+    return [[], '500', (error as Error).message]
+  }
+}
+
+```
+

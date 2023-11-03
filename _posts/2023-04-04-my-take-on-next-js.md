@@ -51,3 +51,57 @@ export default function RegistrationsPage() {
   )
 ```
 
+### Parse query string
+
+`useSearchParams` is a Client Component hook that lets you read the current URLR’s query string.
+
+```typescript
+'use client'
+ 
+import { useSearchParams } from 'next/navigation'
+ 
+export default function SearchBar() {
+  const searchParams = useSearchParams()
+ 
+  const search = searchParams.get('search')
+ 
+  // URL -> `/dashboard?search=my-project`
+  // `search` -> 'my-project'
+  return <>Search: {search}</>
+}
+```
+
+### Handle pagination
+
+```typescript
+const Pagination = (props: Props) => {
+  const router = useRouter()
+  const path = usePathname()
+  const first = (props.page - 1) * props.pageSize + 1
+  const last = first + props.count - 1
+
+  const onClick = (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+    direction: 'next' | 'previous'
+  ) => {
+    e.preventDefault()
+    let newPage = direction === 'next'
+      ? props.page + 1
+      : props.page - 1
+    if (newPage < 1) newPage = 1
+
+    const queryString = props.pageSize
+      ? `page=${newPage}&pageSize=${props.pageSize}`
+      : `page=${newPage}`
+
+    router.push(`${path}?${queryString}`)
+  }
+
+  return (
+		...
+		<p className="text-sm text-gray-700">
+      Showing <span className="font-medium">{first}</span> to <span className="font-medium">{last}</span> of{' '}
+      <span className="font-medium">{props.total}</span> results
+	  </p>
+```
+
