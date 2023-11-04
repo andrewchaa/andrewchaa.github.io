@@ -41,8 +41,6 @@ public class CreateChatRequest {
 }
 ```
 
-## Collections
-
 ### Arrays
 
 Arrays have a fixed size once they're created like other programming languages.
@@ -106,6 +104,22 @@ private static <T> Value getValue(T parameters)
 ```
 
 Now the `getValue` method can accept any type of object as its `parameters` argument, and it will convert it to a `Value` using the provided logic. This approach makes the method more flexible and reusable.
+
+## UUID
+
+### Creating a random UUID
+
+```java
+DefaultUUIDGenerator.randomUUID()
+```
+
+## DateTime
+
+Use `InstanceSource`
+
+```java
+Instant instance = instanceSource.instant();
+```
 
 ### POJO (Plain Old Java Object)
 
@@ -290,7 +304,7 @@ public interface Supplier<T> {
 }
 ```
 
-## Enum
+### Enum
 
 An enumeration (enum) is a special data type that enables for a variable to be a set of predefined constants. The variable must be equal to one of the values that have been predefined for it. Enumerations are used when you have values that you know aren't going to change, like month days, days, colors, deck of cards, etc.
 
