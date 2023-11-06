@@ -1,5 +1,5 @@
 ---
-title: k9s: Kubernetes CLI
+title: k9s, Kubernetes CLI
 date: 2023-09-21
 tags:
   - k9s
