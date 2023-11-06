@@ -30,16 +30,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Detect package manager
-        id: detect-package-manager
-        run: |
-          echo "manager=npm" >> $GITHUB_OUTPUT
-          echo "command=ci" >> $GITHUB_OUTPUT
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: "18"
-          cache: ${{ steps.detect-package-manager.outputs.manager }}
+          cache: npm
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v3
@@ -58,7 +53,7 @@ jobs:
         run: npm ci
       - name: Build with Gatsby
         env:
-          # PREFIX_PATHS: 'true'
+          PREFIX_PATHS: 'true'
         run: npm run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
