@@ -196,7 +196,7 @@ it('should display the name of estimated symptom field', async () => {
 ### getByTestId
 
 
-A shortcut to `container.querySelector(`[data-testid="${yourId}"]`)`
+A shortcut to `container.querySelector(`[data-testid="test-id"]`)`
 
 
 ```typescript
@@ -286,9 +286,9 @@ describe('Add', () => {
 - **`toBeChecked()`**: Validates if a radio button or checkbox is checked.
 
 ```javascript
-<input 
-  type="radio" 
-  name="requireReview" 
+<input
+  type="radio"
+  name="requireReview"
   value="true"
 >
   <label>Yes</label>
