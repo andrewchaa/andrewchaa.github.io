@@ -22,7 +22,19 @@ use('warranty')
 db.getCollection('registrations').find().toArray()
 ```
 
-### Upsert a document
+## Finding document(s)
+
+`findOne()` for a single document or `find()` for multiple documents
+
+```typescript
+const users = await usersCollection
+      .find<User>({email='youngho@email.com'})
+      .skip(skip)
+      .limit(pageSize)
+      .toArray()
+```
+
+## Upsert a document
 
 Use the key(s) as filter expression and set `upsert` to `true`. 
 
@@ -72,4 +84,40 @@ When deciding which index to use, consider the following:
 - If you need to search for text within string fields, then a text index is the right choice.
 
 Indexes are not just limited to these types; there are other index types in MongoDB for specific use cases, such as `hashed` indexes for hash-based sharding and `compound` indexes that index multiple fields together. When creating a compound index, each field can be indexed as either ascending or descending, which you would decide based on how you query those fields.
+
+## Pagination
+
+use `$skip`, `$limit`, and `countDocuments`. 
+
+```typescript
+export const selectUsersMongo = async (
+  page: number,
+  pageSize: number,
+  searchCondition: string,
+  searchValue: string
+)
+  : Promise<[User[], number]>  => {
+  logger.info(`selecting users by page: ${page} and pageSize: ${pageSize}`)
+
+  await client.connect()
+
+  try {
+    const skip = (page - 1) * pageSize
+    const filter = getFilter(searchCondition, searchValue)
+    const total = await usersCollection.countDocuments(filter)
+    const users = await usersCollection
+      .find<User>(filter)
+      .skip(skip)
+      .limit(pageSize)
+      .toArray()
+
+    return [users, total]
+  } catch (error) {
+    logger.error('error selecting users:', error)
+  } finally {
+    await client.close()
+  }
+}
+
+```
 
