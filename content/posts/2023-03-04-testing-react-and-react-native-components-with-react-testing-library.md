@@ -286,9 +286,9 @@ describe('Add', () => {
 - **`toBeChecked()`**: Validates if a radio button or checkbox is checked.
 
 ```javascript
-<input
-  type="radio"
-  name="requireReview"
+<input 
+  type="radio" 
+  name="requireReview" 
   value="true"
 >
   <label>Yes</label>
