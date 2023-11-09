@@ -11,6 +11,10 @@ tags:
 - VS Code extension: [https://www.mongodb.com/docs/mongodb-vscode/](https://www.mongodb.com/docs/mongodb-vscode/)
 - Compass: [https://www.mongodb.com/products/tools/compass](https://www.mongodb.com/products/tools/compass)
 
+## Resources
+
+- Quick reference: [https://www.mongodb.com/docs/drivers/node/current/quick-reference/#std-label-node-quick-reference](https://www.mongodb.com/docs/drivers/node/current/quick-reference/#std-label-node-quick-reference)
+
 ### Retrieve all documents in the collection
 
 
