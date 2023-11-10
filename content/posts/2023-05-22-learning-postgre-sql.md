@@ -35,6 +35,30 @@ brew link --force libpq
 ```
 
 
+## Postico
+
+
+### Autocomplete
+
+
+Press Tab, and Postico automatically tries to complete the word you are typing
+
+
+### Shortcuts
+
+- ⌘ ↩︎: Execute the current query (or the current selection, if any)
+- ⌥⌘↩︎: Execute all queries in the Query View
+- ⇧⌘T: Go the SQL Query View (used to be called the Terminal)
+- ⇥: Shift the selected line(s) to the right (increase indentation)
+- ⇧⇥: Shift the selected line(s) to the left (decrease indentation)
+- ⌘]: Alternate shortcut for shift right
+- ⌘[: Alternate shortcut for shift left
+- ^⌘←: Replace the current query with the previous query from your history.
+- ^⌘→: Replace the current query with the next query from your history.
+- ⌘/: Comment or uncomment the selected line(s) by prepending two dashes
+- ⌥⌘/: Comment (or uncomment) the selection with a block comment (/* */)
+- ^H: Look up the current word (or selection) in [Dash](https://kapeli.com/dash)
+
 ## Commands
 
 

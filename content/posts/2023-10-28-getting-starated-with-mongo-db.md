@@ -37,6 +37,7 @@ db.getCollection('registrations').find().toArray()
 ```typescript
 const users = await usersCollection
       .find<User>({email='youngho@email.com'})
+			.sort({ updateDateIso: -1})
       .skip(skip)
       .limit(pageSize)
       .toArray()

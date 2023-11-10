@@ -50,7 +50,7 @@ public class CreateChatRequest {
 ```
 
 
-### Arrays
+## Arrays
 
 
 Arrays have a fixed size once they're created like other programming languages.
@@ -71,9 +71,8 @@ YourClass[] newArray = ArrayUtils.add(originalArray, newElement);
 
 ### Filtering array
 
-
-Create a `Stream` and filter with the predicate lambda function
-
+- Create a `Stream` and filter with the predicate lambda function
+- Convert to typed array, use `toArray(T::new)`
 
 ```typescript
 var messages = Array.stream(messages)
@@ -82,7 +81,15 @@ var messages = Array.stream(messages)
 ```
 
 
-### Constants
+### Add an item to an array
+
+
+```java
+ArrayUtils.add(messages, new Message(BOT, content));
+```
+
+
+## Constants
 
 
 Constant is a value that cannot be changed once assigned. Constants are not supported directly in Java. Instead, there is an alternative way to define a constant in Java by using the `static` and `final` keywords.
