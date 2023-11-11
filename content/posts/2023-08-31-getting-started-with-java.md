@@ -453,6 +453,7 @@ Java records were introduced as a feature in Java 14 as a preview feature and we
 
 **Compact Syntax**: You can define a record with a very compact syntax compared to regular classes.
 
+- Don’t forget overriding `toString()`
 
 ### Syntax:
 
@@ -460,6 +461,10 @@ Java records were introduced as a feature in Java 14 as a preview feature and we
 ```java
 public record RecordName(Type field1, Type field2, ...) {
     // Additional methods and annotations can go here
+  @Override
+  public String toString() {
+    return "RecordName{" + "field1=" + field1 + "}";
+  }
 }
 ```
 
