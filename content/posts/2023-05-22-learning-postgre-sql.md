@@ -83,7 +83,10 @@ psql -h localhost -p 15432 -u <user>
 I came from a SQL Server background, and Postgres has slight variations in syntax. `ENUM` was interesting that I could create a custom type. Also, I have to put `;` to execute the statement in `psql`. Hmm, I’m not a big fan of typing `;` at the end of the statement (23/10/2023)
 
 
-## Creating a table
+## Managing table
+
+
+### Creating a table
 
 
 This is more of a comprehensive example to create tables, constraints, and indexes. (23/10/23)
@@ -121,12 +124,27 @@ CREATE INDEX idx_messages_conversation_id ON messages (conversation_id);
 ```
 
 
-## Deleting table
+### Deleting table
 
 
 ```sql
 DROP TABLE Conversations
 DROP TABLE Messages
+```
+
+
+### Altering table
+
+- Only one altering action per statement.
+- Put `;` to mark the end of the statement.
+
+```sql
+ALTER TABLE conversations DROP COLUMN user_uid;
+ALTER TABLE conversations ADD COLUMN user_id bigint NOT NULL:
+ALTER TABLE conversations 
+  ADD CONSTRAINT fk_conversations_user_id 
+	FOREIGN KEY (user_id)
+	REFERENCES users (user_id);
 ```
 
 
