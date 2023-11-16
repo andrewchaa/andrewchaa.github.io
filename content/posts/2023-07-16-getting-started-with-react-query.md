@@ -144,6 +144,22 @@ const handleComplete = (job?: Job) => {
 ```
 
 
+## Reusing `react query`
+
+
+```typescript
+export function useUserQuery() {
+  return useQuery([QueryKeys.user], async () => {
+    const loginUser = await apis.getStoredUser()
+    const user = await getUser(loginUser.userId)
+    return user.data
+  })
+}
+
+const userQuery = useUserQuery()
+```
+
+
 ## Testing
 
 
