@@ -44,6 +44,14 @@ const users = await usersCollection
 ```
 
 
+### Find with nested attributes
+
+
+```typescript
+{ "customer.name": 'Mrs Livingston'}
+```
+
+
 ## Upsert a document
 
 

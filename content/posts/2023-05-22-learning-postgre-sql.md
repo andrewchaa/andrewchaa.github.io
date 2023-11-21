@@ -11,7 +11,19 @@ tags:
 - The most advanced open-source database in the world
 - POST-Ingres: Michael Stonebraker developed Ingress and then a post-Ingres project
 
-## Installing psql
+## Installation
+
+
+### postgresql
+
+
+```shell
+brew install postgresql
+brew services start postgresql@14
+```
+
+
+### psql
 
 
 First check if you have `psql` is installed.
