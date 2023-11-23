@@ -73,7 +73,7 @@ But make sure `jest.mock` is outside `describe` block. Otherwise, it wouldn’t 
 ### Mock and verify
 
 
-Import the function and mock it with `jest.mock` to perform verification.
+Import the function and mock it with `jest.mock` to perform verification. The reason it works is because `jest.mock()` gets executed first.
 
 
 ```typescript

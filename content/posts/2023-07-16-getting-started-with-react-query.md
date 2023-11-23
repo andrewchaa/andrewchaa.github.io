@@ -182,14 +182,44 @@ const JobItems = (props: JobItemsProps)  => {
 
 ## Mutation
 
+- Use `useMutation` to save or update data.
+- Do `refetch` after the mutation succeeds
+- Use `onError` and `onSuccess`
 
-Use `useMutation` to save or update data.
+```typescript
+const updateMutation = useMutation({
+  mutationKey: [QueryKeys.updateRegistration, registration.registrationId],
+  mutationFn: async (registration: RegistrationRequest) => {
+    const response = await createRegistration(registration)
+    if (response.status !== 200 && response.status !== 201) {
+      throw new Error(response.message)
+    }
+  },
+  onSuccess: () => {
+    toast.show({
+      render: () => <ToastMessage
+        type='success'
+        description={'Registration created successfully.'}
+      />
+    })
+  },
+  onError: (error) => {
+    console.log('error', error)
+    toast.show({
+      render: () => (
+        <ToastMessage
+          type='error'
+          title='Failed to create a registration'
+          description={(error as any).toString()}
+        />
+      ),
+    })
+  }
+})
+```
 
 
-Do `refetch` after the mutation succeeds
-
-
-```javascript
+```typescript
 const completeMutation = useMutation(async (job: Job) => {
   const response = await apis.updateJob({
     ...job,
