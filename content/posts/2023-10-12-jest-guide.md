@@ -123,6 +123,16 @@ describe('registrations', () => {
 ```
 
 
+### Mock function to return its parameter
+
+
+```typescript
+jest.mock("../common/repositories/registrationsDynamo", () => ({
+  upsertRegistrationDynamo: jest.fn(x => Promise.resolve([x, '200', ''])),
+}))
+```
+
+
 ### Manual mock
 
 
