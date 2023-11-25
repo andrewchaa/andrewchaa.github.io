@@ -276,16 +276,17 @@ export async function getUsers (page: number, pageSize: number)
 
   try {
     const users = await selectUsersMongo(page, pageSize)
-    const usersWithCognitoInfo = await Promise.all(users.map(async (user, i) => {
-      const cognitoUser = await selectUserCognito(user.email)
-      if (!cognitoUser) {
-        logger.warn(`a user not found at Cognito by email: ${user.email} / userId: ${user.userId}`)
-      }
-      return {
-        ...user,
-        userStatus: cognitoUser?.UserStatus || 'UNKNOWN',
-      }
-    }))
+    const usersWithCognitoInfo = 
+			await Promise.all(users.map(async (user, i) => {
+	      const cognitoUser = await selectUserCognito(user.email)
+	      if (!cognitoUser) {
+	        logger.warn(`a user not found at Cognito by email: ${user.email} / userId: ${user.userId}`)
+	      }
+	      return {
+	        ...user,
+	        userStatus: cognitoUser?.UserStatus || 'UNKNOWN',
+	      }
+	    }))
 
     return [
       usersWithCognitoInfo,
