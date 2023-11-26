@@ -173,25 +173,27 @@ export const KeyboardAwareScrollView = () =>
 **`spyOn`** is a method provided by Jest that allows you to create a mock function (i.e., a spy) that wraps the original function. A spy allows you to monitor the behaviour of the original function, including how many times it was called, what arguments it was called with, and what it returned.
 
 
+`spyOn` is not hoisted to the beginning of the module, so you can use it within the test. If you want to mock the import functions differently depending on your test scenario, I recommend using `spyOn`, rather `mock`. One thing to make sure is you have to import the whole module as `*` to use `spyOn`. `spyOn` doesn’t provide syntax like `spyOn('.../module', 'functioin name')`
+
+
+Mock a function with `spyOn`
+
+
 ```typescript
+import * as usersService from '../common/services/users'
 
-describe('AddService', () => {
-  const mockNavigate = jest.fn()
-  jest.spyOn(Navigation, 'useNavigation').mockReturnValue({
-    navigate: mockNavigate,
-  })
+it('should not create registration if user does not exist', async () => {
+  jest
+    .spyOn(usersService, 'getUser')
+    .mockResolvedValueOnce([{} as any, statusCodes.NOT_FOUND, 'User not found'])
 
-  it('should navigate to ServiceParentList', () => {
-    render(<AddService />, {wrapper})
+  const response = await handler(proxyEvent as any, {} as any)
 
-    fireEvent.press(screen.getByTestId('pressable-symptom'))
-
-    expect(mockNavigate).toHaveBeenCalledWith(
-      RouteNames.ServiceParentList,
-      { job: mockJob, type: ServiceType.SYMPTOM }
-    )
-  })
+  expect(response.statusCode).toEqual(statusCodes.NOT_FOUND)
+  expect(upsertRegistrationMongo).toBeCalledTimes(0)
+  expect(upsertRegistrationDynamo).toBeCalledTimes(0)
 })
+
 ```
 
 
