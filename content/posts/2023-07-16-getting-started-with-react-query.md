@@ -202,6 +202,15 @@ const updateMutation = useMutation({
         description={'Registration created successfully.'}
       />
     })
+		toast.show({
+      render: () => <ToastMessage
+        type='success'
+        description={'Registration created successfully.'}
+      />
+	  })
+
+    initializeRegistration()
+    navigation.navigate(RouteNames.RegistrationList)
   },
   onError: (error) => {
     console.log('error', error)
