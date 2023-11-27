@@ -34,7 +34,7 @@ A query is a declarative dependency on an asynchronous source of data that is ti
 
 
 ```typescript
-const { isLoading, error, data: jobsResponse } = useQuery('jobs', async () => {
+const { isLoading, data, isError, error } = useQuery('jobs', async () => {
   return await apis.getJobs(companyId)
 }, {
   enabled: !!companyId,
@@ -46,6 +46,91 @@ The unique key, `jobs`, is used internally for refetching, caching, and sharing 
 
 
 Sometimes, your `userQuery` can depend on the value of a variable which is a result of another async operation. In that case, you use `enabled` option. The `enabled` option is used to toggle the query on and off. When `enabled` is false, the query will not run even when `companyId` changes. 
+
+
+### Handling error
+
+
+```typescript
+const { isLoading, data, isError, error } = useQuery('jobs', async () => {
+  return await apis.getJobs(companyId)
+}
+
+if (isLoading) {
+	return <h2>Loading...</h2>
+}
+
+if (isError) {
+	return <h2>{error.message}</h2>
+}
+```
+
+
+### ReactQueryDevTools
+
+
+Install `@tanstack/react-query-devtools`
+
+
+```typescript
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+
+function App() {
+  return (
+    <QueryClientProvider client={queryClient}>
+      {/* The rest of your application */}
+      <ReactQueryDevtools initialIsOpen={false} />
+    </QueryClientProvider>
+  )
+}
+```
+
+
+Devtools are excluded in production builds. However, it might be desirable to lazy load the devtools in production:
+
+
+```typescript
+import * as React from 'react'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import { Example } from './Example'
+
+const queryClient = new QueryClient()
+
+const ReactQueryDevtoolsProduction = React.lazy(() =>
+  import('@tanstack/react-query-devtools/build/lib/index.prod.js').then(
+    (d) => ({
+      default: d.ReactQueryDevtools,
+    }),
+  ),
+)
+
+function App() {
+  const [showDevtools, setShowDevtools] = React.useState(false)
+
+  React.useEffect(() => {
+    // @ts-ignore
+    window.toggleDevtools = () => setShowDevtools((old) => !old)
+  }, [])
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <Example />
+      <ReactQueryDevtools initialIsOpen />
+      {showDevtools && (
+        <React.Suspense fallback={null}>
+          <ReactQueryDevtoolsProduction />
+        </React.Suspense>
+      )}
+    </QueryClientProvider>
+  )
+}
+
+export default App
+```
+
+
+With this, calling **`window.toggleDevtools()`** will download the devtools bundle and show them.
 
 
 ### refetch
@@ -97,14 +182,53 @@ const JobItems = (props: JobItemsProps)  => {
 
 ## Mutation
 
+- Use `useMutation` to save or update data.
+- Do `refetch` after the mutation succeeds
+- Use `onError` and `onSuccess`
 
-Use `useMutation` to save or update data.
+```typescript
+const updateMutation = useMutation({
+  mutationKey: [QueryKeys.updateRegistration, registration.registrationId],
+  mutationFn: async (registration: RegistrationRequest) => {
+    const response = await createRegistration(registration)
+    if (response.status !== 200 && response.status !== 201) {
+      throw new Error(response.message)
+    }
+  },
+  onSuccess: () => {
+    toast.show({
+      render: () => <ToastMessage
+        type='success'
+        description={'Registration created successfully.'}
+      />
+    })
+		toast.show({
+      render: () => <ToastMessage
+        type='success'
+        description={'Registration created successfully.'}
+      />
+	  })
+
+    initializeRegistration()
+    navigation.navigate(RouteNames.RegistrationList)
+  },
+  onError: (error) => {
+    console.log('error', error)
+    toast.show({
+      render: () => (
+        <ToastMessage
+          type='error'
+          title='Failed to create a registration'
+          description={(error as any).toString()}
+        />
+      ),
+    })
+  }
+})
+```
 
 
-Do `refetch` after the mutation succeeds
-
-
-```javascript
+```typescript
 const completeMutation = useMutation(async (job: Job) => {
   const response = await apis.updateJob({
     ...job,
@@ -141,6 +265,22 @@ const handleComplete = (job?: Job) => {
   ...
   completeMutation.mutate(job)
 }
+```
+
+
+## Reusing `react query`
+
+
+```typescript
+export function useUserQuery() {
+  return useQuery([QueryKeys.user], async () => {
+    const loginUser = await apis.getStoredUser()
+    const user = await getUser(loginUser.userId)
+    return user.data
+  })
+}
+
+const userQuery = useUserQuery()
 ```
 
 

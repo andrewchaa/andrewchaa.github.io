@@ -48,3 +48,7 @@ These are VS Code keymap shortcuts on Intellij.
 - Open terminal window: ^ `
 - Maximize terminal window: **⇧** ⌘ ‘
 
+**Windows**
+
+- Show services: ⌘ 8
+

@@ -14,6 +14,9 @@ kill 546
 
 # print all environment variables
 printenv
+
+# list files in a single column
+ls -1 ~/.ssh
 ```
 
 

@@ -286,9 +286,9 @@ describe('Add', () => {
 - **`toBeChecked()`**: Validates if a radio button or checkbox is checked.
 
 ```javascript
-<input
-  type="radio"
-  name="requireReview"
+<input 
+  type="radio" 
+  name="requireReview" 
   value="true"
 >
   <label>Yes</label>
@@ -372,6 +372,33 @@ await waitFor(() => {
   })
 })
 
+```
+
+
+## Set up Github actions
+
+
+```yaml
+name: Run Tests
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: Run Test
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 18
+    - name: test
+      run: |
+        yarn
+        yarn test
 ```
 
 

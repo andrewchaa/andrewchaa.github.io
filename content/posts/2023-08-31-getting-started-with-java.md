@@ -50,7 +50,7 @@ public class CreateChatRequest {
 ```
 
 
-### Arrays
+## Arrays
 
 
 Arrays have a fixed size once they're created like other programming languages.
@@ -71,9 +71,8 @@ YourClass[] newArray = ArrayUtils.add(originalArray, newElement);
 
 ### Filtering array
 
-
-Create a `Stream` and filter with the predicate lambda function
-
+- Create a `Stream` and filter with the predicate lambda function
+- Convert to typed array, use `toArray(T::new)`
 
 ```typescript
 var messages = Array.stream(messages)
@@ -82,7 +81,15 @@ var messages = Array.stream(messages)
 ```
 
 
-### Constants
+### Add an item to an array
+
+
+```java
+ArrayUtils.add(messages, new Message(BOT, content));
+```
+
+
+## Constants
 
 
 Constant is a value that cannot be changed once assigned. Constants are not supported directly in Java. Instead, there is an alternative way to define a constant in Java by using the `static` and `final` keywords.
@@ -153,7 +160,7 @@ Instant instance = instanceSource.instant();
 ```
 
 
-### POJO (Plain Old Java Object)
+## POJO (Plain Old Java Object)
 
 
 ### Request
@@ -446,6 +453,7 @@ Java records were introduced as a feature in Java 14 as a preview feature and we
 
 **Compact Syntax**: You can define a record with a very compact syntax compared to regular classes.
 
+- Don’t forget overriding `toString()`
 
 ### Syntax:
 
@@ -453,6 +461,10 @@ Java records were introduced as a feature in Java 14 as a preview feature and we
 ```java
 public record RecordName(Type field1, Type field2, ...) {
     // Additional methods and annotations can go here
+  @Override
+  public String toString() {
+    return "RecordName{" + "field1=" + field1 + "}";
+  }
 }
 ```
 
@@ -512,6 +524,62 @@ public record Message(Author author, String content) {
 			", content='...'" +
 			"}";
   }
+}
+```
+
+
+## Optional
+
+
+`java.util.Optional<T>` is a container object which may or may not contain a non-null value. It was introduced in Java 8 as a means to provide a clear and explicit way to convey the idea of optionality, thereby avoiding `null` checks and `NullPointerException`s.
+
+
+Here are some key points about `Optional`:
+
+
+**Avoiding Null**: Before `Optional`, a method could return `null` to indicate that no value was present, but that could easily lead to `NullPointerException`s if the caller didn't diligently check for `null`. With `Optional`, the intent is clear—there might not be a value.
+
+
+**API Usage**: Methods that might not be able to return a result can return an instance of `Optional<T>` instead of potentially returning `null`. The caller of the method must then explicitly deal with the possibility that there might not be a value present.
+
+
+**Common Methods**:
+
+- `Optional.empty()`: Returns an empty `Optional` instance.
+- `Optional.of(T value)`: Returns an `Optional` with the specified present non-null value.
+- `Optional.ofNullable(T value)`: Returns an `Optional` describing the specified value, or an empty  if the value is `null`.
+- `Optional.isPresent()`: Returns `true` if there is a value present, otherwise `false`.
+- `Optional.get()`: If a value is present, this method returns the value, otherwise throws `NoSuchElementException`.
+- `Optional.orElse(T other)`: Returns the value if present, otherwise returns `other`.
+- `Optional.orElseGet(Supplier<? extends T> other)`: Returns the value if present, otherwise invokes `other` and returns the result of that invocation.
+- `Optional.orElseThrow(Supplier<? extends X> exceptionSupplier)`: Returns the contained value if present, otherwise throws an exception to be created by the provided supplier.
+- `Optional.ifPresent(Consumer<? super T> consumer)`: If a value is present, invoke the specified consumer with the value, otherwise do nothing.
+1. **Chaining Methods**: `Optional` supports fluent API style operations that include `map`, `flatMap`, `filter`, etc., which can be chained together to perform complex conditional operations.
+
+Here's a simple example of using `Optional`:
+
+
+```java
+public class OptionalExample {
+    public static Optional<String> findString(List<String> list, String str) {
+        for (String s : list) {
+            if (s.equals(str)) {
+                return Optional.of(s);
+            }
+        }
+        return Optional.empty();
+    }
+
+    public static void main(String[] args) {
+        List<String> list = Arrays.asList("a", "b", "c");
+        Optional<String> result = findString(list, "b");
+
+        result.ifPresent(System.out::println); // Prints "b"
+        System.out.println(result.orElse("not found")); // Prints "b"
+
+        Optional<String> notFound = findString(list, "d");
+        System.out.println(notFound.orElse("not found")); // Prints "not found"
+    }
 }
 ```
 
