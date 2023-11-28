@@ -164,7 +164,7 @@ const numDomains = Object.keys(domains).length; // O(1)
 ### Object.assign()
 
 
-A static method that copies all enumerable own properties from one or more source objects to a target object.
+A static method that copies all enumerable properties from one or more source objects to a target object.
 
 
 ```typescript
@@ -182,6 +182,14 @@ it('should return the list of jobs given companyId', async () => {
     data: { job },
   })
 })
+```
+
+
+But in ES 6, you can use spread operator.
+
+
+```typescript
+const allEvents = [...events, ...getJobGraphQlEvents]
 ```
 
 
@@ -298,6 +306,27 @@ export async function getUsers (page: number, pageSize: number)
   }
 }
 
+```
+
+
+## lambda functions
+
+
+### reduce
+
+
+Basically, you can do anything with `reduce`.
+
+
+**Flattening object arrays**
+
+
+```typescript
+const nodes = nodeData
+	.reduce(
+		(acc, curr) => [...acc, ...curr.nodes],
+		[]
+	)
 ```
 
 

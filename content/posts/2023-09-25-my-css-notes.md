@@ -117,3 +117,9 @@ You can also combine **`grid-template-columns`** with media queries to create re
 The **`grid-template-columns`** property provides a powerful way to control the layout of items in a grid container. With practice, you can create complex layouts with ease using this property.
 
 
+## Get window width and height
+
+
+You can use `window.innerWidth` and `window.innerHeight`
+
+
