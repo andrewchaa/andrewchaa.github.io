@@ -12,6 +12,49 @@ tags:
 - [EAS Update tutorial](https://www.youtube.com/watch?v=HYh3UqxYzpA)
 - [Github Actions](https://docs.expo.dev/eas-update/github-actions/)
 
+## EAS Build
+
+
+Install the latest EAS CLI
+
+
+```shell
+npm install -g eas-cli
+```
+
+
+Log in to Expo account
+
+
+```shell
+eas login
+```
+
+
+If you haven’t configured the project, do it
+
+
+```shell
+eas build:configure
+```
+
+
+Run a build
+
+
+```shell
+eas build --platform ios
+```
+
+
+Once the build is complete, submit the build to the App Store
+
+
+```shell
+eas submit -p ios
+```
+
+
 ## EAS Update
 
 

@@ -31,10 +31,7 @@ jest --init
 `jest --init` will create a configuration file, `jest.config.js`, and add `test` script to the `package.json`
 
 
-## Mocking
-
-
-### Use `jest.mock`
+## `jest.mock`
 
 
 It’s the simplest form of mock and works in various scenarios.
@@ -164,36 +161,6 @@ export const KeyboardAwareScrollView = () =>
   jest.fn().mockImplementation(
     ({ children }) => children
   )
-```
-
-
-### spyOn
-
-
-**`spyOn`** is a method provided by Jest that allows you to create a mock function (i.e., a spy) that wraps the original function. A spy allows you to monitor the behaviour of the original function, including how many times it was called, what arguments it was called with, and what it returned.
-
-
-`spyOn` is not hoisted to the beginning of the module, so you can use it within the test. If you want to mock the import functions differently depending on your test scenario, I recommend using `spyOn`, rather `mock`. One thing to make sure is you have to import the whole module as `*` to use `spyOn`. `spyOn` doesn’t provide syntax like `spyOn('.../module', 'functioin name')`
-
-
-Mock a function with `spyOn`
-
-
-```typescript
-import * as usersService from '../common/services/users'
-
-it('should not create registration if user does not exist', async () => {
-  jest
-    .spyOn(usersService, 'getUser')
-    .mockResolvedValueOnce([{} as any, statusCodes.NOT_FOUND, 'User not found'])
-
-  const response = await handler(proxyEvent as any, {} as any)
-
-  expect(response.statusCode).toEqual(statusCodes.NOT_FOUND)
-  expect(upsertRegistrationMongo).toBeCalledTimes(0)
-  expect(upsertRegistrationDynamo).toBeCalledTimes(0)
-})
-
 ```
 
 
@@ -444,10 +411,55 @@ it('should return a 201 response when a company is created', async () => {
 ```
 
 
+## `spyOn`
+
+
+**`spyOn`** is a method provided by Jest that allows you to create a mock function (i.e., a spy) that wraps the original function. A spy allows you to monitor the behaviour of the original function, including how many times it was called, what arguments it was called with, and what it returned.
+
+
+`spyOn` is not hoisted to the beginning of the module, so you can use it within the test. If you want to mock the import functions differently depending on your test scenario, I recommend using `spyOn`, rather `mock`. One thing to make sure is you have to import the whole module as `*` to use `spyOn`. `spyOn` doesn’t provide syntax like `spyOn('.../module', 'functioin name')`
+
+
+### Mocking
+
+
+```typescript
+import * as usersService from '../common/services/users'
+
+it('should not create registration if user does not exist', async () => {
+  jest
+    .spyOn(usersService, 'getUser')
+    .mockResolvedValueOnce([{} as any, statusCodes.NOT_FOUND, 'User not found'])
+
+  const response = await handler(proxyEvent as any, {} as any)
+
+  expect(response.statusCode).toEqual(statusCodes.NOT_FOUND)
+  expect(upsertRegistrationMongo).toBeCalledTimes(0)
+  expect(upsertRegistrationDynamo).toBeCalledTimes(0)
+})
+
+```
+
+
+### Verification
+
+
+```typescript
+import graphApi from './graphApi'
+const spy = jest.spyOn(graphApi, 'useGetNodesQuery`);
+
+it('renders all the components', () => {
+	render(<ReviewGraph />)
+
+  waitFor(() => expect(spy).toHaveBeenCalledTimes(1))
+})
+```
+
+
 ## Verification
 
 
-You can verify that the arguments are correctly passed. 
+Verification with `jest.mock`
 
 
 ```typescript
@@ -500,24 +512,67 @@ describe('registrations', () => {
 Use `expect.any(String)`and `expect.any(Number)` if the values are not important.
 
 
+Verification with `spyOn`
+
+
+## Use cases
+
+
+### Fail on the first error
+
+
+If you have too many tests and it’s difficult to locate failing tests, use `bail` feature to make the jest run fail at the first error.
+
+
+In config
+
+
+```typescript
+module.exports = {  
+  // stop after first failing test
+  bail: true
+
+  // stop after 3 failed tests
+  bail: 3
+}
+```
+
+
+Using cli,
+
+
+```shell
+jest --bail 1
+```
+
+
 ## Errors
 
 
 ### Cannot use import statement outside a module
 
 
-Often you have this error: `Cannot use import statement outside a module`
+The error message "Cannot use import statement outside a module" typically occurs when trying to run Jest tests on code that uses ES6 import syntax without properly configuring Jest to handle this syntax. This error is commonly seen in projects that are set up with a mix of CommonJS (`require`/`module.exports`) and ES6 (`import`/`export`) module syntaxes, or when a dependency (like `react-force-graph` in your case) is distributed as an ES6 module.
 
 
-Make sure you have `babel.config.ts` and `jest.config.ts`
-
-
-[https://stackoverflow.com/questions/58613492/how-to-resolve-cannot-use-import-statement-outside-a-module-in-jest](https://stackoverflow.com/questions/58613492/how-to-resolve-cannot-use-import-statement-outside-a-module-in-jest)
+Jest, by default, operates in a Node.js environment and expects CommonJS modules. Node.js has only recently started supporting ES6 modules natively, and many tools and libraries are still catching up.
 
 
 ```javascript
 // babel.config.js
-module.exports = {presets: ['@babel/preset-env']}
+module.exports = {
+  presets: [
+    [
+      '@babel/preset-env',
+      {
+        targets: {
+          node: 'current', // This is important for Jest
+        },
+      },
+    ],
+    '@babel/preset-react',
+  ],
+};
 ```
 
 
@@ -531,6 +586,19 @@ module.exports = {
   },
   setupFiles: ['dotenv/config'],
 }
+```
+
+
+### Cannot use import statement outside a module error with a specific package
+
+
+If `react-force-graph` or any other external module is causing issues during testing and you don't need to test its implementation details, consider mocking it in your tests.
+
+
+```javascript
+jest.mock('react-force-graph', () => ({
+  // Mock implementation or just return a dummy component
+}));
 ```
 
 
@@ -584,9 +652,4 @@ describe('getUsers', () => {
 })
 ```
 
-
-## Further topics
-
-- Snapshot testing
-- Interactive watch mode
 
