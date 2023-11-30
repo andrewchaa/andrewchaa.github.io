@@ -51,7 +51,7 @@ Once the build is complete, submit the build to the App Store
 
 
 ```shell
-eas submit -p ios
+eas submit --platform ios
 ```
 
 

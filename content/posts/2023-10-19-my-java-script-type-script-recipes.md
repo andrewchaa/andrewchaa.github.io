@@ -144,6 +144,9 @@ return { oneDomain, allDomains };
 ```
 
 
+## Object functions
+
+
 ### **Object.keys()**
 
 
@@ -190,6 +193,26 @@ But in ES 6, you can use spread operator.
 
 ```typescript
 const allEvents = [...events, ...getJobGraphQlEvents]
+```
+
+
+### `Object.entries()`
+
+
+Enumerate `key`, `value` pairs of an object
+
+
+```typescript
+let searchCondition: SearchCondition = 'all';
+let searchValue: string | number = '';
+
+for (const [key, value] of Object.entries(ev.queryStringParameters)) {
+  if (value && searchParams[key as keyof typeof searchParams]) {
+    searchCondition = searchParams[key as keyof typeof searchParams] as SearchCondition;
+    searchValue = key === 'warrantyYear' ? parseInt(value) : value;
+    break;
+  }
+}
 ```
 
 
