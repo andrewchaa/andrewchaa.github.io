@@ -12,10 +12,13 @@ I have been using create-react-app for a while for my side project. Since Next.j
 Since I host all my APIs and websites on AWS, I needed to deploy the Next.js app to AWS. I found this helpful guide on how to do it: [**https://aws.amazon.com/blogs/mobile/amplify-next-js-13/**](https://aws.amazon.com/blogs/mobile/amplify-next-js-13/).
 
 
-### Implementing Google Authentication
+## Implementing Google Authentication
 
 
 [https://www.telerik.com/blogs/how-to-implement-google-authentication-nextjs-app-using-nextauth](https://www.telerik.com/blogs/how-to-implement-google-authentication-nextjs-app-using-nextauth)
+
+
+## Router and Params
 
 
 ### Update query string to persist state across page reload or revisits
@@ -111,6 +114,34 @@ const Pagination = (props: Props) => {
       Showing <span className="font-medium">{first}</span> to <span className="font-medium">{last}</span> of{' '}
       <span className="font-medium">{props.total}</span> results
 	  </p>
+```
+
+
+## API
+
+
+API routes provide a solution to build a **public API** with Next.js.
+
+
+Any file inside the folder `pages/api` is mapped to `/api/*` and will be treated as an API endpoint instead of a `page`. They are server-side only bundles and won't increase your client-side bundle size.
+
+
+For example, the following API route returns a JSON response with a status code of `200`:
+
+
+```typescript
+import type { NextApiRequest, NextApiResponse } from 'next'
+ 
+type ResponseData = {
+  message: string
+}
+ 
+export default function handler(
+  req: NextApiRequest,
+  res: NextApiResponse<ResponseData>
+) {
+  res.status(200).json({ message: 'Hello from Next.js!' })
+}
 ```
 
 
