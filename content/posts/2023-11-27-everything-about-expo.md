@@ -123,3 +123,8 @@ All builds of your app going forward will be eligible to receive updates publish
 Publish an update
 
 
+```shell
+eas update --branch production --message "Test-updating the app"
+```
+
+

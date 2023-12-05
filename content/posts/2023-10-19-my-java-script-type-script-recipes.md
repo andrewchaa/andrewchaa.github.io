@@ -353,3 +353,73 @@ const nodes = nodeData
 ```
 
 
+## Handling error
+
+
+`error` object has a `message` property. Depending on the package you use, it can have optional `name` or `cause` property. AWS SDK throws `name` and `message` on error
+
+
+```shell
+error [ResourceAlreadyExistsException: The specified log stream already exists]
+```
+
+
+```typescript
+export async function createLogStreamIfNotExists(logStreamName: string) {
+  try {
+    await logClient.send(new CreateLogStreamCommand({
+      logGroupName: cloudWatchLogGroupName,
+      logStreamName: logStreamName,
+    }))
+  }
+  catch (e: any) {
+    if (e.name !== 'ResourceAlreadyExistsException') {
+      throw e
+    }
+  }
+}
+```
+
+
+### filter
+
+
+You can remove duplicate items in an array of objects using `filter` and `set`
+
+
+```typescript
+function removeDuplicates(arr, key) {
+  const seen = new Set();
+  return arr.filter(item => {
+    if (!seen.has(item[key])) {
+      seen.add(item[key]);
+      return true;
+    }
+    return false;
+  });
+}
+
+// Example usage
+const data = [
+  {
+    nodeType: 'account',
+    id: '1000',
+    label: 'Sam'
+  },
+  {
+    nodeType: 'account',
+    id: '1001',
+    label: 'Yo'
+  },
+  {
+    nodeType: 'account',
+    id: '1000',
+    label: 'Sam'
+  }
+];
+
+const uniqueData = removeDuplicates(data, 'id');
+console.log(uniqueData);
+```
+
+
