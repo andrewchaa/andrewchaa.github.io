@@ -64,6 +64,6 @@ ssh -L <local_port>:localhost:<instance_port> <username>@<base_url>
 Once it succeeds. [`localhost`](http://localhost/) will be the host name of your database instance, even though it’s not on your local network. It’s because the port is forward to a remote host.
 
 
-![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/875308e8-8000-4329-b1aa-ffd95b33ba6e/97672406-33d9-4552-a4fa-5e5ea4309e4b/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20231207%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231207T012650Z&X-Amz-Expires=3600&X-Amz-Signature=ea4ad6b8ef4a675d585c438e1dac787987cfbb7ddef829e9cf1390d0611046cb&X-Amz-SignedHeaders=host&x-id=GetObject)
+![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/875308e8-8000-4329-b1aa-ffd95b33ba6e/97672406-33d9-4552-a4fa-5e5ea4309e4b/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20231208%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231208T012718Z&X-Amz-Expires=3600&X-Amz-Signature=b56a26bc90bfd5211847bbc01c4864981ca621a1e0730cc0e1dbecd9340d1fe8&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
