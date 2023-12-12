@@ -420,7 +420,7 @@ it('should return a 201 response when a company is created', async () => {
 `spyOn` is not hoisted to the beginning of the module, so you can use it within the test. If you want to mock the import functions differently depending on your test scenario, I recommend using `spyOn`, rather `mock`. One thing to make sure is you have to import the whole module as `*` to use `spyOn`. `spyOn` doesn’t provide syntax like `spyOn('.../module', 'functioin name')`
 
 
-### Mocking
+	### Mocking
 
 
 ```typescript
