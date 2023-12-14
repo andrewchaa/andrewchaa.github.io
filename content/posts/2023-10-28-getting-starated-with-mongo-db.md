@@ -150,3 +150,73 @@ export const selectUsersMongo = async (
 ```
 
 
+## Removing `_id` from retrieved data
+
+
+Mongo DB uses `_id` as an identity attribute that’s unique. Yet, I don’t use it as I have another key that’s unique to the domain. Often it’s unnecessary to have the attribute and the value in the retrieved data set.
+
+
+To remove the `_id` field from the documents returned by a MongoDB query in your JavaScript application, you have a couple of options:
+
+
+### Use MongoDB's `$project` in Aggregation Pipeline
+
+
+If you're using an aggregation pipeline, you can add a `$project` stage to your pipeline to exclude the `_id` field:
+
+
+```javascript
+db.collection.aggregate([
+  // ... (your other aggregation stages)
+  {
+    $project: {
+      _id: 0, // Exclude the _id field
+      // Include other fields you want
+    }
+  }
+]);
+```
+
+
+### Modify the Result in JavaScript
+
+
+If you're not using an aggregation pipeline or prefer to handle this in JavaScript, you can simply delete the `_id` property from each object after you've fetched the results:
+
+
+```javascript
+const results = await db.collection.find().toArray();
+
+results.forEach(doc => {
+  delete doc._id; // Remove the _id property
+});
+
+// Now 'results' doesn't have the _id field
+
+```
+
+
+### Specify Fields in `find()` or `findOne()`
+
+
+If you are using `find()` or `findOne()`, you can specify which fields to include or exclude in the second argument (projection):
+
+
+```javascript
+const results = await db.collection.find({}, { projection: { _id: 0 } }).toArray();
+
+```
+
+
+In this code, `{ projection: { _id: 0 } }` is used to exclude the `_id` field from the results.
+
+
+### Choose Based on Use Case
+
+- Use the `$project` stage in the aggregation pipeline if you are already using an aggregation pipeline for other reasons.
+- Modify the result in JavaScript if you want more flexibility or need to perform other transformations on the data.
+- Use projection in `find()` or `findOne()` for a straightforward query without an aggregation pipeline.
+
+Remember, the `_id` field is a unique identifier for each document in MongoDB. If you remove it, make sure that it's not needed for any other operations (like updates or deletes) later in your application.
+
+
