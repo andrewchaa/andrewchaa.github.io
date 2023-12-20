@@ -5,7 +5,63 @@ tags:
   - css
 ---
 
-### grid template columns
+## Resources
+
+- [CSS Zen Garden](https://www.csszengarden.com/)
+
+## Basic formatting
+
+
+Use `color` and value like `white`
+
+
+```css
+h1 {
+	background-color: #2a5599;
+  color: white;
+  padding: 5px;
+}
+```
+
+
+Add b black border of 1px around all SVGs elements
+
+
+```css
+svg {
+	border: 1px solid black;
+}
+```
+
+
+Show `<div />`s side by side
+
+
+```css
+.mainView {
+  display: flex;
+}
+.mainView {
+  flex: 1;
+}
+```
+
+
+```html
+<div class="mainView">
+  <div>
+    <h2>Airlines</h2>
+    <svg id="airlinesChart"></svg>
+  </div>
+  <div>
+    <h2>Airports</h2>
+    <svg id="map"></svg>
+  </div>
+</div>
+```
+
+
+## grid template columns
 
 
 The CSS property [grid-template-columns](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns) is used within the CSS Grid Layout, which is a powerful two-dimensional layout system designed to handle both rows and columns.
