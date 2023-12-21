@@ -52,6 +52,20 @@ const users = await usersCollection
 ```
 
 
+### Find documents with property’s value with trailing spaces
+
+
+```javascript
+// Compass
+{"jobNo": {"$regex": ".+\\s+$"}}
+
+// Code
+const results = await yourCollection.find({
+  jobNo: { $regex: /\s+$/, $options: 'i' }
+}).toArray();
+```
+
+
 ## Upsert a document
 
 
