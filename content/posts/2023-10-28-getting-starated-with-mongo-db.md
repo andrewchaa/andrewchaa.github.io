@@ -66,6 +66,52 @@ const results = await yourCollection.find({
 ```
 
 
+### Sorting
+
+
+Use `.sort({})`
+
+
+`1` for ascending order and `-1` for descending order
+
+
+```javascript
+const users = await usersCollection
+      .find<User>({email='youngho@email.com'})
+			.sort({ updateDateIso: -1})
+			.toArray()
+```
+
+
+## Removing Duplications
+
+
+In one use-case, I had to retrieve `companyId` and `companyName` from `users` collection. As the collection is about users, those retrieved results contained duplicates. To return distinct results without duplicates, I useed the aggregation framework with `$group` stage to group the documents by the specified fields, `companyId` and `companyName` and then project the fields I was interested in. Here's how I wrote the MongoDB query:
+
+
+```javascript
+db.users.aggregate([
+  {
+    $group: {
+      _id: { companyId: "$companyId", companyName: "$companyName" },
+    }
+  },
+  {
+    $project: {
+      _id: 0, // Exclude the _id field from the results
+      companyId: "$_id.companyId", // Project the companyId
+      companyName: "$_id.companyName" // Project the companyName
+    }
+  }
+])
+```
+
+
+Here's what this aggregation does:
+
+1. **$group**: This stage groups documents by both `companyId` and `companyName`. Each unique combination of `companyId` and `companyName` becomes a single document in the resulting output of this stage.
+2. **$project**: This stage then reshapes each document to include only the `companyId` and `companyName`. The `_id: 0` excludes the `_id` field from the output, and the values are set to the corresponding parts of the `$_id` object created in the `$group` stage.
+
 ## Upsert a document
 
 
