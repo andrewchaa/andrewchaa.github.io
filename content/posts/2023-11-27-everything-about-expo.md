@@ -58,6 +58,9 @@ eas submit --platform ios
 ## EAS Update
 
 
+EAS Update makes fixing small bugs and pushing quick fixes a snap in between app store submissions. It accomplishes this by allowing an end-user's app to swap out the non-native parts of their app (for example, JS, styling, and image changes) with a new update that contains bug fixes and other updates.
+
+
 Install `expo-updates`
 
 
