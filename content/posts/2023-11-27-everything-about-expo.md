@@ -183,3 +183,20 @@ import 'react-native-get-random-values';
 ```
 
 
+### `NoMethodError - undefined method` Error
+
+
+```shell
+NoMethodError - undefined method `=~' for ["-ObjC", "-w"]:Array
+```
+
+
+Ruby 3.2. A recent update had removed the `=~` method for arrays, which was still being used by my version of Cocoapods (1.11.2). This method is typically used for matching regular expressions, and its sudden absence was causing the `pod install` process to fail.
+
+
+```shell
+gem uninstall cocoapods
+gem install cocoapods
+```
+
+
