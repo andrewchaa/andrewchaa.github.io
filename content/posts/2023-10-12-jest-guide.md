@@ -120,6 +120,40 @@ describe('registrations', () => {
 ```
 
 
+### Verify parameters passed to the mocked function
+
+
+```typescript
+jest.mock('../common/repositories/jobsMongo', () => ({
+  upsertJobMongo: jest.fn(),
+}))
+
+it('should save the job with given details from CIC', async () => {
+    await handler({ body: JSON.stringify(job) } as APIGatewayProxyEvent)
+
+    expect(upsertJobDynamo).toHaveBeenCalled()
+
+    const jobSaving = (upsertJobMongo as jest.Mock).mock.calls[0][0] as Job
+    expect(jobSaving.jobNo).toEqual('jobNo')
+    expect(jobSaving.companyId).toEqual('companyId')
+    expect(jobSaving.customer).toEqual('customer')
+    expect(jobSaving.product).toEqual({
+      id: 'product id',
+      name: 'product name',
+      serialNumber: serialNumber,
+      modelName: 'LCB 700 Combi External 21KW',
+    })
+    expect(jobSaving.serviceRequestDate).toEqual(dateString)
+    expect(jobSaving.estimatedSymptom).toEqual('estimated symptom')
+    expect(jobSaving.customerComment).toEqual('customer comment')
+    expect(jobSaving.installationDate)
+      .toEqual(dayjs().add(-10, 'day').format('YYYY-MM-DD'))
+    expect(jobSaving.warrantyExpiryDate)
+      .toEqual(dayjs().add(7, 'year').format('YYYY-MM-DD'))
+  })
+```
+
+
 ### Mock function to return its parameter
 
 
