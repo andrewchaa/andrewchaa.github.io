@@ -9,20 +9,11 @@ tags:
 ## `memo`
 
 
-In React, when you update a state using a state setter function (like `setSelectedNode` in your case), it triggers a re-render of the component. This is the expected behavior as per React's design for state changes. However, in some cases, where you want to avoid unnecessary re-renders, you can use `memo`.
+In React, when you update a state using a state setter function, it triggers a re-render of the component. This is the expected behavior as per React's design for state changes. However, in some cases, where you want to avoid unnecessary re-renders, you can use `memo`.
 
 
-**Use** **`React.memo`** **:**
-Wrap your component with `React.memo`. This allows you to control the re-rendering behavior based on specific props or state changes.
-
-
-```javascript
-const ForceGraphMemoized = React.memo(ForceGraphComponent, (prevProps, nextProps) 
-	=> {
-  // Return true if you want to prevent render, false if you want to allow render
-  return prevProps.someProp === nextProps.someProp;
-});
-```
+**Use** **`memo`**
+Wrap your component with `memo` to get a memoized version of the component. This memoized version of the component will usually not be re-rendered when its parent component is re-rendered as long as its props have not changed. 
 
 
 ```typescript
@@ -31,6 +22,26 @@ import { memo } from 'react'
 export default memo(
 	Graph, 
 	(prevProp, nextProp) => JSON.stringify(prevProp) === JSON.stringify(nextProp)
+)
+```
+
+
+Sometimes, memoizing the component is not enough to skip rendering its content as the content changes internally but you don’t want to re-render the whole component. In this case, use `useMemo` your dataset.
+
+
+```typescript
+const graphData = useMemo(() => {
+  const data = {
+    nodes: nodes.map(x => ({...x})),
+    links: links.map(x => ({...x})),
+	}
+	return data
+}, [links, nodes])
+
+return (
+  <ForceGraph2D
+    graphData={graphData}
+  />
 )
 ```
 
