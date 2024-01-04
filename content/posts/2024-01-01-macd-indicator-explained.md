@@ -15,7 +15,7 @@ tags:
 The MACD indicator is made up of three components: the MACD line, the signal line, and the histogram. The MACD line is calculated by subtracting the 26-period EMA from the 12-period EMA. The signal line is a 9-period EMA of the MACD line. The histogram is the difference between the MACD line and the signal line.
 
 
-![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/875308e8-8000-4329-b1aa-ffd95b33ba6e/1abbe1ec-fd47-4e14-a5d9-c08b08fc48d8/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240103%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240103T012601Z&X-Amz-Expires=3600&X-Amz-Signature=955513f951d00b781bbf69a025a98342d1fa30635e178016a3c7751e99446bf5&X-Amz-SignedHeaders=host&x-id=GetObject)
+![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/875308e8-8000-4329-b1aa-ffd95b33ba6e/1abbe1ec-fd47-4e14-a5d9-c08b08fc48d8/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240104%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240104T012614Z&X-Amz-Expires=3600&X-Amz-Signature=88dac7edd084189b687d88e95ba6ffa32403237e70515e3a21281a73d906fdd9&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 - MACD Line: 12 EMA - 26 EMA
 - Signal Line: 9 EMA of MACD Line
