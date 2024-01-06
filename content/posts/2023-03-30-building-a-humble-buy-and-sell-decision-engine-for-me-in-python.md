@@ -8,19 +8,93 @@ tags:
 My Python skill is pretty shallow. I hope this mini project can help me deepen my understanding.
 
 
-### Set up a new project
+### Google colab
 
 
-Create a new project directory and activate venv to install packages locally
+It’s convenient that Python packages are automatically managed in the notebook
 
 
-```bash
-mkdir buy-sell-signals
-cd code buy-sell-signals
+## Buy when the price is low, and sell when the price is high
 
-python3 -m venv .venv
-source .venv/bin/activate
+
+```python
+import pandas as pd
+import yfinance as yf
+import numpy as np
+
+start_date = pd.to_datetime('2020-01-01')
+end_date = pd.to_datetime('2024-01-01')
+
+goog_data = yf.download('GOOG', start_date, end_date)
+
+goog_data_signal = pd.DataFrame(index=goog_data.index)
+goog_data_signal['price'] = goog_data['Adj Close']
+goog_data_signal['daily_difference'] = goog_data_signal['price'].diff()
+goog_data_signal['signal'] = 0.0
+goog_data_signal['signal'] = np.where(goog_data_signal['daily_difference'] > 0, 1.0, 0.0)
+goog_data_signal['positions'] = goog_data_signal['signal'].diff()
+
+goog_data_signal.tail(10)
 ```
+
+
+| Date                | price               | daily\_difference   | signal | positions |
+| ------------------- | ------------------- | ------------------- | ------ | --------- |
+| 2023-12-15 00:00:00 | 133\.83999633789062 | 0\.6399993896484375 | 1\.0   | 1\.0      |
+| 2023-12-18 00:00:00 | 137\.19000244140625 | 3\.350006103515625  | 1\.0   | 0\.0      |
+| 2023-12-19 00:00:00 | 138\.10000610351562 | 0\.910003662109375  | 1\.0   | 0\.0      |
+| 2023-12-20 00:00:00 | 139\.66000366210938 | 1\.55999755859375   | 1\.0   | 0\.0      |
+| 2023-12-21 00:00:00 | 141\.8000030517578  | 2\.1399993896484375 | 1\.0   | 0\.0      |
+| 2023-12-22 00:00:00 | 142\.72000122070312 | 0\.9199981689453125 | 1\.0   | 0\.0      |
+| 2023-12-26 00:00:00 | 142\.82000732421875 | 0\.100006103515625  | 1\.0   | 0\.0      |
+| 2023-12-27 00:00:00 | 141\.44000244140625 | -1\.3800048828125   | 0\.0   | -1\.0     |
+| 2023-12-28 00:00:00 | 141\.27999877929688 | -0\.160003662109375 | 0\.0   | 0\.0      |
+| 2023-12-29 00:00:00 | 140\.92999267578125 | -0\.350006103515625 | 0\.0   | 0\.0      |
+
+- High: The highest price of the stock on that trading day.
+- Low: The lowest price of the stock on that trading day.
+- Close: The price of the stock at closing time.
+- Open: The price of the stock at the beginning of the trading day (closing price of the previous trading day).
+- Volume: How many stocks were traded.
+- Adj Close: The closing price of the stock that adjusts the price of the stock for corporate actions. This price takes into account the stock splits and dividends.
+- I used `yf.download()` as `pd.DataReader` has compatibility issue with yahoo finance api
+
+### Visualise it
+
+
+```python
+import pandas as pd
+import yfinance as yf
+import numpy as np
+import matplotlib.pyplot as plt
+
+start_date = pd.to_datetime('2020-01-01')
+end_date = pd.to_datetime('2024-01-01')
+
+goog_data = yf.download('GOOG', start_date, end_date)
+
+goog_data_signal = pd.DataFrame(index=goog_data.index)
+goog_data_signal['price'] = goog_data['Adj Close']
+goog_data_signal['daily_difference'] = goog_data_signal['price'].diff()
+goog_data_signal['signal'] = 0.0
+goog_data_signal['signal'] = np.where(goog_data_signal['daily_difference'] > 0, 1.0, 0.0)
+goog_data_signal['positions'] = goog_data_signal['signal'].diff()
+
+fig = plt.figure()
+ax1 = fig.add_subplot(111, ylabel='Google price in $')
+
+goog_data_signal['price'].plot(ax=ax1, color='r', lw=2.)
+ax1.plot(goog_data_signal.loc[goog_data_signal.positions == 1.0].index, 
+         goog_data_signal.price[goog_data_signal.positions == 1.0],
+         '^', markersize=5, color='m')
+ax1.plot(goog_data_signal.loc[goog_data_signal.positions == -1.0].index,
+         goog_data_signal.price[goog_data_signal.positions == -1.0],
+         'v', markersize=5, color='k')
+plt.show()
+```
+
+
+![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/875308e8-8000-4329-b1aa-ffd95b33ba6e/1cb648e5-ebfb-4420-b80a-e03da881e6e8/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240106%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240106T012602Z&X-Amz-Expires=3600&X-Amz-Signature=4452065a2680b37bd1637711b18c5ea7a77e089a17a4163db52762af6371af0a&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
 ### Use SMA 5 and SMA 10
