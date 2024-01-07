@@ -8,6 +8,10 @@ tags:
 My Python skill is pretty shallow. I hope this mini project can help me deepen my understanding.
 
 
+## Resources
+
+- [Learn Algorithmic Trading source code](https://github.com/PacktPublishing/Learn-Algorithmic-Trading)
+
 ### Google colab
 
 
@@ -94,10 +98,64 @@ plt.show()
 ```
 
 
-![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/875308e8-8000-4329-b1aa-ffd95b33ba6e/1cb648e5-ebfb-4420-b80a-e03da881e6e8/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240106%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240106T012602Z&X-Amz-Expires=3600&X-Amz-Signature=4452065a2680b37bd1637711b18c5ea7a77e089a17a4163db52762af6371af0a&X-Amz-SignedHeaders=host&x-id=GetObject)
+![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/875308e8-8000-4329-b1aa-ffd95b33ba6e/1cb648e5-ebfb-4420-b80a-e03da881e6e8/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240107%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240107T012901Z&X-Amz-Expires=3600&X-Amz-Signature=181e1bd9a0f085e8bfbf2c0098df741cdc27df70ec9b1043de40a66af1bff5f2&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
-### Use SMA 5 and SMA 10
+### Backtesting
+
+
+Backtesting is a key phase to get statistics showing how effective the trading strategy is.
+
+- **Profit and loss** (**P and** **L**): The money made by the strategy without transaction fees.
+- **Net profit and loss** (**net P** **and L**): The money made by the strategy with transaction fees.
+- **Exposure**: The capital invested.
+- **Number of trades**: The number of trades placed during a trading session.
+- **Annualised** **return**: This is the return for a year of trading.
+- **Sharpe ratio**: The risk-adjusted return. This is important because it compares the return of the strategy with a risk-free strategy.
+
+```python
+import pandas as pd
+import yfinance as yf
+import numpy as np
+import matplotlib.pyplot as plt
+
+start_date = pd.to_datetime('2021-01-01')
+end_date = pd.to_datetime('2024-01-01')
+
+goog_data = yf.download('GOOG', start_date, end_date)
+
+goog_data_signal = pd.DataFrame(index=goog_data.index)
+goog_data_signal['price'] = goog_data['Adj Close']
+goog_data_signal['daily_difference'] = goog_data_signal['price'].diff()
+goog_data_signal['signal'] = 0.0
+goog_data_signal['signal'] = np.where(goog_data_signal['daily_difference'] > 0, 1.0, 0.0)
+goog_data_signal['positions'] = goog_data_signal['signal'].diff()
+
+
+initial_capital = float(1000.0)
+
+positions = pd.DataFrame(index=goog_data_signal.index).fillna(0.0)
+portfolio = pd.DataFrame(index=goog_data_signal.index).fillna(0.0)
+
+positions['GOOG'] = goog_data_signal['signal']
+portfolio['positions'] = (positions.multiply(goog_data_signal['price'], axis=0))
+portfolio['cash'] = initial_capital - (positions.diff().multiply(goog_data_signal['price'], axis=0)).cumsum()
+portfolio['total'] = portfolio['positions'] + portfolio['cash']
+
+# portfolio.tail(100)
+
+portfolio.plot()
+plt.show()
+```
+
+
+![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/875308e8-8000-4329-b1aa-ffd95b33ba6e/dcc21c55-8215-4a9c-a8fa-66efe8cb1541/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240107%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240107T012901Z&X-Amz-Expires=3600&X-Amz-Signature=92df78930c3056ef861695c93f3761de6cb90286495b8d0527b664356c689750&X-Amz-SignedHeaders=host&x-id=GetObject)
+
+
+As you can see, this strategy is not very profitable
+
+
+## Use SMA 5 and SMA 10
 
 
 ```python
