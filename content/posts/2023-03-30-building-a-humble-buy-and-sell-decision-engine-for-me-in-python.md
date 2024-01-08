@@ -98,7 +98,7 @@ plt.show()
 ```
 
 
-![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/875308e8-8000-4329-b1aa-ffd95b33ba6e/1cb648e5-ebfb-4420-b80a-e03da881e6e8/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240107%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240107T012901Z&X-Amz-Expires=3600&X-Amz-Signature=181e1bd9a0f085e8bfbf2c0098df741cdc27df70ec9b1043de40a66af1bff5f2&X-Amz-SignedHeaders=host&x-id=GetObject)
+![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/875308e8-8000-4329-b1aa-ffd95b33ba6e/1cb648e5-ebfb-4420-b80a-e03da881e6e8/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240108%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240108T012718Z&X-Amz-Expires=3600&X-Amz-Signature=164210978804aef171eae50291bbb65b6e4df90ff77e83856414e50d77da2f40&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
 ### Backtesting
@@ -149,10 +149,182 @@ plt.show()
 ```
 
 
-![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/875308e8-8000-4329-b1aa-ffd95b33ba6e/dcc21c55-8215-4a9c-a8fa-66efe8cb1541/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240107%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240107T012901Z&X-Amz-Expires=3600&X-Amz-Signature=92df78930c3056ef861695c93f3761de6cb90286495b8d0527b664356c689750&X-Amz-SignedHeaders=host&x-id=GetObject)
+![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/875308e8-8000-4329-b1aa-ffd95b33ba6e/dcc21c55-8215-4a9c-a8fa-66efe8cb1541/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240108%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240108T012718Z&X-Amz-Expires=3600&X-Amz-Signature=c003fe58d24b55c3e45624baebb582406f076ec18452831fc526f5e816f515a6&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
 As you can see, this strategy is not very profitable
+
+
+## Exponential Moving Average
+
+
+The exponential moving average, EMA, is similar to the simple moving average, but, instead of weighing all prices in the history equally, it places more weight on the most recent price observation and less weight on the older price observations. 
+
+
+There two different types of EMAs. 
+
+- Fast EMA: converges to new price observations faster and forgets older observations faster
+- Slow EMA: converges to new price observations slower and forgets old observations slower.
+
+```shell
+EMA = ( P - EMAp ) * K + EMAp
+
+Where:
+
+P = Price for the current period
+EMAp = the Exponential moving Average for the previous period
+K = the smoothing constant, equal to 2 / (n + 1)
+n = the number of periods in a simple moving average roughly approximated by the EMA
+```
+
+
+### Implementation of the EMA
+
+
+```python
+import pandas as pd
+import yfinance as yf
+
+start_date = pd.to_datetime('2021-01-01')
+end_date = pd.to_datetime('2024-01-01')
+
+goog_data = yf.download('GOOG', start_date, end_date)
+close = goog_data['Close']
+
+'''
+EMA = ( P - EMAp ) * K + EMAp
+
+Where:
+
+P = Price for the current period
+EMAp = the Exponential moving Average for the previous period
+K = the smoothing constant, equal to 2 / (n + 1)
+n = the number of periods in a simple moving average roughly approximated by the EMA
+'''
+
+num_periods = 20 # number of days over which to average
+K = 2 / (num_periods + 1) # smoothing constant
+ema_p = 0
+
+ema_values = [] # to hold computed EMA values
+
+for close_price in close:
+  if (ema_p == 0):
+    ema_p = close_price
+  else:
+    ema_p = (close_price - ema_p) * K + ema_p
+
+  ema_values.append(ema_p)
+
+goog_data = goog_data.assign(ClosePrice=pd.Series(close, index=goog_data.index))
+goog_data = goog_data.assign(Exponential20DayMovingAverage=pd.Series(ema_values, index=goog_data.index))
+
+close_price = goog_data['ClosePrice']
+ema = goog_data['Exponential20DayMovingAverage']
+
+import matplotlib.pyplot as plt
+
+fig = plt.figure()
+ax1 = fig.add_subplot(111, ylabel='Google price in $')
+close_price.plot(ax=ax1, color='g', lw=2., legend=True)
+ema.plot(ax=ax1, color='b', lw=2., legend=True)
+plt.show()
+```
+
+
+![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/875308e8-8000-4329-b1aa-ffd95b33ba6e/e3674cc0-6def-4621-8c9f-36c7fb232641/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240108%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240108T012718Z&X-Amz-Expires=3600&X-Amz-Signature=36b80726380746517b7dce1d4405400d9eca664f9403685d67d45b558ebefb1c&X-Amz-SignedHeaders=host&x-id=GetObject)
+
+
+### Backtesting EMA
+
+
+```python
+import pandas as pd
+import yfinance as yf
+import numpy as np
+
+start_date = pd.to_datetime('2023-07-01')
+end_date = pd.to_datetime('2024-01-01')
+
+goog_data = yf.download('GOOG', start_date, end_date)
+close = goog_data['Close']
+
+'''
+EMA = ( P - EMAp ) * K + EMAp
+
+Where:
+
+P = Price for the current period
+EMAp = the Exponential moving Average for the previous period
+K = the smoothing constant, equal to 2 / (n + 1)
+n = the number of periods in a simple moving average roughly approximated by the EMA
+'''
+
+num_periods = 20 # number of days over which to average
+K = 2 / (num_periods + 1) # smoothing constant
+ema_p = 0
+
+ema_values = [] # to hold computed EMA values
+
+for close_price in close:
+  if (ema_p == 0):
+    ema_p = close_price
+  else:
+    ema_p = (close_price - ema_p) * K + ema_p
+
+  ema_values.append(ema_p)
+
+goog_data = goog_data.assign(ClosePrice=pd.Series(close, index=goog_data.index))
+goog_data = goog_data.assign(Ema20=pd.Series(ema_values, index=goog_data.index))
+goog_data['Signal'] = np.where(goog_data['ClosePrice'] > goog_data['Ema20'], 1.0, 0.0)
+goog_data['Position'] = goog_data['Signal'].diff()
+
+initial_capital = float(1000.0)
+
+positions = pd.DataFrame(index=goog_data.index).fillna(0.0)
+portfolio = pd.DataFrame(index=goog_data.index).fillna(0.0)
+
+positions['GOOG'] = goog_data['Signal']
+portfolio['Signal'] = goog_data['Signal']
+portfolio['Price'] = goog_data['ClosePrice']
+portfolio['Positions'] = (positions.multiply(goog_data['ClosePrice'], axis=0))
+portfolio['Cash'] = initial_capital - (positions.diff().multiply(goog_data['ClosePrice'], axis=0)).cumsum()
+portfolio['Total'] = portfolio['Positions'] + portfolio['Cash']
+
+portfolio.tail(100)
+# goog_data.tail(100)
+```
+
+
+The last 6 month result is poor. It started with 1,000 capital and end with 990.6
+
+
+| Date                | Signal | Price               | Positions           | Cash               | Total              |
+| ------------------- | ------ | ------------------- | ------------------- | ------------------ | ------------------ |
+| 2023-12-05 00:00:00 | 0\.0   | 132\.38999938964844 | 0\.0                | 990\.6200256347656 | 990\.6200256347656 |
+| 2023-12-06 00:00:00 | 0\.0   | 131\.42999267578125 | 0\.0                | 990\.6200256347656 | 990\.6200256347656 |
+| 2023-12-07 00:00:00 | 1\.0   | 138\.4499969482422  | 138\.4499969482422  | 852\.1700286865234 | 990\.6200256347656 |
+| 2023-12-08 00:00:00 | 1\.0   | 136\.63999938964844 | 136\.63999938964844 | 852\.1700286865234 | 988\.8100280761719 |
+| 2023-12-11 00:00:00 | 0\.0   | 134\.6999969482422  | 0\.0                | 986\.8700256347656 | 986\.8700256347656 |
+| 2023-12-12 00:00:00 | 0\.0   | 133\.63999938964844 | 0\.0                | 986\.8700256347656 | 986\.8700256347656 |
+| 2023-12-13 00:00:00 | 0\.0   | 133\.97000122070312 | 0\.0                | 986\.8700256347656 | 986\.8700256347656 |
+| 2023-12-14 00:00:00 | 0\.0   | 133\.1999969482422  | 0\.0                | 986\.8700256347656 | 986\.8700256347656 |
+| 2023-12-15 00:00:00 | 0\.0   | 133\.83999633789062 | 0\.0                | 986\.8700256347656 | 986\.8700256347656 |
+| 2023-12-18 00:00:00 | 1\.0   | 137\.19000244140625 | 137\.19000244140625 | 849\.6800231933594 | 986\.8700256347656 |
+| 2023-12-19 00:00:00 | 1\.0   | 138\.10000610351562 | 138\.10000610351562 | 849\.6800231933594 | 987\.780029296875  |
+| 2023-12-20 00:00:00 | 1\.0   | 139\.66000366210938 | 139\.66000366210938 | 849\.6800231933594 | 989\.3400268554688 |
+| 2023-12-21 00:00:00 | 1\.0   | 141\.8000030517578  | 141\.8000030517578  | 849\.6800231933594 | 991\.4800262451172 |
+| 2023-12-22 00:00:00 | 1\.0   | 142\.72000122070312 | 142\.72000122070312 | 849\.6800231933594 | 992\.4000244140625 |
+| 2023-12-26 00:00:00 | 1\.0   | 142\.82000732421875 | 142\.82000732421875 | 849\.6800231933594 | 992\.5000305175781 |
+| 2023-12-27 00:00:00 | 1\.0   | 141\.44000244140625 | 141\.44000244140625 | 849\.6800231933594 | 991\.1200256347656 |
+| 2023-12-28 00:00:00 | 1\.0   | 141\.27999877929688 | 141\.27999877929688 | 849\.6800231933594 | 990\.9600219726562 |
+| 2023-12-29 00:00:00 | 1\.0   | 140\.92999267578125 | 140\.92999267578125 | 849\.6800231933594 | 990\.6100158691406 |
+
+
+---
+
+
+Draft
 
 
 ## Use SMA 5 and SMA 10
