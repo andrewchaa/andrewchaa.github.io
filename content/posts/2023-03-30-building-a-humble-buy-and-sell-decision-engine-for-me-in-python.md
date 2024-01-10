@@ -98,7 +98,7 @@ plt.show()
 ```
 
 
-![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/875308e8-8000-4329-b1aa-ffd95b33ba6e/1cb648e5-ebfb-4420-b80a-e03da881e6e8/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240109%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240109T012726Z&X-Amz-Expires=3600&X-Amz-Signature=e0c741103cfb7094463e94d3b277955c8fbd5a25d06557fa2f1c5e268b4de33d&X-Amz-SignedHeaders=host&x-id=GetObject)
+![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/875308e8-8000-4329-b1aa-ffd95b33ba6e/1cb648e5-ebfb-4420-b80a-e03da881e6e8/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240110%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240110T012733Z&X-Amz-Expires=3600&X-Amz-Signature=76b88641ccb139d56dec232f12723f7bd792180cc4f422517f4255bd3019710c&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
 ### Backtesting
@@ -149,7 +149,7 @@ plt.show()
 ```
 
 
-![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/875308e8-8000-4329-b1aa-ffd95b33ba6e/dcc21c55-8215-4a9c-a8fa-66efe8cb1541/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240109%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240109T012726Z&X-Amz-Expires=3600&X-Amz-Signature=a691129bf666a87b968fca2cc4fb21f1730c517b310d7dd554aafc713cc52221&X-Amz-SignedHeaders=host&x-id=GetObject)
+![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/875308e8-8000-4329-b1aa-ffd95b33ba6e/dcc21c55-8215-4a9c-a8fa-66efe8cb1541/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240110%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240110T012733Z&X-Amz-Expires=3600&X-Amz-Signature=1d4f10040fa10cea94d5ad135960012991dbfacd1f6346d2e7d9062ed53da597&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
 As you can see, this strategy is not very profitable
@@ -232,7 +232,7 @@ plt.show()
 ```
 
 
-![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/875308e8-8000-4329-b1aa-ffd95b33ba6e/e3674cc0-6def-4621-8c9f-36c7fb232641/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240109%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240109T012726Z&X-Amz-Expires=3600&X-Amz-Signature=f5de3de7c50242b101bbdd0fc54cfcdc5b76cdb18725b8a9af6da6ff293a5ed1&X-Amz-SignedHeaders=host&x-id=GetObject)
+![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/875308e8-8000-4329-b1aa-ffd95b33ba6e/e3674cc0-6def-4621-8c9f-36c7fb232641/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240110%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240110T012733Z&X-Amz-Expires=3600&X-Amz-Signature=93d3fcd52d3f0ed22d7abac5d78e2e66ca614718b6e8773f2a8254906b677283&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
 ### Backtesting EMA
@@ -321,209 +321,120 @@ The last 6 month result is poor. It started with 1,000 capital and end with 990.
 | 2023-12-29 00:00:00 | 1\.0   | 140\.92999267578125 | 140\.92999267578125 | 849\.6800231933594 | 990\.6100158691406 |
 
 
----
+### Strategy that uses MACD
 
 
-Draft
-
-
-## Use SMA 5 and SMA 10
+### Python Implementation
 
 
 ```python
-import numpy as np
+# MACD Strategy
 import pandas as pd
-import yfinance as yf
+import pandas_datareader as pdr
 import matplotlib.pyplot as plt
+from datetime import datetime
+import yfinance as yf
 
+# Fetch stock data
+def fetch_stock_data(ticker, start, end):
+    return yf.download(ticker, start, end)
 
-def get_nasdaq_data():
-    nasdaq = yf.Ticker("^IXIC")
-    nasdaq_data = nasdaq.history(period="3mo", interval="1d")
-    nasdaq_data.to_csv("nasdaq.csv")
-    return nasdaq_data
+# Calculate MACD
+def calculate_macd(data, short_window=12, long_window=26, signal_window=9):
+    data['EMA_short'] = data['Close'].ewm(span=short_window, adjust=False).mean()
+    data['EMA_long'] = data['Close'].ewm(span=long_window, adjust=False).mean()
+    data['MACD'] = data['EMA_short'] - data['EMA_long']
+    data['Signal_Line'] = data['MACD'].ewm(span=signal_window, adjust=False).mean()
 
-
-def calculate_sma(data, period):
-    sma = data["Close"].rolling(window=period).mean()
-    return sma
-
-
+# Generate trading signals (buy=1 , sell=-1, do nothing=0)
 def generate_signals(data):
-    data["5_SMA"] = calculate_sma(data, 5)
-    data["10_SMA"] = calculate_sma(data, 10)
+    data['Signal'] = 0
+    data['Signal'][data['MACD'] > data['Signal_Line']] = 1
+    data['Signal'][data['MACD'] < data['Signal_Line']] = -1
+    data['Position'] = data['Signal'].diff()
 
-    data["Signal"] = None
-    for i in range(len(data)):
-        if data["5_SMA"][i] > data["10_SMA"][i]:
-            data["Signal"][i] = 'Buy'
-        else:
-            data["Signal"][i] = 'Sell'
+# Backtesting the strategy
+def backtest_strategy(data):
+    initial_capital= float(100000.0)
+    positions = pd.DataFrame(index=data.index).fillna(0.0)
+    portfolio = pd.DataFrame(index=data.index).fillna(0.0)
+    
+    # Buy a 100 shares
+    positions['Stock'] = 100*data['Signal']  
+    portfolio['positions'] = (positions.multiply(data['Close'], axis=0))
+    portfolio['cash'] = initial_capital - (positions.diff().multiply(data['Close'], axis=0)).cumsum()
+    portfolio['total'] = portfolio['positions'] + portfolio['cash']
 
-    return data
+    # Calculate daily returns
+    portfolio['returns'] = portfolio['total'].pct_change()
 
+    return portfolio
 
-def plot_graph(data):
-    buy_signals = data[data['Signal'] == 'Buy']
-    sell_signals = data[data['Signal'] == 'Sell']
+# Calculate the Sharpe Ratio
+def calculate_sharpe_ratio(portfolio):
+    # Assuming risk-free rate = 0 for simplicity
+    risk_free_rate = 0
+    sharpe_ratio = (portfolio['returns'].mean() - risk_free_rate) / portfolio['returns'].std()
+    # Annualize the Sharpe ratio
+    sharpe_ratio_annualized = (252**0.5) * sharpe_ratio
+    return sharpe_ratio_annualized
 
-    plt.figure(figsize=(15, 10))
-    plt.plot(data.index, data["Close"], label="Nasdaq", alpha=0.5)
-    plt.plot(data.index, data["5_SMA"],
-             label="5 Day SMA", linestyle="--", alpha=0.7)
-    plt.plot(data.index, data["10_SMA"],
-             label="10 Day SMA", linestyle="--", alpha=0.7)
-    plt.title("Nasdaq Buy/Sell Signals using 5 and 10 Day SMA")
-    plt.scatter(buy_signals.index, data.loc[buy_signals.index]
-                ['Close'], marker='^', color='g', label='Buy Signal')
-    plt.scatter(sell_signals.index, data.loc[sell_signals.index]
-                ['Close'], marker='v', color='r', label='Sell Signal')
-    plt.xlabel("Date")
-    plt.ylabel("Close Price ($)")
+# Main execution function
+def run_strategy(ticker):
+    start_date = '2023-06-09'
+    end_date = datetime.now().strftime('%Y-%m-%d')
+
+    data = fetch_stock_data(ticker, start_date, end_date)
+    calculate_macd(data)
+    generate_signals(data)
+
+    portfolio = backtest_strategy(data)
+    sharpe_ratio = calculate_sharpe_ratio(portfolio)
+
+    # Plot the results
+    plt.figure(figsize=(10,6))
+    plt.plot(data['Close'], label='Close Price', alpha=0.5)
+    plt.plot(data['EMA_short'], label='12-day EMA', alpha=0.5)
+    plt.plot(data['EMA_long'], label='26-day EMA', alpha=0.5)
+    plt.plot(data['MACD'], label='MACD', alpha=0.5)
+    plt.plot(data['Signal_Line'], label='Signal Line', alpha=0.5)
+    plt.scatter(data.index, data['Position'], label='Buy Signal', marker='^', color='green', alpha=1)
+    plt.scatter(data.index, data['Position'], label='Sell Signal', marker='v', color='red', alpha=1)
+    plt.title(f'MACD Strategy: {ticker}')
     plt.legend()
     plt.show()
 
-
-def get_latest_signal(data):
-    return data["Signal"][-1]
-
-
-if __name__ == "__main__":
-    data = get_nasdaq_data()
-    data_with_signals = generate_signals(data)
-
-    latest_signal = get_latest_signal(data_with_signals)
-    print(f"Latest Signal: {latest_signal}")
-    plot_graph(data_with_signals)
-```
-
-
-The above code is my attempt to create buy-sell signals using SMA (Simple Moving Average) 5 and SMA 10. My next one is using EMA
-
-
-### EMA Signals
-
-
-```python
-import pandas as pd
-import matplotlib.pyplot as plt
-import numpy as np
-import yfinance as yf
-
-
-def get_nasdaq_data():
-    nasdaq = yf.Ticker("^IXIC")
-    nasdaq_data = nasdaq.history(period="3mo", interval="1d")
-    return nasdaq_data
-
-
-def get_signals(df):
-    short_window = 5
-    long_window = 15
-    alpha = 0.1
-    signals = pd.DataFrame(index=df.index)
-
-    signals['ema_signal'] = 0.0
-    signals['ema'] = df['Close'].ewm(alpha=alpha, adjust=False).mean()
-    signals['ema_positions'] = 0.0
-    signals['short_mavg'] = df['Close'].rolling(window=short_window,
-                                                min_periods=1,
-                                                center=False).mean()
-    signals['long_mavg'] = df['Close'].rolling(window=long_window,
-                                               min_periods=1,
-                                               center=False).mean()
-    signals['sma_positions'] = 0.0
-
-    signals['ema_signal'] = np.where(signals['ema'] < df['Close'], 1.0, 0.0)
-    signals['ema_positions'] = signals['ema_signal'].diff()
-    return signals
-
-
-def get_figure(df, signals):
-    fig = plt.figure(figsize=(12, 10))
-    ax1 = fig.add_subplot(111, ylabel='Price in $')
-
-    df.loc['2018-01-01':, 'Close'].plot(ax=ax1,
-                                        color='r', lw=2., label='Close Price')
-    signals.loc[:, 'ema'].plot(ax=ax1, lw=2.)
-
-    # Plot the buy signals
-    ax1.plot(signals.loc[signals.ema_positions == 1.0].index,
-             signals.ema[signals.ema_positions == 1.0],
-             '^', markersize=10, color='g')
-
-    # Plot the sell signals
-    ax1.plot(signals.loc[signals.ema_positions == -1.0].index,
-             signals.ema[signals.ema_positions == -1.0],
-             'v', markersize=10, color='r')
-
+    plt.figure(figsize=(10,6))
+    plt.plot(portfolio['total'], label='Portfolio Value')
+    plt.title('Portfolio Performance')
     plt.legend()
-    return fig
+    plt.show()
 
+    print(f"Sharpe Ratio: {sharpe_ratio}")
 
-df = get_nasdaq_data()
-signals = get_signals(df)
-chart = get_figure(df, signals)
-
-chart.savefig('signals.png')
-print(signals.tail())
-
-# plt.show()
+# Run the strategy for a given stock
+run_strategy('AAPL')
 ```
 
 
-### alpha factor
+### Output and Backtesting
 
 
-By the way, **`alpha`** is a smoothing factor that determines the rate at which the EMA reacts to new price data. It typically ranges between 0 and 1. A smaller **`alpha`** value results in a slower reaction to new price data, meaning the EMA will be less sensitive to recent price changes and more influenced by historical prices. Conversely, a larger **`alpha`** value will make the EMA react more quickly to new price data, giving more weight to recent price changes.
+![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/875308e8-8000-4329-b1aa-ffd95b33ba6e/f2ea385e-af8c-4b2b-8fd9-912b288e0db3/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240110%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240110T012733Z&X-Amz-Expires=3600&X-Amz-Signature=0e6872cb8afc54436e7f6c7ef1fdeb87f170fd2dafb17f4be774d79fc3db9998&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
-### Import another file
+![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/875308e8-8000-4329-b1aa-ffd95b33ba6e/582e9c14-56b3-446c-b444-bdaff17bc967/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240110%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240110T012733Z&X-Amz-Expires=3600&X-Amz-Signature=214384c973d28f7edafbedd334d44cb8fe1bbe2843a2f8f36d81ea338e8b4aaf&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
-To import another Python file, you can use the **`import`** statement followed by the filename without the **`.py`** extension. For example, if you have a Python file named **`other_file.py`**, you can import it in your current script like this:
+The result is not very impressive and the Sharpe Ratio is `0.336`, which is moderate. The following is the typical Sharpe Ratios of other strategies.
 
 
-```python
-import other_file
-```
-
-
-Once you've imported the file, you can access its functions, classes, and variables using the dot notation. For example, if **`other_file.py`** contains a function named **`my_function`**, you can call it like this:
-
-
-```python
-other_file.my_function()
-```
-
-
-Keep in mind that the file you want to import should be in the same directory as your current script or in a directory listed in your Python's **`sys.path`**. If the file is in a different directory, you can add that directory to **`sys.path`** like this:
-
-
-```python
-import sys
-sys.path.append('/path/to/directory')
-import other_file
-```
-
-
-Replace **`/path/to/directory`** with the path to the directory containing **`other_file.py`**. After adding the directory to **`sys.path`**, you can import and use the file as usual
-
-
-### Building and testing Python with Github actions
-
-
-[https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python](https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python)
-
-
-### Send email using sendgrid
-
-
-Install `sendgrid` library.
-
-
-```python
-pip install sendgrid
-```
+| **Strategy**             | **Average Sharpe Ratio** |
+| ------------------------ | ------------------------ |
+| Buy and Hold             | 0.2-0.4                  |
+| Moving Average Crossover | 0.3-0.5                  |
+| MACD (Your Strategy)     | 0.3363                   |
+| RSI                      | 0.4-0.6                  |
+| Momentum                 | 0.5-0.7                  |
 
 
