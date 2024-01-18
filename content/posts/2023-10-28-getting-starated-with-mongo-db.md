@@ -66,6 +66,25 @@ const results = await yourCollection.find({
 ```
 
 
+### Find if a property has `Int32` type value
+
+
+Sometimes, your property has incorrect type value. In my case, `gasSafeNumber` is supposed to have `string` value but some documents had `Int32` values.
+
+
+```javascript
+find({ gasSafeNumber: { $type: ['int']}})
+```
+
+
+### Check the existence of the field
+
+
+```javascript
+find({ postCode: { $exists: true } })
+```
+
+
 ### Sorting
 
 
