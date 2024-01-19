@@ -528,6 +528,66 @@ public record Message(Author author, String content) {
 ```
 
 
+## Stream
+
+
+`Stream` is an interface that represents a sequence of elements supporting sequential and parallel aggregate operations. Introduced in Java 8, `Stream` API provides a modern and functional approach to processing collections of objects. The Stream API is in the `java.util.stream` package.
+
+
+### Key Characteristics of Java Streams:
+
+
+**No Storage**: Streams don't store elements. They carry values from a source (like a collection or an array) through a pipeline of computational steps.
+
+
+**Functional in Nature**: Streams facilitate functional-style operations on elements, such as map-reduce transformations.
+
+
+**Lazy Execution**: Stream operations are lazily executed. This means computation on the source data is only performed when necessary for the terminal operation.
+
+
+**Possibly Unbounded**: While collections have a finite size, streams need not. They can represent fixed-size collections, infinite streams, or compute elements on-demand.
+
+
+**Consumable**: Streams are designed to be consumed only once. After a terminal operation is performed, the stream cannot be reused.
+
+
+### Core Components of Stream API:
+
+- **Stream Sources**: Collections, arrays, or I/O channels can serve as sources for streams.
+- **Intermediate Operations**: These operations transform a stream into another stream, such as `filter`, `map`, `limit`, `sorted`, etc. They are lazy, meaning they're not executed until a terminal operation is invoked.
+- **Terminal Operations**: These operations produce a result or a side-effect, such as `forEach`, `reduce`, `collect`, `findFirst`, etc. Once a terminal operation is performed, the stream is consumed and cannot be used further.
+
+### Basic Example of a Stream:
+
+
+```java
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class StreamExample {
+    public static void main(String[] args) {
+        List<String> myList = Arrays.asList("a1", "a2", "b1", "c2", "c1");
+
+        List<String> filtered = myList.stream()   // Create a stream
+                .filter(s -> s.startsWith("c"))   // Intermediate operation
+                .map(String::toUpperCase)         // Intermediate operation
+                .sorted()                         // Intermediate operation
+                .collect(Collectors.toList());    // Terminal operation
+
+        filtered.forEach(System.out::println);    // Outputs: C1, C2
+    }
+}
+```
+
+
+### Parallel Streams:
+
+
+Java streams can be processed in parallel to leverage multicore architectures. Parallel streams divide the provided task into many and run them in parallel, which can lead to significant performance improvements. However, parallel processing can be more complex and may not always lead to better performance, especially for small datasets or operations that are not CPU-intensive.
+
+
 ## Optional
 
 

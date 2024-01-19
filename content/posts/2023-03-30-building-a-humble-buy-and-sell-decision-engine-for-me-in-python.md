@@ -98,7 +98,7 @@ plt.show()
 ```
 
 
-![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/875308e8-8000-4329-b1aa-ffd95b33ba6e/1cb648e5-ebfb-4420-b80a-e03da881e6e8/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240118%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240118T012704Z&X-Amz-Expires=3600&X-Amz-Signature=777b1b25a529d98a6bf8b4b8cdad037909abff5b962facb78989afdd67edd755&X-Amz-SignedHeaders=host&x-id=GetObject)
+![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/875308e8-8000-4329-b1aa-ffd95b33ba6e/1cb648e5-ebfb-4420-b80a-e03da881e6e8/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240119%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240119T012736Z&X-Amz-Expires=3600&X-Amz-Signature=ecbfca00e79d1c763aba2de2c3ff2a66ed6d5f605cecde182d056829f92c9495&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
 ### Backtesting
@@ -149,7 +149,7 @@ plt.show()
 ```
 
 
-![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/875308e8-8000-4329-b1aa-ffd95b33ba6e/dcc21c55-8215-4a9c-a8fa-66efe8cb1541/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240118%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240118T012704Z&X-Amz-Expires=3600&X-Amz-Signature=ebe2b34642415cd31993c37e5b0d450dd1e2023a437a56de174cc2f41c6e66c4&X-Amz-SignedHeaders=host&x-id=GetObject)
+![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/875308e8-8000-4329-b1aa-ffd95b33ba6e/dcc21c55-8215-4a9c-a8fa-66efe8cb1541/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240119%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240119T012736Z&X-Amz-Expires=3600&X-Amz-Signature=b26c8efef0bd4001316509c7c7ea347d9b643b5d3a319e838702cfbb3e432365&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
 As you can see, this strategy is not very profitable
@@ -232,7 +232,7 @@ plt.show()
 ```
 
 
-![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/875308e8-8000-4329-b1aa-ffd95b33ba6e/e3674cc0-6def-4621-8c9f-36c7fb232641/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240118%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240118T012704Z&X-Amz-Expires=3600&X-Amz-Signature=a5e2810acff7916d3e419193cd1d2344aa1685e6821164eaa2116969fb32c4c0&X-Amz-SignedHeaders=host&x-id=GetObject)
+![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/875308e8-8000-4329-b1aa-ffd95b33ba6e/e3674cc0-6def-4621-8c9f-36c7fb232641/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240119%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240119T012736Z&X-Amz-Expires=3600&X-Amz-Signature=3f097196e9894ad00fa77581ffc0f23d3ca48341aa802bb88216eaed311c7a7b&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
 ### Backtesting EMA
@@ -420,10 +420,10 @@ run_strategy('AAPL')
 ### Output and Backtesting
 
 
-![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/875308e8-8000-4329-b1aa-ffd95b33ba6e/f2ea385e-af8c-4b2b-8fd9-912b288e0db3/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240118%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240118T012704Z&X-Amz-Expires=3600&X-Amz-Signature=6cdf7ee9d562347069714958c8088b1a3a5c48708d4658de0acab7df2191dbe5&X-Amz-SignedHeaders=host&x-id=GetObject)
+![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/875308e8-8000-4329-b1aa-ffd95b33ba6e/f2ea385e-af8c-4b2b-8fd9-912b288e0db3/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240119%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240119T012736Z&X-Amz-Expires=3600&X-Amz-Signature=5aa2ad51102907b1565922f1cd6c772ae5bce0b6b473c8a3598d6a7614a44400&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
-![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/875308e8-8000-4329-b1aa-ffd95b33ba6e/582e9c14-56b3-446c-b444-bdaff17bc967/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240118%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240118T012704Z&X-Amz-Expires=3600&X-Amz-Signature=52734ac7eb142e76072047945701cc1fd7e7709ce4d5fbdbb364a3fe3ffd5d0a&X-Amz-SignedHeaders=host&x-id=GetObject)
+![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/875308e8-8000-4329-b1aa-ffd95b33ba6e/582e9c14-56b3-446c-b444-bdaff17bc967/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240119%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240119T012736Z&X-Amz-Expires=3600&X-Amz-Signature=ba1ec117e28a81539aab09029334d3816077f31cc95dcbb02df0ee7bc09aa2ef&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
 The result is not very impressive and the Sharpe Ratio is `0.336`, which is moderate. The following is the typical Sharpe Ratios of other strategies.

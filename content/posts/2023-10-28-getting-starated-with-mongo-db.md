@@ -131,7 +131,10 @@ Here's what this aggregation does:
 1. **$group**: This stage groups documents by both `companyId` and `companyName`. Each unique combination of `companyId` and `companyName` becomes a single document in the resulting output of this stage.
 2. **$project**: This stage then reshapes each document to include only the `companyId` and `companyName`. The `_id: 0` excludes the `_id` field from the output, and the values are set to the corresponding parts of the `$_id` object created in the `$group` stage.
 
-## Upsert a document
+## Update
+
+
+### Upsert a document
 
 
 Use the key(s) as filter expression and set `upsert` to `true`. 
@@ -160,6 +163,24 @@ import { MongoClient } from 'mongodb'
   )
   await client.close()
 
+```
+
+
+### Remove a field that’s not used any more
+
+
+You can use `$unset`
+
+
+```javascript
+use('warranty');
+
+const query = { postCode: { $exists: true } };
+const updateResult = db.getCollection('registrations').updateMany(
+  query,
+  { $unset: { postCode: "" } }
+);
+console.log(`Documents updated: ${updateResult.modifiedCount}`);
 ```
 
 

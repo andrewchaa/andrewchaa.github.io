@@ -144,6 +144,26 @@ return { oneDomain, allDomains };
 ```
 
 
+## Utility Types
+
+
+### `Partial<T>`
+
+
+You can create a new type that has all the same fields as an existing type but with all fields optional by using the `Partial<T>` utility type.
+
+
+```typescript
+type User = {
+  id: number
+  name: string
+  email: string
+}
+
+type OptionalUser = Partial<User>
+```
+
+
 ## Object functions
 
 
