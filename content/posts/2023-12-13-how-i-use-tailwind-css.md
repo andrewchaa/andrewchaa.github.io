@@ -15,12 +15,12 @@ Use `min-w-[12rem]`
 I had a dropdown and the labels of the items were trimmed short.
 
 
-![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/875308e8-8000-4329-b1aa-ffd95b33ba6e/410f265c-aa5c-453a-8d04-87ca0b81b68f/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240120%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240120T012642Z&X-Amz-Expires=3600&X-Amz-Signature=473a3508dbe753c7899cc1a1207ae05ffc1fa3d154a8162c190e72d996826d72&X-Amz-SignedHeaders=host&x-id=GetObject)
+![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/875308e8-8000-4329-b1aa-ffd95b33ba6e/410f265c-aa5c-453a-8d04-87ca0b81b68f/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240121%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240121T012914Z&X-Amz-Expires=3600&X-Amz-Signature=91185e02f355439d28a1a23d0245479704fa2e015b0a71b423ea02800161e423&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
 So, I sorted it by setting the minimum width, `min-w-[12rem]`
 
 
-![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/875308e8-8000-4329-b1aa-ffd95b33ba6e/b0ea9ddb-852c-40b4-9297-d5bdd3a39663/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240120%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240120T012642Z&X-Amz-Expires=3600&X-Amz-Signature=5165c3a58dd5bb6dcc287aad59ba14b7cf907530beca8079db9f4992ba05dc4e&X-Amz-SignedHeaders=host&x-id=GetObject)
+![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/875308e8-8000-4329-b1aa-ffd95b33ba6e/b0ea9ddb-852c-40b4-9297-d5bdd3a39663/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240121%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240121T012914Z&X-Amz-Expires=3600&X-Amz-Signature=6214bc7eff60883ce6010c75c0109ea74a6a65925fadebfec4b465c639f4950c&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
