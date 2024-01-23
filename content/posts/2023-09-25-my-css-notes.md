@@ -61,6 +61,14 @@ Show `<div />`s side by side
 ```
 
 
+Make it bold
+
+
+```css
+font-weight: bold
+```
+
+
 ## grid template columns
 
 

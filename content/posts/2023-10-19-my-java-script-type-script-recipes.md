@@ -129,6 +129,37 @@ it('should return the list of jobs given companyId', async () => {
 ```
 
 
+## Array
+
+
+### Sorting array with date
+
+
+```typescript
+import _ from 'lodash';
+
+const conversations = [
+  { title: 'title 1', createdAt: '2023-11-13T15:28:53.278Z' },
+  { title: 'title 2', createdAt: '2023-11-10T15:28:53.278Z' }
+];
+
+// Convert createdAt to a Date object and then sort
+const sortedConversations = _.orderBy(
+  conversations,
+  [(conversation) => new Date(conversation.createdAt)],
+  ['desc']
+);
+
+// Get the latest conversation
+const latestConversation = sortedConversations[0];
+
+console.log(latestConversation);
+```
+
+
+In JavaScript, when comparing date strings in ISO format (like **`"2023-11-13T15:28:53.278Z"`**), you can usually rely on lexicographical (string) comparison for sorting, because the ISO format is designed to be lexicographically sortable. This means that a simple string comparison will often correctly order the dates from earliest to latest or vice versa.
+
+
 ### Array.prototype.some()
 
 
