@@ -102,7 +102,10 @@ const users = await usersCollection
 ```
 
 
-## Removing Duplications
+## Aggregation
+
+
+### Removing Duplications
 
 
 In one use-case, I had to retrieve `companyId` and `companyName` from `users` collection. As the collection is about users, those retrieved results contained duplicates. To return distinct results without duplicates, I useed the aggregation framework with `$group` stage to group the documents by the specified fields, `companyId` and `companyName` and then project the fields I was interested in. Here's how I wrote the MongoDB query:
@@ -132,6 +135,22 @@ Here's what this aggregation does:
 2. **$project**: This stage then reshapes each document to include only the `companyId` and `companyName`. The `_id: 0` excludes the `_id` field from the output, and the values are set to the corresponding parts of the `$_id` object created in the `$group` stage.
 
 ## Update
+
+
+Update a field
+
+
+```javascript
+use('service-agent');
+
+db.getCollection('users').updateMany(
+  { email: { $in: [
+    "info@deepeyes.co.uk",
+    "accounts@deepeyes.com",
+  ]}}, 
+  { $set: { 'status': 'ACTIVE' } }
+);
+```
 
 
 ### Upsert a document
