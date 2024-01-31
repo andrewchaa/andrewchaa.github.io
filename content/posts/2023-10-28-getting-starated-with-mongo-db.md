@@ -85,6 +85,14 @@ find({ postCode: { $exists: true } })
 ```
 
 
+### FInd if email contains `skyline`
+
+
+```javascript
+find({"email": {"$regex": "skyline"}})
+```
+
+
 ### Sorting
 
 
