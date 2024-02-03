@@ -95,6 +95,35 @@ psql -h localhost -p 15432 -u <user>
 I came from a SQL Server background, and Postgres has slight variations in syntax. `ENUM` was interesting that I could create a custom type. Also, I have to put `;` to execute the statement in `psql`. Hmm, I’m not a big fan of typing `;` at the end of the statement (23/10/2023)
 
 
+## Upsert
+
+
+```sql
+WITH _users AS (
+  INSERT INTO users (users_uid, ...)
+  VALUES (?:2, ...)
+  ON CONFLICT (users_uid) DO
+  UPDATE SET users_uid = EXCLUDED.users_uid
+)
+INSERT INTO conversations (conversation_uid, conversation_title, users_id, created_at)
+VALUES (
+  ?:0,
+  ?:1,
+  (SELECT users_id FROM _users),
+  ?:3
+  )
+```
+
+
+`ON CONFLICT` is a feature of PostgreSQL that allows you to perform an action when a proposed record conflicts with an existing record.
+
+
+`ON CONFLICT ON user_uid` clause is saying "when you try to insert a record into the `users` table and the `user_uid` already exists in the table, then do the following action: `UPDATE user_uid = EXCLUDED.user_uid`. This means that if a conflict occurs, then the existing record's `user_uid` should be updated to the new value.
+
+
+The `EXCLUDED` keyword is a special table in PostgreSQL that contains the row proposed for insertion. So `EXCLUDED.user_uid` refers to the `user_uid` of the new record that you tried to insert.
+
+
 ## Managing table
 
 
