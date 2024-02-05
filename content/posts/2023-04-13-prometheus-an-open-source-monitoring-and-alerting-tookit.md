@@ -12,7 +12,7 @@ Prometheus is an open-source monitoring and alerting toolkit that was designed f
 Prometheus can serve as the intermediary between the application pods and Grafana. 
 
 
-![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/875308e8-8000-4329-b1aa-ffd95b33ba6e/cc00c70b-eb95-494b-b2ac-79554507d101/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240204%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240204T012631Z&X-Amz-Expires=3600&X-Amz-Signature=dcc60b32800baf9da06e0b45c446fa6e59fe5142c1ec89958d1f5f25ac980493&X-Amz-SignedHeaders=host&x-id=GetObject)
+![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/875308e8-8000-4329-b1aa-ffd95b33ba6e/cc00c70b-eb95-494b-b2ac-79554507d101/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240205%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240205T012502Z&X-Amz-Expires=3600&X-Amz-Signature=c9dd09339b65678bd7fb51425e5bf9cf76008360a95696640bc5e747e7d822f1&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
 Here's an overview of its role:
