@@ -11,7 +11,7 @@ I’m a full stack developer but honestly, I admit my CSS layout skill needs lot
 Anyway today, I was building something similar to the following.
 
 
-![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/875308e8-8000-4329-b1aa-ffd95b33ba6e/feb3e03e-bb8f-410d-af4a-70260fc9012a/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240206%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240206T012320Z&X-Amz-Expires=3600&X-Amz-Signature=aa2321329c15ce061f29214fe633a6a9688d373fc363ae61ea809589b38204e5&X-Amz-SignedHeaders=host&x-id=GetObject)
+![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/875308e8-8000-4329-b1aa-ffd95b33ba6e/feb3e03e-bb8f-410d-af4a-70260fc9012a/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240207%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240207T012217Z&X-Amz-Expires=3600&X-Amz-Signature=162c8897e55cfd45f067ac53f1cd083a4aeceece3c3da35386733249e2888274&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
 So, on the same row, two HTML elements. One with icon and title and the other, just an icon.
