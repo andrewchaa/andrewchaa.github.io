@@ -6,6 +6,22 @@ tags:
   - tips
 ---
 
+### Append the new data to the existing state
+
+
+Use function in `set` state
+
+
+```typescript
+useEffect(() => {
+  if (graphData) {
+    setNodes(prevNodes => [...prevNodes, ...graphData.nodes]);
+    setLinks(graphData.links);
+  }
+}, [graphData]);
+```
+
+
 ## Conditionally join class names
 
 
