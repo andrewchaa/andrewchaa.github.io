@@ -36,35 +36,33 @@ jest --init
 
 It’s the simplest form of mock and works in various scenarios.
 
+1. Import the dependency
+2. `jest.mock()` the dependency
 
 ```typescript
-// mock npm package
-jest.mock('expo-media-library', () => ({
-  requestPermissionsAsync: jest.fn(),
-}))
+import * as users from './users'
+import * as registrationsMongo from '../repositories/registrationsMongo'
 
-// mock an imported function
-jest.mock('../../api/serviceAgentUserService', () => ({
-  getAllUsers: jest.fn().mockReturnValue({
-    status: 200,
-    message: 'Successfully retrieved jobs',
-    data: [
-        {
-          lastname: 'Rehman',
-          companyId: 'CT01',
-          companyName: 'London Service Center',
-          firstname: 'Shafiq',
-          gasSafetyNumber: '570908',
-          email: 'Shafiq.rehman@navienuk.com',
-          oftecNumber: 'C500579',
-        }
-      ]}
-    )
-}))
+jest.mock('./users')
+jest.mock('../repositories/registrationsMongo')
+
+it('should return an error if user has missing information', async () => {
+  (users.getUser as jest.Mock).mockResolvedValueOnce({
+    code: 200,
+    data: { ...mockUser, firstname: '' },
+  })
+
+  const result = await createRegistration(mockRequest)
+
+  expect(result).toEqual({
+    code: statusCodes.UNPROCESSABLE_ENTITY,
+    error: 'User has missing information OR user is blocked',
+  })
+})
 ```
 
 
-But make sure `jest.mock` is outside `describe` block. Otherwise, it wouldn’t work!
+But make sure `jest.mock` is outside `describe` or `it` block. Otherwise, it wouldn’t work!
 
 
 ### Mock and verify
