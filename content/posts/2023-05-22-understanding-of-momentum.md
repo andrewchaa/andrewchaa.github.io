@@ -11,7 +11,7 @@ tags:
 - Index: bullish if 50 ≤ x ≤ 70, bearish if 30 ≤ x ≤ 50
 - Momentum is a lagging indicator
 
-![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/875308e8-8000-4329-b1aa-ffd95b33ba6e/5119430c-de3b-4cc5-b50f-d2c542ce9ad8/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240221%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240221T012317Z&X-Amz-Expires=3600&X-Amz-Signature=57f15635794cd9c79438a43f44cc19a8d9f6bc45ad53da460381f7ff1925c682&X-Amz-SignedHeaders=host&x-id=GetObject)
+![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/875308e8-8000-4329-b1aa-ffd95b33ba6e/5119430c-de3b-4cc5-b50f-d2c542ce9ad8/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240222%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240222T012248Z&X-Amz-Expires=3600&X-Amz-Signature=38eb77fb6236ee35cbfc1bafaa4aa5df23d8f53adb3ee151ea52a45857d83310&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
 ## Moving Averages
@@ -26,7 +26,7 @@ tags:
 - Significance: momentum of change (convergence), proximity to resistance or support, and proximity of MA to current price
 - Most reversal activity takes place at or near resistance or support
 
-![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/875308e8-8000-4329-b1aa-ffd95b33ba6e/d732e202-24fa-4862-99ce-4f0068d89501/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240221%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240221T012317Z&X-Amz-Expires=3600&X-Amz-Signature=f3f1716c8ca1eb4b8e61fa3a80036c3669d6c98dda6ca6488b050e2708daf046&X-Amz-SignedHeaders=host&x-id=GetObject)
+![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/875308e8-8000-4329-b1aa-ffd95b33ba6e/d732e202-24fa-4862-99ce-4f0068d89501/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240222%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20240222T012248Z&X-Amz-Expires=3600&X-Amz-Signature=ffb836a129168e6a5d5d3b619f6f04a0dd3e82e232af86d412122ca9970dfeee&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 - MA is a lagging indicator but together with price above or below Bollinger Bands it can predict the price movement
 
