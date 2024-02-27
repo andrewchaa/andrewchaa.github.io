@@ -7,7 +7,6 @@ tags:
   - javascript
 description: To simulate different behaviours for the mock function within a single test, you need to set the function as `mock` and then use  `mockReturnValue` and `mockReturnValueOnce` methods on the mocked function itself
 ---
-
 ## Achieve Dynamic Return Values with Jest Mock
 `jest.mock` is a powerful tool in your Jest testing arsenal, allowing you to inject mock implementations and dependencies into your test cases. However, it's crucial to understand its behaviour regarding return values.
 
