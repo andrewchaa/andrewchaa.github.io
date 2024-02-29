@@ -1,11 +1,9 @@
 ---
-title: Streamline Your Node.js Lambda Builds with esbuild
-date: 2024-02-27
+title: "Stop Your Mac from Sleeping While Reading: Introducing `caffeinate`"
+date: 2024-02-29
 tags:
-  - javascript
-  - typescript
-  - lambda
-  - esbuild
+  - tools
+  - bash
 ---
 ## Stop Your Mac from Sleeping While Reading: Introducing `caffeinate`
 
