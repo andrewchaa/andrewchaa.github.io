@@ -5,7 +5,6 @@ tags:
   - tools
   - bash
 ---
-## Stop Your Mac from Sleeping While Reading: Introducing `caffeinate`
 
 ![[Pasted image 20240229091105.png]]
 
