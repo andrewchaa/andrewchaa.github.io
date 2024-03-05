@@ -1,0 +1,36 @@
+---
+title: My Bookmarks
+date: 2024-03-01
+tags:
+  - resources
+  - bookmarks
+---
+- [Ajv JSON schema validator](https://github.com/ajv-validator/ajv): he fastest JSON schema Validator. Supports JSON Schema draft-04/06/07/2019-09/2020-12 and JSON Type Definition (RFC8927)
+- [AWS JavaScript SDK v3](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/index.html)
+- [AWS SDK v3 Client mock](https://github.com/m-radzikowski/aws-sdk-client-mock#aws-sdk-v3-client-mock): Easy and powerful mocking of AWS SDK v3 Clients.
+- [Best of Js](https://bestofjs.org/): A place to find the best open source projects related to the web platform: JS, HTML, CSS, but also TypeScript, Node.js, Deno, Bun...
+- [bruno](https://github.com/usebruno/bruno): Opensource IDE For Exploring and Testing Api's (lightweight alternative to postman/insomnia)
+- [cilium](https://cilium.io/): eBPF-based Networking, Observability, Security
+- [classnames](https://github.com/JedWatson/classnames): A simple javascript utility for conditionally joining classNames together
+- [CSS Zen Garden](https://www.csszengarden.com/): The Beauty of CSS Design
+- [Electron Forge](https://www.electronforge.io/): a complete tool for creating, publishing, and installing modern Electron applications
+- [Expo Reference](https://docs.expo.dev/versions/latest/)
+- [Github CLI](https://github.com/cli/cli): GitHub’s official command line tool
+- [GPG Suite](https://gpgtools.org/): One simple package with everything you need to protect your emails and files.
+- [How to write mutation resolver](https://www.apollographql.com/tutorials/fullstack-quickstart/writing-mutation-resolvers)
+- [httpbin.org](https://httpbin.org/): A simple HTTP Request & Response Service.
+- [Immer](https://immerjs.github.io/immer/): a tiny package that allows you to work with immutable state in a more convenient way.
+- [k9s](https://k9scli.io/): Kubernetes CLI To Manage Your Clusters In Style!
+- [msw](https://github.com/mswjs/msw): Seamless REST/GraphQL API mocking library for browser and Node.js.
+- [nativewind](https://github.com/marklawlor/nativewind): React Native utility-first universal design system - powered by Tailwind CSS
+- [pandas-ta](https://github.com/twopirllc/pandas-ta): Technical Analysis Indicators - Pandas TA is an easy to use Python 3 Pandas Extension with 130+ Indicators
+- [pgAdmin](https://www.pgadmin.org/): the most popular and feature rich Open Source administration and development platform for PostgreSQL, the most advanced Open Source database in the world.
+- [Postico](https://eggerapps.at/postico2/): a database app for users
+- [Power tools for AWS Lambda](https://docs.powertools.aws.dev/lambda/typescript/latest/): a developer toolkit to implement Serverless [best practices and increase developer velocity](https://docs.powertools.aws.dev/lambda/typescript/latest/#features).
+- [react-hot-toast](https://react-hot-toast.com/): The Best Toast in Town
+- [react-tooltip](https://github.com/ReactTooltip/react-tooltip): React Tooltip Component
+- [shadcn-ui](https://github.com/shadcn-ui): Beautifully designed components that you can copy and paste into your apps. Accessible. Customizable. Open Source
+- [seedrandom](https://github.com/davidbau/seedrandom): seeded random number generator for Javascript
+- [terraformer](https://github.com/GoogleCloudPlatform/terraformer): CLI tool to generate terraform files from existing infrastructure (reverse Terraform). Infrastructure to Code
+- [tremor](https://github.com/tremorlabs/tremor): The react library to build dashboards fast
+- [zappy](https://zapier.com/zappy): The fastest, all-in-one way to share screenshots, GIFs, and recordings with your teammates.
