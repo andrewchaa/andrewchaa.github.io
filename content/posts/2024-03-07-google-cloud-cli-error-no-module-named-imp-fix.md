@@ -1,5 +1,5 @@
 ---
-title: "Google Cloud CLI Error: \"ModuleNotFoundError: No module named 'imp'\" and the Python 3.12 Fix"
+title: "Fixing Google Cloud CLI Error: \"ModuleNotFoundError: No module named 'imp'\""
 date: 2024-03-07
 tags:
   - tools
