@@ -70,7 +70,8 @@ test('renders user names', async () => {
     expect(screen.getByText('John Doe')).toBeInTheDocument();
     expect(screen.getByText('Jane Doe')).toBeInTheDocument();
   });
-});```
+});
+```
 
 In this example, we first import the necessary functions from msw. Then, we create a server instance using `setupServer` and set up an `onUnhandledRequest` handler to log any unhandled requests during testing.
 
