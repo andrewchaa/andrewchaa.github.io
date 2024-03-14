@@ -20,6 +20,9 @@ git config --global alias.co 'checkout'
 git config --global alias.new 'checkout -b'
 # create a new branch
 
+alias.renew !f() { git branch -d $1 && git checkout -b $1; }; f
+# delete and recreate the branch
+
 git config --global alias.ps 'push'
 # push to the remote repository
 
