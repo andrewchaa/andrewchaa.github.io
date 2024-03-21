@@ -58,4 +58,7 @@ git config --global alias.fb '!git fetch && git rebase origin/main'
 
 git config --global alias.fm '!git fetch && git merge origin/main'
 # fetch changes fromt he remote and merge the local branch
+
+git config --global alias.acp '!f() { git add -A && git commit -am "$1" && git push; }; f'
+# add, commit, and push
 ```
