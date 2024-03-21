@@ -1,41 +1,61 @@
 ---
-title: My Python commands
+title: My Python Note
 date: 2023-01-30
 tags:
   - python
+  - code-snippets
 ---
+This is the collection of my python code snippets and commands I use. My main programming languages are C#, JavaScript / TypeScript, and Java. I use Python to analyse and back-test my trading strategies.
 
-As a Python newbie, I’d like to write down commands and statements I use to help myself to learn more and not to forget what I learn.
-
-
-Exit the Python shell
-
-
+## Getting Started
+### Exit the Python shell
 ```python
 exit()
 ```
 
-
-### Update pip
-
-
+### pip
 ```bash
-pip install --upgrade pip
+pip install --upgrade pip # update pip
+pip install yfinance pandas-datareader # install packages
 ```
 
-
-### pandas, numpy, and matplotlib
-
-
-Install the libraries that facilitate data from Yahoo Finance and FRED
-
-
-```bash
-pip install yfinance pandas-datareader
+## DataFrame
+### Remove rows with the same valule
+```python
+df=df[df.High!=df.Low]
 ```
 
+### Convert column to datetime column and set index
+```python
+df['Datetime'] = pd.to_datetime(df['Datetime'], utc=True)
+df.set_index('Datetime', inplace=True)
+```
 
-Download the Apple EOD pricing data in a dataframe
+## numpy
+### Check if `nan`
+```python
+stopLossAtr = self.slCoefficient * 
+	(self.data.ATR[-1] if not np.isnan(self.data.ATR[-1]) else 6)
+```
+
+## yfinance
+
+### Download data
+```python
+import yfinance as yf
+from datetime import date
+
+tickerSymbol = 'SPGI'
+tickerData = yf.Ticker(tickerSymbol)
+tickerDf = tickerData.history(
+  period='60d',
+  interval='15m'
+)
+
+# See the data
+print(tickerDf)
+tickerDf.to_csv(f"data/{tickerSymbol.lower()}.csv")
+```
 
 
 ```python
