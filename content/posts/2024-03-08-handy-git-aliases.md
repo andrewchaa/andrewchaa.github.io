@@ -7,6 +7,8 @@ tags:
 ---
 These aliases provide shortcuts for Git commands I commonly use, making your workflow faster and more efficient.
 
+The global git configuration file is typically stored int he user's home directory, `~/.gitconfig`
+
 ```shell
 git config --get-regexp alias
 # list of handy git aliases I use.
@@ -20,7 +22,7 @@ git config --global alias.co 'checkout'
 git config --global alias.new 'checkout -b'
 # create a new branch
 
-git config --global alias.renew !f() { git branch -d $1 && git checkout -b $1; }; f
+git config --global alias.renew "!f() { git branch -D $1 && git checkout -b $1; }; f"
 # delete and recreate the branch
 
 git config --global alias.ps 'push'
