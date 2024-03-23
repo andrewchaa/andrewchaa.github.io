@@ -8,8 +8,8 @@ tags:
 
 Key symbols: ⌘ **⇧ ⌥ ⌃**
 
+- **Duplicate line**: **`Shift+Alt+Up/Down`** - Duplicate the current line or selected lines above or below.
 - **Open the command palette**: ⌘ + shft + p - Access various VS Code commands and features quickly.
-- **Quick open**: ⌘ + p - Quickly open any file in your project.
 - **Go to definition**: **`F12`** - Navigate to the definition of the symbol under the cursor.
 - **Find references**: **`Shift+F12`** - Find all references of the symbol under the cursor.
 - **Find all symbols in the file**: ⌘ + SHIFT + 0 - List all symbols (such as functions, classes, or variables) in the current file.
@@ -19,7 +19,6 @@ Key symbols: ⌘ **⇧ ⌥ ⌃**
 - **Toggle line comment**: ⌘ + /  - Comment or uncomment the current line or selected lines.
 - **Toggle block comment**: **`Shift+Alt+A`** - Comment or uncomment the current block (selected text) using block comments.
 - **Move line up/down**: **`Alt+Up/Down`** - Move the current line or selected lines up or down.
-- **Duplicate line**: **`Shift+Alt+Up/Down`** - Duplicate the current line or selected lines above or below.
 - **Go to line number**: ^ + G - Quickly navigate to a specific line number.
 - **Go to previous/next error or warning**: **`F8`** / **`Shift+F8`** - Navigate through the errors and warnings in your code.
 - **Multi-cursor selection**: ⌘ + Click  - Place multiple cursors in the editor for simultaneous editing.
@@ -27,6 +26,8 @@ Key symbols: ⌘ **⇧ ⌥ ⌃**
 - **Format document**: **`Shift+Alt+F`** - Automatically format your code based on the configured formatter.
 - **Fold/unfold code**: ⌘ + ALT + [  / ⌘ + ALT + ] - Collapse or expand code blocks, functions, or objects.
 - **Open shortcuts menu**: ⌘ + K ⌘ + S
+- **Quick open**: ⌘ + p - Quickly open any file in your project.
+- **Scroll up and down without moving cursor**: fn + ⌃ + up  / down arrow
 
 ### Tab
 

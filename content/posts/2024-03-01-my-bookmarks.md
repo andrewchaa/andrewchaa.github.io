@@ -8,6 +8,7 @@ tags:
 - [Ajv JSON schema validator](https://github.com/ajv-validator/ajv): he fastest JSON schema Validator. Supports JSON Schema draft-04/06/07/2019-09/2020-12 and JSON Type Definition (RFC8927)
 - [AWS JavaScript SDK v3](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/index.html)
 - [AWS SDK v3 Client mock](https://github.com/m-radzikowski/aws-sdk-client-mock#aws-sdk-v3-client-mock): Easy and powerful mocking of AWS SDK v3 Clients.
+- [backtrader](https://github.com/mementum/backtrader): Python Backtesting library for trading strategies 
 - [Best of Js](https://bestofjs.org/): A place to find the best open source projects related to the web platform: JS, HTML, CSS, but also TypeScript, Node.js, Deno, Bun...
 - [bruno](https://github.com/usebruno/bruno): Opensource IDE For Exploring and Testing Api's (lightweight alternative to postman/insomnia)
 - [cilium](https://cilium.io/): eBPF-based Networking, Observability, Security

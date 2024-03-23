@@ -20,15 +20,27 @@ pip install yfinance pandas-datareader # install packages
 ```
 
 ## DataFrame
-### Remove rows with the same valule
-```python
-df=df[df.High!=df.Low]
-```
-
 ### Convert column to datetime column and set index
 ```python
 df['Datetime'] = pd.to_datetime(df['Datetime'], utc=True)
 df.set_index('Datetime', inplace=True)
+```
+
+### Remove missing values
+```python
+df = df.dropna(subset=['MACDh_12_26_9', 'ATR'])
+```
+The `dropna` function in pandas is used to remove missing values (NaN or None) from a DataFrame. 
+
+You can use it in several ways:
+- `df.dropna()`: This will drop all rows in which any null value is present.
+- `df.dropna(axis=1)`: This will drop all columns with null values.
+- `df.dropna(how='all')`: This will drop rows where all columns are null.
+- `df.dropna(subset=['column_name'])`: This will drop rows where null values are present in specific columns.
+
+### Remove rows with the same valule
+```python
+df=df[df.High!=df.Low]
 ```
 
 ## numpy

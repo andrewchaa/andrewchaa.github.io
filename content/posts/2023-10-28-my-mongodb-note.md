@@ -1,5 +1,5 @@
 ---
-title: Getting starated with Mongo DB
+title: My Mongo DB Note
 date: 2023-10-28
 tags:
   - mongodb
@@ -15,45 +15,34 @@ tags:
 
 - Quick reference: [https://www.mongodb.com/docs/drivers/node/current/quick-reference/#std-label-node-quick-reference](https://www.mongodb.com/docs/drivers/node/current/quick-reference/#std-label-node-quick-reference)
 
+## Queries
 ### Retrieve all documents in the collection
-
-
 The **`find()`** method in MongoDB Node.js driver returns a cursor to the documents, not the documents themselves. To retrieve all documents from a query, you need to iterate over the cursor or convert it to an array.
-
 
 ```javascript
 use('warranty')
-
 db.getCollection('registrations').find().toArray()
 ```
 
-
-## Finding document(s)
-
-
+### Find a single document
 `findOne()` for a single document or `find()` for multiple documents
-
 
 ```typescript
 const users = await usersCollection
-      .find<User>({email='youngho@email.com'})
-			.sort({ updateDateIso: -1})
+      .find<User>({email='user@email.com'})
+	  .sort({ updateDateIso: -1})
       .skip(skip)
       .limit(pageSize)
       .toArray()
 ```
 
-
 ### Find with nested attributes
-
 
 ```typescript
 { "customer.name": 'Mrs Livingston'}
 ```
 
-
 ### Find documents with property’s value with trailing spaces
-
 
 ```javascript
 // Compass
@@ -65,59 +54,41 @@ const results = await yourCollection.find({
 }).toArray();
 ```
 
-
 ### Find if a property has `Int32` type value
-
-
 Sometimes, your property has incorrect type value. In my case, `gasSafeNumber` is supposed to have `string` value but some documents had `Int32` values.
-
 
 ```javascript
 find({ gasSafeNumber: { $type: ['int']}})
 ```
 
-
 ### Check the existence of the field
-
 
 ```javascript
 find({ postCode: { $exists: true } })
 ```
 
-
 ### FInd if email contains `skyline`
-
 
 ```javascript
 find({"email": {"$regex": "skyline"}})
 ```
 
-
 ### Sorting
-
-
 Use `.sort({})`
-
 
 `1` for ascending order and `-1` for descending order
 
 
 ```javascript
 const users = await usersCollection
-      .find<User>({email='youngho@email.com'})
-			.sort({ updateDateIso: -1})
-			.toArray()
+	.find<User>({email='youngho@email.com'})
+	.sort({ updateDateIso: -1})
+	.toArray()
 ```
 
-
 ## Aggregation
-
-
 ### Removing Duplications
-
-
 In one use-case, I had to retrieve `companyId` and `companyName` from `users` collection. As the collection is about users, those retrieved results contained duplicates. To return distinct results without duplicates, I useed the aggregation framework with `$group` stage to group the documents by the specified fields, `companyId` and `companyName` and then project the fields I was interested in. Here's how I wrote the MongoDB query:
-
 
 ```javascript
 db.users.aggregate([
@@ -136,17 +107,12 @@ db.users.aggregate([
 ])
 ```
 
-
 Here's what this aggregation does:
-
-1. **$group**: This stage groups documents by both `companyId` and `companyName`. Each unique combination of `companyId` and `companyName` becomes a single document in the resulting output of this stage.
-2. **$project**: This stage then reshapes each document to include only the `companyId` and `companyName`. The `_id: 0` excludes the `_id` field from the output, and the values are set to the corresponding parts of the `$_id` object created in the `$group` stage.
+1. `$group`: This stage groups documents by both `companyId` and `companyName`. Each unique combination of `companyId` and `companyName` becomes a single document in the resulting output of this stage.
+2. `$project`: This stage then reshapes each document to include only the `companyId` and `companyName`. The `_id: 0` excludes the `_id` field from the output, and the values are set to the corresponding parts of the `$_id` object created in the `$group` stage.
 
 ## Update
-
-
 ### Update a field
-
 
 ```javascript
 use('service-agent');
@@ -160,12 +126,8 @@ db.getCollection('users').updateMany(
 );
 ```
 
-
 ### Upsert a document
-
-
 Use the key(s) as filter expression and set `upsert` to `true`. 
-
 
 ```typescript
 import { MongoClient } from 'mongodb'
@@ -192,12 +154,8 @@ import { MongoClient } from 'mongodb'
 
 ```
 
-
 ### Remove a field that’s not used any more
-
-
 You can use `$unset`
-
 
 ```javascript
 use('warranty');
