@@ -12,13 +12,9 @@ git config --global core.editor "code --wait"
 ```
 
 ### Automatically track remote branch
-
 ```bash
 git config --global --add --bool push.autoSetupRemote true
 ```
 ### Set up handy aliases
 Refer to [handy git aliases I uses day to day page](https://andrewchaa.me.uk/handy-git-aliases-i-use-day-to-day/)
-
-
-
 

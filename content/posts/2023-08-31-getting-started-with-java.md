@@ -7,13 +7,8 @@ tags:
 
 ### Installing JDK
 
-
 Use [Amazon Correto](https://aws.amazon.com/corretto/?filtered-posts.sort-by=item.additionalFields.createdDate&filtered-posts.sort-order=desc) which is a multiplatform, production-ready distribution of the Open Java Development Kit (OpenJDK)
-
-
 ### Packages in use
-
-
 `javax.ws.rs`
 
 
@@ -329,17 +324,11 @@ public class ChatServiceConfigurationImpl
 	- This method abstracts away the process of converting the JSON credentials string into an actual **`GoogleCredentials`** object that can be used to interact with Google Cloud services.
 
 ### Supplier
-
-
 In Java, the **`Supplier<T>`** is a functional interface introduced in Java 8, found in the **`java.util.function`** package. A functional interface is an interface that contains just one abstract method, and thus can represent lambda expressions targeting it.
-
 
 The primary purpose of **`Supplier<T>`** is to represent a function that takes no arguments and returns a result of type **`T`**. In simpler terms, it supplies a value of type **`T`**.
 
-
 Here's the basic structure of the **`Supplier<T>`** interface:
-
-
 ```java
 @FunctionalInterface
 public interface Supplier<T> {
