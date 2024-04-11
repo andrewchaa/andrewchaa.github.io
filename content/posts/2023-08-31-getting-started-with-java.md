@@ -134,11 +134,7 @@ Now the `getValue` method can accept any type of object as its `parameters` argu
 
 
 ## UUID
-
-
 ### Creating a random UUID
-
-
 ```java
 DefaultUUIDGenerator.randomUUID()
 ```
