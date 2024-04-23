@@ -88,3 +88,32 @@ server.listen({
 This option logs any unhandled requests during testing, allowing you to identify and mock the missing API calls.
 
 Embrace msw in your development workflow and experience the benefits of efficient API mocking for your web applications.
+
+### delay
+Tue. 23/4/24
+The `delay()` function in the Mock Service Worker (MSW) library is used to simulate network delays and latency when responding to requests. It allows you to introduce artificial delays in the response time of your mocked API endpoints, helping you to test and mimic real-world network conditions.
+
+I came across this `delay()` function. I'm developing a web UI for LLM chat and wanted to display `Thinking ...` message while the UI waits for the LLM response. To test the feature, I needed to slow down the API response to verify that the text existed. 
+
+```javascript
+it('shows "thinking ..." message while waiting for the prompt API response', async () => {
+  server.use(
+    rest.post(`/conversations/*/messages`, (req, res, ctx) =>
+      res(
+        ctx.delay(5000),
+        ctx.json({
+          conversationUid: 'conversationUid',
+          messages: [...oldMessages, ...newMessages]
+        })
+      )
+    )
+  );
+
+  const { user } = renderWithProviders(<LlmChat {...props} />, {});
+
+  await user.type(await screen.findByLabelText('Prompt'), newMessages[0].content);
+  await user.click(await screen.findByRole('button', { name: 'Submit' }));
+
+  expect(await screen.findByText('Thinking ...')).toBeInTheDocument();
+});
+```
