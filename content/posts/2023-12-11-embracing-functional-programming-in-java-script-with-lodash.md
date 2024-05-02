@@ -138,7 +138,7 @@ Accepts iteratee which is invoked for each element in an array to generate the c
 
 
 ```typescript
-const nodes = uniqBy(cache.nodes, (node) => node.id)
+setMessages(uniqBy([...messages, ...response.messages], 'content'));
 ```
 
 
