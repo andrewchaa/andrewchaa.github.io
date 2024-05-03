@@ -48,6 +48,6 @@ jest.mock('mongodb', () => {
 ```
 
 Mocking class instances with Jest can be a bit confusing at first but it's not too different from mocking regular functions. In JavaScript, ES6 class is just a constructor function with some syntactic sugar.
-In the mock code above, we're mocking the entire mongodb module using `jest.mock('mongodb')`. Inside the mock function, we return an object that mimics the structure of the `mongodb` module.
+In the mock code above, we're mocking the entire `mongodb` module using `jest.mock('mongodb')`. Inside the mock function, we return an object that mimics the structure of the `mongodb` module.
 We mock the `MongoClient` class by creating a jest.fn that returns an object with the db method mocked. The `db` method is also mocked as a jest.fn that returns an object with the collection method mocked. The `collection` method is mocked as a jest.fn that returns an object with the find method mocked. The `find` method is mocked as a jest.fn that returns an object with the `toArray` method mocked. Finally, the `toArray` method is mocked as a jest.fn that returns an array containing your mock data.
 When mocking class instances with Jest, it's important to understand the structure and interactions of the class methods and properties. By creating mock functions that mimic the behaviour of the real implementation, you can isolate your tests and ensure reliable and consistent results.
