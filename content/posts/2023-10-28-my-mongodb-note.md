@@ -61,7 +61,7 @@ Sometimes, your property has incorrect type value. In my case, `gasSafeNumber` i
 find({ gasSafeNumber: { $type: ['int']}})
 ```
 
-### Check the existence of the field
+### Find if the field exists
 
 ```javascript
 find({ postCode: { $exists: true } })
