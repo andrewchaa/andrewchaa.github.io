@@ -63,4 +63,7 @@ git config --global alias.fm '!git fetch && git merge origin/main'
 
 git config --global alias.acp '!f() { git add -A && git commit -am "$1" && git push; }; f'
 # add, commit, and push
+
+git config --global alias.rbstb '!git fetch --tags --force origin && git rebase --onto tags/stable origin/master'
+# fetch all tags and rebase the current branch to stable tag from origin master
 ```
